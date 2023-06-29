@@ -4,9 +4,9 @@
 
 In the presentation (13.06.23) introducing the XML-Editor, we discussed possibilities to automate the
 process of curating metadata using technologies like large language models (LLM) and more specifically,
-tools like AutoGPT [1]. We came to the conclusion, that testing is needed to get an idea of how
-to approach the topic best. In this short report, I want to document the current progress, which
-exploratory experiments have been attempted, and lay out a roadway on how to proceed. The report
+tools like [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT). We came to the conclusion, that testing is
+needed to get an idea of how to approach the topic best. In this short report, I want to document the current progress,
+which exploratory experiments have been attempted, and lay out a roadway on how to proceed. The report
 is structured into three parts. Starting with the ”Problem description” part, where I want to formulate
 the problem and give background information. Next, I want to present the up-to-date, takeaway
 message in the ”Current Standing” part. Lastly, in the ”Experiment-Diary” part, I want to collect
@@ -16,10 +16,11 @@ methods and results, in a diary-like fashion.
 
 Many image-generating methods, such as microscopy, output the metadata in a proprietary format.
 This causes problems in processing (can my pipeline use that image), publishing (can the reader access
-the data), and storage (will the data be usable in the future). Bioformats [2] attempts to tackle those
-problems, by providing tools to translate to the open OME [3] format. Currently, Bioformats works
-well, with many images, but struggles with some formats. This causes metadata to get lost, or falsely
-translated. I call the in-place correction (not via annotation) of that erroneous metadata ”curation”.
+the data), and storage (will the data be usable in the future). [Bioformats](http://www.openmicroscopy.org/bio-formats/)
+attempts to tackle those problems, by providing tools to translate to the open
+[OME](https://docs.openmicroscopy.org/ome-model/5.6.3/ome-xml/) format. Currently, Bioformats works well, with many
+images, but struggles with some formats. This causes metadata to get lost, or falsely translated. I call the in-place
+correction (not via annotation) of that erroneous metadata ”curation”.
 
 ## Current Standing
 
