@@ -1,5 +1,8 @@
 # Exploring AI for Metadata Curation
 
+This GitHub repository contains the code and documentation for the project "Exploring AI for Metadata Curation".
+The goal is to design an AI system that can curate OME XML metadata for microscopy images from its raw metadata.
+
 ## Introduction
 
 In the presentation (13.06.23) introducing the XML-Editor, we discussed possibilities to automate the
