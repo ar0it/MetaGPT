@@ -17,13 +17,32 @@ methods and results, in a diary-like fashion.
 
 ## Problem description
 
-Many image-generating methods, such as microscopy, output the metadata in a proprietary format.
-This causes problems in processing (can my pipeline use that image), publishing (can the reader access
-the data), and storage (will the data be usable in the future). [Bioformats](http://www.openmicroscopy.org/bio-formats/)
-attempts to tackle those problems, by providing tools to translate to the open
-[OME](https://docs.openmicroscopy.org/ome-model/5.6.3/ome-xml/) format. Currently, Bioformats works well, with many
-images, but struggles with some formats. This causes metadata to get lost, or falsely translated. I call the in-place
-correction (not via annotation) of that erroneous metadata ”curation”.
+Numerous image-generating techniques, such as microscopy, often produce metadata in proprietary formats. This presents
+challenges in processing (i.e., compatibility with existing pipelines), publishing (i.e., accessibility for readers),
+and storage (i.e., future usability of data). Bioformats, a widely used Java library, aims to address these issues by
+offering tools to convert these proprietary formats into the open OME format. 
+While Bioformats effectively handles many image formats, it encounters difficulties with others, potentially leading to
+loss or incorrect translation of metadata. A key issue with Bioformats is its struggle to keep up with the constant
+changes in proprietary file formats. Despite these changes often being relatively minor, the effort to maintain
+Bioformats is substantial due to the hard-coded and static nature of traditional software paradigms.
+Interestingly, format transcription is not dissimilar to language translation, where words in different languages are
+mapped to each other. Large language models (LLMs) have recently surprised the scientific community by outperforming
+previous state-of-the-art translation tools, despite not being explicitly trained for translation tasks. The vast
+amount of multilingual data has enabled these models to develop a deep understanding of language, moving beyond
+monolingual word representation towards a generalized, concept-based knowledge base. 
+In essence, these models accept words in any language, translate them into an abstract conceptual representation
+for reasoning, and then map the resulting concepts back to the desired output language. Applying this logic to
+format transcription, the same principle could be used. Instead of directly mapping a property, such as a key-value
+pair, from the input format to another property in the output format, the input is first represented as a concept.
+This concept can then be transcribed to the specified output. As the conceptual meaning of the input or output does
+not derive from literal string representation, this method is resilient to most changes in proprietary file formats.
+Therefore, I propose OME Cur-AI-tion, a modified version of LLama2. LLama2-based models represent the state-of-the-art
+in open-source natural language models. Preliminary testing has shown that, through transfer learning, such a model can
+standardize output (for example, to the XML syntax) and enhance capabilities in understanding and extracting information
+from unstructured plain text proprietary metadata. A fully functional OME Cur-AI-tion has the potential to revolutionize
+the landscape of microscopy and unify the efforts of the entire imaging community, much like how the FASTA file format
+has enabled the sequence community to work together efficiently.
+
 
 ## Current Standing
 
