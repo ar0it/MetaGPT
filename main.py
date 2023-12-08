@@ -1,23 +1,64 @@
 import openai
+import os
+import autogen
+# from memgpt.autogen.memgpt_agent import create_autogen_memgpt_agent
 
-openai.api_key = "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"
-
-
-data = "Many image-generating methods, such as microscopy, output the metadata in a proprietary format. This causes problems in processing (can my pipeline use that image), publishing (can the reader access the data), and storage (will the data be usable in the future). Bioformats, a widely distributed java library, attempts to tackle those problems by providing tools to translate to the open OME format. Currently, Bioformats works well, with many image formats, but struggles with some. This can lead to metadata getting lost, or falsely translated. Fundamental to the problems of bioformats is the moving target. Provider of proprietary file formats constantly change said formats, making the effort to maintain bioformats enormous, despite changes often being relatively minor. This is caused by the hard coded and static nature of the classical software pardigm. In the most general view format transkription is not much different to language translation, in that words in both languages  are mapped to one another. Translation is a task at which large language models (LLM) surprised the wider scientific community, in that they outperformed previous state of the art translation tools, without being explicitly trained for translation tasks. The sheer amount of multilingual data allowed these models to have a deep understanding of language, going beyond monolingual representation of words, towards a generalised and concept based knowledge base. In other words the models take words in any language as input, translate these to an abstract conceptional representation in which they reason and then map the resulting concepts back to the desired output language. Applying this to the format transcription problem, I believe, that the same logic applies. The input format provides a property such as a key value pair, instead of mapping this directly to another property in the output format, the input is represented as concept first. The concept can then be transcribed to the specified output. Since the conceptual meaning of the input or output doesnt stem from literal string representation, this method is resilient to most changes in proprietary file formats. Thats why here I propose OME Cur-AI-tion a modified version of LLama2. LLama2 based models represent the state of the art open source natural language models. Initial testing showed, that via transfer learning  such a model is cabable to: standardize output (for example to the XML syntax) and increase capabilities in understanding and extracting information from unstructured plain text proprietary metadata. A working OME Cur-AI-tion has the potential to sustainably change the landscape of microscopy and reunite the efforts of the entire imaging community, similar to how the FASTA file format allows the sequence community to work together efficiently."
-
-messages=[
-    {"role": "system", "content": "You are a helpful assistant and proffesional scientific writer. You excel at proof reading and improving scientific manuscripts. You are also a skilled software developer and have a deep understanding of the OME file format."},
-    {"role": "user", "content": f"Please help improve and correct the following text: \n {data}"},
+os.environ["OPENAI_API_KEY"] = "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"
+openai.api_key = os.environ["OPENAI_API_KEY"]
+config_list = [
+    {
+        "model": "gpt-4-1106-preview",
+        "api_key": "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",
+    },
 ]
+print(openai.api_key)
 
-response = openai.ChatCompletion.create(
-    model="gpt-4",
-    messages=messages,
-    temperature=0,
-    max_tokens=5000,
-    top_p=1.0,
-    frequency_penalty=0.0,
-    presence_penalty=0.0,
-    stop=["\"\"\""]
+llm_config = {"config_list": config_list, "seed": 42}
+
+# The user agent
+user_proxy = autogen.UserProxyAgent(
+    name="User_proxy",
+    system_message="A human admin.",
+    code_execution_config={"last_n_messages": 2, "work_dir": "groupchat"},
+    human_input_mode="TERMINATE",  # needed?
 )
-print(response["choices"][0]["message"]["content"])
+
+# The agent playing the role of the project manager (PM)
+scientist = autogen.AssistantAgent(
+    name="ScientistGPT",
+    system_message="You are a super human AI scientist specialized in curation of ome xml files. Specifically you recieve unstructured meta data of an image and your supposed to return the respective ome xml file.",
+    llm_config=llm_config,
+)
+
+
+
+"""
+# This MemGPT agent will have all the benefits of MemGPT, ie persistent memory, etc.
+MemGPT_SeqScientist = create_autogen_memgpt_agent(
+    "MemGPT_SeqScientist",
+    persona_description="I am a world class scientist, specialized in synthetic biology, specifically plasmid design one BASE SEQUENCE level. You work well with MemGPT_GeneScientist as he provides the general structure for your sequences.",
+    user_description=f"You are MemGPT_scientist a world class scientist specialized in plasmid design."
+                     f"You answer on point, concise and correctly."
+                     f"You are participating in a group chat with the user ({user_proxy.name}) and the project manager"
+                     f"of the department, ({pm.name}). Your colleague, MemGPT_GeneScientist, is also participating in "
+                     f"the chat, and is specialized in plasmid design on GENE level.",
+    # extra options
+    # interface_kwargs={"debug": True},
+)
+"""
+
+
+# Initialize the group chat between the user and two LLM agents (PM and coder)
+groupchat = autogen.GroupChat(agents=[scientist, user_proxy], messages=[], max_round=15)
+manager = autogen.GroupChatManager(groupchat=groupchat, llm_config=llm_config)
+
+path = "/home/aaron/PycharmProjects/MetaGPT/raw_Metadata_Image8.txt"
+with open(path, "r") as f:
+    data = f.read()
+    print(data)
+# Begin the group chat with a message from the user
+user_proxy.initiate_chat(
+    manager,
+    message=f"Please generate the ome xml for the following metadata: \n {data}",
+
+)
