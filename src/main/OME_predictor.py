@@ -62,6 +62,37 @@ class XMLPredictor:
             raw_metadata = f.read()
         return raw_metadata
 
+    def init_assistant(self):
+        """
+        Define the assistant that will help the user with the task
+        :return:
+        """
+        from openai import OpenAI
+
+        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+
+
+        assistant = openai.client.beta.assistants.create(
+            instruction="You are a microscopy expert who is specialized at curating metadata for images. You will ",
+            name="OME XML Assistant",
+            model="gpt-4-1106-preview",
+            tools=[{"type": "code_interpreter"}]
+        )
+        file = client.files.create(
+            file=open("path/to/file.txt", "rb"),
+            purpose="assistants"
+        )
+        thread = client.assistants.create(
+            message=[
+                {
+                    "role": "user",
+                    "content": "I need help with my code",
+                    "file_ids": [file.id]
+                }
+            ]
+        )
+
+
     def generate_promt(self):
         """
         Generate the prompt from the raw metadata
