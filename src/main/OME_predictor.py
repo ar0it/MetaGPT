@@ -6,6 +6,7 @@ import os
 import openai
 import autogen
 import argparse
+from openai import OpenAI
 
 os.environ["OPENAI_API_KEY"] = "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"
 openai.api_key = os.environ["OPENAI_API_KEY"]
@@ -23,6 +24,7 @@ class XMLPredictor:
         self.pre_prompt = None
         self.path_to_raw_metadata = path_to_raw_metadata
         self.path_to_ome_xml = None
+        self.client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
         if path_to_ome_xml is None:
             self.path_to_ome_xml = os.path.join(os.path.dirname(path_to_raw_metadata), "ome_xml.ome.xml")
         self.raw_metadata = self.read_raw_metadata()
@@ -67,22 +69,21 @@ class XMLPredictor:
         Define the assistant that will help the user with the task
         :return:
         """
-        from openai import OpenAI
-
-        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-
-
-        assistant = openai.client.beta.assistants.create(
-            instruction="You are a microscopy expert who is specialized at curating metadata for images. You will ",
-            name="OME XML Assistant",
-            model="gpt-4-1106-preview",
-            tools=[{"type": "code_interpreter"}]
-        )
-        file = client.files.create(
+        file = self.client.files.create(
             file=open("path/to/file.txt", "rb"),
             purpose="assistants"
         )
-        thread = client.assistants.create(
+
+        assistant = self.client.beta.assistants.create(
+            instructions="You are a microscopy expert who is specialized at curating metadata for images. You will ",
+            name="OME XML Assistant",
+            model="gpt-4-1106-preview",
+            tools=[{"type": "code_interpreter"},
+                   {"type": "retrieval"}],
+            file_ids=[file.id]
+        )
+
+        thread = self.client.assistants.create(
             message=[
                 {
                     "role": "user",
@@ -91,7 +92,6 @@ class XMLPredictor:
                 }
             ]
         )
-
 
     def generate_promt(self):
         """
