@@ -18,28 +18,30 @@ class XMLPredictor:
 
     def __init__(self,
                  path_to_raw_metadata="/home/aaron/PycharmProjects/MetaGPT/raw_data/raw_Metadata_Image8.txt",
-                 path_to_ome_xml=None,
+                 out_path="/home/aaron/PycharmProjects/MetaGPT/out/ome_xml.ome.xml",
                  path_to_ome_starting_point=None,
-                 ome_xsd_path="/home/aaron/PycharmProjects/MetaGPT/raw_data/ome.xsd"):
+                 ome_xsd_path="/home/aaron/PycharmProjects/MetaGPT/raw_data/test.txt"):
         """
         :param path_to_raw_metadata: path to the raw metadata file
         """
+
         self.run = None
+        self.assistant_id = None
         self.pre_prompt = None
         self.ome_xsd_path = ome_xsd_path
         self.path_to_raw_metadata = path_to_raw_metadata
         self.path_to_ome_xml = None
         self.client = OpenAI()
-        if path_to_ome_xml is None:
-            self.path_to_ome_xml = os.path.join(os.path.dirname(self.path_to_raw_metadata), "ome_xml.ome.xml")
         self.raw_metadata = self.read_raw_metadata()
         self.ome_xml = None
+        self.out_path = out_path
         self.messages = []
-        self.ome_starting_point = self.read_ome_xml(path_to_ome_starting_point)
+        if path_to_ome_starting_point is not None:
+            self.ome_starting_point = self.read_ome_xml(path_to_ome_starting_point)
         self.assistant = None
         self.thread = None
         self.message = None
-        self.model = "gpt-3.5-turbo"
+        self.model = "gpt-4-1106-preview"  # "gpt-3.5-turbo"
         self.main()
 
     def main(self):
@@ -47,15 +49,24 @@ class XMLPredictor:
         Predict the OME XML from the raw metadata
         """
         print("- - - Initializing assistant - - -")
-        self.init_assistant()
+        with open("assistant_id.txt", "r") as f:
+            self.assistant_id = f.read()
+            try:
+                print("Trying to retrieve assistant: " + self.assistant_id)
+                self.assistant = self.client.beta.assistants.retrieve(self.assistant_id)
+                print("Successfully retrieved assistant")
+            except:
+                print("Assistant not found, creating new assistant")
+                self.init_assistant()
+        print("- - - Generating Thread - - -")
+        self.thread = self.client.beta.threads.create()
         print("- - - Generating Prompt - - -")
         self.generate_message(msg=self.raw_metadata)
         print("- - - Predicting OME XML - - -")
-        pred = self.run_message()
+        self.ome_xml = self.run_message()
         print("- - - Exporting OME XML - - -")
         self.export_ome_xml()
         print("- - - Shut down assistant - - -")
-        self.assistant.delete()
 
     def subdivide_raw_metadata(self):
         """
@@ -75,13 +86,14 @@ class XMLPredictor:
         """
         Export the OME XML to a file
         """
-        with open(self.path_to_ome_xml, "w") as f:
+        with open(self.out_path, "w") as f:
             f.write(self.ome_xml)
 
     def read_raw_metadata(self):
         """
         Read the raw metadata from the file
         """
+        print(self.path_to_raw_metadata)
         with open(self.path_to_raw_metadata, "r") as f:
             raw_metadata = f.read()
         return raw_metadata
@@ -102,7 +114,7 @@ class XMLPredictor:
             file=open(self.ome_xsd_path, "rb"),
             purpose="assistants"
         )
-
+        print(file)
         self.assistant = self.client.beta.assistants.create(
             instructions=self.pre_prompt,
             name="OME XML Assistant",
@@ -110,8 +122,8 @@ class XMLPredictor:
             tools=[{"type": "retrieval"}],
             file_ids=[file.id]
         )
-
-        self.thread = self.client.beta.threads.create()
+        with open("assistant_id.txt", "w") as f:
+            f.write(self.assistant.id)
 
     def generate_message(self, msg):
         """
@@ -123,6 +135,13 @@ class XMLPredictor:
             content=msg
         )
 
+    def make_assistant(self):
+        """
+        Create the assistant
+        :return:
+        """
+        self.init_assistant()
+
     def run_message(self):
         """
         Predict the OME XML from the raw metadata
@@ -132,17 +151,27 @@ class XMLPredictor:
             assistant_id=self.assistant.id
         )
 
-        while self.run.status != "complete":
+        while self.run.status == "in_progress" or self.run.status == "queued":
+            print(self.run.status)
             self.run = self.client.beta.threads.runs.retrieve(
                 thread_id=self.thread.id,
                 run_id=self.run.id
             )
             print("Polling for run completion...")
-            time.sleep(1)
+            time.sleep(5)
 
+        print(self.run.status)
+        if self.run.status == "failed":
+            print("Run failed")
+            print(self.run)
+            return None
+
+        assistant_response = None
         messages = self.client.beta.threads.messages.list(thread_id=self.thread.id)
-        print(messages)
-        return messages
+        print(messages.data[0].content[0].text.value)
+        assistant_response = messages.data[0].content[0].text.value
+
+        return assistant_response
 
     def get_ome_xml(self):
         """
@@ -164,7 +193,6 @@ def parse_args():
 
 if __name__ == "__main__":
     path = parse_args().path_in
-    xml_predictor = XMLPredictor(path_to_raw_metadata=path)
-    print(xml_predictor.raw_metadata)
+    xml_predictor = XMLPredictor()
 
-#%%
+# %%
