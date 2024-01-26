@@ -8,7 +8,9 @@ import autogen
 import argparse
 from openai import OpenAI
 import xml.etree.ElementTree as ET
+from lxml import etree
 import time
+import xmlschema
 
 
 class XMLPredictor:
@@ -20,15 +22,16 @@ class XMLPredictor:
                  path_to_raw_metadata="/home/aaron/PycharmProjects/MetaGPT/raw_data/raw_Metadata_Image8.txt",
                  out_path="/home/aaron/PycharmProjects/MetaGPT/out/ome_xml.ome.xml",
                  path_to_ome_starting_point=None,
-                 ome_xsd_path="/home/aaron/PycharmProjects/MetaGPT/raw_data/test.txt"):
+                 ome_xsd_path="/home/aaron/PycharmProjects/MetaGPT/raw_data/ome_xsd.txt"):
         """
         :param path_to_raw_metadata: path to the raw metadata file
         """
-
+        self.xml_schema_path = "/home/aaron/PycharmProjects/MetaGPT/raw_data/ome_xsd.txt"
+        self.xsd_schema = xmlschema.XMLSchema(self.xml_schema_path)
         self.run = None
         self.assistant_id = None
         self.pre_prompt = None
-        self.ome_xsd_path = ome_xsd_path
+
         self.path_to_raw_metadata = path_to_raw_metadata
         self.path_to_ome_xml = None
         self.client = OpenAI()
@@ -41,7 +44,7 @@ class XMLPredictor:
         self.assistant = None
         self.thread = None
         self.message = None
-        self.model = "gpt-4-1106-preview"  # "gpt-3.5-turbo"
+        self.model = "gpt-4-turbo-preview"  # "gpt-3.5-turbo"
         self.main()
 
     def main(self):
@@ -63,10 +66,11 @@ class XMLPredictor:
         print("- - - Generating Prompt - - -")
         self.generate_message(msg=self.raw_metadata)
         print("- - - Predicting OME XML - - -")
-        self.ome_xml = self.run_message()
-        print("- - - Exporting OME XML - - -")
-        self.export_ome_xml()
-        print("- - - Shut down assistant - - -")
+        self.run_message()
+
+        # print("- - - Exporting OME XML - - -")
+        # self.export_ome_xml()
+        # print("- - - Shut down assistant - - -")
 
     def subdivide_raw_metadata(self):
         """
@@ -103,12 +107,11 @@ class XMLPredictor:
         Define the assistant that will help the user with the task
         :return:
         """
-        self.pre_prompt = ("You are a microscopy expert who is specialized at curating metadata for images. You will "
-                           "get raw unstructured metadata and are supposed to correctly identify and transcribe the "
-                           "metadata to the ome xml standard. Remember you have the OME XSD accessible via retrieval, "
-                           "make use of it to follow the standard. Only ever respond with the XML. Try to be as "
-                           "complete as"
-                           "possible and only use structured annotations when absolutely necessary.")
+        self.pre_prompt = ("You are OMEGPT, an AI assistant specialized in curating metadata for images. Your task is"
+                           "to transform raw, unstructured metadata into well-formed XML, adhering to the OME XML"
+                           "standard. You have access to the OME XSD for reference. Your responses should be"
+                           "exclusively in XML format, aligning closely with the standard. Strive for completeness and"
+                           "rely on structured annotations only when essential.")
 
         file = self.client.files.create(
             file=open(self.ome_xsd_path, "rb"),
@@ -166,12 +169,30 @@ class XMLPredictor:
             print(self.run)
             return None
 
-        assistant_response = None
         messages = self.client.beta.threads.messages.list(thread_id=self.thread.id)
-        print(messages.data[0].content[0].text.value)
-        assistant_response = messages.data[0].content[0].text.value
+        ome_xml = messages.data[0].content[0].text.value
+        ome_xml = ome_xml.split("</OME>")[0].split("<OME")[1]
+        self.ome_xml = "<OME" + ome_xml + "</OME>"
+        print(self.ome_xml)
+        validation = self.validate()
+        if validation is not None:
+            print("Validation failed" + str(validation))
+            msg = "There seems to be an issue with the OME XML you provided. The error I get is: " + str(validation)
+            self.generate_message(msg=msg)
+            self.run_message()
 
-        return assistant_response
+    def validate(self) -> Exception:
+        """
+        Validate the OME XML against the OME XSD
+        :param xml_path:
+        :param xsd_path:
+        :return:
+        """
+
+        try:
+            self.xsd_schema.validate(self.ome_xml)
+        except Exception as e:
+            return e
 
     def get_ome_xml(self):
         """
