@@ -1,10 +1,4 @@
-from OME_evaluator import OMEEvaluator
-from OME_predictor import XMLPredictor
-import argparse
-import os
 import xmlschema
-import xml.etree.ElementTree as ET
-
 
 my_schema = xmlschema.XMLSchema('/home/aaron/PycharmProjects/MetaGPT/raw_data/ome.xsd')
 ome_xml_path = "/home/aaron/PycharmProjects/MetaGPT/out/ome_xml.ome.xml"
