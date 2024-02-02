@@ -16,30 +16,28 @@ class PredictorTemplate:
     """
 
     def __init__(self,
-                 path_to_raw_metadata="/home/aaron/PycharmProjects/MetaGPT/raw_data/raw_Metadata_Image8.txt",
-                 out_path="/home/aaron/PycharmProjects/MetaGPT/out/ome_xml.ome.xml",
-                 path_to_ome_starting_point="/home/aaron/PycharmProjects/MetaGPT/raw_data/image8_start_point.ome.xml",
-                 ome_xsd_path="/home/aaron/PycharmProjects/MetaGPT/raw_data/ome_xsd.txt"):
-
-        self.ome_xsd_path = ome_xsd_path
-        self.xsd_schema = xmlschema.XMLSchema(self.ome_xsd_path)
-        self.run = None
-        self.pre_prompt = None
+                 path_to_raw_metadata=None,
+                 path_to_ome_starting_point=None,
+                 ome_xsd_path=None,
+                 out_path=None):
 
         self.path_to_raw_metadata = path_to_raw_metadata
         self.path_to_ome_xml = None
-        self.client = OpenAI()
-        self.raw_metadata = self.read_raw_metadata()
-        self.ome_xml = None
+        self.ome_xsd_path = ome_xsd_path
         self.out_path = out_path
-        self.messages = []
-        self.ome_starting_point = self.read_ome_as_string(path_to_ome_starting_point)
 
+        self.xsd_schema = xmlschema.XMLSchema(self.ome_xsd_path)
+        self.ome_starting_point = self.read_ome_as_string(path_to_ome_starting_point)
+        self.raw_metadata = self.read_raw_metadata()
+
+        self.client = OpenAI()
+        self.run = None
+        self.pre_prompt = None
+        self.predicted_ome = None
+        self.messages = []
         self.assistant = None
         self.thread = None
         self.message = None
-
-        self.predict()
 
     def predict(self):
         """
@@ -47,10 +45,11 @@ class PredictorTemplate:
         """
 
         print("- - - Generating Thread - - -")
-        self.thread = self.client.beta.threads.create()
+        self.init_thread()
 
         print("- - - Generating Prompt - - -")
-        self.generate_message(msg=self.raw_metadata)
+        full_message = "The starting points is:\n" + self.ome_starting_point + "\n\n" + "The raw data is: \n" + self.raw_metadata
+        self.generate_message(msg=full_message)
 
         print("- - - Predicting OME XML - - -")
         self.run_message()
@@ -105,7 +104,7 @@ class PredictorTemplate:
         Export the OME XML to a file
         """
         with open(self.out_path, "w") as f:
-            f.write(self.ome_xml)
+            f.write(self.predicted_ome)
 
     def read_raw_metadata(self):
         """
@@ -116,15 +115,14 @@ class PredictorTemplate:
             raw_metadata = f.read()
         return raw_metadata
 
-    def generate_message(self, msg):
+    def generate_message(self, msg=None):
         """
         Generate the prompt from the raw metadata
         """
-        full_message = "The starting points is:\n" + self.ome_starting_point + "\n\n" + "The raw data is: \n" + msg
         self.message = self.client.beta.threads.messages.create(
             thread_id=self.thread.id,
             role="user",
-            content=full_message
+            content=msg
         )
 
     def run_message(self):  # TODO: Change name
@@ -155,12 +153,13 @@ class PredictorTemplate:
         messages = self.client.beta.threads.messages.list(thread_id=self.thread.id)
         ome_xml = messages.data[0].content[0].text.value
         ome_xml = ome_xml.split("</OME>")[0].split("<OME")[1]
-        self.ome_xml = "<OME" + ome_xml + "</OME>"
-        print(self.ome_xml)
+        self.predicted_ome = "<OME" + ome_xml + "</OME>"
+        self.export_ome_xml()
         validation = self.validate()
         if validation is not None:
-            print("Validation failed" + str(validation))
+            print("Validation failed")
             msg = "There seems to be an issue with the OME XML you provided. Please fix this error:\n" + str(validation)
+            print(msg)
             self.generate_message(msg=msg)
             self.run_message()
 
@@ -170,7 +169,7 @@ class PredictorTemplate:
         :return:
         """
         try:
-            self.xsd_schema.validate(self.ome_xml)
+            self.xsd_schema.validate(self.predicted_ome)
         except Exception as e:
             return e
 
