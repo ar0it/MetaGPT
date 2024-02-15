@@ -2,7 +2,8 @@ import xml.etree.ElementTree as ET
 import javabridge
 import bioformats
 
-javabridge.start_vm(class_path=bioformats.JARS)
+
+# javabridge.start_vm(class_path=bioformats.JARS)
 
 
 class OMEEvaluator:
@@ -13,7 +14,7 @@ class OMEEvaluator:
     """
 
     def __init__(self, path_to_raw_metadata=None,
-                 gt_path="/home/aaron/PycharmProjects/MetaGPT/out/ome_xml.ome.xml",
+                 gt_path="/home/aaron/PycharmProjects/MetaGPT/raw_data/testetst_Image8_edited_.ome.xml",
                  pred_path="/home/aaron/PycharmProjects/MetaGPT/out/ome_xml.ome.xml"):
         """
         :param path_to_raw_metadata: path to the raw metadata file
@@ -21,14 +22,128 @@ class OMEEvaluator:
 
         self.prediction = self.read_ome_xml(pred_path)
         self.ground_truth = self.read_ome_xml(gt_path)
-        self.score = None
-        self.evaluate()
+
+        print(self.edit_distance(xml_a=self.prediction, xml_b=self.ground_truth))
+        # Example usage
 
     def edit_distance(self, xml_a, xml_b):
         """
-        Calculate the edit distance between two xml trees.
+        Calculate the edit distance between two xml trees on word level.
+        Here an outline of the algorithm:
+        1. Get the paths of the xml trees.
+        2. Align the paths such that the distance between the paths is minimized.
+        3. Calculate the word level edit distance between the paths.
         """
-        pass
+        # get the paths of the xml trees
+
+        xml_a_paths = [[[y] for y in x.split("/") if y] for x in self.get_paths(xml_a)]
+        xml_b_paths = [[[y] for y in x.split("/") if y] for x in self.get_paths(xml_b)]
+        print("xml_a_paths", xml_a_paths)
+        print("xml_a_paths", xml_b_paths)
+
+        # align the paths
+        s1 = [[["a"], ["a"], ["a"]], [["b"], ["b"]], [["c"]], [["d"]]]
+        s2 = [[["a"], ["a"], ["a"]], [["b"], ["b"]], [["d"]], [["c"]], [["d"]]]
+        score, alignment_a, alignment_b = self.align_paths(xml_a_paths, xml_b_paths)
+        print("Score:", score)
+        print("Alignment 1:", alignment_a)
+        print("Alignment 2:", alignment_b)
+
+    def align_paths(self, paths_a, paths_b):
+        """
+        Align the paths such that the sum of distances between the paths is minimized.
+        paths_a: set of paths
+        paths_b: set of paths
+        :return: list of tuples of aligned paths
+        """
+        score, alignment_a, alignment_b = self.align_sequences(paths_a, paths_b, cost=self.align_sequences_score)
+        return score, alignment_a, alignment_b
+
+    def align_sequences_score(self, s1, s2, cost=lambda a, b: a != b):
+        """
+        returns only the score for the alignment
+        :param s1:
+        :param s2:
+        :param cost:
+        :return:
+        """
+        score, alignment_a, alignment_b = self.align_sequences(s1, s2, cost=lambda a, b: a != b)
+        return score
+
+    def align_sequences(self, s1, s2, cost=lambda a, b: a != b):
+        m, n = len(s1), len(s2)
+        # Create a matrix to store the cost of edits
+        dp = [[0] * (n + 1) for _ in range(m + 1)]
+
+        # Initialize the matrix with the cost of deletions and insertions
+        for i in range(m + 1):
+            dp[i][0] = i * +1
+        for j in range(n + 1):
+            dp[0][j] = j * +1
+
+        # Fill the matrix based on the cost of substitution, insertion, and deletion
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                if s1[i - 1] == s2[j - 1]:
+                    dp[i][j] = dp[i - 1][j - 1]  # No cost if characters are the same
+                else:
+                    dp[i][j] = min(dp[i - 1][j - 1] + cost(s1[i - 1], s2[j - 1]),  # Substitution
+                                   dp[i - 1][j] + cost(s1[i - 1], s2[j - 1]),  # Deletion
+                                   dp[i][j - 1] + cost(s1[i - 1], s2[j - 1]),  # Insertion
+                                   )
+        # Reconstruct the alignment
+        alignment_a, alignment_b = [], []
+        i, j = m, n
+        while i > 0 and j > 0:
+            if s1[i - 1] == s2[j - 1]:
+                alignment_a = [s1[i - 1]] + alignment_a
+                alignment_b = [s2[j - 1]] + alignment_b
+                i -= 1
+                j -= 1
+            elif dp[i][j] == dp[i - 1][j - 1] + cost(s1[i - 1], s2[j - 1]):  # substitution
+                alignment_a = [s1[i - 1]] + alignment_a
+                alignment_b = [s2[j - 1]] + alignment_b
+                i -= 1
+                j -= 1
+            elif dp[i][j] == dp[i - 1][j] + cost(s1[i - 1], s2[j - 1]):  # deletion
+                alignment_a = [s1[i - 1]] + alignment_a
+                alignment_b = [["-"]] + alignment_b
+                i -= 1
+            else:  # dp[i][j] == dp[i][j - 1] + cost_insertion  # insertion
+                alignment_a = [["-"]] + alignment_a
+                alignment_b = [s2[j - 1]] + alignment_b
+                j -= 1
+
+        # Handle the remaining characters in s1 or s2
+        while i > 0:
+            alignment_a = [s1[i - 1]] + alignment_a
+            alignment_b = [[["-"]*len(s1[j - 1])]] + alignment_b
+            i -= 1
+        while j > 0:
+            alignment_a = [[["-"]*len(s2[j - 1])]] + alignment_a
+            alignment_b = [s2[j - 1]] + alignment_b
+            j -= 1
+
+        return dp[-1][-1], alignment_a, alignment_b
+
+    def word_edit_distance(self, aligned_paths):
+        """
+        Calculate the word level edit distance between two sets of paths.
+        aligned_paths: list of tuples of aligned paths
+        """
+        edit_distance = 0
+        for path_a, path_b in aligned_paths:
+            # set the number of iterations to the length of the longest path
+            iterations = len(path_a) if len(path_a) > len(path_b) else len(path_b)
+            distance = 0
+            for i in range(iterations):
+                node_b = path_b[i] if len(path_b) > i else None
+                node_a = path_a[i] if len(path_a) > i else None
+                if node_a != node_b:
+                    distance += 1
+            edit_distance += distance
+
+        return edit_distance
 
     def get_paths(self, xml_root, path=''):
         """
@@ -88,4 +203,7 @@ class OMEEvaluator:
             f.write(f"Score: {self.score}\n")
 
 
-javabridge.kill_vm()
+# javabridge.kill_vm()
+
+if __name__ == "__main__":
+    evaluator = OMEEvaluator()

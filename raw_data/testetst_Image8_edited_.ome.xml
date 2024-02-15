@@ -1,20 +1,57 @@
-<OME Creator="OME Bio-Formats 6.7.0" UUID="urn:uuid:27555393-9fb6-4c14-942c-badbf7548154" xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
-<Instrument ID="Instrument:0">
-<Microscope/>
-<Detector AmplificationGain="2.0" Gain="1.0" ID="Detector:0:0" Model="" Zoom="1.0"/>
-<Detector AmplificationGain="1.0" Gain="242.27363180139324" ID="Detector:0:1" Model="" Zoom="1.0"/>
-<Detector AmplificationGain="2.0" Gain="800.0" ID="Detector:1:0" Model="" Zoom="1.0"/>
-<Objective ID="Objective:0" Immersion="Water" LensNA="1.2000000000000002" Model="C-Apochromat 63x/1.2 W Korr M27" NominalMagnification="63.0"/>
-<Image ID="Image:0" Name="Image 8 #1">
-<ObjectiveSettings ID="Objective:0" Medium="Water" RefractiveIndex="1.333"/>
-<StageLabel Name="Scene position #0" X="-16360.5" XUnit="µm" Y="-4955.0" YUnit="µm" Z="146.837" ZUnit="µm"/>
-<Pixels BigEndian="false" DimensionOrder="XYCZT" ID="Pixels:0" Interleaved="false" PhysicalSizeX="0.0992287815904495" PhysicalSizeXUnit="µm" PhysicalSizeY="0.0992287815904495" PhysicalSizeYUnit="µm" SignificantBits="8" SizeC="3" SizeT="30" SizeX="680" SizeY="280" SizeZ="1" Type="uint8">
-<Channel AcquisitionMode="LaserScanningConfocalMicroscopy" Color="-16711681" EmissionWavelength="646.4456100000001" EmissionWavelengthUnit="nm" ExcitationWavelength="561.0" ExcitationWavelengthUnit="nm" Fluor="mRFP1.2" ID="Channel:0:0" IlluminationType="Epifluorescence" Name="ChS2-T1" SamplesPerPixel="1">
-<DetectorSettings Binning="1x1" ID="Detector:0:0"/>
-<LightPath/>
-<Channel AcquisitionMode="LaserScanningConfocalMicroscopy" Color="-1" ID="Channel:0:1" IlluminationType="Epifluorescence" Name="T PMT-T1" SamplesPerPixel="1">
-<DetectorSettings Binning="1x1" ID="Detector:0:1"/>
-<LightPath/>
-<Channel AcquisitionMode="LaserScanningConfocalMicroscopy" Color="16711935" EmissionWavelength="530.4922920000002" EmissionWavelengthUnit="nm" ExcitationWavelength="488.00000000000006" ExcitationWavelengthUnit="nm" Fluor="EGFP" ID="Channel:0:2" IlluminationType="Epifluorescence" Name="ChS1-T2" SamplesPerPixel="1">
-<DetectorSettings Binning="1x1" ID="Detector:1:0"/>
-<LightPath/>
+<?xml version="1.0" encoding="UTF-8"?>
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+    <Image ID="ImageID" Name="Image 8 #1">
+        <Pixels DimensionOrder="XYCZT" Type="uint8" SizeX="680" SizeY="280" SizeC="3" SizeZ="1" SizeT="30" BigEndian="false" Interleaved="false">
+            <Channel ID="ChannelID" SamplesPerPixel="1" PhotonCounting="false">
+                <LightPath ID="LightPathID">
+                    <Path ID="PathID" Label="Aperture">
+                        <MicroscopeRef ID="MicroscopeID" Type="LM"/>
+                    </Path>
+                </LightPath>
+                <Color ID="ColorID" Name="ChS1-T2" SamplesPerPixel="1" ColorMode="Color">
+                    <Rendering Ref="RenderingID"/>
+                </Color>
+                <Dye ID="DyeID" Name="EGFP" SamplesPerPixel="1"/>
+                <AcquisitionSettings Ref="AcquisitionSettingsID"/>
+                <Intensity ID="IntensityID" Min="0" Max="0.1333333333333333" Gamma="1"/>
+            </Channel>
+        </Pixels>
+        <AcquisitionSettings ID="AcquisitionSettingsID">
+            <AcquisitionBlock ID="AcquisitionBlockID">
+                <AcquisitionMode ID="AcquisitionModeID" Type="Frame" FitFramesizeToRoi="false" BiDirectional="true" BiDirectionalZ="false" DimensionX="680" DimensionY="280" DimensionZ="1" DimensionT="30" CameraFrameWidth="1300" CameraFrameHeight="1030" CameraFrameOffsetX="0" CameraFrameOffsetY="0" CameraBinning="1" CameraSuperSampling="0" BitsPerSample="8" FilterMethod="Average" FilterMode="Line" FilterSamplingNumber="2" FocalDistanceScanLense="52.5" FocalDistanceLsmTubeLense="150" FocalDistanceStandardTubeLense="164.5" HdrEnabled="false" HdrImagingMode="0" HdrIntensity="1" HdrNumFrames="1" FocusStabilizer="false">
+                    <MicroscopeRef ID="MicroscopeID" Type="LM"/>
+                </AcquisitionMode>
+            </AcquisitionBlock>
+        </AcquisitionSettings>
+    </Image>
+    <Annotation>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|Marker|FocusPosition #1">0</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|Marker|FocusPosition #2">0</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|Marker|FocusPosition #3">0</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|Marker|Id #1">Marker:1</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|Marker|Id #2">Marker:2</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|Marker|Id #3">Marker:3</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageXPosition #1">0</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageXPosition #2">0</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageXPosition #3">0</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageYPosition #1">0</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageYPosition #2">0</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageYPosition #3">0</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|MicroscopeType">LM</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|StageOrientation|X">-1</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Data|ShuttleAndFindData|Calibration|StageOrientation|Y">1</Value>
+        <Value Ref="ValueID" Namespace="Appliance|Id">ShuttleAndFind:1</Value>
+        <Value Ref="ValueID" Namespace="DisplaySetting|Channel|ChannelUnit|ChannelType">Unspecified</Value>
+        <Value Ref="ValueID" Namespace="DisplaySetting|Channel|ChannelUnit|FactorI">1</Value>
+        <Value Ref="ValueID" Namespace="DisplaySetting|Channel|ChannelUnit|OffsetI">0</Value>
+        <Value Ref="ValueID" Namespace="DisplaySetting|Channel|ChannelUnit|UnitI">Unknown</Value>
+        <Value Ref="ValueID" Namespace="DisplaySetting|Channel|Color">#00FF00</Value>
+        <Value Ref="ValueID" Namespace="DisplaySetting|Channel|ColorMode">Color</Value>
+        <Value Ref="ValueID" Namespace="DisplaySetting|Channel|DyeName">EGFP</Value>
+        <Value Ref="ValueID" Namespace="DisplaySetting|Channel|Gamma">1</Value>
+        <Value Ref="ValueID" Namespace="DisplaySetting|Channel|High">0.1333333333333333</Value>
+        <Value Ref="ValueID" Namespace="DisplaySetting|Channel|Id">108853132117492280627326639672251045474</Value>
+        <Value Ref="ValueID" Namespace="DisplaySetting|Channel|IsSelected">true</Value>
+        <Value Ref="ValueID" Namespace="DisplaySetting|Channel|Low">-0</Value>
+    </Annotation>
+</OME>
