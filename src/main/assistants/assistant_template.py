@@ -14,7 +14,7 @@ class AssistantTemplate:
         self.ome_xsd_path = ome_xsd_path
         self.client = client
 
-        self.name = __name__
+        self.name = None
         self.model = "gpt-4-turbo-preview"  # this always links to the most recent (gpt4) model
         self.pre_prompt = None
 
@@ -26,15 +26,16 @@ class AssistantTemplate:
         :return:
         """
         print(f"- - - Creating {self.name}- - -")
+        print(f"Assistant ID path: {assistant_id_path}")
         if assistant_id_path is not None:
-            with open(assistant_id_path, "r") as f:
-                assistant_id = f.read()
             try:
+                with open(assistant_id_path, "r") as f:
+                    assistant_id = f.read()
                 print("Trying to retrieve assistant from ID: " + assistant_id)
                 self.assistant = self.client.beta.assistants.retrieve(assistant_id)
                 print("Successfully retrieved assistant")
             except:
-                print(f"Assistant not found, creating new {self.name}")
+                print(f"Error retrieving assistant, creating new {self.name}")
                 self.new_assistant()
 
         else:
@@ -59,5 +60,5 @@ class AssistantTemplate:
             tools=[{"type": "retrieval"}],
             file_ids=[file.id]
         )
-        with open("../{self.name}_assistant_id.txt", "w") as f:
+        with open(f"../{self.name}_assistant_id.txt", "w") as f:
             f.write(self.assistant.id)

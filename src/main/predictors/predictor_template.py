@@ -24,7 +24,7 @@ class PredictorTemplate:
         self.path_to_raw_metadata = path_to_raw_metadata
         self.path_to_ome_xml = None
         self.ome_xsd_path = ome_xsd_path
-        self.out_path = out_path
+
 
         self.xsd_schema = xmlschema.XMLSchema(self.ome_xsd_path)
         self.ome_starting_point = self.read_ome_as_string(path_to_ome_starting_point)
@@ -33,11 +33,12 @@ class PredictorTemplate:
         self.client = OpenAI()
         self.run = None
         self.pre_prompt = None
-        self.predicted_ome = None
+        self.response = None
         self.messages = []
         self.assistant = None
         self.thread = None
         self.message = None
+
 
     def predict(self):
         """
@@ -104,7 +105,7 @@ class PredictorTemplate:
         Export the OME XML to a file
         """
         with open(self.out_path, "w") as f:
-            f.write(self.predicted_ome)
+            f.write(self.response)
 
     def read_raw_metadata(self):
         """
@@ -153,7 +154,7 @@ class PredictorTemplate:
         messages = self.client.beta.threads.messages.list(thread_id=self.thread.id)
         ome_xml = messages.data[0].content[0].text.value
         ome_xml = ome_xml.split("</OME>")[0].split("<OME")[1]
-        self.predicted_ome = "<OME" + ome_xml + "</OME>"
+        self.response = "<OME" + ome_xml + "</OME>"
         self.export_ome_xml()
         validation = self.validate()
         if validation is not None:
@@ -169,7 +170,8 @@ class PredictorTemplate:
         :return:
         """
         try:
-            self.xsd_schema.validate(self.predicted_ome)
+            self.xsd_schema.validate(self.response)
         except Exception as e:
             return e
+
 
