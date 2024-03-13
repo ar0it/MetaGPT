@@ -25,7 +25,6 @@ class PredictorTemplate:
         self.path_to_ome_xml = None
         self.ome_xsd_path = ome_xsd_path
 
-
         self.xsd_schema = xmlschema.XMLSchema(self.ome_xsd_path)
         self.ome_starting_point = self.read_ome_as_string(path_to_ome_starting_point)
         self.raw_metadata = self.read_raw_metadata()
@@ -38,7 +37,6 @@ class PredictorTemplate:
         self.assistant = None
         self.thread = None
         self.message = None
-
 
     def predict(self):
         """
@@ -64,14 +62,6 @@ class PredictorTemplate:
         Initialize the thread
         """
         self.thread = self.client.beta.threads.create()
-
-    def load_raw_metadata(self):
-        """
-        Load the raw metadata from the file
-        """
-        with open(self.path_to_raw_metadata, "r") as f:
-            raw_metadata = f.read()
-        return raw_metadata
 
     def subdivide_raw_metadata(self):
         """
@@ -173,5 +163,3 @@ class PredictorTemplate:
             self.xsd_schema.validate(self.response)
         except Exception as e:
             return e
-
-
