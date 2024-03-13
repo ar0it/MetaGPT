@@ -13,7 +13,6 @@ class MissingMyrte(AssistantTemplate):
     def __init__(self, ome_xsd_path, client):
         super().__init__(ome_xsd_path, client)
         self.name = "MissingMyrte"
-        self.model = "gpt-4-turbo-preview"  # this always links to the most recent (gpt4) model
         self.pre_prompt = (f"You are {self.name}, a specialized AI assistant within a collective known as the"
                            "Metadata Curation Swarm. Your collective mission is to transform raw, unstructured image"
                            "metadata into well-formed OME XML documents, ensuring comprehensive and accurate data"
@@ -24,8 +23,8 @@ class MissingMyrte(AssistantTemplate):
                            "Receiving Inputs:\n"
                            "You will be given two key pieces of information:\n"
                            "Raw Metadata: Unstructured data containing various details about images."
-                           "OME Schema: The OME schema containing details what propertys belong in to the OME XML and"
-                           "which dont.\n"
+                           "OME Schema: The OME schema containing details what property belong in to the OME XML and"
+                           "which dont. Its accessible via retrieval.\n"
                            "Analysis: Your primary function is to meticulously compare the raw metadata against the"
                            "schema and determine which metadata could be included by following the schema and which"
                            "property cant (because they are not mentioned in the schema).\n"
