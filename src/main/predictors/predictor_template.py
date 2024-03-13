@@ -37,6 +37,7 @@ class PredictorTemplate:
         self.assistant = None
         self.thread = None
         self.message = None
+        self.out_path = out_path
 
     def predict(self):
         """
@@ -76,7 +77,6 @@ class PredictorTemplate:
         with open(path, "r") as f:
             ome_xml = f.read()
 
-        print(ome_xml)
         return ome_xml
 
     def read_ome_as_xml(self, path):
@@ -87,21 +87,19 @@ class PredictorTemplate:
         root = tree.getroot()
         # convert the root to a string
         ome_string = str(ET.tostring(root))
-        print(ome_string)
         return ome_string
 
     def export_ome_xml(self):
         """
         Export the OME XML to a file
         """
-        with open(self.out_path, "w") as f:
+        with open(self.out_path + f"final_{time.time()}.ome.xml", "w") as f:
             f.write(self.response)
 
     def read_raw_metadata(self):
         """
         Read the raw metadata from the file
         """
-        print(self.path_to_raw_metadata)
         with open(self.path_to_raw_metadata, "r") as f:
             raw_metadata = f.read()
         return raw_metadata

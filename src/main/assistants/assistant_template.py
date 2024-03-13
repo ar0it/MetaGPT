@@ -1,3 +1,4 @@
+import os
 import warnings
 
 from openai import OpenAI
@@ -39,8 +40,16 @@ class AssistantTemplate:
                 self.new_assistant()
 
         else:
-            print(f"Assistant not found, creating new {self.name}")
-            self.new_assistant()
+            try:
+                print(os.getcwd())
+                path = f"./assistant_ids/{self.name}_assistant_id.txt"
+                with open(path, "r") as file:
+                    id = file.read()
+                self.assistant = self.client.beta.assistants.retrieve(id)
+                print(f"Retrieved {self.name}")
+            except:
+                print(f"Error retrieving assistant, creating new {self.name}")
+                self.new_assistant()
 
         return self.assistant
 
@@ -60,5 +69,5 @@ class AssistantTemplate:
             tools=[{"type": "retrieval"}],
             file_ids=[file.id]
         )
-        with open(f"../{self.name}_assistant_id.txt", "w") as f:
+        with open(f"./assistant_ids/{self.name}_assistant_id.txt", "w") as f:
             f.write(self.assistant.id)

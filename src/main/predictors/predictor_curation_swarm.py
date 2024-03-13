@@ -7,7 +7,6 @@ from src.main.assistants.assistant_TrashTimothy import TrashTimothy
 from src.main.assistants.assistant_TargetTorben import TargetTorben
 
 
-
 class CurationSwarm(PredictorTemplate):
     """
     This class implements a swarm of AI assistants that work together to curate the metadata.
@@ -31,7 +30,7 @@ class CurationSwarm(PredictorTemplate):
         self.assistant_torben = torben.create_assistant()
         timothy = TrashTimothy(ome_xsd_path, self.client)
         self.assistant_timothy = timothy.create_assistant()
-        self.conversation = []
+        self.conversation = {}
 
     def predict(self):
         """
@@ -55,12 +54,13 @@ class CurationSwarm(PredictorTemplate):
         print("- - - Prompting Myrte - - -")
         myrte_prompt = out_1
         out_2 = self.run_assistant(self.assistant_myrte, myrte_prompt)
-        mapping_issues = out_2[0]
-        target_issues = out_2[1]
+        mapping_issues = out_2.split("- - -")[0]
+        target_issues = out_2.split("- - -")[1]
 
         # 3.(a) Run the mapping assistant to map the mapping issue metadata to the ome xml
         print("- - - Prompting Margarete - - -")
-        out_3a = self.run_assistant(self.assistant_margarete, mapping_issues)
+        margarete_prompt = "The raw data is: \n" + mapping_issues + "\n\n" + "The OME XML is:\n" + self.ome_starting_point
+        self.response = self.run_assistant(self.assistant_margarete, margarete_prompt)
 
         # 3.(b) Run the target assistant to map the target issue to some kind of ontology and then to the ome xml
         # out_3b = self.run_target_torben(target_issues)
@@ -100,10 +100,10 @@ class CurationSwarm(PredictorTemplate):
             return None
 
         messages = self.client.beta.threads.messages.list(thread_id=thread.id)
-        self.conversation.append(messages)
+        self.conversation[assistant.name] = messages
         return messages.data[0].content[0].text.value
 
     def export_convo(self):
         with open(self.out_path + "convo.txt", "w") as f:
-            for message in self.conversation:
-                f.write(message.data[0].content[0].text.value + "\n" + "\n")
+            for k in self.conversation:
+                f.write(str(k) + "\n" + self.conversation[k].data[0].content[0].text.value + "\n" + "\n")
