@@ -20,16 +20,16 @@ class CurationSwarm(PredictorTemplate):
 
         self.ome_xml = None
         self.raw_metadata = self.read_raw_metadata()
-        dave = DiscriminatorDave(ome_xsd_path, self.client)
-        self.assistant_dave = dave.create_assistant()
+        #dave = DiscriminatorDave(ome_xsd_path, self.client)
+        #self.assistant_dave = dave.create_assistant()
         myrte = MissingMyrte(ome_xsd_path, self.client)
         self.assistant_myrte = myrte.create_assistant()
-        margarete = MappingMargarete(ome_xsd_path, self.client)
-        self.assistant_margarete = margarete.create_assistant()
-        torben = TargetTorben(ome_xsd_path, self.client)
-        self.assistant_torben = torben.create_assistant()
-        timothy = TrashTimothy(ome_xsd_path, self.client)
-        self.assistant_timothy = timothy.create_assistant()
+        #margarete = MappingMargarete(ome_xsd_path, self.client)
+        #self.assistant_margarete = margarete.create_assistant()
+        #torben = TargetTorben(ome_xsd_path, self.client)
+        #self.assistant_torben = torben.create_assistant()
+        #timothy = TrashTimothy(ome_xsd_path, self.client)
+        #self.assistant_timothy = timothy.create_assistant()
         self.conversation = {}
 
     def predict(self):
@@ -47,20 +47,26 @@ class CurationSwarm(PredictorTemplate):
         """
         # 1. Run the discriminator assistant to split the metadata into the contained and missing parts
         print("- - - Prompting Dave - - -")
-        dave_prompt = "The starting points is:\n" + self.ome_starting_point + "\n\n" + "The raw data is: \n" + self.raw_metadata
-        out_1 = self.run_assistant(self.assistant_dave, dave_prompt)
+        # dave_prompt = "The starting points is:\n" + self.ome_starting_point + "\n\n" + "The raw data is: \n" + self.raw_metadata
+        # out_1 = self.run_assistant(self.assistant_dave, dave_prompt)
+        with open("/home/aaron/PycharmProjects/MetaGPT/raw_data/dave_example_response.txt", "r") as f:
+            out_1 = f.read()
 
         # 2. Run the missing assistant to split the missing metadata into mapping-issues and the target-issues parts
         print("- - - Prompting Myrte - - -")
-        myrte_prompt = out_1
-        out_2 = self.run_assistant(self.assistant_myrte, myrte_prompt)
-        mapping_issues = out_2.split("- - -")[0]
-        target_issues = out_2.split("- - -")[1]
+        #myrte_prompt = "Here is the raw metadata: \n" + out_1
+        #out_2 = self.run_assistant(self.assistant_myrte, myrte_prompt)
+        #self.response = out_2
+        try:
+            #mapping_issues, target_issues = out_2.split("- - -")
+            pass
+        except:
+            pass
 
         # 3.(a) Run the mapping assistant to map the mapping issue metadata to the ome xml
-        print("- - - Prompting Margarete - - -")
-        margarete_prompt = "The raw data is: \n" + mapping_issues + "\n\n" + "The OME XML is:\n" + self.ome_starting_point
-        self.response = self.run_assistant(self.assistant_margarete, margarete_prompt)
+        # print("- - - Prompting Margarete - - -")
+        # margarete_prompt = "The raw data is: \n" + self.raw_metadata + "\n\n" + "The OME XML is:\n" + self.ome_starting_point
+        # self.response = self.run_assistant(self.assistant_margarete, margarete_prompt)
 
         # 3.(b) Run the target assistant to map the target issue to some kind of ontology and then to the ome xml
         # out_3b = self.run_target_torben(target_issues)

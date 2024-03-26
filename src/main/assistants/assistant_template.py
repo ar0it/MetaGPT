@@ -34,6 +34,11 @@ class AssistantTemplate:
                     assistant_id = f.read()
                 print("Trying to retrieve assistant from ID: " + assistant_id)
                 self.assistant = self.client.beta.assistants.retrieve(assistant_id)
+                # update the assistant prompt
+                self.assistant = self.client.beta.assistants.update(
+                    id=assistant_id,
+                    instructions=self.pre_prompt,
+                )
                 print("Successfully retrieved assistant")
             except:
                 print(f"Error retrieving assistant, creating new {self.name}")
@@ -46,6 +51,11 @@ class AssistantTemplate:
                 with open(path, "r") as file:
                     id = file.read()
                 self.assistant = self.client.beta.assistants.retrieve(id)
+                # update the assistant prompt
+                self.assistant = self.client.beta.assistants.update(
+                    id=self.assistant.id,
+                    instructions=self.pre_prompt,
+                )
                 print(f"Retrieved {self.name}")
             except:
                 print(f"Error retrieving assistant, creating new {self.name}")
