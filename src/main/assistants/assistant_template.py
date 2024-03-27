@@ -17,9 +17,11 @@ class AssistantTemplate:
 
         self.name = None
         self.model = "gpt-4-turbo-preview"  # this always links to the most recent (gpt4) model
-        self.pre_prompt = None
+        self.description = None
+        self.instructions = None
 
         self.assistant = None
+        self.file_id = "file-nLWAvxK87WnJgTmOCsxIpLiY"
 
     def create_assistant(self, assistant_id_path=None):
         """
@@ -27,40 +29,29 @@ class AssistantTemplate:
         :return:
         """
         print(f"- - - Creating {self.name}- - -")
-        print(f"Assistant ID path: {assistant_id_path}")
-        if assistant_id_path is not None:
-            try:
-                with open(assistant_id_path, "r") as f:
-                    assistant_id = f.read()
-                print("Trying to retrieve assistant from ID: " + assistant_id)
-                self.assistant = self.client.beta.assistants.retrieve(assistant_id)
-                # update the assistant prompt
-                self.assistant = self.client.beta.assistants.update(
-                    id=assistant_id,
-                    instructions=self.pre_prompt,
-                )
-                print("Successfully retrieved assistant")
-            except:
-                print(f"Error retrieving assistant, creating new {self.name}")
-                self.new_assistant()
 
-        else:
-            try:
-                print(os.getcwd())
-                path = f"./assistant_ids/{self.name}_assistant_id.txt"
-                with open(path, "r") as file:
-                    id = file.read()
-                self.assistant = self.client.beta.assistants.retrieve(id)
-                # update the assistant prompt
-                self.assistant = self.client.beta.assistants.update(
-                    id=self.assistant.id,
-                    instructions=self.pre_prompt,
-                )
-                print(f"Retrieved {self.name}")
-            except:
-                print(f"Error retrieving assistant, creating new {self.name}")
-                self.new_assistant()
+        if assistant_id_path is None:
+            assistant_id_path = f"./assistant_ids/{self.name}_assistant_id.txt"
 
+        with open(assistant_id_path, "r") as f:
+            assistant_id = f.read()
+
+        try:
+            self.assistant = self.client.beta.assistants.retrieve(assistant_id)
+
+        except Exception as e:
+            # create a new on if the assistant does not exist
+            warnings.warn(e.message)
+            self.new_assistant()
+
+        # update the assistant prompt
+        self.assistant = self.client.beta.assistants.update(
+            assistant_id=self.assistant.id,
+            instructions=self.instructions,
+            description=self.description,
+            file_ids=[self.file_id],
+        )
+        print("Successfully retrieved assistant")
         return self.assistant
 
     def new_assistant(self):
@@ -68,16 +59,21 @@ class AssistantTemplate:
         Define the assistant that will help the user with the task
         :return:
         """
-        file = self.client.files.create(
-            file=open(self.ome_xsd_path, "rb"),
-            purpose="assistants"
-        )
+        # try to get file from the client else create it
+        if self.file_id is None:
+            file = self.client.files.create(
+                file=open(self.ome_xsd_path, "rb"),
+                purpose="assistants"
+            )
+            self.file_id = file.id
+
         self.assistant = self.client.beta.assistants.create(
-            instructions=self.pre_prompt,
+            description=self.description,
+            instructions=self.instructions,
             name=self.name,
             model=self.model,
             tools=[{"type": "retrieval"}],
-            file_ids=[file.id]
+            file_ids=[self.file_id]
         )
         with open(f"./assistant_ids/{self.name}_assistant_id.txt", "w") as f:
             f.write(self.assistant.id)

@@ -14,7 +14,6 @@ class PredictorTemplate:
     A template for creating a new predictor. A predictor utilizes one or several assistants to predict the OME XML from
     the raw metadata.
     """
-
     def __init__(self,
                  path_to_raw_metadata=None,
                  path_to_ome_starting_point=None,
@@ -94,7 +93,7 @@ class PredictorTemplate:
         Export the OME XML to a file
         """
         with open(self.out_path + f"final_{time.time()}.ome.xml", "w") as f:
-            f.write(self.response)
+            f.write("test")
 
     def read_raw_metadata(self):
         """
@@ -128,7 +127,8 @@ class PredictorTemplate:
             print(self.run.status)
             self.run = self.client.beta.threads.runs.retrieve(
                 thread_id=self.thread.id,
-                run_id=self.run.id
+                run_id=self.run.id,
+                instructions= self.assistant.instructions,
             )
 
             time.sleep(5)
