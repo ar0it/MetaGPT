@@ -3,6 +3,13 @@
 This GitHub repository contains the code and documentation for the project "Exploring AI for Metadata Curation".
 The goal is to design an AI system that can curate OME XML metadata for microscopy images from its raw metadata.
 
+## ToDo
+
+- [ ] Fix the evaluation script, to guarantee the global optimal alignment between two XML files
+- [ ] Create a report of the evaluation results which compares bioformats and the AI model
+- [ ] When running the model, make sure that the output xml is valid
+- [ ] Think about the idea that TargetTorben looks for fitting ontology terms for the metadata
+
 ## Introduction
 
 In the presentation (13.06.23) introducing the XML-Editor, we discussed possibilities to automate the

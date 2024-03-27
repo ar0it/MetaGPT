@@ -26,8 +26,8 @@ class CurationSwarm(PredictorTemplate):
         self.assistant_myrte = myrte.create_assistant()
         margarete = MappingMargarete(ome_xsd_path, self.client)
         self.assistant_margarete = margarete.create_assistant()
-        # torben = TargetTorben(ome_xsd_path, self.client)
-        # self.assistant_torben = torben.create_assistant()
+        torben = TargetTorben(ome_xsd_path, self.client)
+        self.assistant_torben = torben.create_assistant()
         # timothy = TrashTimothy(ome_xsd_path, self.client)
         # self.assistant_timothy = timothy.create_assistant()
         self.conversation = {}
@@ -84,12 +84,15 @@ class CurationSwarm(PredictorTemplate):
         # --------------------------------------------------------------------------------------------------------------
         # 3.(b) Run the target assistant to map the target issue to some kind of ontology and then to the ome xml
         # --------------------------------------------------------------------------------------------------------------
-        # out_3b = self.run_target_torben(target_issues)
+        print("- - - Prompting Torben - - -")
+        torben_prompt = "The raw data is: \n" + target_issues + "\n\n" + "The OME XML is:\n" + margarete_out
+        self.conversation["Torben Prompt"] = self.assistant_torben.instructions + "\n" + torben_prompt
+        torben_out = self.run_assistant(self.assistant_torben, torben_prompt)
+        self.conversation["Torben Response"] = torben_out
 
         # --------------------------------------------------------------------------------------------------------------
         # 4. Run the trash assistant to take the metadata that has not been added so far and add it as unstructured
         # --------------------------------------------------------------------------------------------------------------
-        # metadata
         # out_4 = self.run_trash_timothy()
 
     def run_assistant(self, assistant, msg):
