@@ -19,6 +19,7 @@ class AssistantTemplate:
         self.model = "gpt-4-turbo-preview"  # this always links to the most recent (gpt4) model
         self.description = None
         self.instructions = None
+        self.tools = [{"type": "retrieval"}]
 
         self.assistant = None
         self.file_id = "file-nLWAvxK87WnJgTmOCsxIpLiY"
@@ -72,7 +73,7 @@ class AssistantTemplate:
             instructions=self.instructions,
             name=self.name,
             model=self.model,
-            tools=[{"type": "retrieval"}],
+            tools=self.tools,
             file_ids=[self.file_id]
         )
         with open(f"./assistant_ids/{self.name}_assistant_id.txt", "w") as f:

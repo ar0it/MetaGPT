@@ -5,6 +5,7 @@ from src.main.assistants.assistant_MappingMargarete import MappingMargarete
 from src.main.assistants.assistant_DiscriminatorDave import DiscriminatorDave
 from src.main.assistants.assistant_TrashTimothy import TrashTimothy
 from src.main.assistants.assistant_TargetTorben import TargetTorben
+from src.main.assistants.assistant_ValidationVeronika import ValidationVeronika
 
 
 class CurationSwarm(PredictorTemplate):
@@ -30,8 +31,11 @@ class CurationSwarm(PredictorTemplate):
         self.assistant_torben = torben.create_assistant()
         # timothy = TrashTimothy(ome_xsd_path, self.client)
         # self.assistant_timothy = timothy.create_assistant()
+        veronika = ValidationVeronika(ome_xsd_path, self.client)
+        self.assistant_veronika = veronika.create_assistant()
         self.conversation = {}
         self.thread = self.client.beta.threads.create()
+        self.functions = {"validate_ome_xml": [self.validate]}
 
     def predict(self):
         """
@@ -87,13 +91,27 @@ class CurationSwarm(PredictorTemplate):
         print("- - - Prompting Torben - - -")
         torben_prompt = "The raw data is: \n" + target_issues + "\n\n" + "The OME XML is:\n" + margarete_out
         self.conversation["Torben Prompt"] = self.assistant_torben.instructions + "\n" + torben_prompt
-        torben_out = self.run_assistant(self.assistant_torben, torben_prompt)
+        # torben_out = self.run_assistant(self.assistant_torben, torben_prompt)
+        with open("/home/aaron/PycharmProjects/MetaGPT/raw_data/torben_example_response.txt", "r") as f:
+            torben_out = f.read()
         self.conversation["Torben Response"] = torben_out
 
         # --------------------------------------------------------------------------------------------------------------
         # 4. Run the trash assistant to take the metadata that has not been added so far and add it as unstructured
         # --------------------------------------------------------------------------------------------------------------
         # out_4 = self.run_trash_timothy()
+
+        # --------------------------------------------------------------------------------------------------------------
+        # 5. Run the validation assistant to validate the OME XML
+        # --------------------------------------------------------------------------------------------------------------
+        print("- - - Prompting Veronika - - -")
+        veronika_prompt = "The OME XML is:\n" + torben_out
+        self.conversation["Veronika Prompt"] = self.assistant_veronika.instructions + "\n" + veronika_prompt
+        self.conversation["Veronika Response"] = ""
+        self.export_convo()
+        exit()
+        veronika_out = self.run_validation_veronika()
+        self.conversation["Veronika Response"] += veronika_out
 
     def run_assistant(self, assistant, msg):
         """
@@ -121,6 +139,22 @@ class CurationSwarm(PredictorTemplate):
                 thread_id=self.thread.id,
                 run_id=run.id
             )
+            if run.status == "requires_action":
+                print(run.status)
+                tool_outputs = []
+                for call in run.required_action.submit_tool_outputs.tool_calls:
+                    try:
+                        out = self.functions[call.name][0](call)
+                    except Exception as e:
+                        out = "Error: " + str(e)
+
+                    tool_outputs += {"tool_call_id": call.id, "output": out}
+
+                run = self.client.beta.threads.runs.submit_tool_outputs(
+                    thread_id=self.thread.id,
+                    run_id=run.id,
+                    tool_outputs=tool_outputs
+                )
 
         print(run.status)
 
@@ -130,8 +164,15 @@ class CurationSwarm(PredictorTemplate):
             return None
 
         messages = self.client.beta.threads.messages.list(thread_id=self.thread.id)
-        print(messages)
-        return messages.data[0].content[0].text.value
+        messages = messages.data[0].content[0].text.value
+
+        if assistant == self.assistant_veronika:
+            error = self.validate(messages)
+            if error:
+                self.conversation["Veronika Response"] += message + "\n" + error + "\n"
+                messages = self.run_assistant(assistant, message + "\n" + error)
+
+        return messages
 
     def export_convo(self):
         with open(self.out_path + "convo.txt", "w") as f:

@@ -152,12 +152,12 @@ class PredictorTemplate:
             self.generate_message(msg=msg)
             self.run_message()
 
-    def validate(self) -> Exception:
+    def validate(self, ome_xml) -> Exception:
         """
         Validate the OME XML against the OME XSD
         :return:
         """
         try:
-            self.xsd_schema.validate(self.response)
+            self.xsd_schema.validate(ome_xml)
         except Exception as e:
             return e

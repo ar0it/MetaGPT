@@ -9,7 +9,8 @@ The goal is to design an AI system that can curate OME XML metadata for microsco
 - [ ] Create a report of the evaluation results which compares bioformats and the AI model
 - [ ] When running the model, make sure that the output xml is valid
 - [ ] Think about the idea that TargetTorben looks for fitting ontology terms for the metadata
-
+- [ ] Use AICI https://github.com/microsoft/aici to guarantee output formatting
+- [ ] Think about using Autogen to have more control over agent communication
 ## Introduction
 
 In the presentation (13.06.23) introducing the XML-Editor, we discussed possibilities to automate the
