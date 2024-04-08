@@ -1,30 +1,33 @@
 import xml.etree.ElementTree as ET
 import javabridge
 import bioformats
-
-
+import numpy as np
+from zss import simple_distance, Node
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
 # javabridge.start_vm(class_path=bioformats.JARS)
 
 
 class OMEEvaluator:
     """
-    This class evaluates the performance of a OME XML generation model by calculating the similarity between the generated
-    and the ground truth OME XML. The similarity is defined as the number of identical nodes divided by the total number of
-    nodes in the ground truth OME XML.
+    This class evaluates the performance of a OME XML generation model by calculating the edit distance between the
+    ground truth and the prediction. https://github.com/timtadh/zhang-shasha
     """
 
     def __init__(self, path_to_raw_metadata=None,
                  gt_path="/home/aaron/PycharmProjects/MetaGPT/raw_data/testetst_Image8_edited_.ome.xml",
-                 pred_path="/home/aaron/PycharmProjects/MetaGPT/out/ome_xml.ome.xml"):
+                 pred_path="/home/aaron/PycharmProjects/MetaGPT/raw_data/image8_start_point.ome.xml"):
         """
         :param path_to_raw_metadata: path to the raw metadata file
         """
+        self.gt_path = gt_path
+        self.pred_path = pred_path
 
         self.prediction = self.read_ome_xml(pred_path)
         self.ground_truth = self.read_ome_xml(gt_path)
-
-        print(self.edit_distance(xml_a=self.prediction, xml_b=self.ground_truth))
-        # Example usage
+        self.edit_score = self.edit_distance(self.prediction, self.ground_truth)
+        self.report()
 
     def edit_distance(self, xml_a, xml_b):
         """
@@ -36,18 +39,9 @@ class OMEEvaluator:
         """
         # get the paths of the xml trees
 
-        xml_a_paths = [[[y] for y in x.split("/") if y] for x in self.get_paths(xml_a)]
-        xml_b_paths = [[[y] for y in x.split("/") if y] for x in self.get_paths(xml_b)]
-        print("xml_a_paths", xml_a_paths)
-        print("xml_a_paths", xml_b_paths)
-
-        # align the paths
-        s1 = [[["a"], ["a"], ["a"]], [["b"], ["b"]], [["c"]], [["d"]]]
-        s2 = [[["a"], ["a"], ["a"]], [["b"], ["b"]], [["d"]], [["c"]], [["d"]]]
-        score, alignment_a, alignment_b = self.align_paths(xml_a_paths, xml_b_paths)
-        print("Score:", score)
-        print("Alignment 1:", alignment_a)
-        print("Alignment 2:", alignment_b)
+        self.pred_graph = self.get_graph(self.prediction)
+        self.gt_graph = self.get_graph(self.ground_truth)
+        return simple_distance(self.pred_graph, self.gt_graph)
 
     def align_paths(self, paths_a, paths_b):
         """
@@ -56,8 +50,15 @@ class OMEEvaluator:
         paths_b: set of paths
         :return: list of tuples of aligned paths
         """
-        score, alignment_a, alignment_b = self.align_sequences(paths_a, paths_b, cost=self.align_sequences_score)
-        return score, alignment_a, alignment_b
+        print("- - - Aligning paths - - -")
+        # Assuming A and B are your lists and f is your function
+
+        # Create the matrix
+        matrix = [[self.align_sequences_score(a, b) for b in paths_b] for a in paths_a]
+        print("matrix", [print(x, "\n") for x in matrix])
+
+        # score, alignment_a, alignment_b = self.align_sequences(paths_a, paths_b, cost=self.align_sequences_score)
+        return 1, 1, 1
 
     def align_sequences_score(self, s1, s2, cost=lambda a, b: a != b):
         """
@@ -71,9 +72,11 @@ class OMEEvaluator:
         return score
 
     def align_sequences(self, s1, s2, cost=lambda a, b: a != b):
+        print("- - - Aligning sequences - - -")
         m, n = len(s1), len(s2)
         # Create a matrix to store the cost of edits
         dp = [[0] * (n + 1) for _ in range(m + 1)]
+        dp = np.zeros((m + 1, n + 1))
 
         # Initialize the matrix with the cost of deletions and insertions
         for i in range(m + 1):
@@ -117,16 +120,16 @@ class OMEEvaluator:
         # Handle the remaining characters in s1 or s2
         while i > 0:
             alignment_a = [s1[i - 1]] + alignment_a
-            alignment_b = [[["-"]*len(s1[j - 1])]] + alignment_b
+            alignment_b = [[["-"] * len(s1[j - 1])]] + alignment_b
             i -= 1
         while j > 0:
-            alignment_a = [[["-"]*len(s2[j - 1])]] + alignment_a
+            alignment_a = [[["-"] * len(s2[j - 1])]] + alignment_a
             alignment_b = [s2[j - 1]] + alignment_b
             j -= 1
-
+        print(dp)
         return dp[-1][-1], alignment_a, alignment_b
 
-    def word_edit_distance(self, aligned_paths):
+    def word_edit_distance(self, aligned_paths) -> int:
         """
         Calculate the word level edit distance between two sets of paths.
         aligned_paths: list of tuples of aligned paths
@@ -145,9 +148,10 @@ class OMEEvaluator:
 
         return edit_distance
 
-    def get_paths(self, xml_root, path=''):
+    def get_paths(self, xml_root, path: str = '') -> set:
         """
         Helper function to get all paths in an XML tree.
+        :return: set of paths
         """
         paths = set()
         for child in xml_root:
@@ -160,6 +164,25 @@ class OMEEvaluator:
                 paths.add(new_path)
                 paths.update(self.get_paths(child, new_path))
         return paths
+
+    def get_graph(self, xml_root, root=None):
+        """
+        Helper function to get the graph representation of an XML tree.
+        """
+        if root is None:
+            root = Node("OME")
+            if xml_root.attrib:
+                for key in xml_root.attrib.keys():
+                    root.addkid(Node(key + '=' + xml_root.attrib[key]))
+
+        for child in xml_root:
+            new_node = Node(child.tag.split('}')[1])
+            root.addkid(new_node)
+            if child.attrib:
+                for key in child.attrib.keys():
+                    new_node.addkid(Node(key + '=' + child.attrib[key]))
+            self.get_graph(child, new_node)
+        return root
 
     def path_difference(self, xml_a, xml_b):
         """
@@ -176,6 +199,7 @@ class OMEEvaluator:
         """
         tree = ET.parse(path)
         root = tree.getroot()
+        print("root", tree)
         return root
 
     def read_ome_tiff(self, path):
@@ -197,10 +221,45 @@ class OMEEvaluator:
         """
         Write evaluation report to file.
         """
-        with open(f"out/report_{self.path_ground_truth.split('/')[-1]}.txt", "w") as f:
-            f.write("Evaluation Report\n")
-            f.write(f"File: {self.path_ground_truth.split('/')[-1]}\n")
-            f.write(f"Score: {self.score}\n")
+        with open(f"../../out/report_{self.gt_path.split('/')[-1]}.md", "w") as f:
+            f.write("# Evaluation Report\n")
+            f.write("## File content\n")
+            f.write(f"### File 1: {self.gt_path.split('/')[-1]}\n")
+            paths_gt = self.get_paths(self.ground_truth)
+            f.write(f"Number of paths: {len(paths_gt)}\n")  # TODO: Somehow incorporate the ID
+            f.write(f"Number of paths in structured annotations:"
+                    f"{len([x for x in paths_gt if x.__contains__('StructuredAnnotations')])}\n")
+            f.write(f"### File 2: {self.pred_path.split('/')[-1]}\n")
+            paths_pred = self.get_paths(self.prediction)
+            f.write(f"Number of paths: {len(paths_pred)}\n")
+            f.write(f"Number of paths in structured annotations: "
+                    f"{len([x for x in paths_pred if x.__contains__('StructuredAnnotations')])}\n")
+            f.write("## Edit Distance\n")
+            f.write(f"Edit distance between Files: {self.edit_score}\n")
+            # create a pandas dataframe with all the paths
+            df_paths = pd.DataFrame(set(paths_gt.union(paths_pred)))
+            df_paths["GT"] = [1 if x in paths_gt else 0 for x in df_paths[0]]
+            df_paths["Pred"] = [1 if x in paths_pred else 0 for x in df_paths[0]]
+            df_paths["StructuredAnnotations"] = [1 if x.__contains__("StructuredAnnotations") else 0 for x in df_paths[0]]
+
+            plt.bar([1, 2], [df_paths["GT"].sum(), df_paths["Pred"].sum()])
+            plt.bar([1, 2], [df_paths["GT"]
+                             [df_paths["StructuredAnnotations"] == 1].sum(), df_paths["Pred"]
+            [df_paths["StructuredAnnotations"] == 1].sum()])
+
+            plt.title("Path Comparison")
+            plt.xticks([1, 2], ["GT", "Pred"])
+            plt.legend(title="Annotation")
+
+            print(df_paths)
+            plt.savefig(f"../../out/paths_{self.gt_path.split('/')[-1]}.png")
+            # add the plot to the report
+            f.write("## Path Comparison\n")
+            f.write(f"![barplot comparing the two xml files](paths_{self.gt_path.split('/')[-1]}.png)\n")
+
+
+
+
 
 
 # javabridge.kill_vm()

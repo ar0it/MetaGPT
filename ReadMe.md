@@ -5,12 +5,16 @@ The goal is to design an AI system that can curate OME XML metadata for microsco
 
 ## ToDo
 
-- [ ] Fix the evaluation script, to guarantee the global optimal alignment between two XML files
+- [x] Fix the evaluation script, to guarantee the global optimal alignment between two XML files
 - [ ] Create a report of the evaluation results which compares bioformats and the AI model
 - [ ] When running the model, make sure that the output xml is valid
-- [ ] Think about the idea that TargetTorben looks for fitting ontology terms for the metadata
-- [ ] Use AICI https://github.com/microsoft/aici to guarantee output formatting
+- [x] Think about the idea that TargetTorben looks for fitting ontology terms for the metadata
+  - Overkill, lets ignore for now
+- [x] Use AICI https://github.com/microsoft/aici to guarantee output formatting
+  - Doesnt Work because I dont run the LLM locally
 - [ ] Think about using Autogen to have more control over agent communication
+- [ ] Register master thesis
+- [ ] 
 ## Introduction
 
 In the presentation (13.06.23) introducing the XML-Editor, we discussed possibilities to automate the

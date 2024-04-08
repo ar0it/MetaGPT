@@ -1,4 +1,3 @@
-from ..predictors.predictor_template import PredictorTemplate
 import time
 from src.main.assistants.assistant_MissingMyrte import MissingMyrte
 from src.main.assistants.assistant_MappingMargarete import MappingMargarete
@@ -6,6 +5,7 @@ from src.main.assistants.assistant_DiscriminatorDave import DiscriminatorDave
 from src.main.assistants.assistant_TrashTimothy import TrashTimothy
 from src.main.assistants.assistant_TargetTorben import TargetTorben
 from src.main.assistants.assistant_ValidationVeronika import ValidationVeronika
+from src.main.predictors.predictor_template import PredictorTemplate
 
 
 class CurationSwarm(PredictorTemplate):
@@ -54,11 +54,12 @@ class CurationSwarm(PredictorTemplate):
         # 1. Run the discriminator assistant to split the metadata into the contained and missing parts
         # --------------------------------------------------------------------------------------------------------------
         print("- - - Prompting Dave - - -")
-        dave_prompt = "The starting points is:\n" + self.ome_starting_point + "\n\n" + "The raw data is: \n" + self.raw_metadata
+        dave_prompt = ("The starting points is:\n" + self.ome_starting_point + "\n\n" + "The raw data is: \n" +
+                       self.raw_metadata)
         self.conversation["Dave Prompt"] = self.assistant_dave.instructions + "\n" + dave_prompt
 
         # dave_out = self.run_assistant(self.assistant_dave, dave_prompt)
-        with open("/home/aaron/PycharmProjects/MetaGPT/raw_data/dave_example_response.txt", "r") as f:
+        with open("/raw_data/example_outputs/dave_example_response.txt", "r") as f:
             dave_out = f.read()
             self.conversation["Dave Response"] = dave_out
 
@@ -69,7 +70,7 @@ class CurationSwarm(PredictorTemplate):
         myrte_prompt = self.assistant_dave.instructions + "\n" "Here is the raw metadata: \n" + dave_out
         self.conversation["Myrte Prompt"] = self.assistant_myrte.instructions + "\n" + myrte_prompt
         # myrte_out = self.run_assistant(self.assistant_myrte, myrte_prompt)
-        with open("/home/aaron/PycharmProjects/MetaGPT/raw_data/myrte_example_response.txt", "r") as f:
+        with open("/raw_data/example_outputs/myrte_example_response.txt", "r") as f:
             myrte_out = f.read()
             self.conversation["Myrte Response"] = myrte_out
         mapping_issues, target_issues = myrte_out.split("- - -")
@@ -78,10 +79,11 @@ class CurationSwarm(PredictorTemplate):
         # 3.(a) Run the mapping assistant to map the mapping issue metadata to the ome xml
         # --------------------------------------------------------------------------------------------------------------
         print("- - - Prompting Margarete - - -")
-        margarete_prompt = "The raw data is: \n" + mapping_issues + "\n\n" + "The OME XML is:\n" + self.ome_starting_point
+        margarete_prompt = ("The raw data is: \n" + mapping_issues + "\n\n" + "The OME XML is:\n" +
+                            self.ome_starting_point)
         self.conversation["Margarete Prompt"] = self.assistant_margarete.instructions + "\n" + margarete_prompt
         # margarete_out = self.run_assistant(self.assistant_margarete, self.conversation["Margarete Prompt"])
-        with open("/home/aaron/PycharmProjects/MetaGPT/raw_data/margarete_example_response.txt", "r") as f:
+        with open("/raw_data/example_outputs/margarete_example_response.txt", "r") as f:
             margarete_out = f.read()
         self.conversation["Margarete Response"] = margarete_out
 
@@ -92,7 +94,7 @@ class CurationSwarm(PredictorTemplate):
         torben_prompt = "The raw data is: \n" + target_issues + "\n\n" + "The OME XML is:\n" + margarete_out
         self.conversation["Torben Prompt"] = self.assistant_torben.instructions + "\n" + torben_prompt
         # torben_out = self.run_assistant(self.assistant_torben, torben_prompt)
-        with open("/home/aaron/PycharmProjects/MetaGPT/raw_data/torben_example_response.txt", "r") as f:
+        with open("/raw_data/example_outputs/torben_example_response.txt", "r") as f:
             torben_out = f.read()
         self.conversation["Torben Response"] = torben_out
 
@@ -105,29 +107,36 @@ class CurationSwarm(PredictorTemplate):
         # 5. Run the validation assistant to validate the OME XML
         # --------------------------------------------------------------------------------------------------------------
         print("- - - Prompting Veronika - - -")
-        veronika_prompt = "The OME XML is:\n" + torben_out
-        self.conversation["Veronika Prompt"] = self.assistant_veronika.instructions + "\n" + veronika_prompt
-        self.conversation["Veronika Response"] = ""
-        self.export_convo()
-        exit()
-        veronika_out = self.run_validation_veronika()
-        self.conversation["Veronika Response"] += veronika_out
+        error = self.validate(torben_out)
+        if error:
+            veronika_prompt = "The OME XML is:\n" + torben_out + "\n" + "Validator Error message:\n" + str(error) + "\n"
+            self.conversation["Veronika Prompt"] = self.assistant_veronika.instructions + "\n" + veronika_prompt
+            self.conversation["Veronika Response"] = ""
+            self.export_convo()
+            # veronika_out = self.run_assistant(self.assistant_veronika, veronika_prompt)
+            with open("/raw_data/example_outputs/veronika_example_response.txt", "r") as f:
+                veronika_out = f.read()
+            self.conversation["Veronika Response"] += veronika_out
 
-    def run_assistant(self, assistant, msg):
+    def run_assistant(self, assistant, msg, thread=None):
         """
         Run the assistant
+        :param thread:
         :param assistant:
         :param msg:
         :return:
         """
+        if thread is None:
+            thread = self.thread
+
         message = self.client.beta.threads.messages.create(
-            thread_id=self.thread.id,
+            thread_id=thread.id,
             role="user",
             content=msg
         )
 
         run = self.client.beta.threads.runs.create(
-            thread_id=self.thread.id,
+            thread_id=thread.id,
             assistant_id=assistant.id,
         )
 
@@ -166,15 +175,19 @@ class CurationSwarm(PredictorTemplate):
         messages = self.client.beta.threads.messages.list(thread_id=self.thread.id)
         messages = messages.data[0].content[0].text.value
 
+        return messages
+
         if assistant == self.assistant_veronika:
             error = self.validate(messages)
+            print(error)
             if error:
-                self.conversation["Veronika Response"] += message + "\n" + error + "\n"
-                messages = self.run_assistant(assistant, message + "\n" + error)
+                self.conversation["Veronika Response"] += messages + "\n" + "Validator Error message:\n" + error + "\n"
+
+                messages = self.run_assistant(assistant, self.conversation["Veronika Response"])
 
         return messages
 
     def export_convo(self):
         with open(self.out_path + "convo.txt", "w") as f:
             for k in self.conversation:
-                f.write(str(k) + "\n" + self.conversation[k])
+                f.write(str(k) + "\n" + "\n" + self.conversation[k] + "\n" + "\n")
