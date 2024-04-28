@@ -14,22 +14,13 @@ The goal is to design an AI system that can curate OME XML metadata for microsco
   - Doesnt Work because I dont run the LLM locally
 - [ ] Think about using Autogen to have more control over agent communication
 - [ ] Register master thesis
-- [ ] 
-## Introduction
-
-In the presentation (13.06.23) introducing the XML-Editor, we discussed possibilities to automate the
-process of curating metadata using technologies like large language models (LLM) and more specifically,
-tools like [AutoGPT](https://github.com/Significant-Gravitas/Auto-GPT). We came to the conclusion, that testing is
-needed to get an idea of how to approach the topic best. In this short report, I want to document the current progress,
-which exploratory experiments have been attempted, and lay out a roadway on how to proceed. The report
-is structured into three parts. Starting with the ”Problem description” part, where I want to formulate
-the problem and give background information. Next, I want to present the up-to-date, takeaway
-message in the ”Current Standing” part. Lastly, in the ”Experiment-Diary” part, I want to collect
-methods and results, in a diary-like fashion.
+- [ ] Use structured prompting to get more control over the output
+  - pydantic_test as playground
+- [ ] Define realistic goals that I still want to implement]
 
 ## Problem description
 
-Numerous image-generating techniques, such as microscopy, often produce metadata in proprietary formats. This presents
+Numerous image-generating techniques, such as microscopy, produce metadata, often in proprietary formats. This presents
 challenges in processing (i.e., compatibility with existing pipelines), publishing (i.e., accessibility for readers),
 and storage (i.e., future usability of data). Bioformats, a widely used Java library, aims to address these issues by
 offering tools to convert these proprietary formats into the open OME format. 
@@ -38,18 +29,18 @@ loss or incorrect translation of metadata. A key issue with Bioformats is its st
 changes in proprietary file formats. Despite these changes often being relatively minor, the effort to maintain
 Bioformats is substantial due to the hard-coded and static nature of traditional software paradigms.
 Interestingly, format transcription is not dissimilar to language translation, where words in different languages are
-mapped to each other. Large language models (LLMs) have recently surprised the scientific community by outperforming
+mapped to each other. Large language models (LLMs)/ Transformers/ Autoregressive Decoder have recently surprised the scientific community by outperforming
 previous state-of-the-art translation tools, despite not being explicitly trained for translation tasks. The vast
 amount of multilingual data has enabled these models to develop a deep understanding of language, moving beyond
-monolingual word representation towards a generalized, concept-based knowledge base. 
+monolingual word representation towards a generalized, conceptual knowledge base. 
 In essence, these models accept words in any language, translate them into an abstract conceptual representation
 for reasoning, and then map the resulting concepts back to the desired output language. Applying this logic to
 format transcription, the same principle could be used. Instead of directly mapping a property, such as a key-value
 pair, from the input format to another property in the output format, the input is first represented as a concept.
 This concept can then be transcribed to the specified output. As the conceptual meaning of the input or output does
 not derive from literal string representation, this method is resilient to most changes in proprietary file formats.
-Therefore, I propose OME Cur-AI-tion, a modified version of LLama2. LLama2-based models represent the state-of-the-art
-in open-source natural language models. Preliminary testing has shown that, through transfer learning, such a model can
+Therefore, I propose OME Cur-AI-tion, a modified version of LLama2 (Nope). LLama2-based models represent the state-of-the-art
+in open-source natural language models (not anymore). Preliminary testing has shown that, through transfer learning, such a model can
 standardize output (for example, to the XML syntax) and enhance capabilities in understanding and extracting information
 from unstructured plain text proprietary metadata. A fully functional OME Cur-AI-tion has the potential to revolutionize
 the landscape of microscopy and unify the efforts of the entire imaging community, much like how the FASTA file format
@@ -57,6 +48,14 @@ has enabled the sequence community to work together efficiently.
 
 
 ## Current Standing
+
+- I found that the Mapping of properties is not the fatal flaw of Bioformats, but the lack of target properties in the OME XML schema
+- Instead of using LLama2, I am using GPT-4 via api, which has more powerfull function calling capabilities
+- Instead of extending Bioformats I could rephrase the task to "substitute Bioformats" and use the AI model to generate the OME XML metadata from scratch
+  - This would allow the to use the Bioformats output as "ground truth" for the AI model
+  - It could still be formulated that this is done soley for research purposes, and longterm the goal is to extend Bioformats functionality.
+  - This experiment could figure out if lLM are able to adhere to a schema.
+- 
 
 ### Post Presentation 
 
