@@ -16,7 +16,7 @@ The goal is to design an AI system that can curate OME XML metadata for microsco
 - [ ] Register master thesis
 - [ ] Use structured prompting to get more control over the output
   - pydantic_test as playground
-- [ ] Define realistic goals that I still want to implement]
+- [ ] Define realistic goals that I still want to implement
 
 ## Problem description
 
