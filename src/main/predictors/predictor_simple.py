@@ -16,5 +16,5 @@ class SimplePredictor(PredictorTemplate):
                          path_to_ome_starting_point=path_to_ome_starting_point,
                          ome_xsd_path=ome_xsd_path,
                          out_path=out_path)
-        all_alone_august = AllAloneAugust(ome_xsd_path, self.client)
-        self.assistant = all_alone_august.create_assistant(assistant_id_path=None)
+
+        self.assistant = AllAloneAugust(ome_xsd_path, self.client)

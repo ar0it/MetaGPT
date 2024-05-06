@@ -1,12 +1,12 @@
 import os
-import openai
-import autogen
+# import autogen
 import argparse
 from openai import OpenAI
 import xml.etree.ElementTree as ET
 from lxml import etree
 import time
 import xmlschema
+import instructor
 
 
 class PredictorTemplate:
@@ -28,7 +28,7 @@ class PredictorTemplate:
         self.ome_starting_point = self.read_ome_as_string(path_to_ome_starting_point)
         self.raw_metadata = self.read_raw_metadata()
 
-        self.client = OpenAI()
+        self.client = instructor.patch(OpenAI())
         self.run = None
         self.pre_prompt = None
         self.response = None
@@ -47,7 +47,7 @@ class PredictorTemplate:
         self.init_thread()
 
         print("- - - Generating Prompt - - -")
-        full_message = "The starting points is:\n" + self.ome_starting_point + "\n\n" + "The raw data is: \n" + self.raw_metadata
+        full_message = "\n\n" + "The raw data is: \n" + self.raw_metadata
         self.generate_message(msg=full_message)
 
         print("- - - Predicting OME XML - - -")
@@ -93,7 +93,7 @@ class PredictorTemplate:
         Export the OME XML to a file
         """
         with open(self.out_path + f"final_{time.time()}.ome.xml", "w") as f:
-            f.write("test")
+            f.write(self.response)
 
     def read_raw_metadata(self):
         """
@@ -128,7 +128,7 @@ class PredictorTemplate:
             self.run = self.client.beta.threads.runs.retrieve(
                 thread_id=self.thread.id,
                 run_id=self.run.id,
-                instructions= self.assistant.instructions,
+                #instructions= self.assistant.instructions,
             )
 
             time.sleep(5)
@@ -144,13 +144,19 @@ class PredictorTemplate:
         ome_xml = ome_xml.split("</OME>")[0].split("<OME")[1]
         self.response = "<OME" + ome_xml + "</OME>"
         self.export_ome_xml()
-        validation = self.validate()
+        validation = self.validate(self.response)
+        print(validation)
+
+        """
+        
+        
         if validation is not None:
             print("Validation failed")
             msg = "There seems to be an issue with the OME XML you provided. Please fix this error:\n" + str(validation)
             print(msg)
             self.generate_message(msg=msg)
             self.run_message()
+        """
 
     def validate(self, ome_xml) -> Exception:
         """
