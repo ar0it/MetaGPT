@@ -2,7 +2,7 @@ import os
 import warnings
 
 from openai import OpenAI
-
+from pydantic import BaseModel
 
 class AssistantTemplate:
     """
@@ -16,7 +16,7 @@ class AssistantTemplate:
         self.client = client
 
         self.name = None
-        self.model = "gpt-4-turbo-preview"  # this always links to the most recent (gpt4) model
+        self.model = "gpt-4o"
         self.description = None
         self.instructions = None
         self.tools = [{"type": "file_search"}]
@@ -60,6 +60,7 @@ class AssistantTemplate:
         # try to get file from the client else create it
         if self.vector_store_id is None:
             # Create a vector store caled "Financial Statements"
+            print(self.client.api_key)
             vector_store = self.client.beta.vector_stores.create(name="OME XML schema")
             self.vector_store_id = vector_store.id
 
@@ -83,8 +84,7 @@ class AssistantTemplate:
             name=self.name,
             model=self.model,
             tools=self.tools,
-            tool_resources={"file_search": {"vector_store_ids": [self.vector_store_id]}},
-            response_model=self.response_model
+            tool_resources={"file_search": {"vector_store_ids": [self.vector_store_id]}}
         )
         self.save_assistant_id()
 
@@ -93,5 +93,49 @@ class AssistantTemplate:
         Save the assistant id to a file.
         :return:
         """
-        with open(f"./assistant_ids/{self.name}_assistant_id.txt", "w") as f:
+        print(f"os.getwd: {os.getcwd()}")
+
+        with open(f"{os.getcwd()}/assistant_ids/{self.name}_assistant_id.txt", "w") as f:
             f.write(self.assistant.id)
+
+    def openai_schema(self, cls:BaseModel = None):
+        """
+        Return the schema in the format of OpenAI's schema as jsonschema
+
+        Note:
+            Its important to add a docstring to describe how to best use this class, it will be included in the description attribute and be part of the prompt.
+
+        Returns:
+            model_json_schema (dict): A dictionary in the format of OpenAI's schema as jsonschema
+        """
+        from docstring_parser import parse
+        schema = cls.model_json_schema()
+        docstring = parse(cls.__doc__ or "")
+        parameters = {
+            k: v for k, v in schema.items() if k not in ("title", "description")
+        }
+        for param in docstring.params:
+            if (name := param.arg_name) in parameters["properties"] and (
+                    description := param.description
+            ):
+                if "description" not in parameters["properties"][name]:
+                    parameters["properties"][name]["description"] = description
+
+        parameters["required"] = sorted(
+            k for k, v in parameters["properties"].items() if "default" not in v
+        )
+
+        if "description" not in schema:
+            if docstring.short_description:
+                schema["description"] = docstring.short_description
+            else:
+                schema["description"] = (
+                    f"Correctly extracted `{cls.__name__}` with all "
+                    f"the required parameters with correct types"
+                )
+
+        return {
+            "name": schema["title"],
+            "description": schema["description"],
+            "parameters": parameters,
+        }

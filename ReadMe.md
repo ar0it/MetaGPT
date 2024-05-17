@@ -14,11 +14,36 @@ The goal is to design an AI system that can curate OME XML metadata for microsco
   - Doesnt Work because I dont run the LLM locally
 - [ ] Think about using Autogen to have more control over agent communication
 - [ ] Register master thesis
-- [ ] Use structured prompting to get more control over the output
+- [x] Use structured prompting to get more control over the output
   - pydantic_test as playground
-- [ ] Define realistic goals that I still want to implement
+- [x] Define realistic goals that I still want to implement
+  - see [Final Thesis Project](#outline-of-the-final-thesis-project)
+- [ ] Prepare for the meeting with Sven
 
-## Problem description
+## Outline of the final Thesis-Project
+Due to the problems outlined in [current Standing](#current-standing), I will refocus the project to the following:
+1. To be able to construct a clean experiment, I need a ground truth. This ground truth will be the output of Bioformats.
+2. Instead of curating the metadata, I will generate the metadata from scratch using the AI model. This will allow me to compare the output of the AI model with the ground truth.
+3. I will have at least 3 different AI models, that I will compare with each other and with Bioformats
+   a) A single Agent that generates the whole XML in one go. It will use structured prompting to ensure that the output is valid XML. 
+   b) A network of Agents that will generate the XML in a more systematic way. This will allow me to have more control over the output and to have a more modular system. 
+   c) A network of Agents using Autogen, which are more self-sufficient and less structured than the Agents in b).
+4. The models can be considered agentic, as they will use function calling such as the validation of the XML to ensure that the output is valid.
+5. I will evaluate the models based on the alignment of the generated XML with the ground truth XML
+6. I will need to find a metric to evaluate parts of the generated XML, which is not covered by bioformats (e.g. structured Annotations)
+    Measure how large the structured annotations are
+In a nutshell the title for the thesis could be 
+
+**Exploring networks of agentic Large Language models for the translation and curation of OME-XML metadata**
+
+### Agenda for Meeting with Luis
+- [ ] Get Luis up to date, what has happened since the last meeting
+- [ ] Discuss the outline
+- [ ] How to approach the meeting with sven
+
+### Agenda for Meeting with Sven
+
+## Initial Problem description
 
 Numerous image-generating techniques, such as microscopy, produce metadata, often in proprietary formats. This presents
 challenges in processing (i.e., compatibility with existing pipelines), publishing (i.e., accessibility for readers),
@@ -61,7 +86,7 @@ has enabled the sequence community to work together efficiently.
 
 We discussed two ideas for AI metadata curation:
 1. Translate the raw metadata to OME-XML as you would with other languages using a LLM
-   1. This can lead to context length issues.
+   1. This can lead to context length issues. (Aaron from 2024 -> lol)
    2. Less automated, since validation and other services still need to be implemented
    
 2. Define a system of LLM-Agents, that provide the service of curating metadata

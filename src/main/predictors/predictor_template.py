@@ -27,8 +27,7 @@ class PredictorTemplate:
         self.xsd_schema = xmlschema.XMLSchema(self.ome_xsd_path)
         self.ome_starting_point = self.read_ome_as_string(path_to_ome_starting_point)
         self.raw_metadata = self.read_raw_metadata()
-
-        self.client = instructor.patch(OpenAI())
+        self.client = instructor.patch(OpenAI(api_key=os.getenv("OPENAI_API_KEY")))
         self.run = None
         self.pre_prompt = None
         self.response = None
@@ -51,11 +50,12 @@ class PredictorTemplate:
         self.generate_message(msg=full_message)
 
         print("- - - Predicting OME XML - - -")
-        self.run_message()
+        self.assistant.run_assistant(msg=full_message, thread=self.thread)
 
         print("- - - Exporting OME XML - - -")
         self.export_ome_xml()
-        # print("- - - Shut down assistant - - -")
+        print("- - - Shut down assistant - - -")
+        self.clean_assistants()
 
     def init_thread(self):
         """
@@ -140,9 +140,7 @@ class PredictorTemplate:
             return None
 
         messages = self.client.beta.threads.messages.list(thread_id=self.thread.id)
-        ome_xml = messages.data[0].content[0].text.value
-        ome_xml = ome_xml.split("</OME>")[0].split("<OME")[1]
-        self.response = "<OME" + ome_xml + "</OME>"
+        self.response = messages.data[0].content[0].text.value
         self.export_ome_xml()
         validation = self.validate(self.response)
         print(validation)
@@ -167,3 +165,13 @@ class PredictorTemplate:
             self.xsd_schema.validate(ome_xml)
         except Exception as e:
             return e
+
+    def clean_assistants(self):
+        """
+        Clean up the assistants
+        """
+        self.client.beta.assistants.delete(assistant_id=self.assistant.id)
+        self.client.beta.threads.delete(thread_id=self.thread.id)
+
+#%%
+
