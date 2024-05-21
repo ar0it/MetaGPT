@@ -13,8 +13,8 @@ import OME_evaluator
 # Constants
 # ----------------------------------------------------------------------------------------------------------------------
 ome_schema_path = '/home/aaron/PycharmProjects/MetaGPT/raw_data/ome_xsd.txt'
-ome_starting_point_path = "/home/aaron/PycharmProjects/MetaGPT/raw_data/image8_start_point.ome.xml"
-raw_meta_path = "/home/aaron/PycharmProjects/MetaGPT/raw_data/raw_Metadata_Image8.txt"
+ome_starting_point_path = "/out/image8_start_point.ome.xml"
+raw_meta_path = "/out/raw_Metadata_Image8.txt"
 out = "/home/aaron/PycharmProjects/MetaGPT/out/"
 
 # ----------------------------------------------------------------------------------------------------------------------
