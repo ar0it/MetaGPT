@@ -1,0 +1,57 @@
+MissingMyrte
+Missing Map:
+Appliance|Data|ShuttleAndFindData|Calibration|Marker|FocusPosition #1 0
+Appliance|Data|ShuttleAndFindData|Calibration|Marker|FocusPosition #2 0
+Appliance|Data|ShuttleAndFindData|Calibration|Marker|FocusPosition #3 0
+Appliance|Data|ShuttleAndFindData|Calibration|Marker|Id #1 Marker:1
+Appliance|Data|ShuttleAndFindData|Calibration|Marker|Id #2 Marker:2
+Appliance|Data|ShuttleAndFindData|Calibration|Marker|Id #3 Marker:3
+Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageXPosition #1 0
+Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageXPosition #2 0
+Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageXPosition #3 0
+Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageYPosition #1 0
+Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageYPosition #2 0
+Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageYPosition #3 0
+Appliance|Data|ShuttleAndFindData|Calibration|MicroscopeType LM
+Appliance|Data|ShuttleAndFindData|Calibration|StageOrientation|X -1
+Appliance|Data|ShuttleAndFindData|Calibration|StageOrientation|Y 1
+Appliance|Id ShuttleAndFind:1
+DisplaySetting|Channel|ChannelUnit|ChannelType Unspecified
+DisplaySetting|Channel|ChannelUnit|FactorI 1
+DisplaySetting|Channel|ChannelUnit|OffsetI 0
+DisplaySetting|Channel|ChannelUnit|UnitI Unknown
+DisplaySetting|Channel|Color #00FF00
+DisplaySetting|Channel|ColorMode Color
+DisplaySetting|Channel|DyeName EGFP
+DisplaySetting|Channel|Gamma 1
+DisplaySetting|Channel|High 0.1333333333333333
+DisplaySetting|Channel|Id 108853132117492280627326639672251045474
+DisplaySetting|Channel|IsSelected true
+DisplaySetting|Channel|Low -0
+DisplaySetting|Channel|Name ChS1-T2
+ - - -
+Missing Target:
+Experiment|AcquisitionBlock|AcquisitionModeSetup|AcquisitionMode Frame
+Experiment|AcquisitionBlock|AcquisitionModeSetup|ApertureDiameter 4.4099999999999993
+Experiment|AcquisitionBlock|AcquisitionModeSetup|BiDirectional true
+Experiment|AcquisitionBlock|AcquisitionModeSetup|BiDirectionalZ false
+Experiment|AcquisitionBlock|AcquisitionModeSetup|BitsPerSample 8
+Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraBinning 1
+Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraFrameHeight 1030
+Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraFrameOffsetX 0
+Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraFrameOffsetY 0
+Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraFrameWidth 1300
+Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraSuperSampling 0
+Experiment|AcquisitionBlock|AcquisitionModeSetup|FilterMethod Average
+Experiment|AcquisitionBlock|AcquisitionModeSetup|FilterMode Line
+Experiment|AcquisitionBlock|AcquisitionModeSetup|FilterSamplingNumber 2
+Experiment|AcquisitionBlock|AcquisitionModeSetup|FitFramesizeToRoi false
+Experiment|AcquisitionBlock|AcquisitionModeSetup|FocalDistanceLsmTubeLense 150
+Experiment|AcquisitionBlock|AcquisitionModeSetup|FocalDistanceScanLense 52.5
+Experiment|AcquisitionBlock|AcquisitionModeSetup|FocalDistanceStandardTubeLense 164.5
+Experiment|AcquisitionBlock|AcquisitionModeSetup|FocusStabilizer false
+Experiment|AcquisitionBlock|AcquisitionModeSetup|HdrEnabled false
+Experiment|AcquisitionBlock|AcquisitionModeSetup|HdrImagingMode 0
+Experiment|AcquisitionBlock|AcquisitionModeSetup|HdrIntensity 1
+Experiment|AcquisitionBlock|AcquisitionModeSetup|HdrNumFrames 1
+
