@@ -1,11 +1,13 @@
 import xml.etree.ElementTree as ET
-import javabridge
-import bioformats
+#import javabridge
+#import bioformats
 import numpy as np
 from zss import simple_distance, Node
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
+
+
 # javabridge.start_vm(class_path=bioformats.JARS)
 
 
@@ -15,18 +17,20 @@ class OMEEvaluator:
     ground truth and the prediction. https://github.com/timtadh/zhang-shasha
     """
 
-    def __init__(self, path_to_raw_metadata=None,
-                 gt_path="/home/aaron/PycharmProjects/MetaGPT/raw_data/testetst_Image8_edited_.ome.xml",
-                 pred_path="/home/aaron/PycharmProjects/MetaGPT/raw_data/image8_start_point.ome.xml"):
+    def __init__(self,
+                 schema: str = None,
+                 ground_truth: str = None,
+                 predicted: list[str] = None,
+                 out_path: str = None):
         """
         :param path_to_raw_metadata: path to the raw metadata file
         """
-        self.gt_path = gt_path
-        self.pred_path = pred_path
-
-        self.prediction = self.read_ome_xml(pred_path)
-        self.ground_truth = self.read_ome_xml(gt_path)
-        self.edit_score = self.edit_distance(self.prediction, self.ground_truth)
+        self.prediction: list = predicted
+        self.ground_truth = ground_truth
+        self.out_path: str = out_path
+        self.edit_score = []
+        for p in self.prediction:
+            self.edit_score.append(self.edit_distance(p, self.ground_truth))
         self.report()
 
     def edit_distance(self, xml_a, xml_b):
@@ -41,7 +45,7 @@ class OMEEvaluator:
 
         self.pred_graph = self.get_graph(self.prediction)
         self.gt_graph = self.get_graph(self.ground_truth)
-        return simple_distance(self.pred_graph, self.gt_graph)
+        return simple_distance(self.gt_graph, self.pred_graph)
 
     def align_paths(self, paths_a, paths_b):
         """
@@ -206,9 +210,10 @@ class OMEEvaluator:
         """
         This method reads the ome tiff file.
         """
-        ome = bioformats.OMEXML()
-        print(ome)
-        return ome
+        pass
+        #ome = bioformats.OMEXML()
+        #print(ome)
+        #return ome
 
     def evaluate(self):
         """
@@ -217,6 +222,13 @@ class OMEEvaluator:
         print("Evaluation in progress...")
         self.score = self.path_difference(self.prediction, self.ground_truth)
 
+    def flatten(self, container):
+        for i in container:
+            if isinstance(i, (list, tuple, set)):
+                yield from self.flatten(i)
+            else:
+                yield i
+
     def report(self):
         """
         Write evaluation report to file.
@@ -224,43 +236,91 @@ class OMEEvaluator:
         with open(f"../../out/report_{self.gt_path.split('/')[-1]}.md", "w") as f:
             f.write("# Evaluation Report\n")
             f.write("## File content\n")
-            f.write(f"### File 1: {self.gt_path.split('/')[-1]}\n")
+            f.write(f"### File Ground Truth: \n")
             paths_gt = self.get_paths(self.ground_truth)
             f.write(f"Number of paths: {len(paths_gt)}\n")  # TODO: Somehow incorporate the ID
             f.write(f"Number of paths in structured annotations:"
                     f"{len([x for x in paths_gt if x.__contains__('StructuredAnnotations')])}\n")
-            f.write(f"### File 2: {self.pred_path.split('/')[-1]}\n")
-            paths_pred = self.get_paths(self.prediction)
-            f.write(f"Number of paths: {len(paths_pred)}\n")
-            f.write(f"Number of paths in structured annotations: "
-                    f"{len([x for x in paths_pred if x.__contains__('StructuredAnnotations')])}\n")
+            paths_pred = []
+            for j, p in enumerate(self.prediction):
+                f.write(f"### Prediction {j}\n")
+                paths_pred.append(self.get_paths(p))
+                f.write(f"Number of paths: {len(paths_pred[j])}\n")
+                f.write(f"Number of paths in structured annotations: "
+                        f"{len([x for x in paths_pred[j] if x.__contains__('StructuredAnnotations')])}\n")
             f.write("## Edit Distance\n")
-            f.write(f"Edit distance between Files: {self.edit_score}\n")
-            # create a pandas dataframe with all the paths
-            df_paths = pd.DataFrame(set(paths_gt.union(paths_pred)))
+            for j, p in enumerate(self.prediction):
+                f.write(f"Edit distance between gt and file {j}: {self.edit_score[j]}\n")
+            # create a pandas dataframe with all the paths and in which samples they occur
+            df_paths = pd.DataFrame(set(self.flatten(paths_pred + [paths_gt])))
             df_paths["GT"] = [1 if x in paths_gt else 0 for x in df_paths[0]]
-            df_paths["Pred"] = [1 if x in paths_pred else 0 for x in df_paths[0]]
-            df_paths["StructuredAnnotations"] = [1 if x.__contains__("StructuredAnnotations") else 0 for x in df_paths[0]]
+            for j, p in enumerate(self.prediction):
+                df_paths[f"Pred{j}"] = [1 if x in paths_pred[j] else 0 for x in df_paths[0]]
+                df_paths[f"StructuredAnnotations{j}"] = [1 if x.__contains__("StructuredAnnotations") else 0 for x in
+                                                         df_paths[0]]
 
             plt.bar([1, 2], [df_paths["GT"].sum(), df_paths["Pred"].sum()])
-            plt.bar([1, 2], [df_paths["GT"]
-                             [df_paths["StructuredAnnotations"] == 1].sum(), df_paths["Pred"]
-            [df_paths["StructuredAnnotations"] == 1].sum()])
+            for j, p in enumerate(self.prediction):
+                plt.bar([1, 2], [df_paths["GT"]
+                                 [df_paths[f"StructuredAnnotations{j}"] == 1].sum(), df_paths[f"Pred{j}"]
+                                 [df_paths[f"StructuredAnnotations{j}"] == 1].sum()])
 
             plt.title("Path Comparison")
-            plt.xticks([1, 2], ["GT", "Pred"])
+            plt.xticks(range(len(self.prediction) + 1), ["GT"] + [f"Pred{j}" for j in range(len(self.prediction))])
             plt.legend(title="Annotation")
 
             print(df_paths)
-            plt.savefig(f"../../out/paths_{self.gt_path.split('/')[-1]}.png")
+            plt.savefig(f"{self.out_path}.png")
             # add the plot to the report
             f.write("## Path Comparison\n")
-            f.write(f"![barplot comparing the two xml files](paths_{self.gt_path.split('/')[-1]}.png)\n")
+            f.write(f"![barplot comparing the xml files]({self.out_path}.png)\n")
+
+    def sample_df(
+            self,
+            df_paths: pd.DataFrame = None,
+    ):
+        """
+        This function creates a df with samples as Index and properties as Columns
+        TODO: Autogenerated function controll if it works as expected
+        """
+        properties = ["Method", "n_paths", "n_annotations", "Edit_distance"]
+        df = pd.DataFrame(index=df_paths.columns, columns=properties)
+        df["Method"] = "qwe"
+        df["Name"] = "qwe"
+        df["iter"] = 1
+        df["n_paths"] = df_paths.sum()
+        df["n_annotations"] = df_paths[df_paths.__contains__("StructuredAnnotations")].sum()
+        df["Edit_distance"] = [self.edit_distance(x, self.ground_truth) for x in self.prediction]
+        return df
+
+    def path_df(
+            self,
+            paths: dict[list[str]] = None  # each sample in the dictonary has a list of paths
+    ):
+        df = pd.DataFrame()
+        for sample in paths:
+            for path in paths[sample]:
+                df.at[sample, path] = 1
+        return df
+
+    def sample_std_plot(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        """
+        This function creates a plot which compares the inter sample standard deviation.
+        The X-axis will be the used method, whereas the Y-axis will be the standard deviation.
+        """
+        df_sample["Sample_std"] = df_sample.groupby(['Method', 'Name'])['n_paths'].std().reset_index()
+        plt.bar(df_sample["Method"], df_sample["Sample_std"])
 
 
-
-
-
+# Which plots do I want to return?
+# plot which shows deviation between runs of same sample
+# plot which shows the datatype dependent performance
+# plot which shows the method dependent performance
+# plot which shows the cost to run the tool
+# maybe show the average per sample std instead of the std of the entire dataset
 
 # javabridge.kill_vm()
 

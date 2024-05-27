@@ -59,7 +59,7 @@ class CurationSwarm(PredictorTemplate):
         self.conversation["Dave Prompt"] = self.assistant_dave.instructions + "\n" + dave_prompt
 
         # dave_out = self.run_assistant(self.assistant_dave, dave_prompt)
-        with open("/raw_data/example_outputs/dave_example_response.txt", "r") as f:
+        with open("/raw_data/assistant_outputs/dave_example_response.txt", "r") as f:
             dave_out = f.read()
             self.conversation["Dave Response"] = dave_out
 
@@ -70,7 +70,7 @@ class CurationSwarm(PredictorTemplate):
         myrte_prompt = self.assistant_dave.instructions + "\n" "Here is the raw metadata: \n" + dave_out
         self.conversation["Myrte Prompt"] = self.assistant_myrte.instructions + "\n" + myrte_prompt
         # myrte_out = self.run_assistant(self.assistant_myrte, myrte_prompt)
-        with open("/raw_data/example_outputs/myrte_example_response.txt", "r") as f:
+        with open("/raw_data/assistant_outputs/myrte_example_response.txt", "r") as f:
             myrte_out = f.read()
             self.conversation["Myrte Response"] = myrte_out
         mapping_issues, target_issues = myrte_out.split("- - -")
@@ -83,7 +83,7 @@ class CurationSwarm(PredictorTemplate):
                             self.ome_starting_point)
         self.conversation["Margarete Prompt"] = self.assistant_margarete.instructions + "\n" + margarete_prompt
         # margarete_out = self.run_assistant(self.assistant_margarete, self.conversation["Margarete Prompt"])
-        with open("/raw_data/example_outputs/margarete_example_response.txt", "r") as f:
+        with open("/raw_data/assistant_outputs/margarete_example_response.txt", "r") as f:
             margarete_out = f.read()
         self.conversation["Margarete Response"] = margarete_out
 
@@ -94,7 +94,7 @@ class CurationSwarm(PredictorTemplate):
         torben_prompt = "The raw data is: \n" + target_issues + "\n\n" + "The OME XML is:\n" + margarete_out
         self.conversation["Torben Prompt"] = self.assistant_torben.instructions + "\n" + torben_prompt
         # torben_out = self.run_assistant(self.assistant_torben, torben_prompt)
-        with open("/raw_data/example_outputs/torben_example_response.txt", "r") as f:
+        with open("/raw_data/assistant_outputs/torben_example_response.txt", "r") as f:
             torben_out = f.read()
         self.conversation["Torben Response"] = torben_out
 
@@ -114,7 +114,7 @@ class CurationSwarm(PredictorTemplate):
             self.conversation["Veronika Response"] = ""
             self.export_convo()
             # veronika_out = self.run_assistant(self.assistant_veronika, veronika_prompt)
-            with open("/raw_data/example_outputs/veronika_example_response.txt", "r") as f:
+            with open("/raw_data/assistant_outputs/veronika_example_response.txt", "r") as f:
                 veronika_out = f.read()
             self.conversation["Veronika Response"] += veronika_out
 

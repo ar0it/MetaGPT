@@ -7,7 +7,7 @@ Main file for the MetaGPT project. This file will run the entire experiment.
 from src.main.predictors.predictor_curation_swarm import CurationSwarm
 from src.main.predictors.predictor_simple import SimplePredictor
 from src.main.assistants.assistant_MelancholicMarvin import MelancholicMarvin
-import OME_evaluator
+from OME_evaluator import OMEEvaluator
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Constants
@@ -29,13 +29,17 @@ with open(raw_meta_path, "r") as f:
 # ----------------------------------------------------------------------------------------------------------------------
 # Simple Predictor
 # ----------------------------------------------------------------------------------------------------------------------
-melancholic_marvin = MelancholicMarvin()
-out_marvin = melancholic_marvin.assistant.say(f"Here is the raw metadata {raw_meta} for you to curate.")
-
+#melancholic_marvin = MelancholicMarvin()
+#out_marvin = melancholic_marvin.assistant.say(f"Here is the raw metadata {raw_meta} for you to curate.")
+marvin_path = ""
+with open(marvin_path, "r") as f:
+    out_marvin = f.read()
 # ----------------------------------------------------------------------------------------------------------------------
 # Structured Agent Network
 # ----------------------------------------------------------------------------------------------------------------------
-out_network = None
+network_path = "/out/assistant_outputs/veronika_example_response.txt"
+with open(network_path, "r") as f:
+    out_network = f.read()
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Agent Swarm
@@ -45,12 +49,15 @@ out_swarm = None
 # ----------------------------------------------------------------------------------------------------------------------
 # Bioformats
 # ----------------------------------------------------------------------------------------------------------------------
-out_bioformats = None
+gt_path = "/home/aaron/DataspellProjects/MetaGPT/out/testetst_Image8_edited_.ome.xml"
+with open(gt_path, "r") as f:
+    out_bioformats = f.read()
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Evaluation Pipeline
 # ----------------------------------------------------------------------------------------------------------------------
-ome_eval = OME_evaluator(schema=ome_xsd,
+# TODO: make evaluator work with entire datasets?
+ome_eval = OMEEvaluator(schema=ome_xsd,
                          ground_truth=out_bioformats,
                          predicted=[out_marvin, out_network, out_swarm],
                          out_path=out)

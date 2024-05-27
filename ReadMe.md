@@ -1,5 +1,12 @@
 # Exploring AI for Metadata Curation
 
+## To Do
+- [x] Create a new branch for the project
+- [x] Finalize the agent swarm workflow, succh that it includes  TargetTorben and TrashTimothy.
+- [x] Finalize TargetTorben to include the Ontology mapping step
+- [x] Test on the dataset given by Luis
+- [x] Think about the evaluation steps
+- [x] 
 This GitHub repository contains the code and documentation for the project "Exploring AI for Metadata Curation".
 The goal is to design an AI system that can curate OME XML metadata for microscopy images from its raw metadata.
 
