@@ -48,7 +48,13 @@ In a nutshell the title for the thesis could be
 - [ ] Discuss the outline
 - [ ] How to approach the meeting with sven
 
-### Agenda for Meeting with Sven
+### Meeting with Sven
+
+- [ ] Make sure to incorporate the microscopy perspective as bioinformatics
+- [ ] use n >=3 for each datapoint to get an idea of the consistency of the model
+- [ ] Can I compare the performance against human curation?
+- [ ] Experiment aspect of the work super important
+- [ ] report how often the pipeline doesn't complete
 
 ## Initial Problem description
 
