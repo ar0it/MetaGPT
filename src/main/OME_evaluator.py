@@ -25,15 +25,18 @@ class OMEEvaluator:
         """
         :param path_to_raw_metadata: path to the raw metadata file
         """
-        self.prediction: list = predicted
-        self.ground_truth = ground_truth
+        self.gt_graph = None
+        self.predicted = [self.string_to_ome_xml(x) for x in predicted]
+        self.pred_graph = None
+        self.ground_truth = self.string_to_ome_xml(ground_truth)
         self.out_path: str = out_path
         self.edit_score = []
-        for p in self.prediction:
+        self.samples = {}
+        for p in self.predicted:
             self.edit_score.append(self.edit_distance(p, self.ground_truth))
         self.report()
 
-    def edit_distance(self, xml_a, xml_b):
+    def edit_distance(self, xml_a:ET.Element, xml_b:ET.Element):
         """
         Calculate the edit distance between two xml trees on word level.
         Here an outline of the algorithm:
@@ -43,8 +46,8 @@ class OMEEvaluator:
         """
         # get the paths of the xml trees
 
-        self.pred_graph = self.get_graph(self.prediction)
-        self.gt_graph = self.get_graph(self.ground_truth)
+        self.pred_graph = self.get_graph(xml_a)
+        self.gt_graph = self.get_graph(xml_b)
         return simple_distance(self.gt_graph, self.pred_graph)
 
     def align_paths(self, paths_a, paths_b):
@@ -152,7 +155,7 @@ class OMEEvaluator:
 
         return edit_distance
 
-    def get_paths(self, xml_root, path: str = '') -> set:
+    def get_paths(self, xml_root:ET.Element, path: str = '') -> set:
         """
         Helper function to get all paths in an XML tree.
         :return: set of paths
@@ -169,7 +172,7 @@ class OMEEvaluator:
                 paths.update(self.get_paths(child, new_path))
         return paths
 
-    def get_graph(self, xml_root, root=None):
+    def get_graph(self, xml_root:ET.Element, root=None):
         """
         Helper function to get the graph representation of an XML tree.
         """
@@ -206,6 +209,12 @@ class OMEEvaluator:
         print("root", tree)
         return root
 
+    def string_to_ome_xml(self, string):
+        """
+        This method reads the ome xml string and returns the root element.
+        """
+        root = ET.fromstring(string)
+        return root
     def read_ome_tiff(self, path):
         """
         This method reads the ome tiff file.
@@ -233,43 +242,15 @@ class OMEEvaluator:
         """
         Write evaluation report to file.
         """
-        with open(f"../../out/report_{self.gt_path.split('/')[-1]}.md", "w") as f:
+        with open(f"../../out/report_test.md", "w") as f:
             f.write("# Evaluation Report\n")
             f.write("## File content\n")
             f.write(f"### File Ground Truth: \n")
             paths_gt = self.get_paths(self.ground_truth)
-            f.write(f"Number of paths: {len(paths_gt)}\n")  # TODO: Somehow incorporate the ID
-            f.write(f"Number of paths in structured annotations:"
-                    f"{len([x for x in paths_gt if x.__contains__('StructuredAnnotations')])}\n")
-            paths_pred = []
-            for j, p in enumerate(self.prediction):
+            self.samples["GT"] = paths_gt
+            for j, p in enumerate(self.predicted):
                 f.write(f"### Prediction {j}\n")
-                paths_pred.append(self.get_paths(p))
-                f.write(f"Number of paths: {len(paths_pred[j])}\n")
-                f.write(f"Number of paths in structured annotations: "
-                        f"{len([x for x in paths_pred[j] if x.__contains__('StructuredAnnotations')])}\n")
-            f.write("## Edit Distance\n")
-            for j, p in enumerate(self.prediction):
-                f.write(f"Edit distance between gt and file {j}: {self.edit_score[j]}\n")
-            # create a pandas dataframe with all the paths and in which samples they occur
-            df_paths = pd.DataFrame(set(self.flatten(paths_pred + [paths_gt])))
-            df_paths["GT"] = [1 if x in paths_gt else 0 for x in df_paths[0]]
-            for j, p in enumerate(self.prediction):
-                df_paths[f"Pred{j}"] = [1 if x in paths_pred[j] else 0 for x in df_paths[0]]
-                df_paths[f"StructuredAnnotations{j}"] = [1 if x.__contains__("StructuredAnnotations") else 0 for x in
-                                                         df_paths[0]]
-
-            plt.bar([1, 2], [df_paths["GT"].sum(), df_paths["Pred"].sum()])
-            for j, p in enumerate(self.prediction):
-                plt.bar([1, 2], [df_paths["GT"]
-                                 [df_paths[f"StructuredAnnotations{j}"] == 1].sum(), df_paths[f"Pred{j}"]
-                                 [df_paths[f"StructuredAnnotations{j}"] == 1].sum()])
-
-            plt.title("Path Comparison")
-            plt.xticks(range(len(self.prediction) + 1), ["GT"] + [f"Pred{j}" for j in range(len(self.prediction))])
-            plt.legend(title="Annotation")
-
-            print(df_paths)
+                self.samples[f"Pred{j}"] = self.get_paths(p)
             plt.savefig(f"{self.out_path}.png")
             # add the plot to the report
             f.write("## Path Comparison\n")
@@ -325,4 +306,5 @@ class OMEEvaluator:
 # javabridge.kill_vm()
 
 if __name__ == "__main__":
-    evaluator = OMEEvaluator()
+
+    evaluator = OMEEvaluator(predicted=["<OME></OME>"], ground_truth="<OME></OME>", out_path="./out")

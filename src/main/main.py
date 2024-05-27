@@ -22,34 +22,34 @@ out = "/home/aaron/PycharmProjects/MetaGPT/out/"
 # ----------------------------------------------------------------------------------------------------------------------
 with open(ome_schema_path, "r") as f:
     ome_xsd = f.read()
-
-with open(raw_meta_path, "r") as f:
-    raw_meta = f.read()
+#
+# with open(raw_meta_path, "r") as f:
+#     raw_meta = f.read()
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Simple Predictor
 # ----------------------------------------------------------------------------------------------------------------------
 #melancholic_marvin = MelancholicMarvin()
 #out_marvin = melancholic_marvin.assistant.say(f"Here is the raw metadata {raw_meta} for you to curate.")
-marvin_path = ""
-with open(marvin_path, "r") as f:
-    out_marvin = f.read()
+# marvin_path = ""
+# with open(marvin_path, "r") as f:
+#     out_marvin = f.read()
 # ----------------------------------------------------------------------------------------------------------------------
 # Structured Agent Network
 # ----------------------------------------------------------------------------------------------------------------------
-network_path = "/out/assistant_outputs/veronika_example_response.txt"
+network_path = "/home/aaron/PycharmProjects/MetaGPT/out/assistant_outputs/veronika_example_response.txt"
 with open(network_path, "r") as f:
     out_network = f.read()
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Agent Swarm
 # ----------------------------------------------------------------------------------------------------------------------
-out_swarm = None
+#out_swarm = None
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Bioformats
 # ----------------------------------------------------------------------------------------------------------------------
-gt_path = "/home/aaron/DataspellProjects/MetaGPT/out/testetst_Image8_edited_.ome.xml"
+gt_path = "/home/aaron/PycharmProjects/MetaGPT/out/testetst_Image8_edited_.ome.xml"
 with open(gt_path, "r") as f:
     out_bioformats = f.read()
 
@@ -58,6 +58,6 @@ with open(gt_path, "r") as f:
 # ----------------------------------------------------------------------------------------------------------------------
 # TODO: make evaluator work with entire datasets?
 ome_eval = OMEEvaluator(schema=ome_xsd,
-                         ground_truth=out_bioformats,
-                         predicted=[out_marvin, out_network, out_swarm],
-                         out_path=out)
+                        ground_truth=out_bioformats,
+                        predicted=[out_network],
+                        out_path=out)
