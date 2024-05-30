@@ -8,7 +8,8 @@ from src.main.predictors.predictor_curation_swarm import CurationSwarm
 from src.main.predictors.predictor_simple import SimplePredictor
 from src.main.assistants.assistant_MelancholicMarvin import MelancholicMarvin
 from OME_evaluator import OMEEvaluator
-
+from src.main.DataClasses import Sample
+from src.main.DataClasses import Experiment
 # ----------------------------------------------------------------------------------------------------------------------
 # Constants
 # ----------------------------------------------------------------------------------------------------------------------
@@ -26,6 +27,7 @@ with open(ome_schema_path, "r") as f:
 # with open(raw_meta_path, "r") as f:
 #     raw_meta = f.read()
 
+experiment = Experiment(name="Experiment1", samples={})
 # ----------------------------------------------------------------------------------------------------------------------
 # Simple Predictor
 # ----------------------------------------------------------------------------------------------------------------------
@@ -41,6 +43,8 @@ network_path = "/home/aaron/PycharmProjects/MetaGPT/out/assistant_outputs/veroni
 with open(network_path, "r") as f:
     out_network = f.read()
 
+network_sample = Sample(name="Image8", metadata_str=out_network, method="Network")
+experiment.add_sample(network_sample)
 # ----------------------------------------------------------------------------------------------------------------------
 # Agent Swarm
 # ----------------------------------------------------------------------------------------------------------------------
@@ -53,11 +57,16 @@ gt_path = "/home/aaron/PycharmProjects/MetaGPT/out/testetst_Image8_edited_.ome.x
 with open(gt_path, "r") as f:
     out_bioformats = f.read()
 
+bio_sample = Sample(name="Image8", metadata_str=out_bioformats, method="Bioformats")
+experiment.add_sample(bio_sample)
 # ----------------------------------------------------------------------------------------------------------------------
 # Evaluation Pipeline
 # ----------------------------------------------------------------------------------------------------------------------
 # TODO: make evaluator work with entire datasets?
 ome_eval = OMEEvaluator(schema=ome_xsd,
-                        ground_truth=out_bioformats,
-                        predicted=[out_network],
+                        experiment=experiment,
                         out_path=out)
+
+
+
+
