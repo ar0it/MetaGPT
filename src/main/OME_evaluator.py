@@ -33,6 +33,7 @@ class OMEEvaluator:
         self.out_path: str = out_path
         self.edit_score = []
         self.experiment = experiment
+        self.plot_dict = {}
         for s in self.experiment.samples.values():
             s.metadata_xml = self.string_to_ome_xml(s.metadata_str)
             s.paths = self.get_paths(s.metadata_xml)
@@ -230,7 +231,7 @@ class OMEEvaluator:
         """
         Write evaluation report to file.
         """
-        with open(f"../../out/reports/report_test.md", "w") as f:
+        with open(f"{self.out_path}/reports/report_test.md", "w") as f:
             f.write("# Evaluation Report\n")
             f.write("## File content\n")
             f.write(f"### File Ground Truth: \n")
@@ -242,9 +243,11 @@ class OMEEvaluator:
             df_sample = self.sample_df(df_paths)
             self.method_edit_distance_plt(df_sample)
             self.n_paths_method_plt(df_sample)
+            self.format_method_plot(df_sample)
             # add the plot to the report
             f.write("## Path Comparison\n")
-            f.write(f"![barplot comparing the xml files]({self.out_path}/plots/method_edit_distance_plt.png)\n")
+            for k, v in self.plot_dict.items():
+                f.write(f"![{k}]({v})\n")
 
     def sample_df(
             self,
@@ -256,17 +259,17 @@ class OMEEvaluator:
         properties = ["Method", "n_paths", "n_annotations", "Edit_distance"]
         df = pd.DataFrame(index=df_paths.columns, columns=properties)
         print(df)
-        df["Method"] = [s.method for s in self.experiment.samples.values()]
-        df["Name"] = [s.name for s in self.experiment.samples.values()]
+        df["Method"] = [s.method if s.method else None for s in self.experiment.samples.values()]
+        df["Name"] = [s.name if s.name else None for s in self.experiment.samples.values()]
         df["n_paths"] = df_paths.sum()
         df["n_annotations"] = {k: df_paths[k][df_paths.index.str.contains("StructuredAnnotations")].sum() for k in
                                df_paths.columns}
-
+        df["og_image_format"] = [s.format if s.format else None for s in self.experiment.samples.values()]
         edit_distances = []
         for n in df["Name"].unique():
             methods = list(df["Method"].unique())
             for m in methods:
-                edit_distances.append(self.edit_distance(self.experiment.samples[f"{n}_{m}"].metadata_xml, self.experiment.samples[f"{n}_{"Bioformats"}"].metadata_xml))
+                edit_distances.append(self.edit_distance(self.experiment.samples[f"{n}_{m}"].metadata_xml, self.experiment.samples[f"{n}_Bioformats"].metadata_xml))
         df["Edit_distance"] = edit_distances
         print(df)
         return df
@@ -293,7 +296,8 @@ class OMEEvaluator:
         """
         fig, ax = plt.subplots()
         sns.barplot(x="Method", y="Edit_distance", data=df_sample, ax=ax)
-        plt.savefig(f"{self.out_path}/plots/method_edit_distance_plt.png")
+        plt.savefig(f"{self.out_path}/plots/method_edit_distance_plt.svg")
+        self.plot_dict["method_edit_distance_plt"] = f"../plots/method_edit_distance_plt.svg"
         return fig, ax
 
     def n_paths_method_plt(
@@ -302,9 +306,23 @@ class OMEEvaluator:
     ):
         fig, ax = plt.subplots()
         sns.barplot(x="Method", y="n_paths", data=df_sample, ax=ax)
-        plt.savefig(f"{self.out_path}/plots/n_paths_method_plt.png")
+        plt.savefig(f"{self.out_path}/plots/n_paths_method_plt.svg")
+        self.plot_dict["n_paths_method_plt"] = f"../plots/n_paths_method_plt.svg"
         return fig, ax
 
+    def format_method_plot(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        """
+        This plot compares the performance of the different methods based on the original image format.
+        For each method several bars are plotted, one for each image format.
+        """
+        fig, ax = plt.subplots()
+        sns.barplot(x="Method", y="Edit_distance", hue="og_image_format", data=df_sample, ax=ax)
+        plt.savefig(f"{self.out_path}/plots/format_method_plot.svg")
+        self.plot_dict["format_method_plot"] = f"../plots/format_method_plot.svg"
+        return fig, ax
 
 # Which plots do I want to return?
 # plot which shows deviation between runs of same sample
@@ -312,5 +330,3 @@ class OMEEvaluator:
 # plot which shows the method dependent performance
 # plot which shows the cost to run the tool
 # maybe show the average per sample std instead of the std of the entire dataset
-
-

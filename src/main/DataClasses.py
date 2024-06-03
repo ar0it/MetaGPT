@@ -12,6 +12,7 @@ class Sample:
     cost: Optional[float] = None
     paths: Optional[list[str]] = None
     time: Optional[float] = None
+    format: Optional[str] = None
 
 
 @dataclass

@@ -19,10 +19,10 @@ class XMLPredictor:
     """
 
     def __init__(self,
-                 path_to_raw_metadata="/home/aaron/PycharmProjects/MetaGPT/raw_data/raw_Metadata_Image8.txt",
+                 path_to_raw_metadata="/home/aaron/PycharmProjects/MetaGPT/in/raw_Metadata_Image8.txt",
                  out_path="/home/aaron/PycharmProjects/MetaGPT/out/ome_xml.ome.xml",
-                 path_to_ome_starting_point="/home/aaron/PycharmProjects/MetaGPT/raw_data/image8_start_point.ome.xml",
-                 ome_xsd_path="/home/aaron/PycharmProjects/MetaGPT/raw_data/ome_xsd.txt"):
+                 path_to_ome_starting_point="/home/aaron/PycharmProjects/MetaGPT/in/image8_start_point.ome.xml",
+                 ome_xsd_path="/home/aaron/PycharmProjects/MetaGPT/in/ome_xsd.txt"):
         """
         :param path_to_raw_metadata: path to the raw metadata file
         """

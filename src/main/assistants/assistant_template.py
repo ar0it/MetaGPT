@@ -65,7 +65,7 @@ class AssistantTemplate:
             self.vector_store_id = vector_store.id
 
             # Ready the files for upload to OpenAI
-            file_paths = ["/home/aaron/PycharmProjects/MetaGPT/raw_data/ome_xsd.txt"]
+            file_paths = ["/home/aaron/PycharmProjects/MetaGPT/in/ome_xsd.txt"]
             file_streams = [open(path, "rb") for path in file_paths]
 
             # Use the upload and poll SDK helper to upload the files, add them to the vector store,
