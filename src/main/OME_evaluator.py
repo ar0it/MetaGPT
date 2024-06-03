@@ -230,7 +230,7 @@ class OMEEvaluator:
         """
         Write evaluation report to file.
         """
-        with open(f"../../out/report_test.md", "w") as f:
+        with open(f"../../out/reports/report_test.md", "w") as f:
             f.write("# Evaluation Report\n")
             f.write("## File content\n")
             f.write(f"### File Ground Truth: \n")
@@ -240,10 +240,11 @@ class OMEEvaluator:
             print(df_paths)
             # create a dataframe with the samples properties
             df_sample = self.sample_df(df_paths)
-            plt.savefig(f"{self.out_path}.png")
+            self.method_edit_distance_plt(df_sample)
+            self.n_paths_method_plt(df_sample)
             # add the plot to the report
             f.write("## Path Comparison\n")
-            f.write(f"![barplot comparing the xml files]({self.out_path}.png)\n")
+            f.write(f"![barplot comparing the xml files]({self.out_path}/plots/method_edit_distance_plt.png)\n")
 
     def sample_df(
             self,
@@ -282,7 +283,7 @@ class OMEEvaluator:
             df[f"{name}_{method}"] = df.index.isin(path)
         return df
 
-    def sample_std_plot(
+    def method_edit_distance_plt(
             self,
             df_sample: pd.DataFrame = None,
     ):
@@ -290,8 +291,19 @@ class OMEEvaluator:
         This function creates a plot which compares the inter sample standard deviation.
         The X-axis will be the used method, whereas the Y-axis will be the standard deviation.
         """
-        df_sample["Sample_std"] = df_sample.groupby(['Method', 'Name'])['n_paths'].std().reset_index()
-        plt.bar(df_sample["Method"], df_sample["Sample_std"])
+        fig, ax = plt.subplots()
+        sns.barplot(x="Method", y="Edit_distance", data=df_sample, ax=ax)
+        plt.savefig(f"{self.out_path}/plots/method_edit_distance_plt.png")
+        return fig, ax
+
+    def n_paths_method_plt(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        fig, ax = plt.subplots()
+        sns.barplot(x="Method", y="n_paths", data=df_sample, ax=ax)
+        plt.savefig(f"{self.out_path}/plots/n_paths_method_plt.png")
+        return fig, ax
 
 
 # Which plots do I want to return?
