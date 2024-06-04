@@ -2,7 +2,7 @@
 Main file for the MetaGPT project. This file will run the entire experiment.
 """
 import os
-
+import bioformats
 import javabridge
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -23,7 +23,10 @@ wd = os.getcwd() + "/../.."
 ome_schema_path = f'{wd}/in/schema/ome_xsd.txt'
 raw_meta_path = f"{wd}/in/metadata/raw_Metadata_Image8.txt"
 network_paths = [f"{wd}/out/assistant_outputs/veronika_example_response.txt"]
-gt_paths = [f"{wd}/in/images/Image_8.czi"]
+gt_paths = [f"{wd}/in/images/Image_12.czi",
+            f"{wd}/in/images/Image_8.czi",
+            f"{wd}/in/images/testetst_Image8_edited_.ome.tif"
+            ]
 out = f"{wd}/out/"
 print(out)
 
@@ -40,12 +43,11 @@ experiment = Experiment(name="Experiment1", samples={})
 # ----------------------------------------------------------------------------------------------------------------------
 # Bioformats
 # ----------------------------------------------------------------------------------------------------------------------
+javabridge.start_vm(class_path=bioformats.JARS)
 for path in gt_paths:
     out_bioformats = get_omexml_metadata(path=path)
-    print(type(out_bioformats))
     raw_meta = get_raw_metadata(path=path)
     name = path.split("/")[-1].split(".")[0]
-    print(name)
     format = path.split("/")[-1].split(".")[1]
     bio_sample = Sample(name=name,
                         metadata_str=out_bioformats,
@@ -63,14 +65,10 @@ for path in gt_paths:
 # ----------------------------------------------------------------------------------------------------------------------
 # Structured Agent Network
 # ----------------------------------------------------------------------------------------------------------------------
-for path in network_paths:
-    with open(path, "r") as f:
-        out_network = f.read()
-    #name = path.split("/")[-1].split(".")[0]
-    name = "testetst_Image8_edited_"
-    format = path.split("/")[-1].split(".")[1]
+    #with open(path, "r") as f:
+    #    out_network = f.read()
     network_sample = Sample(name=name,
-                            metadata_str=out_network,
+                            metadata_str=out_bioformats,
                             method="Network",
                             format=format)
     experiment.add_sample(network_sample)
@@ -87,6 +85,6 @@ for path in network_paths:
 ome_eval = OMEEvaluator(schema=ome_xsd,
                         experiment=experiment,
                         out_path=out)
-
+javabridge.kill_vm()
 
 

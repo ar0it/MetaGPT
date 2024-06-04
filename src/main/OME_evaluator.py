@@ -1,6 +1,10 @@
+import time
 import xml.etree.ElementTree as ET
-#import javabridge
-#import bioformats
+from typing import Union, Any
+from xml.etree.ElementTree import Element, ElementTree
+
+import javabridge
+import bioformats
 import numpy as np
 from zss import simple_distance, Node
 import seaborn as sns
@@ -8,6 +12,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from src.main.DataClasses import Sample
 from src.main.DataClasses import Experiment
+from src.PyGram.src.PyGram import Profile
+from src.PyGram.src import tree
+from deprecated import deprecated
 
 
 # javabridge.start_vm(class_path=bioformats.JARS)
@@ -39,8 +46,18 @@ class OMEEvaluator:
             s.paths = self.get_paths(s.metadata_xml)
 
         self.report()
+        print("test")
 
-    def edit_distance(self, xml_a: ET.Element, xml_b: ET.Element):
+    def element_to_pygram(self, element: ET.Element):
+        """
+        Convert an xml element to a pygram tree.
+        """
+        node = tree.Node(element.tag)
+        for child in element:
+            node.addkid(self.element_to_pygram(child))
+        return node
+
+    def zss_edit_distance(self, xml_a: ET.Element, xml_b: ET.Element):
         """
         Calculate the edit distance between two xml trees on word level.
         Here an outline of the algorithm:
@@ -48,12 +65,40 @@ class OMEEvaluator:
         2. Align the paths such that the distance between the paths is minimized.
         3. Calculate the word level edit distance between the paths.
         """
-        # get the paths of the xml trees
 
         self.pred_graph = self.get_graph(xml_a)
         self.gt_graph = self.get_graph(xml_b)
         return simple_distance(self.gt_graph, self.pred_graph)
 
+    def pygram_edit_distance(self, xml_a: ET.Element, xml_b: ET.Element):
+        """
+        Calculate the edit distance between two xml trees on word level.
+        Here an outline of the algorithm:
+        """
+        profile1 = Profile(self.element_to_pygram(xml_a), 2, 3)
+        profile2 = Profile(self.element_to_pygram(xml_b), 2, 3)
+        return profile1.edit_distance(profile2)
+
+    @deprecated()
+    def word_edit_distance(self, aligned_paths) -> int:
+        """
+        Calculate the word level edit distance between two sets of paths.
+        aligned_paths: list of tuples of aligned paths
+        """
+        edit_distance = 0
+        for path_a, path_b in aligned_paths:
+            # set the number of iterations to the length of the longest path
+            iterations = len(path_a) if len(path_a) > len(path_b) else len(path_b)
+            distance = 0
+            for i in range(iterations):
+                node_b = path_b[i] if len(path_b) > i else None
+                node_a = path_a[i] if len(path_a) > i else None
+                if node_a != node_b:
+                    distance += 1
+            edit_distance += distance
+        return edit_distance
+
+    @deprecated()
     def align_paths(self, paths_a, paths_b):
         """
         Align the paths such that the sum of distances between the paths is minimized.
@@ -71,6 +116,7 @@ class OMEEvaluator:
         # score, alignment_a, alignment_b = self.align_sequences(paths_a, paths_b, cost=self.align_sequences_score)
         return 1, 1, 1
 
+    @deprecated()
     def align_sequences_score(self, s1, s2, cost=lambda a, b: a != b):
         """
         returns only the score for the alignment
@@ -82,6 +128,7 @@ class OMEEvaluator:
         score, alignment_a, alignment_b = self.align_sequences(s1, s2, cost=lambda a, b: a != b)
         return score
 
+    @deprecated()
     def align_sequences(self, s1, s2, cost=lambda a, b: a != b):
         print("- - - Aligning sequences - - -")
         m, n = len(s1), len(s2)
@@ -140,25 +187,6 @@ class OMEEvaluator:
         print(dp)
         return dp[-1][-1], alignment_a, alignment_b
 
-    def word_edit_distance(self, aligned_paths) -> int:
-        """
-        Calculate the word level edit distance between two sets of paths.
-        aligned_paths: list of tuples of aligned paths
-        """
-        edit_distance = 0
-        for path_a, path_b in aligned_paths:
-            # set the number of iterations to the length of the longest path
-            iterations = len(path_a) if len(path_a) > len(path_b) else len(path_b)
-            distance = 0
-            for i in range(iterations):
-                node_b = path_b[i] if len(path_b) > i else None
-                node_a = path_a[i] if len(path_a) > i else None
-                if node_a != node_b:
-                    distance += 1
-            edit_distance += distance
-
-        return edit_distance
-
     def get_paths(self, xml_root: ET.Element, path: str = '') -> set:
         """
         Helper function to get all paths in an XML tree.
@@ -195,7 +223,7 @@ class OMEEvaluator:
             self.get_graph(child, new_node)
         return root
 
-    def path_difference(self, xml_a, xml_b):
+    def path_difference(self, xml_a: ET.Element, xml_b: ET.Element):
         """
         Calculates the length of the difference between the path sets in two xml trees.
         """
@@ -204,7 +232,7 @@ class OMEEvaluator:
         print("path difference: ", paths_a)
         return len(paths_a.symmetric_difference(paths_b))
 
-    def read_ome_xml(self, path):
+    def read_ome_xml(self, path: str):
         """
         This method reads the ome xml file and returns the root element.
         """
@@ -235,16 +263,17 @@ class OMEEvaluator:
             f.write("# Evaluation Report\n")
             f.write("## File content\n")
             f.write(f"### File Ground Truth: \n")
-
             # create a dataframe with the paths
             df_paths = self.path_df()
             print(df_paths)
             # create a dataframe with the samples properties
             df_sample = self.sample_df(df_paths)
+            print(df_sample)
+            # create the plots
             self.method_edit_distance_plt(df_sample)
             self.n_paths_method_plt(df_sample)
             self.format_method_plot(df_sample)
-            # add the plot to the report
+            # add the plots to the report
             f.write("## Path Comparison\n")
             for k, v in self.plot_dict.items():
                 f.write(f"![{k}]({v})\n")
@@ -258,7 +287,6 @@ class OMEEvaluator:
         """
         properties = ["Method", "n_paths", "n_annotations", "Edit_distance"]
         df = pd.DataFrame(index=df_paths.columns, columns=properties)
-        print(df)
         df["Method"] = [s.method if s.method else None for s in self.experiment.samples.values()]
         df["Name"] = [s.name if s.name else None for s in self.experiment.samples.values()]
         df["n_paths"] = df_paths.sum()
@@ -269,17 +297,21 @@ class OMEEvaluator:
         for n in df["Name"].unique():
             methods = list(df["Method"].unique())
             for m in methods:
-                edit_distances.append(self.edit_distance(self.experiment.samples[f"{n}_{m}"].metadata_xml, self.experiment.samples[f"{n}_Bioformats"].metadata_xml))
+                gt = self.experiment.samples[f"{n}_Bioformats"].metadata_xml
+                test = self.experiment.samples[f"{n}_{m}"].metadata_xml
+                t0 = time.time()
+                #edit_distances.append(self.zss_edit_distance(test, gt))
+                edit_distances.append(self.pygram_edit_distance(test, gt))
+                t1 = time.time()
         df["Edit_distance"] = edit_distances
-        print(df)
         return df
 
     def path_df(
             self,
     ):
         self.all_paths = pd.Series(list(set(self.flatten([s.paths for s in self.experiment.samples.values()]))))
-        df = pd.DataFrame(columns=[f"{s.name}_{s.method}" for s in self.experiment.samples.values()], index=self.all_paths)
-        print(df)
+        df = pd.DataFrame(columns=[f"{s.name}_{s.method}" for s in self.experiment.samples.values()],
+                          index=self.all_paths)
         for name, method, path in zip([s.name for s in self.experiment.samples.values()],
                                       [s.method for s in self.experiment.samples.values()],
                                       [s.paths for s in self.experiment.samples.values()]):
@@ -322,6 +354,7 @@ class OMEEvaluator:
         sns.barplot(x="Method", y="Edit_distance", hue="og_image_format", data=df_sample, ax=ax)
         plt.savefig(f"{self.out_path}/plots/format_method_plot.svg")
         self.plot_dict["format_method_plot"] = f"../plots/format_method_plot.svg"
+        plt.show()
         return fig, ax
 
 # Which plots do I want to return?

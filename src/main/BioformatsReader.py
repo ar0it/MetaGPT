@@ -11,8 +11,6 @@ import numpy as np
 from deprecated import deprecated
 
 
-
-
 def get_omexml_metadata(path=None, url=None):
     '''Read the OME metadata from a file using Bio-formats
 
@@ -24,7 +22,6 @@ def get_omexml_metadata(path=None, url=None):
     :returns: the metdata as XML.
 
     '''
-    javabridge.start_vm(class_path=bioformats.JARS)
     with ImageReader(path=path, url=url, perform_init=False) as rdr:
         #
         # Below, "in" is a keyword and Rhino's parser is just a little wonky I fear.
@@ -60,7 +57,6 @@ def get_raw_metadata2(path=None, url=None):
         # It is critical that setGroupFiles be set to false, goodness knows
         # why, but if you don't the series count is wrong for flex files.
         #
-        javabridge.start_vm(class_path=bioformats.JARS)
         script = """
             importClass(Packages.loci.common.services.ServiceFactory,
                         Packages.loci.formats.services.OMEXMLService,
@@ -101,12 +97,8 @@ def get_raw_metadata(path: str = None):
     """
     Read the raw metadata from a file using Bio-formats
     """
-    javabridge.start_vm(class_path=bioformats.JARS)
     with ImageReader(path=path, url=None, perform_init=False) as rdr:
         rdr.rdr.setId(path)
         series_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getSeriesMetadata(path))
         global_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getGlobalMetadata(path))
         return global_md
-
-
-javabridge.kill_vm()
