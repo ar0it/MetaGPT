@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 import time
 
 
-class XMLValidator:
+class OME_Validator:
     """
     Class to validate the OME XML prediction.
     """

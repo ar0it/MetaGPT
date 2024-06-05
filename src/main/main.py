@@ -15,6 +15,7 @@ from src.main.BioformatsReader import get_raw_metadata
 import os
 import bioformats
 import javabridge
+
 # ----------------------------------------------------------------------------------------------------------------------
 # Constants
 # ----------------------------------------------------------------------------------------------------------------------
@@ -57,24 +58,27 @@ for path in gt_paths:
                         method="Bioformats",
                         format=format)
     experiment.add_sample(bio_sample)
+
     # ------------------------------------------------------------------------------------------------------------------
-    # Simple Predictor
+    # Marvin
     # ------------------------------------------------------------------------------------------------------------------
-    #melancholic_marvin = MelancholicMarvin()
-    #out_marvin = melancholic_marvin.assistant.say(f"Here is the raw metadata {raw_meta} for you to curate.")
-    # marvin_path = ""
-    # with open(marvin_path, "r") as f:
-    #     out_marvin = f.read()
+    melancholic_marvin = MelancholicMarvin()
+    out_marvin = melancholic_marvin.assistant.say(f"Here is the raw metadata {raw_meta} for you to curate.")
+    marvin_sample = Sample(name=name,
+                           metadata_str=out_marvin,
+                           method="Marvin",
+                           format=format)
+    experiment.add_sample(marvin_sample)
+
     # ------------------------------------------------------------------------------------------------------------------
     # Structured Agent Network
     # ------------------------------------------------------------------------------------------------------------------
-    #with open(path, "r") as f:
-    #    out_network = f.read()
     network_sample = Sample(name=name,
                             metadata_str=out_bioformats,
                             method="Network",
                             format=format)
     experiment.add_sample(network_sample)
+
     # ------------------------------------------------------------------------------------------------------------------
     # Agent Swarm
     # ------------------------------------------------------------------------------------------------------------------
@@ -87,5 +91,3 @@ ome_eval = OMEEvaluator(schema=ome_xsd,
                         experiment=experiment,
                         out_path=out)
 javabridge.kill_vm()
-
-
