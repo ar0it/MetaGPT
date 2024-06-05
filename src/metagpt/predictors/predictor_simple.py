@@ -1,5 +1,5 @@
-from src.main.predictors.predictor_template import PredictorTemplate
-from src.main.assistants.assistant_AllAloneAugust import AllAloneAugust
+from src.metagpt.predictors.predictor_template import PredictorTemplate
+from src.metagpt.assistants.assistant_AllAloneAugust import AllAloneAugust
 
 
 class SimplePredictor(PredictorTemplate):

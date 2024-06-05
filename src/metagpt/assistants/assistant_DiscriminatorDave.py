@@ -1,4 +1,4 @@
-from src.main.assistants.assistant_template import AssistantTemplate
+from src.metagpt.assistants.assistant_template import AssistantTemplate
 
 
 class DiscriminatorDave(AssistantTemplate):

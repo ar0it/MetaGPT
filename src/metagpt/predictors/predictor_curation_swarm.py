@@ -1,11 +1,11 @@
 import time
-from src.main.assistants.assistant_MissingMyrte import MissingMyrte
-from src.main.assistants.assistant_MappingMargarete import MappingMargarete
-from src.main.assistants.assistant_DiscriminatorDave import DiscriminatorDave
-from src.main.assistants.assistant_TrashTimothy import TrashTimothy
-from src.main.assistants.assistant_TargetTorben import TargetTorben
-from src.main.assistants.assistant_ValidationVeronika import ValidationVeronika
-from src.main.predictors.predictor_template import PredictorTemplate
+from src.metagpt.assistants.assistant_MissingMyrte import MissingMyrte
+from src.metagpt.assistants.assistant_MappingMargarete import MappingMargarete
+from src.metagpt.assistants.assistant_DiscriminatorDave import DiscriminatorDave
+from src.metagpt.assistants.assistant_TrashTimothy import TrashTimothy
+from src.metagpt.assistants.assistant_TargetTorben import TargetTorben
+from src.metagpt.assistants.assistant_ValidationVeronika import ValidationVeronika
+from src.metagpt.predictors.predictor_template import PredictorTemplate
 
 
 class CurationSwarm(PredictorTemplate):

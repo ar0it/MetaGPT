@@ -1,21 +1,20 @@
 import time
 import xml.etree.ElementTree as ET
 from typing import Union, Any
-from xml.etree.ElementTree import Element, ElementTree
+#from xml.etree.ElementTree import Element, ElementTree
 
-import javabridge
-import bioformats
+#import javabridge
+#import bioformats
 import numpy as np
 from zss import simple_distance, Node
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
-from src.main.DataClasses import Sample
-from src.main.DataClasses import Experiment
-from src.PyGram.src.PyGram import Profile
-from src.PyGram.src import tree
+from DataClasses import Sample
+from DataClasses import Experiment
+import tree
+from PyGram import Profile
 from deprecated import deprecated
-
 
 # javabridge.start_vm(class_path=bioformats.JARS)
 

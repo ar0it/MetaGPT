@@ -4,14 +4,14 @@ Main file for the MetaGPT project. This file runs the entire experiment.
 # ----------------------------------------------------------------------------------------------------------------------
 # Libraries
 # ----------------------------------------------------------------------------------------------------------------------
-from src.main.predictors.predictor_curation_swarm import CurationSwarm
-from src.main.predictors.predictor_simple import SimplePredictor
-from src.main.assistants.assistant_MelancholicMarvin import MelancholicMarvin
+#from predictors.predictor_curation_swarm import CurationSwarm
+#from predictors.predictor_simple import SimplePredictor
+#from assistants.assistant_MelancholicMarvin import MelancholicMarvin
 from OME_evaluator import OMEEvaluator
-from src.main.DataClasses import Sample
-from src.main.DataClasses import Experiment
-from src.main.BioformatsReader import get_omexml_metadata
-from src.main.BioformatsReader import get_raw_metadata
+from DataClasses import Sample
+from DataClasses import Experiment
+from BioformatsReader import get_omexml_metadata
+from BioformatsReader import get_raw_metadata
 import os
 import bioformats
 import javabridge
@@ -19,14 +19,19 @@ import javabridge
 # ----------------------------------------------------------------------------------------------------------------------
 # Constants
 # ----------------------------------------------------------------------------------------------------------------------
-wd = os.getcwd() + "/../.."
+wd = os.getcwd()
 ome_schema_path = f'{wd}/in/schema/ome_xsd.txt'
 raw_meta_path = f"{wd}/in/metadata/raw_Metadata_Image8.txt"
-network_paths = [f"{wd}/out/assistant_outputs/veronika_example_response.txt"]
-gt_paths = [f"{wd}/in/images/Image_12.czi",
-            f"{wd}/in/images/Image_8.czi",
-            f"{wd}/in/images/testetst_Image8_edited_.ome.tif"
-            ]
+network_paths = [
+    f"{wd}/out/assistant_outputs/veronika_example_response.txt"
+    ]
+
+gt_paths = [
+    f"{wd}/in/images/Image_12.czi",
+    f"{wd}/in/images/Image_8.czi",
+    f"{wd}/in/images/testetst_Image8_edited_.ome.tif"
+    ]
+
 out = f"{wd}/out/"
 print(out)
 
@@ -62,14 +67,13 @@ for path in gt_paths:
     # ------------------------------------------------------------------------------------------------------------------
     # Marvin
     # ------------------------------------------------------------------------------------------------------------------
-    melancholic_marvin = MelancholicMarvin()
-    out_marvin = melancholic_marvin.assistant.say(f"Here is the raw metadata {raw_meta} for you to curate.")
-    marvin_sample = Sample(name=name,
-                           metadata_str=out_marvin,
-                           method="Marvin",
-                           format=format)
-    experiment.add_sample(marvin_sample)
-
+    #melancholic_marvin = MelancholicMarvin()
+    #out_marvin = melancholic_marvin.assistant.say(f"Here is the raw metadata {raw_meta} for you to curate.")
+    #marvin_sample = Sample(name=name,
+    #                       metadata_str=out_marvin,
+    #                       method="Marvin",
+    #                       format=format)
+    #experiment.add_sample(marvin_sample)
     # ------------------------------------------------------------------------------------------------------------------
     # Structured Agent Network
     # ------------------------------------------------------------------------------------------------------------------

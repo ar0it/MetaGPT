@@ -1,11 +1,11 @@
-from src.main.assistants.assistant_template import AssistantTemplate
+from src.metagpt.assistants.assistant_template import AssistantTemplate
 from pydantic import BaseModel, Field
 import time
 from marvin.beta import Application
 from marvin.beta.assistants import EndRun
 import marvin
 import ome_types
-from src.main.OME_validator import OME_Validator
+from src.metagpt.OME_validator import OME_Validator
 
 
 class MelancholicMarvin:

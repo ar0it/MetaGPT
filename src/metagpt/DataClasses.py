@@ -1,3 +1,6 @@
+"""
+Data classes for the metagpt package.
+"""
 from dataclasses import dataclass
 from xml.etree import ElementTree as ET
 from typing import Optional
