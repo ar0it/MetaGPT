@@ -6,9 +6,12 @@
 - [x] Finalize TargetTorben to include the Ontology mapping step
 - [x] Test on the dataset given by Luis
 - [x] Think about the evaluation steps
-- [x] 
+- [ ] OME schema in ome_types weird? Check how to get from ome_types to  valid ome xml
+- [ ] input raw data seems to miss some key information?
+- [ ] build in some fail safe to not spend to much money per image
 This GitHub repository contains the code and documentation for the project "Exploring AI for Metadata Curation".
 The goal is to design an AI system that can curate OME XML metadata for microscopy images from its raw metadata.
+- [ ] Figure out why the app.state.model_dump() shows only 2 hierachy levels.
 
 ## ToDo
 
@@ -20,12 +23,12 @@ The goal is to design an AI system that can curate OME XML metadata for microsco
 - [x] Use AICI https://github.com/microsoft/aici to guarantee output formatting
   - Doesnt Work because I dont run the LLM locally
 - [ ] Think about using Autogen to have more control over agent communication
-- [ ] Register master thesis
+- [x] Register master thesis
 - [x] Use structured prompting to get more control over the output
   - pydantic_test as playground
 - [x] Define realistic goals that I still want to implement
   - see [Final Thesis Project](#outline-of-the-final-thesis-project)
-- [ ] Prepare for the meeting with Sven
+- [x] Prepare for the meeting with Sven
 
 ## Outline of the final Thesis-Project
 Due to the problems outlined in [current Standing](#current-standing), I will refocus the project to the following:

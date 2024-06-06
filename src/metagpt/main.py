@@ -69,11 +69,14 @@ for path in gt_paths:
     # ------------------------------------------------------------------------------------------------------------------
     #melancholic_marvin = MelancholicMarvin()
     #out_marvin = melancholic_marvin.assistant.say(f"Here is the raw metadata {raw_meta} for you to curate.")
-    #marvin_sample = Sample(name=name,
-    #                       metadata_str=out_marvin,
-    #                       method="Marvin",
-    #                       format=format)
-    #experiment.add_sample(marvin_sample)
+    # save the output to file
+    #with open(f"{out}/assistant_outputs/{name}_marvin.txt", "w") as f:
+    #    f.write(out_marvin)
+    marvin_sample = Sample(name=name,
+                           metadata_str=out_bioformats,
+                           method="Marvin",
+                           format=format)
+    experiment.add_sample(marvin_sample)
     # ------------------------------------------------------------------------------------------------------------------
     # Structured Agent Network
     # ------------------------------------------------------------------------------------------------------------------
