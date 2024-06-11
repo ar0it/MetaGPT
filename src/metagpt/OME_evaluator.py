@@ -18,7 +18,7 @@ class OMEEvaluator:
     This class evaluates the performance of a OME XML generation model by calculating the edit distance between the
     ground truth and the prediction. https://github.com/timtadh/zhang-shasha
     """
-    
+
     def __init__(self,
                  schema: str = None,
                  experiment: Experiment = None,
@@ -60,7 +60,6 @@ class OMEEvaluator:
         2. Align the paths such that the distance between the paths is minimized.
         3. Calculate the word level edit distance between the paths.
         """
-
         self.pred_graph = self.get_graph(xml_a)
         self.gt_graph = self.get_graph(xml_b)
         return simple_distance(self.gt_graph, self.pred_graph)
