@@ -1,10 +1,6 @@
 import time
 import xml.etree.ElementTree as ET
 from typing import Union, Any
-#from xml.etree.ElementTree import Element, ElementTree
-
-#import javabridge
-#import bioformats
 import numpy as np
 from zss import simple_distance, Node
 import seaborn as sns
@@ -16,15 +12,13 @@ import tree
 from PyGram import Profile
 from deprecated import deprecated
 
-# javabridge.start_vm(class_path=bioformats.JARS)
-
 
 class OMEEvaluator:
     """
     This class evaluates the performance of a OME XML generation model by calculating the edit distance between the
     ground truth and the prediction. https://github.com/timtadh/zhang-shasha
     """
-
+    
     def __init__(self,
                  schema: str = None,
                  experiment: Experiment = None,
@@ -47,6 +41,7 @@ class OMEEvaluator:
         self.report()
         print("test")
 
+    ####################################################################################################################
     def element_to_pygram(self, element: ET.Element):
         """
         Convert an xml element to a pygram tree.
@@ -55,7 +50,8 @@ class OMEEvaluator:
         for child in element:
             node.addkid(self.element_to_pygram(child))
         return node
-
+    
+    ####################################################################################################################
     def zss_edit_distance(self, xml_a: ET.Element, xml_b: ET.Element):
         """
         Calculate the edit distance between two xml trees on word level.
@@ -68,7 +64,8 @@ class OMEEvaluator:
         self.pred_graph = self.get_graph(xml_a)
         self.gt_graph = self.get_graph(xml_b)
         return simple_distance(self.gt_graph, self.pred_graph)
-
+    
+    ####################################################################################################################
     def pygram_edit_distance(self, xml_a: ET.Element, xml_b: ET.Element):
         """
         Calculate the edit distance between two xml trees on word level.
@@ -77,7 +74,8 @@ class OMEEvaluator:
         profile1 = Profile(self.element_to_pygram(xml_a), 2, 3)
         profile2 = Profile(self.element_to_pygram(xml_b), 2, 3)
         return profile1.edit_distance(profile2)
-
+    
+    ####################################################################################################################
     @deprecated()
     def word_edit_distance(self, aligned_paths) -> int:
         """
@@ -96,7 +94,8 @@ class OMEEvaluator:
                     distance += 1
             edit_distance += distance
         return edit_distance
-
+    
+    ####################################################################################################################
     @deprecated()
     def align_paths(self, paths_a, paths_b):
         """
@@ -114,7 +113,8 @@ class OMEEvaluator:
 
         # score, alignment_a, alignment_b = self.align_sequences(paths_a, paths_b, cost=self.align_sequences_score)
         return 1, 1, 1
-
+    
+    ####################################################################################################################
     @deprecated()
     def align_sequences_score(self, s1, s2, cost=lambda a, b: a != b):
         """
@@ -126,7 +126,8 @@ class OMEEvaluator:
         """
         score, alignment_a, alignment_b = self.align_sequences(s1, s2, cost=lambda a, b: a != b)
         return score
-
+    
+    ####################################################################################################################
     @deprecated()
     def align_sequences(self, s1, s2, cost=lambda a, b: a != b):
         print("- - - Aligning sequences - - -")
@@ -185,7 +186,8 @@ class OMEEvaluator:
             j -= 1
         print(dp)
         return dp[-1][-1], alignment_a, alignment_b
-
+    
+    ####################################################################################################################
     def get_paths(self, xml_root: ET.Element, path: str = '') -> set:
         """
         Helper function to get all paths in an XML tree.
@@ -202,7 +204,8 @@ class OMEEvaluator:
                 paths.add(new_path)
                 paths.update(self.get_paths(child, new_path))
         return paths
-
+    
+    ####################################################################################################################
     def get_graph(self, xml_root: ET.Element, root=None):
         """
         Helper function to get the graph representation of an XML tree.
@@ -221,7 +224,8 @@ class OMEEvaluator:
                     new_node.addkid(Node(key + '=' + child.attrib[key]))
             self.get_graph(child, new_node)
         return root
-
+    
+    ####################################################################################################################
     def path_difference(self, xml_a: ET.Element, xml_b: ET.Element):
         """
         Calculates the length of the difference between the path sets in two xml trees.
@@ -230,7 +234,8 @@ class OMEEvaluator:
         paths_b = self.get_paths(xml_b)
         print("path difference: ", paths_a)
         return len(paths_a.symmetric_difference(paths_b))
-
+    
+    #################################################################################################################### 
     def read_ome_xml(self, path: str):
         """
         This method reads the ome xml file and returns the root element.
@@ -253,7 +258,8 @@ class OMEEvaluator:
                 yield from self.flatten(i)
             else:
                 yield i
-
+    
+    ####################################################################################################################
     def report(self):
         """
         Write evaluation report to file.
@@ -277,12 +283,14 @@ class OMEEvaluator:
             for k, v in self.plot_dict.items():
                 f.write(f"![{k}]({v})\n")
 
+    ####################################################################################################################
     def sample_df(
             self,
             df_paths: pd.DataFrame = None,
     ):
         """
-        This function creates a df with samples as Index and properties as Columns
+        This function creates a df with samples as Index and properties as Columns.
+        TODO: Add docstring
         """
         properties = ["Method", "n_paths", "n_annotations", "Edit_distance"]
         df = pd.DataFrame(index=df_paths.columns, columns=properties)
@@ -293,6 +301,7 @@ class OMEEvaluator:
                                df_paths.columns}
         df["og_image_format"] = [s.format if s.format else None for s in self.experiment.samples.values()]
         edit_distances = []
+
         for n in df["Name"].unique():
             methods = list(df["Method"].unique())
             for m in methods:
@@ -305,9 +314,13 @@ class OMEEvaluator:
         df["Edit_distance"] = edit_distances
         return df
 
+    ####################################################################################################################
     def path_df(
             self,
     ):
+        """
+        TODO: Add docstring
+        """
         self.all_paths = pd.Series(list(set(self.flatten([s.paths for s in self.experiment.samples.values()]))))
         df = pd.DataFrame(columns=[f"{s.name}_{s.method}" for s in self.experiment.samples.values()],
                           index=self.all_paths)
@@ -317,6 +330,7 @@ class OMEEvaluator:
             df[f"{name}_{method}"] = df.index.isin(path)
         return df
 
+    ####################################################################################################################
     def method_edit_distance_plt(
             self,
             df_sample: pd.DataFrame = None,
@@ -331,16 +345,21 @@ class OMEEvaluator:
         self.plot_dict["method_edit_distance_plt"] = f"../plots/method_edit_distance_plt.svg"
         return fig, ax
 
+    ####################################################################################################################
     def n_paths_method_plt(
             self,
             df_sample: pd.DataFrame = None,
     ):
+        """
+        TODO: Add docstring
+        """
         fig, ax = plt.subplots()
         sns.barplot(x="Method", y="n_paths", data=df_sample, ax=ax)
         plt.savefig(f"{self.out_path}/plots/n_paths_method_plt.svg")
         self.plot_dict["n_paths_method_plt"] = f"../plots/n_paths_method_plt.svg"
         return fig, ax
 
+    ####################################################################################################################
     def format_method_plot(
             self,
             df_sample: pd.DataFrame = None,
@@ -360,5 +379,5 @@ class OMEEvaluator:
 # plot which shows deviation between runs of same sample
 # plot which shows the datatype dependent performance
 # plot which shows the method dependent performance
-# plot which shows the cost to run the tool
+# plot which shows the cost to run the tool 
 # maybe show the average per sample std instead of the std of the entire dataset

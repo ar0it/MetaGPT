@@ -77,9 +77,15 @@ for path in gt_paths:
                            method="Marvin",
                            format=format)
     experiment.add_sample(marvin_sample)
+    
     # ------------------------------------------------------------------------------------------------------------------
     # Structured Agent Network
     # ------------------------------------------------------------------------------------------------------------------
+    # curation_network = CurationNetwork()
+    # out_network = curation_network.predict(raw_meta)
+    # save the output to file
+    # with open(f"{out}/assistant_outputs/{name}_network.txt", "w") as f:
+    #     f.write(out_network)
     network_sample = Sample(name=name,
                             metadata_str=out_bioformats,
                             method="Network",
@@ -89,7 +95,16 @@ for path in gt_paths:
     # ------------------------------------------------------------------------------------------------------------------
     # Agent Swarm
     # ------------------------------------------------------------------------------------------------------------------
-    #out_swarm = None
+    #curation_swarm = CurationSwarm()
+    #out_swarm = curation_swarm.predict(raw_meta)
+    # save the output to file
+    #with open(f"{out}/assistant_outputs/{name}_swarm.txt", "w") as f:
+    #    f.write(out_swarm)
+    swarm_sample = Sample(name=name,
+                          metadata_str=out_bioformats,
+                          method="Swarm",
+                          format=format)
+    experiment.add_sample(swarm_sample)
 
 # ----------------------------------------------------------------------------------------------------------------------
 # Evaluation Pipeline

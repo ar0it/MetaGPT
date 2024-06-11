@@ -12,7 +12,9 @@
 This GitHub repository contains the code and documentation for the project "Exploring AI for Metadata Curation".
 The goal is to design an AI system that can curate OME XML metadata for microscopy images from its raw metadata.
 - [x] Figure out why the app.state.model_dump() shows only 2 hierachy levels. - It doesnt
-- [ ] Function for ome_types which translates from json to OME obj
+- [x] Function for ome_types which translates from json to OME obj
+  - Write some tests for the function
+  - Think about pull request to ome_types
 
 
 ## ToDo
