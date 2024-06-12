@@ -56,6 +56,7 @@ for path in gt_paths:
     # ------------------------------------------------------------------------------------------------------------------
     out_bioformats = get_omexml_metadata(path=path)
     raw_meta = get_raw_metadata(path=path)
+    print(raw_meta)
     name = path.split("/")[-1].split(".")[0]
     format = path.split("/")[-1].split(".")[1]
     bio_sample = Sample(name=name,

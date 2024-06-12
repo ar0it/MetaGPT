@@ -345,18 +345,45 @@ class OMEEvaluator:
         return fig, ax
 
     ####################################################################################################################
-    def n_paths_method_plt(
-            self,
-            df_sample: pd.DataFrame = None,
-    ):
+    import matplotlib.pyplot as plt
+
+    def n_paths_method_plt(self, df_sample: pd.DataFrame = None):
         """
-        TODO: Add docstring
+        Plots the number of paths per method as a bar plot.
+        
+        Parameters:
+        - df_sample: pd.DataFrame, a DataFrame containing the data to plot.
+        
+        Returns:
+        - fig: The figure object.
+        - ax: The axes object.
         """
-        fig, ax = plt.subplots()
-        sns.barplot(x="Method", y="n_paths", data=df_sample, ax=ax)
+        # Create the figure and axis objects
+        fig, ax = plt.subplots(figsize=(10, 6))
+
+        # Create the bar plot
+        ax.bar(df_sample["Method"], df_sample["n_paths"], color="skyblue", edgecolor='black')
+
+        # Add labels and title
+        ax.set_xlabel("Method", fontsize=14)
+        ax.set_ylabel("Number of Paths", fontsize=14)
+        ax.set_title("Number of Paths per Method", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        # Customize the appearance
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        # Save the plot
+        plt.tight_layout()
         plt.savefig(f"{self.out_path}/plots/n_paths_method_plt.svg")
+
+        # Update the plot dictionary
         self.plot_dict["n_paths_method_plt"] = f"../plots/n_paths_method_plt.svg"
+
         return fig, ax
+
 
     ####################################################################################################################
     def format_method_plot(

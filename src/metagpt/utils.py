@@ -1,7 +1,9 @@
 from ome_types import OME
 
 def from_dict(ome_dict):
-    """Convert a dictionary to an OME object."""
+    """
+    Convert a dictionary to an OME object.
+    """
     def set_attributes(obj, data):
         for key, value in data.items():
             if isinstance(value, dict):

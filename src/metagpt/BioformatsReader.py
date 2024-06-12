@@ -3,7 +3,6 @@ This file implements functions to read the proprietary images and returns their 
 raw metadata key-value pairs.
 """
 import javabridge
-import imagej
 from bioformats import ImageReader
 import javabridge as jutil
 import numpy as np
@@ -105,38 +104,7 @@ def get_raw_metadata(path: str = None):
     """
     with ImageReader(path=path, url=None, perform_init=False) as rdr:
         rdr.rdr.setId(path)
+        metadata  = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getMetadata())
         series_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getSeriesMetadata(path))
         global_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getGlobalMetadata(path))
-        return global_md
-
-
-import imagej
-import os
-import pandas as pd
-
-def get_raw_metadata(image_path):
-    # Initialize ImageJ
-    ij = imagej.init('sc.fiji:fiji')
-
-    # Construct the Bio-Formats Importer command
-    bio_formats_command = f"open={image_path} autoscale color_mode=Default display_metadata rois_import=[ROI manager] view=[Metadata only] stack_order=Default"
-    
-    # Run the Bio-Formats Importer
-    ij.py.run_macro(f"IJ.run('Bio-Formats Importer', '{bio_formats_command}');")
-
-    # Get the metadata
-    metadata = ij.WindowManager.getCurrentImage().getStringProperty('Info')
-
-    # Split metadata into lines and then key-value pairs
-    metadata_lines = metadata.split('\n')
-    metadata_dict = {}
-    for line in metadata_lines:
-        if ": " in line:
-            key, value = line.split(": ", 1)
-            metadata_dict[key] = value
-
-    print("Metadata:", metadata_dict)
-
-# Example usage
-image_path = '/home/aaron/Documents/Projects/MetaGPT/in/images/Image_8.czi'
-get_raw_metadata(image_path)
+        return metadata
