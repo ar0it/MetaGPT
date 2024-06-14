@@ -9,9 +9,9 @@ from typing import Optional
 @dataclass
 class Sample:
     name: str
-    metadata_str: str
+    metadata_str: str  # the metadata as xml string
     method: str
-    metadata_xml: Optional[ET.Element] = None
+    metadata_xml: Optional[ET.Element] = None  # the metadata as xml object
     cost: Optional[float] = None
     paths: Optional[list[str]] = None
     time: Optional[float] = None
