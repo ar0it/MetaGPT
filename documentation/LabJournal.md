@@ -1,3 +1,6 @@
+# 16.06.24
+- Limit the tokens used for a request. (I want control over the cost)
+- Implement code asynch?
 
 # 14.06.24
 

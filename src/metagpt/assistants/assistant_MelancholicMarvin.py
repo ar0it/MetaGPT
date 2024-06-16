@@ -1,46 +1,33 @@
-from src.metagpt.assistants.assistant_template import AssistantTemplate
 from pydantic import BaseModel, Field
-import time
 from marvin.beta import Application
 from marvin.beta.assistants import EndRun
-import marvin
-import ome_types
-from src.metagpt.OME_validator import OME_Validator
-
+from ome_types import OME
 
 class MelancholicMarvin:
 
-    def __init__(self, schema: str = None):
-        self.name = "OME_Predictor"
+    def __init__(self):
+        self.name = "OME-GPT"
         self.prompt = (f"You are {self.name}, an AI-Assistant specialized in curating and predicting metadata for "
-                       f"images. Your"
-                       f"task is"
-                       "to transform raw, unstructured metadata into well-formed XML, adhering to the OME XML"
-                       "standard. You have access to the OME XSD. Your responses"
-                       "should be exclusively in OME-XML format, aligning closely with the standard. Strive for"
-                       "completeness and validity. Rely on structured annotations only when necessary. DO NOT RESPONDE AT ALL"
-                       "ONLY UPDATE THE STATE. You might get a response from the system with potential valdiation errors."
-                       "If you do, please correct them and try again. If you are unable to correct the errors, please ask for help.")
-        self.state = self.ResponseModel()
-        self.xsd_schema = schema
+                   f"images. Your task is to take raw, unstructured metadata as input and store it in your given "
+                   f"state which is structured by the OME XSD schema. Strive for completeness and validity. Rely on "
+                   f"structured annotations only when necessary. DO NOT RESPOND AT ALL. ONLY UPDATE THE STATE. "
+                   f"You might get a response from the system with potential validation errors. If you do, please "
+                   f"correct them and try again. If you are unable to correct the errors, please ask for help. "
+                   f"Do not get stuck in a recursive loop!")
+        
+        self.state = OME()
         self.assistant = Application(
             name=self.name,
             instruction=self.prompt,
             state=self.state,
         )
 
-    def run_assistant(self, msg, thread=None):
-        not_valid = True
-        while not_valid:
-            self.assistant.say(msg)
-            response = self.assistant.state
-            print(response.ome_xml)
-            validation_error = self.validate(response.ome_xml)
-            if validation_error is None:
-                not_valid = False
-            else:
-                msg = f"Validation error: {validation_error}. Please correct the error and try again."
-        return self.assistant.state
+    def say(self, msg):
+        """
+        Say something to the assistant.
+        :return:
+        """
+        self.assistant.say(message=msg, max_completion_tokens=100000)
 
     def validate(self, ome_xml) -> Exception:
         """
