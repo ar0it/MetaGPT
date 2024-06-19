@@ -1,7 +1,7 @@
 from ome_types import OME
 from typing import List, Dict, Set, Type
 from pydantic import BaseModel
-
+from deprecated import deprecated
 
 def from_dict(ome_dict):
     """
@@ -59,7 +59,7 @@ def _init_logger():
             "(Lch/qos/logback/classic/Level;)V",
             logLevel)
     
-
+@deprecated()
 # Function to identify dependencies and collect all models
 def collect_dependencies(model: Type[BaseModel], known_models: Dict[str, Type[BaseModel]], collected: Dict[str, Type[BaseModel]]):
     if model.__name__ in collected:
@@ -74,6 +74,7 @@ def collect_dependencies(model: Type[BaseModel], known_models: Dict[str, Type[Ba
             if hasattr(item_type, '__fields__'):
                 collect_dependencies(item_type, known_models, collected)
 
+@deprecated()
 # Function to identify dependencies for sorting
 def get_dependencies(model: Type[BaseModel], known_models: Dict[str, Type[BaseModel]]) -> Set[str]:
     dependencies = set()
@@ -89,6 +90,7 @@ def get_dependencies(model: Type[BaseModel], known_models: Dict[str, Type[BaseMo
                 dependencies.update(get_dependencies(item_type, known_models))
     return dependencies
 
+@deprecated()
 # Function to sort models by dependencies
 def sort_models_by_dependencies(root_model: Type[BaseModel]) -> List[Type[BaseModel]]:
     known_models = {model.__name__: model for model in globals().values() if isinstance(model, type) and issubclass(model, BaseModel)}

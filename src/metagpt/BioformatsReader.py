@@ -43,7 +43,7 @@ def get_omexml_metadata(path=None, url=None):
         xml;
         """
         xml = jutil.run_script(script, dict(path=rdr.path, reader=rdr.rdr))
-        print(type(xml))
+        #print(type(xml))
         return str(xml)
 
 
@@ -59,7 +59,7 @@ def get_raw_metadata(path: str = None) -> dict[str, str]:
         rdr.rdr.setId(path)
         metadata  = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getMetadata())
         series_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getSeriesMetadata(path))
-        print(series_md)
+        #print(series_md)
         global_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getGlobalMetadata(path))
         #print(global_md)
         meta_all = metadata | series_md | global_md # merges the metadata overwrite potentially conflicting entries
@@ -81,5 +81,5 @@ def raw_to_tree(raw_metadata: dict[str, str]):
 
     # pretty print dictionary
     import json
-    print(json.dumps(metadata, indent=4))
+    #print(json.dumps(metadata, indent=4))
     return metadata

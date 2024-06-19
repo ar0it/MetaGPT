@@ -1,3 +1,8 @@
+# 19.06.24
+- what to do about nodes that can occur multiple times (in the tree model)
+- Remove metadata already implemented from raw_meta ?
+- unrecognized fields
+
 # 16.06.24
 - Limit the tokens used for a request. (I want control over the cost)
 - Implement code async?

@@ -173,5 +173,4 @@ class PredictorTemplate:
         self.client.beta.assistants.delete(assistant_id=self.assistant.id)
         self.client.beta.threads.delete(thread_id=self.thread.id)
 
-#%%
 
