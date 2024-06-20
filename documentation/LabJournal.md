@@ -1,3 +1,9 @@
+# 20.06.24
+- the state incorporate the lower lvvl states which have alrdy been predicted, but the llm doesnt know that and tries to predict those again maybe fixed by deleting added raw_meta, also need to restructure prompt probably
+- use the same assistant/ thread for all predictions?
+- MaybeModels create problems since the subnodes are not added currently
+- Model requiring another object for instantiation might be only relevant for image/pixels 
+
 # 19.06.24
 - what to do about nodes that can occur multiple times (in the tree model)
 - Remove metadata already implemented from raw_meta ?

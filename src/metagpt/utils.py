@@ -2,6 +2,80 @@ from ome_types import OME
 from typing import List, Dict, Set, Type
 from pydantic import BaseModel
 from deprecated import deprecated
+from contextlib import contextmanager
+import json
+from datetime import datetime
+import sys
+from io import StringIO
+
+def render_cell_output(output_path):
+    """
+    Load the captured output from a file and render it.
+
+    Parameters:
+    output_path (str): Path to the output file where the cell output is saved.
+    """
+    try:
+        # Read the output file
+        with open(output_path, 'r', encoding='utf-8') as f:
+            output_data = json.load(f)
+        
+        # Print the captured stdout and stderr
+        if 'stdout' in output_data:
+            print(output_data['stdout'], end='')
+        if 'stderr' in output_data:
+            print(output_data['stderr'], end='', file=sys.stderr)
+        
+        print(f"\nCell output loaded from {output_path}")
+    
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+class Tee:
+    def __init__(self, *streams):
+        self.streams = streams
+    
+    def write(self, data):
+        for stream in self.streams:
+            stream.write(data)
+    
+    def flush(self):
+        for stream in self.streams:
+            stream.flush()
+
+@contextmanager
+def save_and_stream_output(output_path=f"out/jupyter_cell_outputs/cell_output_{datetime.now().isoformat()}_.json"):
+    """
+    Context manager to capture the output of a code block, save it to a file,
+    and print it to the console in real-time.
+
+    Parameters:
+    output_path (str): Path to the output file where the cell output will be saved.
+    """
+    original_stdout = sys.stdout
+    original_stderr = sys.stderr
+    stdout_buffer = StringIO()
+    stderr_buffer = StringIO()
+
+    sys.stdout = Tee(sys.stdout, stdout_buffer)
+    sys.stderr = Tee(sys.stderr, stderr_buffer)
+    
+    try:
+        yield
+    finally:
+        sys.stdout = original_stdout
+        sys.stderr = original_stderr
+        
+        output_data = {
+            'stdout': stdout_buffer.getvalue(),
+            'stderr': stderr_buffer.getvalue()
+        }
+
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(output_data, f, indent=4)
+        
+        print(f"\nCell output saved to {output_path}")
+
 
 def from_dict(ome_dict):
     """

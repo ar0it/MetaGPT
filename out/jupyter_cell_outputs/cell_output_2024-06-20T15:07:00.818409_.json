@@ -1,0 +1,4 @@
+{
+    "stdout": "####################################################################################\nPredicting metadata for OME\nChildren: <class 'list'>\ntetset\nPredicting metadata for Project\nTreeNode(model=Project, children=[TreeNode(model=DatasetRef, children=[]), TreeNode(model=AnnotationRef, children=[])])\n####################################################################################\nPredicting metadata for Project\nChildren: <class 'list'>\ntetset\nPredicting metadata for DatasetRef\nTreeNode(model=DatasetRef, children=[])\n####################################################################################\nPredicting metadata for DatasetRef\nChildren: <class 'list'>\nid='Dataset:0'\n",
+    "stderr": ""
+}

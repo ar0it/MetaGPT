@@ -1,0 +1,4 @@
+{
+    "stdout": "####################################################################################\nPredicting metadata for OME\nPredicting metadata for Project\nTreeNode(model=Project, children=[TreeNode(model=DatasetRef, children=[]), TreeNode(model=AnnotationRef, children=[])])\n####################################################################################\nPredicting metadata for Project\nPredicting metadata for DatasetRef\nTreeNode(model=DatasetRef, children=[])\n####################################################################################\nPredicting metadata for DatasetRef\n",
+    "stderr": ""
+}
