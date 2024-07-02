@@ -27,7 +27,7 @@ class PredictorTemplate:
         self.xsd_schema = xmlschema.XMLSchema(self.ome_xsd_path)
         self.ome_starting_point = self.read_ome_as_string(path_to_ome_starting_point)
         self.raw_metadata = self.read_raw_metadata()
-        self.client = instructor.patch(OpenAI(api_key=os.getenv("OPENAI_API_KEY")))
+        self.client = OpenAI() #instructor.patch(OpenAI(api_key=os.getenv("OPENAI_API_KEY")))
         self.run = None
         self.pre_prompt = None
         self.response = None
@@ -107,13 +107,15 @@ class PredictorTemplate:
         """
         Generate the prompt from the raw metadata
         """
-        self.message = self.client.beta.threads.messages.create(
+        message = self.client.beta.threads.messages.create(
             thread_id=self.thread.id,
             role="user",
             content=msg
         )
+        self.messages.append(message)
+        return message
 
-    def run_message(self):  # TODO: Change name
+    def get_response(self):  # TODO: Change name
         """
         Predict the OME XML from the raw metadata
         """

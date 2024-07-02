@@ -104,7 +104,7 @@ class MelancholicMarvin:
         Say something to the assistant.
         :return:
         """
-        self.assistant.say(message=msg, max_completion_tokens=100000)
+        self.assistant.say(message=msg)
 
     def validate(self, ome_xml) -> Exception:
         """

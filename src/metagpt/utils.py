@@ -1,5 +1,5 @@
 from ome_types import OME
-from typing import List, Dict, Set, Type
+from typing import List, Dict, Set, Type, Any
 from pydantic import BaseModel
 from deprecated import deprecated
 from contextlib import contextmanager
@@ -7,6 +7,7 @@ import json
 from datetime import datetime
 import sys
 from io import StringIO
+from docstring_parser import parse
 
 def render_cell_output(output_path):
     """
@@ -188,3 +189,96 @@ def sort_models_by_dependencies(root_model: Type[BaseModel]) -> List[Type[BaseMo
             dependency_graph.pop(model_name)
     
     return sorted_models
+
+
+import re
+from docstring_parser import parse
+from typing import Any, Dict, Union
+
+def openai_schema(cls) -> Dict[str, Any]:
+    """
+    Return the schema in the format of OpenAI's schema as jsonschema
+
+    Note:
+        It's important to add a docstring to describe how to best use this class, it will be included in the description attribute and be part of the prompt.
+
+    Returns:
+        dict: A dictionary in the format of OpenAI's schema as jsonschema
+    """
+    schema = cls.model_json_schema()
+    docstring = parse(cls.__doc__ or "")
+    
+    def clean_description(desc: Union[str, Any]) -> str:
+        if not isinstance(desc, str):
+            return str(desc)
+        cleaned = re.sub(r'\s+', ' ', desc)
+        return cleaned.strip()
+
+    def resolve_ref(ref: str, definitions: Dict[str, Any]) -> Dict[str, Any]:
+        if not ref.startswith('#/$defs/'):
+            return {'type': 'object', 'description': f'Unresolved reference: {ref}'}
+        def_name = ref.split('/')[-1]
+        return definitions.get(def_name, {'type': 'object', 'description': f'Missing definition: {def_name}'})
+
+    def flatten_schema(prop: Any, definitions: Dict[str, Any]) -> Any:
+        if not isinstance(prop, dict):
+            return prop
+
+        flattened = {}
+        unnecessary_keys = ['title', 'name', 'namespace', "type"]  # Add any other keys you want to exclude
+        for key, value in prop.items():
+            if key not in unnecessary_keys:
+                if key == '$ref':
+                    flattened.update(flatten_schema(resolve_ref(value, definitions), definitions))
+                elif key == "required" and (value == True or value == False):
+                    continue
+                elif key == 'description' and type(value) == str:
+                    flattened[key] = clean_description(value)
+                elif isinstance(value, dict):
+                    flattened[key] = flatten_schema(value, definitions)
+                elif isinstance(value, list):
+                    flattened[key] = [flatten_schema(item, definitions) for item in value]
+                else:
+                    flattened[key] = value
+
+        return flattened
+
+    # Extract $defs if present
+    definitions = schema.pop('$defs', {})
+
+    # Flatten the main schema
+    flattened_schema = flatten_schema(schema, definitions)
+
+    # Add flattened definitions to properties
+    if 'properties' not in flattened_schema:
+        flattened_schema['properties'] = {}
+    flattened_schema['properties']['definitions'] = {
+        'type': 'object',
+        'properties': {k: flatten_schema(v, definitions) for k, v in definitions.items()}
+    }
+
+    # Add descriptions from docstring
+    for param in docstring.params:
+        if param.arg_name in flattened_schema.get('properties', {}) and param.description:
+            flattened_schema['properties'][param.arg_name]['description'] = clean_description(param.description)
+
+    # Combine short_description and long_description for a more complete description
+    full_description = docstring.short_description or ""
+    if docstring.long_description:
+        full_description += " " + docstring.long_description if full_description else docstring.long_description
+    
+    description = clean_description(full_description) if full_description else f"Correctly extracted `{cls.__name__}` with all the required parameters with correct types"
+
+    return {
+        "type": "function",
+        "function":{
+               "name": schema.get('title', cls.__name__),
+               "description": description,
+               "parameters": {
+                   "type": "object",
+                   "required": [],
+                   "properties": flattened_schema["properties"]
+                }
+            }
+    }
+    
