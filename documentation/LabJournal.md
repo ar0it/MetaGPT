@@ -1,3 +1,9 @@
+# 03.07.24
+- build the analysis pipeline for the struc annotation track and run it 
+- the raw data which is read by bioformats still seam to not be the correct one
+- network of for struc annotations
+- tree swarm for struc annotations
+
 # 02.07.4
 - Structured Annotations track:
     - try to improve the one shot results via prompt enigneering.
