@@ -14,28 +14,17 @@ class PredictorTemplate:
     A template for creating a new predictor. A predictor utilizes one or several assistants to predict the OME XML from
     the raw metadata.
     """
-    def __init__(self,
-                 path_to_raw_metadata=None,
-                 path_to_ome_starting_point=None,
-                 ome_xsd_path=None,
-                 out_path=None):
-
-        self.path_to_raw_metadata = path_to_raw_metadata
-        self.path_to_ome_xml = None
-        self.ome_xsd_path = ome_xsd_path
-
-        self.xsd_schema = xmlschema.XMLSchema(self.ome_xsd_path)
-        self.ome_starting_point = self.read_ome_as_string(path_to_ome_starting_point)
-        self.raw_metadata = self.read_raw_metadata()
+    def __init__(self):
         self.client = OpenAI() #instructor.patch(OpenAI(api_key=os.getenv("OPENAI_API_KEY")))
         self.run = None
         self.pre_prompt = None
         self.response = None
         self.messages = []
-        self.assistant = None
-        self.thread = None
+        self.assistants = []
+        self.threads = []
+        self.vector_stores = []
         self.message = None
-        self.out_path = out_path
+        self.out_path = None
 
     def predict(self):
         """
@@ -172,7 +161,13 @@ class PredictorTemplate:
         """
         Clean up the assistants
         """
-        self.client.beta.assistants.delete(assistant_id=self.assistant.id)
-        self.client.beta.threads.delete(thread_id=self.thread.id)
+        for a in self.assistants:
+            self.client.beta.assistants.delete(assistant_id=a.id)
+
+        for t in self.threads:
+            self.client.beta.threads.delete(thread_id=t.id)
+
+        for v in self.vector_stores:
+            self.client.beta.vector_stores.delete(vector_store_id=v.id)
 
 

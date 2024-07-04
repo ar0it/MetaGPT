@@ -286,7 +286,7 @@ def openai_schema(cls: BaseModel) -> Dict[str, Any]:
         }
     }
     
-
+@deprecated()
 def dict_to_xml_annotation(value:dict) -> XMLAnnotation:
     """
     Convert a dictionary to an XMLAnnotation object.
@@ -297,8 +297,48 @@ def dict_to_xml_annotation(value:dict) -> XMLAnnotation:
                         'children': [{'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}Key',
                                       'text': k}, {'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}Value',
                                                    'text': v}]}
-    if value["xml_annotations"] is list:
-        value["xml_annotations"] = value["xml_annotations"][0]
+    if value["annotations"] is list:
+        value["annotations"] = value["annotations"][0]
         
-    test_value = {"any_elements": [fun(k, v) for k, v in value["xml_annotations"].items()]}
+    test_value = {"any_elements": [fun(k, v) for k, v in value["annotations"].items()]}
+    return XMLAnnotation(value=test_value)
+
+
+def dict_to_xml_annotation(value: dict) -> XMLAnnotation:
+    """
+    Convert a dictionary to an XMLAnnotation object, handling nested dictionaries.
+    
+    value: dict - The dictionary to be converted to an XMLAnnotation object. 
+    It requires the key 'annotations' which is a dictionary of key-value pairs.
+    """
+    def create_element(key, value):
+        if isinstance(value, dict):
+            return {
+                'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata',
+                'text': '',
+                'children': [
+                    {'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}Key', 'text': key},
+                    {'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}Value', 'text': ''},
+                    {'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata',
+                     'text': '',
+                     'children': [create_element(k, v) for k, v in value.items()]}
+                ]
+            }
+        else:
+            return {
+                'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata',
+                'text': '',
+                'children': [
+                    {'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}Key', 'text': key},
+                    {'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}Value', 'text': str(value)}
+                ]
+            }
+
+    if isinstance(value.get("annotations"), list):
+        value["annotations"] = value["annotations"][0]
+    
+    if not isinstance(value.get("annotations"), dict):
+        raise ValueError("The 'annotations' key must be a dictionary")
+
+    test_value = {"any_elements": [create_element(k, v) for k, v in value["annotations"].items()]}
     return XMLAnnotation(value=test_value)

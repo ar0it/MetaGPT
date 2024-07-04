@@ -57,11 +57,14 @@ def get_raw_metadata(path: str = None) -> dict[str, str]:
     """
     with ImageReader(path=path, url=None, perform_init=False) as rdr:
         rdr.rdr.setId(path)
-        metadata  = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getMetadata())
+        metadata  = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getMetadata(path))
+        print(metadata)
         series_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getSeriesMetadata(path))
-        #print(series_md)
+        print(series_md)
         global_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getGlobalMetadata(path))
-        #print(global_md)
+        print(global_md)
+        print(rdr.rdr.)
+
         meta_all = metadata | series_md | global_md # merges the metadata overwrite potentially conflicting entries
         return meta_all
 
