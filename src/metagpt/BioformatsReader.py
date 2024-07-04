@@ -55,17 +55,53 @@ def get_raw_metadata(path: str = None) -> dict[str, str]:
     :param path: path to the file
     :return: the metadata as a dictionary
     """
+    def get_core_metadata(rdr) -> dict[str, str]:
+        """
+        Extract core metadata directly from the rdr object
+        """
+        core_md = {}
+        
+        # List of core metadata methods to call
+        core_methods = [
+            'getSizeX', 'getSizeY', 'getSizeZ', 'getSizeC', 'getSizeT',
+            'getPixelType', 'getBitsPerPixel', 'getImageCount',
+            'getDimensionOrder', 'isRGB', 'isInterleaved',
+            'isLittleEndian', 'isOrderCertain', 'isThumbnailSeries',
+            'isIndexed', 'isFalseColor', 'getModuloZ', 'getModuloC', 'getModuloT',
+            'getThumbSizeX', 'getThumbSizeY', 'getSeriesCount',
+        ]
+        
+        # Call each method and store the result
+        for method in core_methods:
+            try:
+                value = getattr(rdr, method)()
+                core_md[method] = str(value)
+            except Exception as e:
+                print(f"Error getting {method}: {str(e)}")
+        """
+        # Get metadata for each series
+        series_count = rdr.getSeriesCount()
+        for series in range(series_count):
+            rdr.setSeries(series)
+            for method in core_methods:
+                try:
+                    value = getattr(rdr, method)()
+                    core_md[f"Series_{series}_{method}"] = str(value)
+                except Exception as e:
+                    print(f"Error getting {method} for series {series}: {str(e)}")
+        """
+        
+        return core_md
+    
     with ImageReader(path=path, url=None, perform_init=False) as rdr:
+        rdr.rdr.get
         rdr.rdr.setId(path)
         metadata  = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getMetadata(path))
-        print(metadata)
         series_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getSeriesMetadata(path))
-        print(series_md)
         global_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getGlobalMetadata(path))
-        print(global_md)
-        print(rdr.rdr.)
+        core_md = get_core_metadata(rdr.rdr)
 
-        meta_all = metadata | series_md | global_md # merges the metadata overwrite potentially conflicting entries
+        meta_all = metadata | series_md | global_md | core_md # merges the metadata overwrite potentially conflicting entries
         return meta_all
 
 def raw_to_tree(raw_metadata: dict[str, str]):

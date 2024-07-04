@@ -7,6 +7,8 @@
     - Content coverage
     - Task based 
 To evaluate the performance of your system that extracts metadata and adds it as structured annotations to the OME Datamodel, without having a ground truth for the structured annotations, you'll need to employ a combination of quantitative and qualitative evaluation methods. Here's an approach you could consider:
+- clean up metagpt to be a proper package, restructure to seperate assistant/ predictors/ experiments / evaluators properly.
+
 
 1. Content Coverage Metric:
    This metric would aim to measure how much of the original metadata is represented in the structured annotations.
