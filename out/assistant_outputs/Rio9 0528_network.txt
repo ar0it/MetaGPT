@@ -1,0 +1,27 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Image ID="Image:0">
+    <Pixels ID="Pixels:1" DimensionOrder="XYCZT" Type="uint16" Interleaved="false" BigEndian="false" SizeX="3072" SizeY="3072" SizeZ="1" SizeC="1" SizeT="1">
+      <Channel ID="Channel:0:0" SamplesPerPixel="1"/>
+    </Pixels>
+  </Image>
+  <StructuredAnnotations>
+    <XMLAnnotation ID="Annotation:0">
+      <Value>
+        <OriginalMetadata>
+          <Key>MetaData</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PhotometricInterpretation</Key>
+              <Value>Monochrome</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>MetaMorph</Key>
+              <Value>no</Value>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+      </Value>
+    </XMLAnnotation>
+  </StructuredAnnotations>
+</OME>

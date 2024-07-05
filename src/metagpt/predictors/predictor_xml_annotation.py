@@ -86,10 +86,10 @@ class PredictorXMLAnnotation(predictor_template.PredictorTemplate):
         self.init_assistant()   
         self.init_run()
         response = self.run.required_action.submit_tool_outputs.tool_calls[0]
-        print(response)
-        value = ast.literal_eval(response.function.arguments) # converts string to dict
+        response = ast.literal_eval(response.function.arguments) # converts string to dict
         self.clean_assistants()
-        return value
+        print(response)
+        return response
     
     def init_run(self):
         self.run = self.client.beta.threads.runs.create(
@@ -117,6 +117,7 @@ class PredictorXMLAnnotation(predictor_template.PredictorTemplate):
             instructions=self.pred_prompt,
             model="gpt-4o",
             tools=[utils.openai_schema(self.XMLAnnotationFunction)],
+
         )
         self.assistants.append(self.assistant)
 

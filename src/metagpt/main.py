@@ -31,6 +31,15 @@ predictors2 = importlib.util.module_from_spec(spec)
 sys.modules["predictors2"] = predictors2
 spec.loader.exec_module(predictors2)
 
+spec = importlib.util.spec_from_file_location("predictors3", "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/predictors/predictor_simple.py")
+predictors3 = importlib.util.module_from_spec(spec)
+sys.modules["predictors3"] = predictors3
+spec.loader.exec_module(predictors3)
+
+spec = importlib.util.spec_from_file_location("predictors4", "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/predictors/predictor_network.py")
+predictors4 = importlib.util.module_from_spec(spec)
+sys.modules["predictors4"] = predictors4
+spec.loader.exec_module(predictors4)
 
 #from src.metagpt.predictors.predictor_xml_annotation import PredictorXMLAnnotation
 # from src.metagpt.utils import dict_to_xml_annotation
@@ -108,6 +117,22 @@ for path in gt_paths:
     experiment.add_sample(bio_sample)
 
     # ------------------------------------------------------------------------------------------------------------------
+    # Simple Predictor
+    # ------------------------------------------------------------------------------------------------------------------
+    print("-"*10+"Simple Predictor"+"-"*10)
+    #base_predictor = predictors3.Pred(str(tree_meta))
+    #out_simple = base_predictor.predict()
+    out_simple = out_bioformats
+    # save the output to file
+    with open(f"{out}/assistant_outputs/{name}_simple.txt", "w") as f:
+        f.write(out_simple)
+    simple_sample = Sample(name=name,
+                           metadata_str=out_simple,
+                           method="SimplePredictor",
+                           format=format)
+    experiment.add_sample(simple_sample)
+
+    # ------------------------------------------------------------------------------------------------------------------
     # Marvin
     # ------------------------------------------------------------------------------------------------------------------
     print("-"*10+"Marvin"+"-"*10)
@@ -123,16 +148,16 @@ for path in gt_paths:
     experiment.add_sample(marvin_sample)
     
     # ------------------------------------------------------------------------------------------------------------------
-    # Structured Agent Network
+    # Network Predictor
     # ------------------------------------------------------------------------------------------------------------------
     print("-"*10+"Structured Agent Network"+"-"*10)
-    # curation_network = CurationNetwork()
-    # out_network = curation_network.predict(raw_meta)
+    network_predictor = predictors4.PredictorNetwork(str(tree_meta))
+    out_network = network_predictor.predict()
     # save the output to file
-    # with open(f"{out}/assistant_outputs/{name}_network.txt", "w") as f:
-    #     f.write(out_network)
+    with open(f"{out}/assistant_outputs/{name}_network.txt", "w") as f:
+         f.write(out_network)
     network_sample = Sample(name=name,
-                            metadata_str=out_bioformats,
+                            metadata_str=out_network,
                             method="Network",
                             format=format)
     experiment.add_sample(network_sample)
@@ -156,15 +181,15 @@ for path in gt_paths:
     # Simple Annotation Predictor
     # ------------------------------------------------------------------------------------------------------------------
     print("-"*10+"Simple Annotation Predictor"+"-"*10)
-    base_annotation_predictor = predictors.PredictorXMLAnnotation(str(tree_meta))
-    out_annotation = base_annotation_predictor.predict()
+    #base_annotation_predictor = predictors.PredictorXMLAnnotation(str(tree_meta))
+    out_annotation = out_bioformats #base_annotation_predictor.predict()
     # merge the annotation section with the ome xml
-    out_xml_annotation = utils.dict_to_xml_annotation(out_annotation)
-    ome_start_obj = ome_types.from_xml(out_bioformats)
-    ome_start_obj.structured_annotations.append(out_xml_annotation)
-    out_annotated = ome_types.to_xml(ome_start_obj)
+    #out_xml_annotation = utils.dict_to_xml_annotation(out_annotation)
+    #ome_start_obj = ome_types.from_xml(out_bioformats)
+    #ome_start_obj.structured_annotations.append(out_xml_annotation)
+    #out_annotated = ome_types.to_xml(ome_start_obj)
     annotation_sample = Sample(name=name,
-                            metadata_str=out_annotated,
+                            metadata_str=out_annotation,
                             method="Simple_Annotation",
                             format=format)
     experiment.add_sample(annotation_sample)
@@ -173,15 +198,15 @@ for path in gt_paths:
     # Network Annotation Predictor
     # ------------------------------------------------------------------------------------------------------------------
     print("-"*10+"Network Annotation Predictor"+"-"*10)
-    net_annotation_predictor = predictors2.PredictorXMLAnnotationNet(str(tree_meta))
-    out_annotation_net = net_annotation_predictor.predict()
+    # net_annotation_predictor = predictors2.PredictorXMLAnnotationNet(str(tree_meta))
+    out_annotation_net = out_bioformats #net_annotation_predictor.predict()
     # merge the annotation section with the ome xml
-    out_xml_annotation_net = utils.dict_to_xml_annotation(out_annotation_net)
-    ome_start_obj = ome_types.from_xml(out_bioformats)
-    ome_start_obj.structured_annotations.append(out_xml_annotation_net)
-    out_annotated_net = ome_types.to_xml(ome_start_obj)
+    #out_xml_annotation_net = utils.dict_to_xml_annotation(out_annotation_net)
+    #ome_start_obj = ome_types.from_xml(out_bioformats)
+    #ome_start_obj.structured_annotations.append(out_xml_annotation_net)
+    #out_annotated_net = ome_types.to_xml(ome_start_obj)
     annotation_net_sample = Sample(name=name,
-                            metadata_str=out_annotated_net,
+                            metadata_str=out_annotation_net,
                             method="Network_Annotation",
                             format=format)
     experiment.add_sample(annotation_net_sample)

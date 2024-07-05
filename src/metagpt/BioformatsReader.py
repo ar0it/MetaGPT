@@ -55,10 +55,11 @@ def get_raw_metadata(path: str = None) -> dict[str, str]:
     :param path: path to the file
     :return: the metadata as a dictionary
     """
-    def get_core_metadata(rdr) -> dict[str, str]:
+    def get_core_metadata(rdr:ImageReader) -> dict[str, str]:
         """
         Extract core metadata directly from the rdr object
         """
+        rdr = rdr.rdr
         core_md = {}
         
         # List of core metadata methods to call
@@ -68,9 +69,8 @@ def get_raw_metadata(path: str = None) -> dict[str, str]:
             'getDimensionOrder', 'isRGB', 'isInterleaved',
             'isLittleEndian', 'isOrderCertain', 'isThumbnailSeries',
             'isIndexed', 'isFalseColor', 'getModuloZ', 'getModuloC', 'getModuloT',
-            'getThumbSizeX', 'getThumbSizeY', 'getSeriesCount',
+            'getThumbSizeX', 'getThumbSizeY', 'getSeriesCount', "getIndex",
         ]
-        
         # Call each method and store the result
         for method in core_methods:
             try:
@@ -94,12 +94,11 @@ def get_raw_metadata(path: str = None) -> dict[str, str]:
         return core_md
     
     with ImageReader(path=path, url=None, perform_init=False) as rdr:
-        rdr.rdr.get
         rdr.rdr.setId(path)
         metadata  = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getMetadata(path))
         series_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getSeriesMetadata(path))
         global_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getGlobalMetadata(path))
-        core_md = get_core_metadata(rdr.rdr)
+        core_md = get_core_metadata(rdr)
 
         meta_all = metadata | series_md | global_md | core_md # merges the metadata overwrite potentially conflicting entries
         return meta_all
