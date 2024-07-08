@@ -8,28 +8,12 @@ import sys
 import importlib
 import ast
 from ome_types import from_xml, to_xml
+from predictors.predictor_template import PredictorTemplate
+from predictors.predictor_xml_annotation import PredictorXMLAnnotation
+from predictors.predictor_simple import PredictorSimple
+import utils
 
-spec = importlib.util.spec_from_file_location("predictors", "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/predictors/predictor_template.py")
-predictor_template = importlib.util.module_from_spec(spec)
-sys.modules["predictors"] = predictor_template
-spec.loader.exec_module(predictor_template)
-
-spec = importlib.util.spec_from_file_location("metagpt", "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/utils.py")
-utils = importlib.util.module_from_spec(spec)
-sys.modules["metagpt"] = utils
-spec.loader.exec_module(utils)
-
-spec = importlib.util.spec_from_file_location("predictors2", "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/predictors/predictor_xml_annotation.py")
-predictors2 = importlib.util.module_from_spec(spec)
-sys.modules["predictors2"] = predictors2
-spec.loader.exec_module(predictors2)
-
-spec = importlib.util.spec_from_file_location("predictors3", "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/predictors/predictor_simple.py")
-predictors3 = importlib.util.module_from_spec(spec)
-sys.modules["predictors3"] = predictors3
-spec.loader.exec_module(predictors3)
-
-class PredictorNetwork(predictor_template.PredictorTemplate):
+class PredictorNetwork(PredictorTemplate):
     """
     This predictor approach uses two assistants, one for splitting the raw metadata into already contained and new metadata,
     and one for predicting the structured annotations from the new metadata.
@@ -67,8 +51,8 @@ class PredictorNetwork(predictor_template.PredictorTemplate):
         sep_response_annot = self.sep_response["annotation_properties"]
         sep_response_ome = self.sep_response["ome_properties"]
 
-        self.pred_response_annot = predictors2.PredictorXMLAnnotation("Here is the preselected raw metadata \n" + str(sep_response_annot)).predict()
-        self.pred_response_ome = predictors3.PredictorSimple("Here is the preselected raw metadata \n" + str(sep_response_ome)).predict()
+        self.pred_response_annot = PredictorXMLAnnotation("Here is the preselected raw metadata \n" + str(sep_response_annot)).predict()
+        self.pred_response_ome = PredictorSimple("Here is the preselected raw metadata \n" + str(sep_response_ome)).predict()
         # merge
         xml_annotation = utils.dict_to_xml_annotation(self.pred_response_annot)
         ome_xml = from_xml(self.pred_response_ome)

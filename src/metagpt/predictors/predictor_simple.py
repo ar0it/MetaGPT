@@ -8,26 +8,19 @@ import sys
 import importlib
 import ast
 from ome_types import from_xml, to_xml
+from predictors.predictor_template import PredictorTemplate
+import utils
 
-spec = importlib.util.spec_from_file_location("predictors", "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/predictors/predictor_template.py")
-predictor_template = importlib.util.module_from_spec(spec)
-sys.modules["predictors"] = predictor_template
-spec.loader.exec_module(predictor_template)
-
-spec = importlib.util.spec_from_file_location("metagpt", "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/utils.py")
-utils = importlib.util.module_from_spec(spec)
-sys.modules["metagpt"] = utils
-spec.loader.exec_module(utils)
-
-
-class PredictorSimple(predictor_template.PredictorTemplate):
-    
+class PredictorSimple(PredictorTemplate):
+    """
+    TODO: Add docstring
+    """
     def __init__(self, raw_meta: str) -> None:
         super().__init__()
         self.attempt = 0
         self.raw_metadata = raw_meta
         self.client = OpenAI()
-        self.full_message = "The raw data is: \n" + self.raw_metadata
+        self.full_message = "The raw data is: \n" + str(self.raw_metadata)
         self.prompt = """
         You are part of a toolchain designed to predict metadata for the OME model, specifically the structured annotations part.
         You will be interacting with other toolchain components, therefore asking questions or providing any human-readable output is not necessary.

@@ -8,22 +8,11 @@ import sys
 import importlib
 import ast
 
-spec = importlib.util.spec_from_file_location("predictors", "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/predictors/predictor_template.py")
-predictor_template = importlib.util.module_from_spec(spec)
-sys.modules["predictors"] = predictor_template
-spec.loader.exec_module(predictor_template)
+from predictors.predictor_template import PredictorTemplate
+from predictors.predictor_xml_annotation import PredictorXMLAnnotation
+import utils
 
-spec = importlib.util.spec_from_file_location("metagpt", "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/utils.py")
-utils = importlib.util.module_from_spec(spec)
-sys.modules["metagpt"] = utils
-spec.loader.exec_module(utils)
-
-spec = importlib.util.spec_from_file_location("predictors2", "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/predictors/predictor_xml_annotation.py")
-predictors2 = importlib.util.module_from_spec(spec)
-sys.modules["predictors2"] = predictors2
-spec.loader.exec_module(predictors2)
-
-class PredictorXMLAnnotationNet(predictor_template.PredictorTemplate):
+class PredictorXMLAnnotationNet(PredictorTemplate):
     """
     This predictor approach uses two assistants, one for splitting the raw metadata into already contained and new metadata,
     and one for predicting the structured annotations from the new metadata.
@@ -32,7 +21,7 @@ class PredictorXMLAnnotationNet(predictor_template.PredictorTemplate):
     def __init__(self, raw_meta: str) -> None:
         super().__init__()
         self.raw_metadata = raw_meta
-        self.full_message = "The raw data is: \n" + self.raw_metadata
+        self.full_message = "The raw data is: \n" + str(self.raw_metadata)
 
         self.sep_prompt = """
         You are part of a toolchain designed to predict metadata for the OME model, specifically the structured annotations part.
@@ -78,14 +67,8 @@ class PredictorXMLAnnotationNet(predictor_template.PredictorTemplate):
 
         self.init_sep_run()
         self.sep_response = self.sep_run.required_action.submit_tool_outputs.tool_calls[0].function.arguments
-        print(self.sep_response)
 
-        #self.init_pred_assistant()
-        #self.init_pred_thread()
-        #self.init_pred_run()
-        #self.pred_response = ast.literal_eval(self.pred_run.required_action.submit_tool_outputs.tool_calls[0].function.arguments)
-        #print(self.pred_response)
-        self.pred_response = predictors2.PredictorXMLAnnotation("Here is the preselected raw metadata \n" + self.sep_response).predict()
+        self.pred_response = PredictorXMLAnnotation("Here is the preselected raw metadata \n" + self.sep_response).predict()
         self.clean_assistants()
         return self.pred_response
     
@@ -108,25 +91,6 @@ class PredictorXMLAnnotationNet(predictor_template.PredictorTemplate):
             
         print(self.sep_run.status)
 
-    def init_pred_run(self):
-        self.pred_run = self.client.beta.threads.runs.create(
-            thread_id=self.pred_thread.id,
-            assistant_id=self.pred_assistant.id,
-            tool_choice="required",
-            temperature=0.0,
-            )
-        
-        end_status = ["complete", "requires_action", "failed"]
-        while self.pred_run.status not in end_status:
-            print(self.pred_run.status)
-            time.sleep(5)
-            self.pred_run = self.client.beta.threads.runs.retrieve(
-                thread_id=self.pred_thread.id,
-                run_id=self.pred_run.id
-                )
-            
-        print(self.pred_run.status)
-
     def init_sep_assistant(self):
         self.sep_assistant = self.client.beta.assistants.create(
             name="OME XML Seperator",
@@ -138,15 +102,6 @@ class PredictorXMLAnnotationNet(predictor_template.PredictorTemplate):
         )
         self.assistants.append(self.sep_assistant)
 
-    def init_pred_assistant(self):
-        self.pred_assistant = self.client.beta.assistants.create(
-            name="OME XML Predictor",
-            description="An assistant to predict OME XML annotations from raw metadata",
-            instructions=self.pred_prompt,
-            model="gpt-4o",
-            tools=[utils.openai_schema(StructuredAnnotations)],
-        )
-        self.assistants.append(self.pred_assistant)
     
     def init_vector_store(self):
         self.vector_store = self.client.beta.vector_stores.create(
@@ -166,11 +121,6 @@ class PredictorXMLAnnotationNet(predictor_template.PredictorTemplate):
                                                                 {"role": "user", "content": self.full_message}])
         self.threads.append(self.sep_thread)
     
-    def init_pred_thread(self):
-        self.pred_thread = self.client.beta.threads.create(messages=[{"role": "user", "content": self.pred_prompt},
-                                                                {"role": "assistant", "content": "."},
-                                                                {"role": "user", "content": self.sep_response}])
-        self.threads.append(self.pred_thread)
 
     class OutputTool(BaseModel):
         """
