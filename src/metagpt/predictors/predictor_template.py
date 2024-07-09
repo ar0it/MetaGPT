@@ -25,6 +25,8 @@ class PredictorTemplate:
         self.vector_stores = []
         self.message = None
         self.out_path = None
+        self.token_in_cost = 5/1e6
+        self.token_out_cost = 15/1e6
 
     def predict(self):
         """
@@ -169,5 +171,14 @@ class PredictorTemplate:
 
         for v in self.vector_stores:
             self.client.beta.vector_stores.delete(vector_store_id=v.id)
+
+    def get_cost(self, run):
+        """
+        Get the cost of the prediction
+        """
+        try:
+            return run.usage.completion_tokens * self.token_out_cost + run.usage.prompt_tokens * self.token_in_cost
+        except Exception as e:
+            return 0
 
 

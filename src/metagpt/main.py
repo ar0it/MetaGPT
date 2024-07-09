@@ -41,7 +41,7 @@ network_paths = [
 gt_paths = [
     f"{wd}/in/images/small_images/Rio9 0528.tif",
     #f"{wd}/in/images/Image_8.czi",
-    #f"{wd}/in/images/testetst_Image8_edited_.ome.tif",
+    f"{wd}/in/images/testetst_Image8_edited_.ome.tif",
     #f"{wd}/in/images/11_10_21_48h_H2BmCherryB16F10OVA_CD4cytcells_bsAb_endpoint.lif",
     #f"{wd}/in/images/rFUNC.nii",
     ]
@@ -84,12 +84,12 @@ for path in gt_paths:
     tree_meta = raw_to_tree(raw_meta) # the raw metadata as nested dictionary
 
     name = path.split("/")[-1].split(".")[0]
-    format = path.split("/")[-1].split(".")[1]
+    data_format = path.split("/")[-1].split(".")[1]
 
     bio_sample = Sample(name=name,
                         metadata_str=out_bioformats,
                         method="Bioformats",
-                        format=format)
+                        format=data_format)
     
     experiment.add_sample(bio_sample)
     
@@ -102,6 +102,7 @@ for path in gt_paths:
         experiment=experiment,
         name=name,
         should_predict=should_predict,
+        data_format=data_format
     )
 
     # ------------------------------------------------------------------------------------------------------------------
@@ -127,6 +128,7 @@ for path in gt_paths:
         experiment=experiment,
         name=name,
         should_predict=should_predict,
+        data_format=data_format,
     )
 
     # ------------------------------------------------------------------------------------------------------------------
@@ -151,7 +153,8 @@ for path in gt_paths:
         experiment=experiment,
         name=name,
         should_predict=should_predict,
-        start_point=out_bioformats
+        start_point=out_bioformats,
+        data_format=data_format
     )
 
     # ------------------------------------------------------------------------------------------------------------------
@@ -163,7 +166,8 @@ for path in gt_paths:
         experiment=experiment,
         name=name,
         should_predict=should_predict,
-        start_point=out_bioformats
+        start_point=out_bioformats,
+        data_format=data_format
     )
 
 # ----------------------------------------------------------------------------------------------------------------------

@@ -19,7 +19,6 @@ class PredictorSimple(PredictorTemplate):
         super().__init__()
         self.attempt = 0
         self.raw_metadata = raw_meta
-        self.client = OpenAI()
         self.full_message = "The raw data is: \n" + str(self.raw_metadata)
         self.prompt = """
         You are part of a toolchain designed to predict metadata for the OME model, specifically the structured annotations part.
@@ -95,10 +94,12 @@ class PredictorSimple(PredictorTemplate):
                 thread_id=self.thread.id
             )
             response = response.data[0].content[0].text.value[7:][:-4]
+            cost = self.get_cost(run=self.run)
         elif self.run.status == 'requires_action':
             response = self.run.required_action.submit_tool_outputs.tool_calls[0]
             response = ast.literal_eval(response.function.arguments)
             response = response['ome_xml']
+            cost = self.get_cost(run=self.run)
 
         try:
             test_ome_pred = from_xml(response)
@@ -110,10 +111,10 @@ class PredictorSimple(PredictorTemplate):
                 return self.predict()
             else:
                 raise ValueError("Could not convert the OME XML to OME object")
+        
 
-        self.clean_assistants()
-        print(response)
-        return response
+        self.clean_assistants()        
+        return response, cost
     
     def init_run(self):
         self.run = self.client.beta.threads.runs.create(

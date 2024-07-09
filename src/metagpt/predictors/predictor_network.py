@@ -22,7 +22,7 @@ class PredictorNetwork(PredictorTemplate):
     def __init__(self, raw_meta: str) -> None:
         super().__init__()
         self.raw_metadata = raw_meta
-        self.full_message = "The raw data is: \n" + self.raw_metadata
+        self.full_message = "The raw data is: \n" + str(self.raw_metadata)
 
         self.sep_prompt = """
         You are part of a toolchain designed to predict metadata for the OME model, specifically the structured annotations part.
@@ -46,20 +46,22 @@ class PredictorNetwork(PredictorTemplate):
         self.init_sep_assistant()   
         self.init_sep_run()
         self.sep_response = self.sep_run.required_action.submit_tool_outputs.tool_calls[0].function.arguments
+        sep_cost = self.get_cost(self.sep_run)
         self.sep_response = ast.literal_eval(self.sep_response)
-        print(self.sep_response)
         sep_response_annot = self.sep_response["annotation_properties"]
         sep_response_ome = self.sep_response["ome_properties"]
 
-        self.pred_response_annot = PredictorXMLAnnotation("Here is the preselected raw metadata \n" + str(sep_response_annot)).predict()
-        self.pred_response_ome = PredictorSimple("Here is the preselected raw metadata \n" + str(sep_response_ome)).predict()
+        self.pred_response_annot, annot_cost = PredictorXMLAnnotation("Here is the preselected raw metadata \n" + str(sep_response_annot)).predict()
+        self.pred_response_ome, ome_cost = PredictorSimple("Here is the preselected raw metadata \n" + str(sep_response_ome)).predict()
         # merge
+        print(self.pred_response_annot)
         xml_annotation = utils.dict_to_xml_annotation(self.pred_response_annot)
         ome_xml = from_xml(self.pred_response_ome)
         ome_xml.structured_annotations.append(xml_annotation)
-    
+
+        cost = sep_cost + annot_cost + ome_cost
         self.clean_assistants()
-        return to_xml(ome_xml)
+        return to_xml(ome_xml), cost
     
     def init_sep_run(self):
         self.sep_run = self.client.beta.threads.runs.create(

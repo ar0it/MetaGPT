@@ -205,7 +205,7 @@ def sort_models_by_dependencies(root_model: Type[BaseModel]) -> List[Type[BaseMo
     return sorted_models
 
 
-def openai_schema(cls: BaseModel) -> Dict[str, Any]:
+def openai_schema(cls: BaseModel, additional_ignored_keywords:list[str]=[]) -> Dict[str, Any]:
     """
     Return the schema in the format of OpenAI's schema as jsonschema
 
@@ -235,7 +235,7 @@ def openai_schema(cls: BaseModel) -> Dict[str, Any]:
             return prop
 
         flattened = {}
-        unnecessary_keys = ['title', 'name', 'namespace', "type"]  # Add any other keys you want to exclude
+        unnecessary_keys = [] + additional_ignored_keywords  # Add any other keys you want to exclude
         for key, value in prop.items():
             if key not in unnecessary_keys:
                 if key == '$ref':
@@ -344,7 +344,11 @@ def dict_to_xml_annotation(value: dict) -> XMLAnnotation:
         value["annotations"] = value["annotations"][0]
     
     if not isinstance(value.get("annotations"), dict):
-        raise ValueError("The 'annotations' key must be a dictionary")
+        try:
+            value["annotations"] = ast.literal_eval(value.get("annotations"))
+
+        except Exception as e:
+            raise ValueError("The 'annotations' key must be a dictionary" + e)
 
     test_value = {"any_elements": [create_element(k, v) for k, v in value["annotations"].items()]}
     return XMLAnnotation(value=test_value)
@@ -374,7 +378,8 @@ def make_prediction(predictor: PredictorTemplate,
                     experiment,
                     name,
                     should_predict="maybe",
-                    start_point=None):
+                    start_point=None,
+                    data_format=None):
     """
     TODO: add docstring
     """
@@ -383,17 +388,17 @@ def make_prediction(predictor: PredictorTemplate,
     print("-"*10+method+"_"+name+"-"*10)
 
     if should_predict == "maybe":
-        out = load_output(path) or predictor(in_data).predict()
+        out, cost = load_output(path) or predictor(in_data).predict()
     elif should_predict:
-        out = predictor(in_data).predict() or None
+        out, cost = predictor(in_data).predict() or (None, None)
     else:
-        out = load_output(path) or None
+        out, cost = load_output(path) or (None, None)
         
     if not out:
         return
 
     # save the output to file or load from file if None
-    save_output(out, path=path) #FIXME: Only save if the output was predicted
+    save_output(out, cost, path=path) #FIXME: Only save if the output was predicted
     
     if start_point:
         #make sure the output is a dictionary
@@ -405,11 +410,12 @@ def make_prediction(predictor: PredictorTemplate,
     out_sample = Sample(name=name,
                         metadata_str=out,
                         method=method,
-                        format=format)
+                        format=data_format,
+                        cost=cost)
     
     experiment.add_sample(out_sample)
 
-def save_output(output: str, path: str) -> bool:
+def save_output(output: str, cost: float, path: str) -> bool:
     """
     Save output to a file.
 
@@ -422,13 +428,13 @@ def save_output(output: str, path: str) -> bool:
     """
     try:
         with open(path, "w") as f:
-            f.write(str(output))
+            f.write(str(output)+ "\nCOST: " + str(cost))
         return True
     except IOError as e:
         print(f"Error saving output: {e}")
         return False
 
-def load_output(path: str) -> Optional[str]:
+def load_output(path: str) -> tuple[Optional[str], Optional[float]]:
     """
     Load output from a file.
 
@@ -440,7 +446,14 @@ def load_output(path: str) -> Optional[str]:
     """
     try:
         with open(path, "r") as f:
-            return f.read()
-    except IOError as e:
+            lines = f.readlines()
+            output = ""
+            for line in lines:
+                if line.startswith("COST"):
+                    cost = float(line.split(":")[-1].strip())
+                else:
+                    output += line
+        return output, cost
+    except Exception as e:
         print(f"Error loading output: {e}")
         return None

@@ -67,10 +67,13 @@ class PredictorXMLAnnotationNet(PredictorTemplate):
 
         self.init_sep_run()
         self.sep_response = self.sep_run.required_action.submit_tool_outputs.tool_calls[0].function.arguments
+        cost_sep = self.get_cost(run=self.sep_run)
 
-        self.pred_response = PredictorXMLAnnotation("Here is the preselected raw metadata \n" + self.sep_response).predict()
+
+        self.pred_response, pre_cost = PredictorXMLAnnotation("Here is the preselected raw metadata \n" + self.sep_response).predict()
+        cost = cost_sep + pre_cost
         self.clean_assistants()
-        return self.pred_response
+        return self.pred_response, cost
     
     def init_sep_run(self):
         self.sep_run = self.client.beta.threads.runs.create(

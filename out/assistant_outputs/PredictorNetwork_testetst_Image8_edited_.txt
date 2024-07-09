@@ -1,11 +1,11 @@
 <OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
   <Image ID="Image:0">
-    <Pixels ID="Pixels:3" DimensionOrder="XYCZT" Type="uint8" SignificantBits="8" SizeX="680" SizeY="280" SizeZ="1" SizeC="1" SizeT="1" PhysicalSizeX="9.93E-06" PhysicalSizeY="9.93E-06" PhysicalSizeZ="1.0">
+    <Pixels ID="Pixels:6" DimensionOrder="XYCZT" Type="uint8" SignificantBits="8" SizeX="680" SizeY="280" SizeZ="1" SizeC="1" SizeT="1" PhysicalSizeX="9.93E-06" PhysicalSizeY="9.93E-06" PhysicalSizeZ="1.0">
       <Channel ID="Channel:0:0" SamplesPerPixel="1"/>
     </Pixels>
   </Image>
   <StructuredAnnotations>
-    <XMLAnnotation ID="Annotation:1">
+    <XMLAnnotation ID="Annotation:15">
       <Value>
         <OriginalMetadata>
           <Key>ImageProperties</Key>
@@ -49,6 +49,12 @@
               <Key>SizeT</Key>
               <Value>30</Value>
             </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>PixelProperties</Key>
+          <Value/>
+          <OriginalMetadata>
             <OriginalMetadata>
               <Key>PixelType</Key>
               <Value>1</Value>
@@ -61,12 +67,6 @@
               <Key>DimensionOrder</Key>
               <Value>XYCZT</Value>
             </OriginalMetadata>
-          </OriginalMetadata>
-        </OriginalMetadata>
-        <OriginalMetadata>
-          <Key>Attributes</Key>
-          <Value/>
-          <OriginalMetadata>
             <OriginalMetadata>
               <Key>isRGB</Key>
               <Value>False</Value>
@@ -83,6 +83,12 @@
               <Key>isIndexed</Key>
               <Value>False</Value>
             </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>SeriesProperties</Key>
+          <Value/>
+          <OriginalMetadata>
             <OriginalMetadata>
               <Key>SeriesCount</Key>
               <Value>1</Value>
@@ -93,3 +99,15 @@
     </XMLAnnotation>
   </StructuredAnnotations>
 </OME>
+
+
+
+
+
+
+
+
+
+
+
+COST: 0.0

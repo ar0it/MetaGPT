@@ -1,1 +1,21 @@
-{'annotations': {'MetaData': {'PhotometricInterpretation': 'Monochrome', 'MetaMorph': 'no'}}}
+{'annotations': {'MetaData': {'PhotometricInterpretation': 'MetaMorph'}}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COST: 0.0

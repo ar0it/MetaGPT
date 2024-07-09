@@ -1,3 +1,12 @@
+# 09.07.24
+- start writing the thesis (first rough draft)
+- work on problems that come up on the fly
+- run pipe for more files (and formats)
+- can I manually curate some images to get a better gt?
+- remove annotations from the bioformats part before merging with predicted
+annotations
+
+
 # 04.07.24
 - build the network struc annotations
 - prompt engineering for all the prompts!

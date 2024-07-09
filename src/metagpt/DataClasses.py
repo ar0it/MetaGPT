@@ -12,7 +12,7 @@ class Sample:
     metadata_str: str  # the metadata as xml string
     method: str
     metadata_xml: Optional[ET.Element] = None  # the metadata as xml object
-    cost: Optional[float] = None
+    cost: Optional[float] = None # the cost in $
     paths: Optional[list[str]] = None
     time: Optional[float] = None
     format: Optional[str] = None

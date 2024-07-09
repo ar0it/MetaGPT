@@ -34,6 +34,9 @@ class OMEEvaluator:
         self.edit_score = []
         self.experiment = experiment
         self.plot_dict = {}
+        self.qual_color_palette = sns.color_palette("husl", 8)
+        self.palette0 = sns.palettes._ColorPalette(sns.color_palette("Paired")[0::2])
+        self.palette1 = sns.palettes._ColorPalette(sns.color_palette("Paired")[1::2])
         for s in self.experiment.samples.values():
             s.metadata_xml = self.string_to_ome_xml(s.metadata_str)
             s.paths = self.get_paths(s.metadata_xml)
@@ -41,7 +44,7 @@ class OMEEvaluator:
         self.report()
         print("test")
 
-    ####################################################################################################################
+
     def element_to_pygram(self, element: ET.Element):
         """
         Convert an xml element to a pygram tree.
@@ -51,7 +54,7 @@ class OMEEvaluator:
             node.addkid(self.element_to_pygram(child))
         return node
     
-    ####################################################################################################################
+
     def zss_edit_distance(self, xml_a: ET.Element, xml_b: ET.Element):
         """
         Calculate the edit distance between two xml trees on word level.
@@ -64,7 +67,7 @@ class OMEEvaluator:
         self.gt_graph = self.get_graph(xml_b)
         return simple_distance(self.gt_graph, self.pred_graph)
     
-    ####################################################################################################################
+
     def pygram_edit_distance(self, xml_a: ET.Element, xml_b: ET.Element):
         """
         Calculate the edit distance between two xml trees on word level.
@@ -74,7 +77,7 @@ class OMEEvaluator:
         profile2 = Profile(self.element_to_pygram(xml_b), 2, 3)
         return profile1.edit_distance(profile2)
     
-    ####################################################################################################################
+
     @deprecated()
     def word_edit_distance(self, aligned_paths) -> int:
         """
@@ -94,7 +97,7 @@ class OMEEvaluator:
             edit_distance += distance
         return edit_distance
     
-    ####################################################################################################################
+
     @deprecated()
     def align_paths(self, paths_a, paths_b):
         """
@@ -112,8 +115,7 @@ class OMEEvaluator:
 
         # score, alignment_a, alignment_b = self.align_sequences(paths_a, paths_b, cost=self.align_sequences_score)
         return 1, 1, 1
-    
-    ####################################################################################################################
+
     @deprecated()
     def align_sequences_score(self, s1, s2, cost=lambda a, b: a != b):
         """
@@ -125,8 +127,7 @@ class OMEEvaluator:
         """
         score, alignment_a, alignment_b = self.align_sequences(s1, s2, cost=lambda a, b: a != b)
         return score
-    
-    ####################################################################################################################
+
     @deprecated()
     def align_sequences(self, s1, s2, cost=lambda a, b: a != b):
         print("- - - Aligning sequences - - -")
@@ -186,7 +187,7 @@ class OMEEvaluator:
         print(dp)
         return dp[-1][-1], alignment_a, alignment_b
     
-    ####################################################################################################################
+
     def get_paths(self, xml_root: ET.Element, path: str = '') -> set:
         """
         Helper function to get all paths in an XML tree.
@@ -204,7 +205,7 @@ class OMEEvaluator:
                 paths.update(self.get_paths(child, new_path))
         return paths
     
-    ####################################################################################################################
+
     def get_graph(self, xml_root: ET.Element, root=None):
         """
         Helper function to get the graph representation of an XML tree.
@@ -224,7 +225,7 @@ class OMEEvaluator:
             self.get_graph(child, new_node)
         return root
     
-    ####################################################################################################################
+
     def path_difference(self, xml_a: ET.Element, xml_b: ET.Element):
         """
         Calculates the length of the difference between the path sets in two xml trees.
@@ -234,7 +235,7 @@ class OMEEvaluator:
         print("path difference: ", paths_a)
         return len(paths_a.symmetric_difference(paths_b))
     
-    #################################################################################################################### 
+
     def read_ome_xml(self, path: str):
         """
         This method reads the ome xml file and returns the root element.
@@ -258,7 +259,7 @@ class OMEEvaluator:
             else:
                 yield i
     
-    ####################################################################################################################
+
     def report(self):
         """
         Write evaluation report to file.
@@ -277,12 +278,13 @@ class OMEEvaluator:
             self.method_edit_distance_plt(df_sample)
             self.n_paths_method_plt(df_sample)
             self.format_method_plot(df_sample)
+            self.paths_annotation_stacked_plt(df_sample)
             # add the plots to the report
             f.write("## Path Comparison\n")
             for k, v in self.plot_dict.items():
                 f.write(f"![{k}]({v})\n")
 
-    ####################################################################################################################
+
     def sample_df(
             self,
             df_paths: pd.DataFrame = None,
@@ -299,8 +301,9 @@ class OMEEvaluator:
         df["n_annotations"] = {k: df_paths[k][df_paths.index.str.contains("StructuredAnnotations")].sum() for k in
                                df_paths.columns}
         df["og_image_format"] = [s.format if s.format else None for s in self.experiment.samples.values()]
-        edit_distances = []
+        df["cost"] = [s.cost if s.cost else None for s in self.experiment.samples.values()]
 
+        edit_distances = []
         for n in df["Name"].unique():
             methods = list(df["Method"].unique())
             for m in methods:
@@ -313,7 +316,7 @@ class OMEEvaluator:
         df["Edit_distance"] = edit_distances
         return df
 
-    ####################################################################################################################
+
     def path_df(
             self,
     ):
@@ -329,7 +332,7 @@ class OMEEvaluator:
             df[f"{name}_{method}"] = df.index.isin(path)
         return df
 
-    ####################################################################################################################
+
     def method_edit_distance_plt(
             self,
             df_sample: pd.DataFrame = None,
@@ -339,14 +342,77 @@ class OMEEvaluator:
         The X-axis will be the used method, whereas the Y-axis will be the standard deviation.
         """
         fig, ax = plt.subplots()
-        sns.barplot(x="Method", y="Edit_distance", data=df_sample, ax=ax)
-        plt.savefig(f"{self.out_path}/plots/method_edit_distance_plt.svg")
-        self.plot_dict["method_edit_distance_plt"] = f"../plots/method_edit_distance_plt.svg"
+        
+        n_path_plt = sns.barplot(
+            x=df_sample["Method"],
+            y=df_sample["Edit_distance"],
+            edgecolor='black',
+            ax=ax,
+            palette=self.palette0)
+
+        ax.set_xlabel("Method", fontsize=14)
+        ax.set_ylabel("Edit Distance", fontsize=14)
+        ax.set_title("Edit Distance by Method", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/method_edit_plt.svg")
+        self.plot_dict["method_edit_plt"] = f"../plots/method_edit_plt.svg"
+        plt.show()
+
         return fig, ax
 
-    ####################################################################################################################
-    import matplotlib.pyplot as plt
 
+    def paths_annotation_stacked_plt(self, df_sample: pd.DataFrame = None):
+        """
+        Plots the number of paths and annotations per sample as a stacked bar plot.
+        Uses the seaborn library.
+
+        """
+        fig, ax = plt.subplots()
+
+        n_path_plt = sns.barplot(
+            x=df_sample["Method"],
+            y=df_sample["n_paths"],
+            edgecolor='black',
+            ax=ax,
+            palette=self.palette0,
+            label="OME Paths")
+        
+        n_annot_plt = sns.barplot(
+            x=df_sample["Method"],
+            y=df_sample["n_annotations"],
+            edgecolor='black',
+            ax=ax,
+            palette=self.palette1,
+            label="Annotation Paths")
+
+
+        ax.set_xlabel("Sample", fontsize=14)
+        ax.set_ylabel("Number of Paths", fontsize=14)
+        ax.set_title("Number of Paths and Annotations per Sample", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/paths_annotation_stacked_plt.svg")
+        self.plot_dict["paths_annotation_stacked_plt"] = f"../plots/paths_annotation_stacked_plt.svg"
+        plt.show()
+
+        return fig, ax
+    
+        
     def n_paths_method_plt(self, df_sample: pd.DataFrame = None):
         """
         Plots the number of paths per method as a bar plot.
@@ -358,34 +424,36 @@ class OMEEvaluator:
         - fig: The figure object.
         - ax: The axes object.
         """
-        # Create the figure and axis objects
-        fig, ax = plt.subplots(figsize=(10, 6))
+        fig, ax = plt.subplots()
 
-        # Create the bar plot
-        ax.bar(df_sample["Method"], df_sample["n_paths"], color="skyblue", edgecolor='black')
+        n_path_plt = sns.barplot(
+            x=df_sample["Method"],
+            y=df_sample["n_paths"],
+            edgecolor='black',
+            ax=ax,
+            palette=self.palette0,
+            label="OME Paths")
 
-        # Add labels and title
-        ax.set_xlabel("Method", fontsize=14)
+
+        ax.set_xlabel("Sample", fontsize=14)
         ax.set_ylabel("Number of Paths", fontsize=14)
-        ax.set_title("Number of Paths per Method", fontsize=16)
+        ax.set_title("Number of Paths and Annotations per Sample", fontsize=16)
         ax.tick_params(axis='x', rotation=45)
 
-        # Customize the appearance
+        ax.legend(loc='upper right')
         ax.grid(True, which='both', linestyle='--', linewidth=0.5)
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
 
-        # Save the plot
         plt.tight_layout()
-        plt.savefig(f"{self.out_path}/plots/n_paths_method_plt.svg")
 
-        # Update the plot dictionary
-        self.plot_dict["n_paths_method_plt"] = f"../plots/n_paths_method_plt.svg"
+        plt.savefig(f"{self.out_path}/plots/paths_stacked_plt.svg")
+        self.plot_dict["paths_stacked_plt"] = f"../plots/paths_stacked_plt.svg"
+        plt.show()
 
         return fig, ax
 
 
-    ####################################################################################################################
     def format_method_plot(
             self,
             df_sample: pd.DataFrame = None,
@@ -395,11 +463,43 @@ class OMEEvaluator:
         For each method several bars are plotted, one for each image format.
         """
         fig, ax = plt.subplots()
-        sns.barplot(x="Method", y="Edit_distance", hue="og_image_format", data=df_sample, ax=ax)
-        plt.savefig(f"{self.out_path}/plots/format_method_plot.svg")
-        self.plot_dict["format_method_plot"] = f"../plots/format_method_plot.svg"
+
+        n_path_plt = sns.barplot(
+            x=df_sample["Method"],
+            y=df_sample["Edit_distance"],
+            hue=df_sample["og_image_format"],
+            edgecolor='black',
+            ax=ax,
+            palette=self.palette0)
+
+
+        ax.set_xlabel("Method", fontsize=14)
+        ax.set_ylabel("Edit Distance", fontsize=14)
+        ax.set_title("Edit Distance by Format", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/paths_stacked_plt.svg")
+        self.plot_dict["paths_stacked_plt"] = f"../plots/paths_stacked_plt.svg"
         plt.show()
+
         return fig, ax
+    
+    def method_cost_plot(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        """
+        This plot compares the performance of the different methods based on the cost.
+        Wont work because OpenAI does not provide the cost of the methods.
+        """
+        pass
 
 # Which plots do I want to return?
 # plot which shows deviation between runs of same sample

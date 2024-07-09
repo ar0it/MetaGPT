@@ -1,0 +1,12 @@
+{'annotations': {'Image': {'Resolution': {'XResolution': '100777.212', 'YResolution': '100777.212', 'ResolutionUnit': 'Centimeter'}, 'Dimensions': {'ImageWidth': '680', 'ImageLength': '280'}, 'PhotometricInterpretation': {'PhotometricInterpretation': 'BlackIsZero', 'MetaDataPhotometricInterpretation': 'Monochrome'}, 'PlanarConfiguration': 'Chunky', 'BitsPerSample': '8', 'Compression': 'Uncompressed', 'SamplesPerPixel': '1', 'NumberOfChannels': '1', 'SampleFormat': 'unsigned integer'}, 'Software': {'Name': 'OME Bio-Formats', 'Version': '6.7.0'}, 'MetaMorph': 'no', 'ImageJ': '', 'Hyperstack': 'true', 'Series': {'getSeriesCount': '1'}, 'PixelData': {'getSizeX': '680', 'getSizeY': '280', 'getSizeZ': '1', 'getSizeC': '3', 'getSizeT': '30', 'getPixelType': '1', 'getImageCount': '90', 'getDimensionOrder': 'XYCZT', 'isRGB': 'False', 'isInterleaved': 'False', 'isLittleEndian': 'True', 'isIndexed': 'False'}}}
+
+
+
+
+
+
+
+
+
+
+COST: 0.0
