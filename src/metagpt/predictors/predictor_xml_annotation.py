@@ -82,9 +82,17 @@ class PredictorXMLAnnotation(PredictorTemplate):
         response = self.run.required_action.submit_tool_outputs.tool_calls[0]
         response = ast.literal_eval(response.function.arguments) # converts string to dict
         cost = self.get_cost(run=self.run)
+        try:
+            utils.merge_xml_annotation(response)
 
+        except Exception as e:
+            print(e)
+            self.attempts += 1
+            if self.attempts < 4:
+                return self.predict()
+            
         self.clean_assistants()
-        return response, cost
+        return response, cost, self.attempts
     
     def init_run(self):
         self.run = self.client.beta.threads.runs.create(

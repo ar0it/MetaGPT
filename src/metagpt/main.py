@@ -178,5 +178,5 @@ print("Evaluation")
 print("-"*60)
 ome_eval = OMEEvaluator(schema=ome_xsd,
                         experiment=experiment,
-                        out_path=out)
+                        out_path=out).report()
 javabridge.kill_vm()

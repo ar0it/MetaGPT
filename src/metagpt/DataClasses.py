@@ -16,6 +16,7 @@ class Sample:
     paths: Optional[list[str]] = None
     time: Optional[float] = None
     format: Optional[str] = None
+    attempts: Optional[float] = None
 
 
 @dataclass

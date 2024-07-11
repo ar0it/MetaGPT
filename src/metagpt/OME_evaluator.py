@@ -28,7 +28,7 @@ class OMEEvaluator:
         """
         self.all_paths = None
         self.gt_graph = None
-        self.predicted = [self.string_to_ome_xml(x.metadata_str) for x in experiment.samples.values()]
+        #self.predicted = [self.string_to_ome_xml(x.metadata_str) for x in experiment.samples.values()]
         self.pred_graph = None
         self.out_path: str = out_path
         self.edit_score = []
@@ -37,12 +37,7 @@ class OMEEvaluator:
         self.qual_color_palette = sns.color_palette("husl", 8)
         self.palette0 = sns.palettes._ColorPalette(sns.color_palette("Paired")[0::2])
         self.palette1 = sns.palettes._ColorPalette(sns.color_palette("Paired")[1::2])
-        for s in self.experiment.samples.values():
-            s.metadata_xml = self.string_to_ome_xml(s.metadata_str)
-            s.paths = self.get_paths(s.metadata_xml)
 
-        self.report()
-        print("test")
 
 
     def element_to_pygram(self, element: ET.Element):
@@ -279,6 +274,10 @@ class OMEEvaluator:
             self.n_paths_method_plt(df_sample)
             self.format_method_plot(df_sample)
             self.paths_annotation_stacked_plt(df_sample)
+            self.method_attempts_plot(df_sample)
+            self.format_counts_plt(df_sample)
+            self.paths_annotation_stacked_relative_plt(df_sample)
+            self.attempts_paths_plt(df_sample)
             # add the plots to the report
             f.write("## Path Comparison\n")
             for k, v in self.plot_dict.items():
@@ -302,7 +301,7 @@ class OMEEvaluator:
                                df_paths.columns}
         df["og_image_format"] = [s.format if s.format else None for s in self.experiment.samples.values()]
         df["cost"] = [s.cost if s.cost else None for s in self.experiment.samples.values()]
-
+        df["attempts"] = [s.attempts if s.attempts else None for s in self.experiment.samples.values()]
         edit_distances = []
         for n in df["Name"].unique():
             methods = list(df["Method"].unique())
@@ -314,6 +313,10 @@ class OMEEvaluator:
                 edit_distances.append(self.pygram_edit_distance(test, gt))
                 t1 = time.time()
         df["Edit_distance"] = edit_distances
+
+        # save the df to a csv
+        df.to_csv(f"{self.out_path}/data_frames/sample_df.csv")
+
         return df
 
 
@@ -323,6 +326,9 @@ class OMEEvaluator:
         """
         TODO: Add docstring
         """
+        for s in self.experiment.samples.values():
+            s.metadata_xml = self.string_to_ome_xml(s.metadata_str)
+            s.paths = self.get_paths(s.metadata_xml)
         self.all_paths = pd.Series(list(set(self.flatten([s.paths for s in self.experiment.samples.values()]))))
         df = pd.DataFrame(columns=[f"{s.name}_{s.method}" for s in self.experiment.samples.values()],
                           index=self.all_paths)
@@ -330,6 +336,9 @@ class OMEEvaluator:
                                       [s.method for s in self.experiment.samples.values()],
                                       [s.paths for s in self.experiment.samples.values()]):
             df[f"{name}_{method}"] = df.index.isin(path)
+
+        #save the df to a csv
+        df.to_csv(f"{self.out_path}/data_frames/path_df.csv")
         return df
 
 
@@ -343,7 +352,7 @@ class OMEEvaluator:
         """
         fig, ax = plt.subplots()
         
-        n_path_plt = sns.barplot(
+        plot = sns.barplot(
             x=df_sample["Method"],
             y=df_sample["Edit_distance"],
             edgecolor='black',
@@ -364,12 +373,15 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/method_edit_plt.svg")
         self.plot_dict["method_edit_plt"] = f"../plots/method_edit_plt.svg"
-        plt.show()
+        #plt.show()
 
         return fig, ax
 
 
-    def paths_annotation_stacked_plt(self, df_sample: pd.DataFrame = None):
+    def paths_annotation_stacked_plt(
+            self,
+            df_sample: pd.DataFrame = None,
+            ):
         """
         Plots the number of paths and annotations per sample as a stacked bar plot.
         Uses the seaborn library.
@@ -379,19 +391,20 @@ class OMEEvaluator:
 
         n_path_plt = sns.barplot(
             x=df_sample["Method"],
-            y=df_sample["n_paths"],
+            y=df_sample["n_paths"]-df_sample["n_annotations"],
             edgecolor='black',
             ax=ax,
             palette=self.palette0,
             label="OME Paths")
-        
+        bottom_heights = [patch.get_height() for patch in n_path_plt.patches]
         n_annot_plt = sns.barplot(
             x=df_sample["Method"],
             y=df_sample["n_annotations"],
             edgecolor='black',
             ax=ax,
             palette=self.palette1,
-            label="Annotation Paths")
+            label="Annotation Paths",
+            bottom=bottom_heights)
 
 
         ax.set_xlabel("Sample", fontsize=14)
@@ -408,12 +421,15 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/paths_annotation_stacked_plt.svg")
         self.plot_dict["paths_annotation_stacked_plt"] = f"../plots/paths_annotation_stacked_plt.svg"
-        plt.show()
+        #plt.show()
 
         return fig, ax
     
         
-    def n_paths_method_plt(self, df_sample: pd.DataFrame = None):
+    def n_paths_method_plt(
+            self, 
+            df_sample: pd.DataFrame = None,
+    ):
         """
         Plots the number of paths per method as a bar plot.
         
@@ -426,7 +442,7 @@ class OMEEvaluator:
         """
         fig, ax = plt.subplots()
 
-        n_path_plt = sns.barplot(
+        plot = sns.barplot(
             x=df_sample["Method"],
             y=df_sample["n_paths"],
             edgecolor='black',
@@ -449,7 +465,7 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/paths_stacked_plt.svg")
         self.plot_dict["paths_stacked_plt"] = f"../plots/paths_stacked_plt.svg"
-        plt.show()
+        #plt.show()
 
         return fig, ax
 
@@ -464,7 +480,7 @@ class OMEEvaluator:
         """
         fig, ax = plt.subplots()
 
-        n_path_plt = sns.barplot(
+        plot = sns.barplot(
             x=df_sample["Method"],
             y=df_sample["Edit_distance"],
             hue=df_sample["og_image_format"],
@@ -487,7 +503,7 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/paths_stacked_plt.svg")
         self.plot_dict["paths_stacked_plt"] = f"../plots/paths_stacked_plt.svg"
-        plt.show()
+        #plt.show()
 
         return fig, ax
     
@@ -501,9 +517,210 @@ class OMEEvaluator:
         """
         pass
 
+    def method_attempts_plot(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        """
+        This plots the number of attempts against the number of paths in the og image.
+        """
+        fig, ax = plt.subplots()
+
+
+        plot = sns.barplot(
+            x=df_sample["n_paths"],
+            y=df_sample["attempts"],
+            edgecolor='black',
+            hue=df_sample["Method"],
+            ax=ax,
+            palette=self.palette0)
+
+        ax.set_xlabel("Number of Paths", fontsize=14)
+        ax.set_ylabel("Number of Attempts", fontsize=14)
+        ax.set_title("Attempts by Paths", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/attempts_paths_plt.svg")
+        self.plot_dict["attempts_paths_plt"] = f"../plots/attempts_paths_plt.svg"
+        #plt.show()
+
+        return fig, ax
+    
+    def format_counts_plt(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        """
+        This plot shows the formats on the x axis, and how many samples are in
+        each format on the y axis. the different samples need to be identified via
+        the name tag to not count the same file multiple times for each method.
+        
+        """
+        fig, ax = plt.subplots()
+        y = df_sample[df_sample["Method"]=="Bioformats"]["og_image_format"].value_counts()
+        plot = sns.barplot(
+            x=y.index,
+            y=y,
+            edgecolor='black',
+            ax=ax,
+            palette=self.palette0)
+
+        ax.set_xlabel("Format", fontsize=14)
+        ax.set_ylabel("Number of Samples", fontsize=14)
+        ax.set_title("Number of Samples by Format", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+        # set the y ticks to integers
+        ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+
+        #ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/format_counts_plt.svg")
+        self.plot_dict["format_counts_plt"] = f"../plots/format_counts_plt.svg"
+        #plt.show()
+
+        return fig, ax
+    
+    def format_n_paths(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        """
+        This plots shows the format on the x axis and the number of paths of the y axis as a scatter plot for each data point. But only for the Bioformats method.
+        """
+        fig, ax = plt.subplots()
+
+        plot = sns.scatterplot(
+            x=df_sample[df_sample["Method"]=="Bioformats"]["og_image_format"],
+            y=df_sample[df_sample["Method"]=="Bioformats"]["n_paths"],
+            edgecolor='black',
+            ax=ax,
+            palette=self.palette0)
+
+        ax.set_xlabel("Format", fontsize=14)
+        ax.set_ylabel("Number of Paths", fontsize=14)
+        ax.set_title("Number of Paths by Format", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+        # set the y ticks to integers
+        ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+
+        #ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/format_n_paths_plt.svg")
+        self.plot_dict["format_n_paths_plt"] = f"../plots/format_n_paths_plt.svg"
+        #plt.show()
+
+        return fig, ax
+    
+
+    def paths_annotation_stacked_relative_plt(
+            self,
+            df_sample: pd.DataFrame = None,
+            ):
+        """
+        Plots the relative to og_bioformats file number of paths and annotations per sample as a stacked bar plot.
+        Uses the seaborn library.
+
+        """
+        fig, ax = plt.subplots()
+        norm_values_n_paths = df_sample[df_sample['Method'] == 'Bioformats'].set_index('Name')['n_paths']
+
+        n_path_plt = sns.barplot(
+            x=df_sample["Method"],
+            y=df_sample.apply(
+            lambda row: (row['n_paths'] / norm_values_n_paths[row['Name']]),
+            axis=1) * (df_sample["n_paths"]-df_sample["n_annotations"])/df_sample["n_paths"],
+            edgecolor='black',
+            ax=ax,
+            label="OME Paths",
+            palette=self.palette0)
+
+        bottom_heights = [patch.get_height() for patch in n_path_plt.patches]
+        print(bottom_heights)
+        n_annot_plt = sns.barplot(
+            x=df_sample["Method"],
+            y=df_sample.apply(
+            lambda row: (row['n_paths'] / norm_values_n_paths[row['Name']]),
+            axis=1) * (1-(df_sample["n_paths"]-df_sample["n_annotations"])/df_sample["n_paths"]),
+            edgecolor='black',
+            ax=ax,
+            palette=self.palette1,
+            label="Annotation Paths",
+            bottom= bottom_heights,
+            )
+
+
+        ax.set_xlabel("Sample", fontsize=14)
+        ax.set_ylabel("Number of Paths", fontsize=14)
+        ax.set_title("Number of Paths and Annotations per Sample", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/paths_annotation_stacked_relative_plt.svg")
+        self.plot_dict["paths_annotation_stacked_relative_plt"] = f"../plots/paths_annotation_stacked_relative_plt.svg"
+        #plt.show()
+
+        return fig, ax
+    
+    def attempts_paths_plt(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        """
+        This plot shows the number of attempts per number of paths(of the original bioformats file). Each Method is its own line.
+        """
+        fig, ax = plt.subplots()
+
+        plot = sns.lineplot(
+            x=df_sample["n_paths"],
+            y=df_sample["attempts"],
+            hue=df_sample["Method"],
+            ax=ax,
+            palette=self.palette0)
+        
+        ax.set_xlabel("Number of Paths", fontsize=14)
+        ax.set_ylabel("Number of Attempts", fontsize=14)
+        ax.set_title("Attempts by Paths", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/attempts_paths_plt.svg")
+        self.plot_dict["attempts_paths_plt"] = f"../plots/attempts_paths_plt.svg"
+        #plt.show()
+
+
 # Which plots do I want to return?
 # plot which shows deviation between runs of same sample
 # plot which shows the datatype dependent performance
 # plot which shows the method dependent performance
 # plot which shows the cost to run the tool 
 # maybe show the average per sample std instead of the std of the entire dataset
+# maybe look at tempertature dependent performance

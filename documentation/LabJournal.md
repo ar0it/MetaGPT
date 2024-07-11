@@ -1,3 +1,8 @@
+# 10.07.24
+
+- create a plot that shows the completion rate on the y axis and the metadata property count on the x axis 
+- number of paths annotations stacked plot as a relative version (relative to bioformats translation)
+
 # 09.07.24
 - start writing the thesis (first rough draft)
 - work on problems that come up on the fly

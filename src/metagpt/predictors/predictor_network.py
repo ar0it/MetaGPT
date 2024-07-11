@@ -12,6 +12,7 @@ from predictors.predictor_template import PredictorTemplate
 from predictors.predictor_xml_annotation import PredictorXMLAnnotation
 from predictors.predictor_simple import PredictorSimple
 import utils
+import numpy as np
 
 class PredictorNetwork(PredictorTemplate):
     """
@@ -51,8 +52,8 @@ class PredictorNetwork(PredictorTemplate):
         sep_response_annot = self.sep_response["annotation_properties"]
         sep_response_ome = self.sep_response["ome_properties"]
 
-        self.pred_response_annot, annot_cost = PredictorXMLAnnotation("Here is the preselected raw metadata \n" + str(sep_response_annot)).predict()
-        self.pred_response_ome, ome_cost = PredictorSimple("Here is the preselected raw metadata \n" + str(sep_response_ome)).predict()
+        self.pred_response_annot, annot_cost, annot_attempts = PredictorXMLAnnotation("Here is the preselected raw metadata \n" + str(sep_response_annot)).predict()
+        self.pred_response_ome, ome_cost, ome_attempts = PredictorSimple("Here is the preselected raw metadata \n" + str(sep_response_ome)).predict()
         # merge
         print(self.pred_response_annot)
         xml_annotation = utils.dict_to_xml_annotation(self.pred_response_annot)
@@ -61,7 +62,7 @@ class PredictorNetwork(PredictorTemplate):
 
         cost = sep_cost + annot_cost + ome_cost
         self.clean_assistants()
-        return to_xml(ome_xml), cost
+        return to_xml(ome_xml), cost, np.mean([annot_attempts, ome_attempts])
     
     def init_sep_run(self):
         self.sep_run = self.client.beta.threads.runs.create(

@@ -354,7 +354,7 @@ def dict_to_xml_annotation(value: dict) -> XMLAnnotation:
     return XMLAnnotation(value=test_value)
 
 
-def merge_xml_annotation(ome: Optional[str], annot: Optional[Dict[str, Any]]) -> Optional[str]:
+def merge_xml_annotation(ome: str = None, annot: Dict[str, Any] = None) -> Optional[str]:
     """
     Merge the annotation section with the OME XML.
 
@@ -365,6 +365,10 @@ def merge_xml_annotation(ome: Optional[str], annot: Optional[Dict[str, Any]]) ->
     Returns:
         Optional[str]: The merged XML string, or None if inputs are invalid.
     """
+    if not ome:
+        ome = OME()
+        ome = ome_types.to_xml(ome)
+
     if ome and annot:
         out_xml_annotation_net = dict_to_xml_annotation(annot)
         ome_start_obj = ome_types.from_xml(ome)
@@ -372,50 +376,7 @@ def merge_xml_annotation(ome: Optional[str], annot: Optional[Dict[str, Any]]) ->
         return ome_types.to_xml(ome_start_obj)
     return None
 
-
-def make_prediction(predictor: PredictorTemplate,
-                    in_data,
-                    experiment,
-                    name,
-                    should_predict="maybe",
-                    start_point=None,
-                    data_format=None):
-    """
-    TODO: add docstring
-    """
-    method = predictor.__name__
-    path = f"{os.getcwd()}/out/assistant_outputs/{method}_{name}.txt"
-    print("-"*10+method+"_"+name+"-"*10)
-
-    if should_predict == "maybe":
-        out, cost = load_output(path) or predictor(in_data).predict()
-    elif should_predict:
-        out, cost = predictor(in_data).predict() or (None, None)
-    else:
-        out, cost = load_output(path) or (None, None)
-        
-    if not out:
-        return
-
-    # save the output to file or load from file if None
-    save_output(out, cost, path=path) #FIXME: Only save if the output was predicted
-    
-    if start_point:
-        #make sure the output is a dictionary
-        if not isinstance(out, dict):
-            out = ast.literal_eval(out)
-        out = merge_xml_annotation(start_point, out)
-
-
-    out_sample = Sample(name=name,
-                        metadata_str=out,
-                        method=method,
-                        format=data_format,
-                        cost=cost)
-    
-    experiment.add_sample(out_sample)
-
-def save_output(output: str, cost: float, path: str) -> bool:
+def save_output(output: str, cost: float, attempts: float, path: str) -> bool:
     """
     Save output to a file.
 
@@ -429,6 +390,7 @@ def save_output(output: str, cost: float, path: str) -> bool:
     try:
         with open(path, "w") as f:
             f.write(str(output)+ "\nCOST: " + str(cost))
+            f.write("\nATTEMPTS: " + str(attempts))
         return True
     except IOError as e:
         print(f"Error saving output: {e}")
@@ -451,9 +413,56 @@ def load_output(path: str) -> tuple[Optional[str], Optional[float]]:
             for line in lines:
                 if line.startswith("COST"):
                     cost = float(line.split(":")[-1].strip())
+                elif line.startswith("ATTEMPTS"):
+                    attempts = float(line.split(":")[-1].strip())
                 else:
                     output += line
-        return output, cost
+        return output, cost, attempts
     except Exception as e:
         print(f"Error loading output: {e}")
         return None
+    
+def make_prediction(predictor: PredictorTemplate,
+                    in_data,
+                    experiment,
+                    name,
+                    should_predict="maybe",
+                    start_point=None,
+                    data_format=None):
+    """
+    TODO: add docstring
+    """
+    method = predictor.__name__
+    path = f"{os.getcwd()}/out/assistant_outputs/{method}_{name}.txt"
+    print("-"*10+method+"_"+name+"-"*10)
+
+    if should_predict == "maybe":
+        out, cost, attempts = load_output(path) or predictor(in_data).predict()
+    elif should_predict:
+        out, cost, attempts = predictor(in_data).predict() or (None, None)
+    else:
+        out, cost, attempts = load_output(path) or (None, None)
+        
+    if not out:
+        return
+
+    # save the output to file
+    if out:
+        save_output(out, cost, attempts, path=path) #FIXME: Only save if the output was predicted
+    
+    if start_point and out:
+        #make sure the output is a dictionary
+        if not isinstance(out, dict):
+            out = ast.literal_eval(out)
+        out = merge_xml_annotation(start_point, out)
+
+
+    out_sample = Sample(name=name,
+                        metadata_str=out,
+                        method=method,
+                        format=data_format,
+                        cost=cost,
+                        attempts=attempts)
+     
+    experiment.add_sample(out_sample)
+

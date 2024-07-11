@@ -27,6 +27,7 @@ class PredictorTemplate:
         self.out_path = None
         self.token_in_cost = 5/1e6
         self.token_out_cost = 15/1e6
+        self.attempts = 1
 
     def predict(self):
         """

@@ -17,7 +17,6 @@ class PredictorSimple(PredictorTemplate):
     """
     def __init__(self, raw_meta: str) -> None:
         super().__init__()
-        self.attempt = 0
         self.raw_metadata = raw_meta
         self.full_message = "The raw data is: \n" + str(self.raw_metadata)
         self.prompt = """
@@ -106,15 +105,15 @@ class PredictorSimple(PredictorTemplate):
 
         except Exception as e:
             print(e)
-            if self.attempt < 3:
-                self.attempt += 1
+            if self.attempts < 4:
+                self.attempts += 1
                 return self.predict()
             else:
                 raise ValueError("Could not convert the OME XML to OME object")
         
 
         self.clean_assistants()        
-        return response, cost
+        return response, cost, self.attempts
     
     def init_run(self):
         self.run = self.client.beta.threads.runs.create(

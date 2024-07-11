@@ -1,4 +1,7 @@
-{'annotations': {'Software': ['hyperstack', 'MetaMorph', 'ImageJ']}}
+{'annotations': {'Software': ['MetaMorph', 'ImageJ'], 'ImageType': 'hyperstack'}}
+
+
+
 
 
 
@@ -10,3 +13,4 @@
 
 
 COST: 0.0
+ATTEMPTS: 1.0

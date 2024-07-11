@@ -1,6 +1,6 @@
 <OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
   <Image ID="Image:0">
-    <Pixels ID="Pixels:6" DimensionOrder="XYCZT" Type="uint8" SignificantBits="8" SizeX="680" SizeY="280" SizeZ="1" SizeC="1" SizeT="1" PhysicalSizeX="9.93E-06" PhysicalSizeY="9.93E-06" PhysicalSizeZ="1.0">
+    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint8" SignificantBits="8" SizeX="680" SizeY="280" SizeZ="1" SizeC="1" SizeT="1" PhysicalSizeX="9.926E-06" PhysicalSizeY="9.926E-06" PhysicalSizeZ="1.0">
       <Channel ID="Channel:0:0" SamplesPerPixel="1"/>
     </Pixels>
   </Image>
@@ -110,4 +110,8 @@
 
 
 
+
+
+
 COST: 0.0
+ATTEMPTS: 2.0

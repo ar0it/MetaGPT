@@ -1,10 +1,10 @@
 <OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06">
   <Image ID="Image:0">
-    <Pixels DimensionOrder="XYCZT" Type="uint8" SizeX="680" SizeY="280" SizeZ="1" SizeC="3" SizeT="30" BigEndian="false" Interleaved="false">
+    <Pixels DimensionOrder="XYCZT" Type="uint8" SizeX="680" SizeY="280" SizeZ="1" SizeC="3" SizeT="30" BigEndian="false" Interleaved="false" Compression="Uncompressed" PhysicalSizeX="9.926e-06" PhysicalSizeY="9.926e-06" PhysicalSizeZ="1.0">
       <Channel ID="Channel:0:0" SamplesPerPixel="1"/>
       <Channel ID="Channel:0:1" SamplesPerPixel="1"/>
       <Channel ID="Channel:0:2" SamplesPerPixel="1"/>
-      <TiffData FirstC="0" FirstZ="0" FirstT="0" PlaneCount="90"/>
+      <TiffData/>
     </Pixels>
   </Image>
 </OME>
@@ -18,4 +18,9 @@
 
 
 
+
+
+
+
 COST: 0.0
+ATTEMPTS: 1.0
