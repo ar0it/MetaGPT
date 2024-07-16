@@ -1,5 +1,5 @@
-from src.metagpt.predictors.predictor_template import PredictorTemplate
-from src.metagpt.assistants.assistant_DiscriminatorDave import DiscriminatorDave
+from metagpt.predictors.predictor_template import PredictorTemplate
+from metagpt.assistants.assistant_DiscriminatorDave import DiscriminatorDave
 import time
 
 

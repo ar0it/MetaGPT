@@ -8,10 +8,10 @@ import sys
 import importlib
 import ast
 from ome_types import from_xml, to_xml
-from predictors.predictor_template import PredictorTemplate
-from predictors.predictor_xml_annotation import PredictorXMLAnnotation
-from predictors.predictor_simple import PredictorSimple
-import utils
+from metagpt.predictors.predictor_template import PredictorTemplate
+from metagpt.predictors.predictor_simple_annotator import PredictorSimpleAnnotation
+from metagpt.predictors.predictor_simple import PredictorSimple
+import metagpt.utils.utils as utils
 import numpy as np
 
 class PredictorNetwork(PredictorTemplate):
@@ -46,13 +46,17 @@ class PredictorNetwork(PredictorTemplate):
         self.init_vector_store()
         self.init_sep_assistant()   
         self.init_sep_run()
-        self.sep_response = self.sep_run.required_action.submit_tool_outputs.tool_calls[0].function.arguments
+        try:
+            self.sep_response = self.sep_run.required_action.submit_tool_outputs.tool_calls[0].function.arguments
+            self.sep_response = ast.literal_eval(self.sep_response)
+        except:
+            return None, None, self.attempts
+        
         sep_cost = self.get_cost(self.sep_run)
-        self.sep_response = ast.literal_eval(self.sep_response)
         sep_response_annot = self.sep_response["annotation_properties"]
         sep_response_ome = self.sep_response["ome_properties"]
 
-        self.pred_response_annot, annot_cost, annot_attempts = PredictorXMLAnnotation("Here is the preselected raw metadata \n" + str(sep_response_annot)).predict()
+        self.pred_response_annot, annot_cost, annot_attempts = PredictorSimpleAnnotation("Here is the preselected raw metadata \n" + str(sep_response_annot)).predict()
         self.pred_response_ome, ome_cost, ome_attempts = PredictorSimple("Here is the preselected raw metadata \n" + str(sep_response_ome)).predict()
         # merge
         print(self.pred_response_annot)

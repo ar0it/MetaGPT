@@ -1,3 +1,15 @@
+
+# 16.07.24
+- Was geht noch nicht?
+- data reading sometimes weird
+- tree approach not used at all (Tree annotator?)
+- marvin approach not used at all
+- only 2 test files --> use more and different files (larger)
+- Not all file formats seem to work?
+- make sure marvin tree approach scope limited
+- Implement a Distorter which goes from ome xml to unstructured metadata --> this way I have a ground truth
+
+
 # 10.07.24
 
 - create a plot that shows the completion rate on the y axis and the metadata property count on the x axis 

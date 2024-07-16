@@ -8,8 +8,8 @@ import sys
 import importlib
 import ast
 from ome_types import from_xml, to_xml
-from predictors.predictor_template import PredictorTemplate
-import utils
+from metagpt.predictors.predictor_template import PredictorTemplate
+import metagpt.utils.utils as utils
 
 class PredictorSimple(PredictorTemplate):
     """
@@ -88,30 +88,30 @@ class PredictorSimple(PredictorTemplate):
         self.init_vector_store()
         self.init_assistant()   
         self.init_run()
-        if self.run.status == 'completed':
-            response = self.client.beta.threads.messages.list(
-                thread_id=self.thread.id
-            )
-            response = response.data[0].content[0].text.value[7:][:-4]
-            cost = self.get_cost(run=self.run)
-        elif self.run.status == 'requires_action':
-            response = self.run.required_action.submit_tool_outputs.tool_calls[0]
-            response = ast.literal_eval(response.function.arguments)
-            response = response['ome_xml']
-            cost = self.get_cost(run=self.run)
-
+        response = None
         try:
-            test_ome_pred = from_xml(response)
+            if self.run.status == 'completed':
+                response = self.client.beta.threads.messages.list(
+                    thread_id=self.thread.id
+                )
+                response = response.data[0].content[0].text.value[7:][:-4]
+                cost = self.get_cost(run=self.run)
+            elif self.run.status == 'requires_action':
+                response = self.run.required_action.submit_tool_outputs.tool_calls[0]
+                response = ast.literal_eval(response.function.arguments)
+                response = response['ome_xml']
 
+            test_ome_pred = from_xml(response)
         except Exception as e:
             print(e)
-            if self.attempts < 4:
+            if self.attempts < 1:
                 self.attempts += 1
                 return self.predict()
             else:
-                raise ValueError("Could not convert the OME XML to OME object")
-        
-
+                print("Could not convert the OME XML to OME object")
+                return None, None, self.attempts
+            
+        cost = self.get_cost(run=self.run)
         self.clean_assistants()        
         return response, cost, self.attempts
     

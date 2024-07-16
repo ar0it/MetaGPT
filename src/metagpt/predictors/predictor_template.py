@@ -28,7 +28,8 @@ class PredictorTemplate:
         self.token_in_cost = 5/1e6
         self.token_out_cost = 15/1e6
         self.attempts = 1
-
+        self.name = self.__class__.__name__
+        
     def predict(self):
         """
         Predict the OME XML from the raw metadata

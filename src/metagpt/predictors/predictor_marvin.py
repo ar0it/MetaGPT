@@ -1,4 +1,4 @@
-from predictors.predictor_template import PredictorTemplate
+from metagpt.predictors.predictor_template import PredictorTemplate
 from marvin.beta.applications import Application
 class PredictorMarvin(PredictorTemplate):
     """

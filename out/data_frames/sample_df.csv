@@ -1,11 +1,6 @@
 ,Method,n_paths,n_annotations,Edit_distance,Name,og_image_format,cost,attempts
-Rio9 0528_Bioformats,Bioformats,42,20,0.0,Rio9 0528,tif,,
-Rio9 0528_PredictorSimple,PredictorSimple,14,0,0.935483870967742,Rio9 0528,tif,,1.0
-Rio9 0528_PredictorNetwork,PredictorNetwork,25,10,0.792,Rio9 0528,tif,,1.0
-Rio9 0528_PredictorXMLAnnotation,PredictorXMLAnnotation,50,28,0.3961136023916293,Rio9 0528,tif,,1.0
-Rio9 0528_PredictorXMLAnnotationNet,PredictorXMLAnnotationNet,47,25,0.05386416861826693,Rio9 0528,tif,,1.0
 testetst_Image8_edited__Bioformats,Bioformats,46,22,0.0,testetst_Image8_edited_,ome,,
 testetst_Image8_edited__PredictorSimple,PredictorSimple,19,0,0.9606299212598425,testetst_Image8_edited_,ome,,1.0
 testetst_Image8_edited__PredictorNetwork,PredictorNetwork,25,10,0.7408312958435208,testetst_Image8_edited_,ome,,2.0
-testetst_Image8_edited__PredictorXMLAnnotation,PredictorXMLAnnotation,54,30,0.36107382550335565,testetst_Image8_edited_,ome,,1.0
-testetst_Image8_edited__PredictorXMLAnnotationNet,PredictorXMLAnnotationNet,47,23,0.040322580645161255,testetst_Image8_edited_,ome,,1.0
+testetst_Image8_edited__PredictorSimpleAnnotation,PredictorSimpleAnnotation,0,0,2.0,testetst_Image8_edited_,ome,,2.0
+testetst_Image8_edited__PredictorNetworkAnnotation,PredictorNetworkAnnotation,0,0,2.0,testetst_Image8_edited_,ome,,1.0

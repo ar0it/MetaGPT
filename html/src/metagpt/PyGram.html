@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>src.metagpt.PyGram API documentation</title>
+<meta name="description" content="Allows for the computation of the PQ-Gram edit distance of two trees. To calculate the distance,
+a Profile object must first be created for each …">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>src.metagpt.PyGram</code></h1>
+</header>
+<section id="section-intro">
+<p>Allows for the computation of the PQ-Gram edit distance of two trees. To calculate the distance,
+a Profile object must first be created for each tree, then the edit_distance function can be called.</p>
+<pre><code>For more information on the PQ-Gram algorithm, please see the README.
+</code></pre>
+<p>Copyright (c) 2011, Tyler Goeringer and Tim Henderson
+All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<pre><code>* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+* Neither the name of the Case Western Reserve University nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+</code></pre>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="src.metagpt.PyGram.build_extended_tree"><code class="name flex">
+<span>def <span class="ident">build_extended_tree</span></span>(<span>root, p=1, q=1)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This method will take a normal tree structure and the given values for p and q, returning
+a new tree which represents the so-called PQ-Extended-Tree.</p>
+<p>To do this, the following algorithm is used:
+1) Add p-1 null ancestors to the root
+2) Traverse tree, add q-1 null children before the first and
+after the last child of every non-leaf node
+3) For each leaf node add q null children</p></div>
+</dd>
+<dt id="src.metagpt.PyGram.q_append_leaf"><code class="name flex">
+<span>def <span class="ident">q_append_leaf</span></span>(<span>node, q)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This method will append q null node children to the given node. (Step 3)</p></div>
+</dd>
+<dt id="src.metagpt.PyGram.q_append_non_leaf"><code class="name flex">
+<span>def <span class="ident">q_append_non_leaf</span></span>(<span>node, q)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This method will append null node children to the given node. (Step 2)</p>
+<p>When adding null nodes to a non-leaf node, the null nodes should exist on both side of
+the real children. This is why the first of each pair of children added sets the flag
+'before=True', ensuring that on the left and right (or start and end) of the list of
+children a node is added.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="src.metagpt.PyGram.Profile"><code class="flex name class">
+<span>class <span class="ident">Profile</span></span>
+<span>(</span><span>root, p=2, q=3)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a PQ-Gram Profile, which is a list of PQ-Grams. Each PQ-Gram is represented by a
+ShiftRegister. This class relies on both the ShiftRegister and tree.Node classes.</p>
+<p>Builds the PQ-Gram Profile of the given tree, using the p and q parameters specified.
+The p and q parameters do not need to be specified, however, different values will have
+an effect on the distribution of the calculated edit distance. In general, smaller values
+of p and q are better, though a value of (1, 1) is not recommended, and anything lower is
+invalid.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Profile(object):
+    &#34;&#34;&#34;
+        Represents a PQ-Gram Profile, which is a list of PQ-Grams. Each PQ-Gram is represented by a
+        ShiftRegister. This class relies on both the ShiftRegister and tree.Node classes.
+    &#34;&#34;&#34;
+    
+    def __init__(self, root, p=2, q=3):
+        &#34;&#34;&#34;
+            Builds the PQ-Gram Profile of the given tree, using the p and q parameters specified.
+            The p and q parameters do not need to be specified, however, different values will have
+            an effect on the distribution of the calculated edit distance. In general, smaller values
+            of p and q are better, though a value of (1, 1) is not recommended, and anything lower is
+            invalid.
+        &#34;&#34;&#34;
+        super(Profile, self).__init__()
+        ancestors = ShiftRegister(p)
+        self.list = list()
+        
+        self.profile(root, p, q, ancestors)
+        self.sort()
+    
+    def profile(self, root, p, q, ancestors):
+        &#34;&#34;&#34;
+            Recursively builds the PQ-Gram profile of the given subtree. This method should not be called
+            directly and is called from __init__.
+        &#34;&#34;&#34;
+        ancestors.shift(root.label)
+        siblings = ShiftRegister(q)
+        
+        if(len(root.children) == 0):
+            self.append(ancestors.concatenate(siblings))
+        else:
+            for child in root.children:
+                siblings.shift(child.label)
+                self.append(ancestors.concatenate(siblings))
+                self.profile(child, p, q, copy.deepcopy(ancestors))
+            for i in range(q-1):
+                siblings.shift(&#34;*&#34;)
+                self.append(ancestors.concatenate(siblings))
+    
+    def edit_distance(self, other):
+        &#34;&#34;&#34;
+            Computes the edit distance between two PQ-Gram Profiles. This value should always
+            be between 0.0 and 1.0. This calculation is reliant on the intersection method.
+        &#34;&#34;&#34;
+        union = len(self) + len(other)
+        return 1.0 - 2.0*(self.intersection(other)/union)
+    
+    def intersection(self, other):
+        &#34;&#34;&#34;
+            Computes the set intersection of two PQ-Gram Profiles and returns the number of
+            elements in the intersection.
+        &#34;&#34;&#34;
+        intersect = 0.0
+        i = j = 0
+        while i &lt; len(self) and j &lt; len(other):
+            intersect += self.gram_edit_distance(self[i], other[j])
+            if self[i] == other[j]:
+                i += 1
+                j += 1
+            elif self[i] &lt; other[j]:
+                i += 1
+            else:
+                j += 1
+        return intersect
+        
+    def gram_edit_distance(self, gram1, gram2):
+        &#34;&#34;&#34;
+            Computes the edit distance between two different PQ-Grams. If the two PQ-Grams are the same
+            then the distance is 1.0, otherwise the distance is 0.0. Changing this will break the
+            metrics of the algorithm.
+        &#34;&#34;&#34;
+        distance = 0.0
+        if gram1 == gram2:
+            distance = 1.0
+        return distance
+    
+    def sort(self):
+        &#34;&#34;&#34;
+            Sorts the PQ-Grams by the concatenation of their labels. This step is automatically performed
+            when a PQ-Gram Profile is created to ensure the intersection algorithm functions properly and
+            efficiently.
+        &#34;&#34;&#34;
+        self.list.sort(key=lambda x: &#39;&#39;.join(x)) # previously it was  &#39;&#39;.join but didnt run, not sure whats right
+    
+    def append(self, value):
+        self.list.append(value)
+    
+    def __len__(self):
+        return len(self.list)
+    
+    def __repr__(self):
+        return str(self.list)
+    
+    def __str__(self):
+        return str(self.list)
+    
+    def __getitem__(self, key):
+        return self.list[key]
+    
+    def __iter__(self):
+        for x in self.list: yield x</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="src.metagpt.PyGram.Profile.append"><code class="name flex">
+<span>def <span class="ident">append</span></span>(<span>self, value)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="src.metagpt.PyGram.Profile.edit_distance"><code class="name flex">
+<span>def <span class="ident">edit_distance</span></span>(<span>self, other)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the edit distance between two PQ-Gram Profiles. This value should always
+be between 0.0 and 1.0. This calculation is reliant on the intersection method.</p></div>
+</dd>
+<dt id="src.metagpt.PyGram.Profile.gram_edit_distance"><code class="name flex">
+<span>def <span class="ident">gram_edit_distance</span></span>(<span>self, gram1, gram2)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the edit distance between two different PQ-Grams. If the two PQ-Grams are the same
+then the distance is 1.0, otherwise the distance is 0.0. Changing this will break the
+metrics of the algorithm.</p></div>
+</dd>
+<dt id="src.metagpt.PyGram.Profile.intersection"><code class="name flex">
+<span>def <span class="ident">intersection</span></span>(<span>self, other)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Computes the set intersection of two PQ-Gram Profiles and returns the number of
+elements in the intersection.</p></div>
+</dd>
+<dt id="src.metagpt.PyGram.Profile.profile"><code class="name flex">
+<span>def <span class="ident">profile</span></span>(<span>self, root, p, q, ancestors)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Recursively builds the PQ-Gram profile of the given subtree. This method should not be called
+directly and is called from <strong>init</strong>.</p></div>
+</dd>
+<dt id="src.metagpt.PyGram.Profile.sort"><code class="name flex">
+<span>def <span class="ident">sort</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sorts the PQ-Grams by the concatenation of their labels. This step is automatically performed
+when a PQ-Gram Profile is created to ensure the intersection algorithm functions properly and
+efficiently.</p></div>
+</dd>
+</dl>
+</dd>
+<dt id="src.metagpt.PyGram.ShiftRegister"><code class="flex name class">
+<span>class <span class="ident">ShiftRegister</span></span>
+<span>(</span><span>size)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Represents a register which acts as a fixed size queue. There are only two valid
+operations on a ShiftRegister: shift and concatenate. Shifting results in a new
+value being pushed onto the end of the list and the value at the beginning list being
+removed. Note that you cannot recover this value, nor do you need to for generating
+PQ-Gram Profiles.</p>
+<p>Creates an internal list of the specified size and fills it with the default value
+of "*". Once a ShiftRegister is created you cannot change the size without
+concatenating another ShiftRegister.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ShiftRegister(object):
+    &#34;&#34;&#34;
+        Represents a register which acts as a fixed size queue. There are only two valid
+        operations on a ShiftRegister: shift and concatenate. Shifting results in a new
+        value being pushed onto the end of the list and the value at the beginning list being
+        removed. Note that you cannot recover this value, nor do you need to for generating
+        PQ-Gram Profiles.
+    &#34;&#34;&#34;
+
+    def __init__(self, size):
+        &#34;&#34;&#34;
+            Creates an internal list of the specified size and fills it with the default value
+            of &#34;*&#34;. Once a ShiftRegister is created you cannot change the size without 
+            concatenating another ShiftRegister.
+        &#34;&#34;&#34;
+        self.register = list()
+        for i in range(size):
+            self.register.append(&#34;*&#34;)
+        
+    def concatenate(self, reg):
+        &#34;&#34;&#34;
+            Concatenates two ShiftRegisters and returns the resulting ShiftRegister.
+        &#34;&#34;&#34;
+        temp = list(self.register)
+        temp.extend(reg.register)
+        return temp
+    
+    def shift(self, el):
+        &#34;&#34;&#34;
+            Shift is the primary operation on a ShiftRegister. The new item given is pushed onto
+            the end of the ShiftRegister, the first value is removed, and all items in between shift 
+            to accomodate the new value.
+        &#34;&#34;&#34;
+        self.register.pop(0)
+        self.register.append(el)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="src.metagpt.PyGram.ShiftRegister.concatenate"><code class="name flex">
+<span>def <span class="ident">concatenate</span></span>(<span>self, reg)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Concatenates two ShiftRegisters and returns the resulting ShiftRegister.</p></div>
+</dd>
+<dt id="src.metagpt.PyGram.ShiftRegister.shift"><code class="name flex">
+<span>def <span class="ident">shift</span></span>(<span>self, el)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Shift is the primary operation on a ShiftRegister. The new item given is pushed onto
+the end of the ShiftRegister, the first value is removed, and all items in between shift
+to accomodate the new value.</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="src.metagpt" href="index.html">src.metagpt</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="src.metagpt.PyGram.build_extended_tree" href="#src.metagpt.PyGram.build_extended_tree">build_extended_tree</a></code></li>
+<li><code><a title="src.metagpt.PyGram.q_append_leaf" href="#src.metagpt.PyGram.q_append_leaf">q_append_leaf</a></code></li>
+<li><code><a title="src.metagpt.PyGram.q_append_non_leaf" href="#src.metagpt.PyGram.q_append_non_leaf">q_append_non_leaf</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="src.metagpt.PyGram.Profile" href="#src.metagpt.PyGram.Profile">Profile</a></code></h4>
+<ul class="two-column">
+<li><code><a title="src.metagpt.PyGram.Profile.append" href="#src.metagpt.PyGram.Profile.append">append</a></code></li>
+<li><code><a title="src.metagpt.PyGram.Profile.edit_distance" href="#src.metagpt.PyGram.Profile.edit_distance">edit_distance</a></code></li>
+<li><code><a title="src.metagpt.PyGram.Profile.gram_edit_distance" href="#src.metagpt.PyGram.Profile.gram_edit_distance">gram_edit_distance</a></code></li>
+<li><code><a title="src.metagpt.PyGram.Profile.intersection" href="#src.metagpt.PyGram.Profile.intersection">intersection</a></code></li>
+<li><code><a title="src.metagpt.PyGram.Profile.profile" href="#src.metagpt.PyGram.Profile.profile">profile</a></code></li>
+<li><code><a title="src.metagpt.PyGram.Profile.sort" href="#src.metagpt.PyGram.Profile.sort">sort</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="src.metagpt.PyGram.ShiftRegister" href="#src.metagpt.PyGram.ShiftRegister">ShiftRegister</a></code></h4>
+<ul class="">
+<li><code><a title="src.metagpt.PyGram.ShiftRegister.concatenate" href="#src.metagpt.PyGram.ShiftRegister.concatenate">concatenate</a></code></li>
+<li><code><a title="src.metagpt.PyGram.ShiftRegister.shift" href="#src.metagpt.PyGram.ShiftRegister.shift">shift</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

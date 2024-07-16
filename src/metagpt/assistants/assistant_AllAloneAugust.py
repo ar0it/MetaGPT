@@ -1,4 +1,4 @@
-from src.metagpt.assistants.assistant_template import AssistantTemplate
+from metagpt.assistants.assistant_template import AssistantTemplate
 from pydantic import BaseModel, Field
 import time
 

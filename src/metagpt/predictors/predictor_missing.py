@@ -1,5 +1,5 @@
-from src.metagpt.predictors.predictor_template import PredictorTemplate
-from src.metagpt.assistants.assistant_MissingMyrte import MissingMyrte
+from metagpt.predictors.predictor_template import PredictorTemplate
+from metagpt.assistants.assistant_MissingMyrte import MissingMyrte
 import time
 
 

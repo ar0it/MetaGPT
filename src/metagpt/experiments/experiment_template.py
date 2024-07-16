@@ -1,10 +1,61 @@
+from metagpt.utils.DataClasses import Dataset, Sample
+from metagpt.utils import utils, BioformatsReader
+
+
 class ExperimentTemplate:
     """
     The experiment template class defines an experiment object that can be used to run experiments.
     The experiment defines the dataset, the predictors, the evaluator and more.
     """
     def __init__(self) -> None:
-        self.dataset = None
+        self.data_paths:list = []
         self.predictors:list = []
         self.reps:int = 1
         self.create_report:bool = True
+        self.dataset = Dataset()
+        self.should_predict = "maybe"
+        self.evaluators:list = []
+        self.out_path:str = None
+        self.schema:str = None
+
+    def run(self):
+        """
+        Run the experiment
+        """
+        for i in range (self.reps):
+            for path in self.data_paths:
+                print("-"*60)
+                print("Processing image:")
+                print(path)
+                print("-"*60)
+                print("-"*10+"Bioformats"+"-"*10)
+                out_bioformats = BioformatsReader.get_omexml_metadata(path=path) # the raw metadata as ome xml str
+                raw_meta = BioformatsReader.get_raw_metadata(path=path) # the raw metadata as dictionary of key value pairs
+                tree_meta = BioformatsReader.raw_to_tree(raw_meta) # the raw metadata as nested dictionary --> more compressed
+                file_name = path.split("/")[-1].split(".")[0]
+                data_format = path.split("/")[-1].split(".")[1]
+
+                bio_sample = Sample(name=file_name,
+                                    metadata_str=out_bioformats,
+                                    method="Bioformats",
+                                    format=data_format)
+                
+                self.dataset.add_sample(bio_sample)
+
+                for predictor in self.predictors:
+                    print("-"*10+predictor.__class__.__name__+"-"*10)
+                    utils.make_prediction(
+                        predictor=predictor,
+                        in_data=tree_meta,
+                        dataset=self.dataset,
+                        name=file_name,
+                        should_predict=self.should_predict,
+                        data_format=data_format,
+                        iter=i
+                    )
+        
+        for eval in self.evaluators:
+            eval(
+                schema=self.schema,
+                dataset=self.dataset,
+                out_path=self.out_path).report()
