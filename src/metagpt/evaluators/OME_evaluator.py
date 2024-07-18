@@ -10,7 +10,7 @@ from metagpt.utils.DataClasses import Sample, Dataset
 import pygram.tree as tree
 from pygram.PyGram import Profile
 from deprecated import deprecated
-
+from metagpt.utils import utils
 
 class OMEEvaluator:
     """
@@ -50,11 +50,7 @@ class OMEEvaluator:
 
     def zss_edit_distance(self, xml_a: ET.Element, xml_b: ET.Element):
         """
-        Calculate the edit distance between two xml trees on word level.
-        Here an outline of the algorithm:
-        1. Get the paths of the xml trees.
-        2. Align the paths such that the distance between the paths is minimized.
-        3. Calculate the word level edit distance between the paths.
+        TODO: add docstring
         """
         self.pred_graph = self.get_graph(xml_a)
         self.gt_graph = self.get_graph(xml_b)
@@ -181,27 +177,9 @@ class OMEEvaluator:
         return dp[-1][-1], alignment_a, alignment_b
     
 
-    def get_paths(self, xml_root: ET.Element, path: str = '') -> set:
+    def get_graph(self, xml_root: ET.Element, root=None)-> Node:
         """
-        Helper function to get all paths in an XML tree.
-        :return: set of paths
-        """
-        paths = set()
-        for child in xml_root:
-            new_path = path + '/' + child.tag.split('}')[1]
-            if child.attrib:
-                for key in child.attrib.keys():
-                    paths.add(new_path + '/' + key + '=' + child.attrib[key])
-                    paths.update(self.get_paths(child, new_path))
-            else:
-                paths.add(new_path)
-                paths.update(self.get_paths(child, new_path))
-        return paths
-    
-
-    def get_graph(self, xml_root: ET.Element, root=None):
-        """
-        Helper function to get the graph representation of an XML tree.
+        Helper function to get the graph representation of an ET XML tree as zss Node.
         """
         if root is None:
             root = Node("OME")
@@ -223,34 +201,10 @@ class OMEEvaluator:
         """
         Calculates the length of the difference between the path sets in two xml trees.
         """
-        paths_a = self.get_paths(xml_a)
-        paths_b = self.get_paths(xml_b)
+        paths_a = utils.get_json(xml_a)
+        paths_b = utils.get_json(xml_b)
         print("path difference: ", paths_a)
         return len(paths_a.symmetric_difference(paths_b))
-    
-
-    def read_ome_xml(self, path: str):
-        """
-        This method reads the ome xml file and returns the root element.
-        """
-        tree = ET.parse(path)
-        root = tree.getroot()
-        print("root", tree)
-        return root
-
-    def string_to_ome_xml(self, string):
-        """
-        This method reads the ome xml string and returns the root element.
-        """
-        root = ET.fromstring(string)
-        return root
-
-    def flatten(self, container):
-        for i in container:
-            if isinstance(i, (list, tuple, set)):
-                yield from self.flatten(i)
-            else:
-                yield i
     
 
     def report(self):
@@ -330,8 +284,8 @@ class OMEEvaluator:
         """
         for s in self.dataset.samples.values():
             if s.metadata_str:
-                s.metadata_xml = self.string_to_ome_xml(s.metadata_str)
-                s.paths = self.get_paths(s.metadata_xml)
+                s.metadata_xml = ET.fromstring(s.metadata_str)
+                s.paths = utils.get_json(s.metadata_xml)
 
             else:
                 s.paths = set()
@@ -339,7 +293,7 @@ class OMEEvaluator:
         self.all_paths = pd.Series(
             list(
                 set(
-                    self.flatten(
+                    utils.flatten(
                         [s.paths for s in self.dataset.samples.values()]))))
         
         df = pd.DataFrame(

@@ -1,0 +1,4 @@
+{'annotations': {'ImageProperties': {'Dimensions': {'ImageWidth': 680, 'ImageLength': 280}, 'Resolution': {'XResolution': 100777.212, 'YResolution': 100777.212, 'ResolutionUnit': 'Centimeter'}, 'PhotometricInterpretation': 'BlackIsZero', 'SamplesPerPixel': 1, 'NumberOfChannels': 1, 'BitsPerSample': 8, 'SampleFormat': 'unsigned integer', 'Compression': 'Uncompressed', 'PlanarConfiguration': 'Chunky', 'Software': 'OME Bio-Formats 6.7.0', 'MetaDataPhotometricInterpretation': 'Monochrome', 'MetaMorph': 'no', 'Hyperstack': 'true'}}}
+
+COST: 0.0
+ATTEMPTS: 1.0

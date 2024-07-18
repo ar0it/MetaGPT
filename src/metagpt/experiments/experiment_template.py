@@ -1,6 +1,7 @@
 from metagpt.utils.DataClasses import Dataset, Sample
 from metagpt.utils import utils, BioformatsReader
-
+from metagpt.distorters.distorter_template import DistorterTemplate
+import json
 
 class ExperimentTemplate:
     """
@@ -32,8 +33,15 @@ class ExperimentTemplate:
                 out_bioformats = BioformatsReader.get_omexml_metadata(path=path) # the raw metadata as ome xml str
                 raw_meta = BioformatsReader.get_raw_metadata(path=path) # the raw metadata as dictionary of key value pairs
                 tree_meta = BioformatsReader.raw_to_tree(raw_meta) # the raw metadata as nested dictionary --> more compressed
+
                 file_name = path.split("/")[-1].split(".")[0]
                 data_format = path.split("/")[-1].split(".")[1]
+
+                dt = DistorterTemplate()
+                fake_meta = dt.distort(
+                    out_bioformats,
+                    out_path=self.out_path + "distorted_data/" + file_name + "_distorted.json",
+                    should_pred=self.should_predict) # the distorted metadata as dictionary of key value pairs
 
                 bio_sample = Sample(name=file_name,
                                     metadata_str=out_bioformats,
@@ -46,7 +54,7 @@ class ExperimentTemplate:
                     print("-"*10+predictor.__class__.__name__+"-"*10)
                     utils.make_prediction(
                         predictor=predictor,
-                        in_data=tree_meta,
+                        in_data=fake_meta,
                         dataset=self.dataset,
                         name=file_name,
                         should_predict=self.should_predict,

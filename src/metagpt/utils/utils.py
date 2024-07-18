@@ -16,6 +16,8 @@ import os
 from metagpt.predictors.predictor_template import PredictorTemplate
 from typing import Optional
 import ast
+import xml.etree.ElementTree as ET
+from ome_types import from_xml, to_xml
 
 def render_cell_output(output_path):
     """
@@ -417,10 +419,17 @@ def load_output(path: str) -> tuple[Optional[str], Optional[float]]:
                     attempts = float(line.split(":")[-1].strip())
                 else:
                     output += line
+        # test if the loaded output is valid_xml
+        if output.startswith("{"):
+            merge_xml_annotation(annot=output)
+        elif output.startswith("<"):
+            from_xml(output)
+
         return output, cost, attempts
+    
     except Exception as e:
         print(f"Error loading output: {e}")
-        return None
+        return None, None, None
     
 def make_prediction(predictor: PredictorTemplate,
                     in_data,
@@ -438,7 +447,7 @@ def make_prediction(predictor: PredictorTemplate,
     print("-"*10+method+"_"+name+"-"*10)
 
     if should_predict == "maybe":
-        out, cost, attempts = load_output(path) or predictor(in_data).predict()
+        out, cost, attempts = load_output(path) or predictor(in_data).predict() # TODO: How does or work exactly does it take the option which is not None???
     elif should_predict:
         out, cost, attempts = predictor(in_data).predict() or (None, None)
     else:
@@ -455,7 +464,6 @@ def make_prediction(predictor: PredictorTemplate,
             out = ast.literal_eval(out)
         out = merge_xml_annotation(start_point, out)
 
-
     out_sample = Sample(name=name,
                         metadata_str=out,
                         method=method,
@@ -466,3 +474,46 @@ def make_prediction(predictor: PredictorTemplate,
      
     dataset.add_sample(out_sample)
 
+def flatten(container):
+    for i in container:
+        if isinstance(i, (list, tuple, set)):
+            yield from flatten(i)
+        else:
+            yield i
+
+
+def read_ome_xml(path: str)-> ET.Element:
+    """
+    This method reads the ome xml file and returns the ET root element.
+    """
+    tree = ET.parse(path)
+    root = tree.getroot()
+    print("root", tree)
+    return root
+
+def get_json(xml_root: ET.Element, paths={}) -> list:
+    """
+    Helper function to get all paths in an XML tree.
+    :return: set of paths
+    """
+    for child in xml_root:
+        child_tag = child.tag.split('}')[1]
+        if child.attrib:
+            new_dict = {}
+            new_dict[child_tag] = {}
+
+            for key in child.attrib.keys():
+                new_dict[child_tag][key] = child.attrib[key]
+
+            if child_tag+"s" not in paths:
+                paths[child_tag+"s"] = []
+            paths[child_tag+"s"] += [new_dict]
+
+            get_json(child, new_dict[child_tag])
+        elif child.text:
+            paths[child_tag] = child.text
+        else:
+            new_path = {}
+            paths[child_tag] = new_path
+            get_json(child, new_path)
+    return paths

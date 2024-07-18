@@ -1,0 +1,252 @@
+{
+    "Annotations": {
+        "XMLNotes": [
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:0",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "hyperstack",
+                            "Value": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:1",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "PlanarConfiguration",
+                            "Value": "Chunky"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:2",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "MetaDataPhotometricInterpretation",
+                            "Value": "Monochrome"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:3",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "SamplesPerPixel",
+                            "Value": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:4",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "NumberOfChannels",
+                            "Value": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:5",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "ResolutionUnit",
+                            "Value": "Centimeter"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:6",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "ImageWidth",
+                            "Value": "680"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:7",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "PhotometricInterpretation",
+                            "Value": "BlackIsZero"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:8",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "Software",
+                            "Value": "OME Bio-Formats 6.7.0"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:9",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "Compression",
+                            "Value": "Uncompressed"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:10",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "YResolution",
+                            "Value": "100777.212"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:11",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "XResolution",
+                            "Value": "100777.212"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:12",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "MetaMorph",
+                            "Value": "no"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:13",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "SampleFormat",
+                            "Value": "unsigned integer"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:14",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "BitsPerSample",
+                            "Value": "8"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLNote": {
+                    "Identifier": "Annotation:15",
+                    "Namespace": "openmicroscopy.org/OriginalMetadata",
+                    "Content": {
+                        "OriginalMetadata": {
+                            "Key": "ImageLength",
+                            "Value": "280"
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "Visuals": [
+        {
+            "Visual": {
+                "Identifier": "Image:0",
+                "Title": "testetst_Image8_edited_.ome.tif",
+                "Details": {},
+                "PixelData": [
+                    {
+                        "PixelInfo": {
+                            "Endian": "false",
+                            "Order": "XYCZT",
+                            "Identifier": "Pixels:0",
+                            "Interleaved": "false",
+                            "SizeX": "0.09922878199885109",
+                            "SizeXUnit": "µm",
+                            "SizeY": "0.09922878199885109",
+                            "SizeYUnit": "µm",
+                            "Bits": "8",
+                            "Channels": "3",
+                            "TimePoints": "30",
+                            "Width": "680",
+                            "Height": "280",
+                            "Depth": "1",
+                            "DataType": "uint8",
+                            "ColorChannels": [
+                                {
+                                    "ColorChannel": {
+                                        "Identifier": "Channel:0:0",
+                                        "Samples": "1",
+                                        "LightPath": {}
+                                    }
+                                },
+                                {
+                                    "ColorChannel": {
+                                        "Identifier": "Channel:0:1",
+                                        "Samples": "1",
+                                        "LightPath": {}
+                                    }
+                                },
+                                {
+                                    "ColorChannel": {
+                                        "Identifier": "Channel:0:2",
+                                        "Samples": "1",
+                                        "LightPath": {}
+                                    }
+                                }
+                            ],
+                            "MetadataOnly": {}
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

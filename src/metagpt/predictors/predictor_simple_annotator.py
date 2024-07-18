@@ -82,7 +82,7 @@ class PredictorSimpleAnnotation(PredictorTemplate):
         try:
             response = self.run.required_action.submit_tool_outputs.tool_calls[0]
             response = ast.literal_eval(response.function.arguments) # converts string to dict
-            utils.merge_xml_annotation(response)
+            print(utils.merge_xml_annotation(response))
 
         except Exception as e:
             print(e)

@@ -80,9 +80,8 @@ class PredictorNetworkAnnotation(PredictorTemplate):
         cost_sep = self.get_cost(run=self.sep_run)
 
         self.pred_response, pre_cost, attempts = PredictorSimpleAnnotation("Here is the preselected raw metadata \n" + self.sep_response).predict()
-        cost = cost_sep + pre_cost
         self.clean_assistants()
-        return self.pred_response, cost, np.mean(attempts. self.attempts)
+        return self.pred_response, 0, np.mean([attempts, self.attempts])
     
     def init_sep_run(self):
         self.sep_run = self.client.beta.threads.runs.create(

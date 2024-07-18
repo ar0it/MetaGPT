@@ -1,3 +1,5 @@
+# 17.07.24
+- n_paths shouldnt be a set (doubles are allowed)
 
 # 16.07.24
 - Was geht noch nicht?
