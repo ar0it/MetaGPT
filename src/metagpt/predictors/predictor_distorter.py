@@ -47,25 +47,26 @@ class PredictorDistorter(PredictorTemplate):
         """
         TODO: Add docstring
         """
+        print(f"Predicting for {self.name}, attempt: {self.attempts}")
         self.init_thread()
         self.init_assistant()   
         self.init_run()
-        response = None
+        response, cost = None, None
         try:
-            if self.run.status == 'requires_action':
-                response = self.run.required_action.submit_tool_outputs.tool_calls[0]
-                response = ast.literal_eval(response.function.arguments)
-            else:
-                raise Exception("The run did not require action")
+            self.add_attempts()
+            response = self.run.required_action.submit_tool_outputs.tool_calls[0]
+            response = ast.literal_eval(response.function.arguments)
 
         except Exception as e:
-            print("An Exception has occured:", e)
-            if self.attempts < 1:
-                self.attempts += 1
+            response = None
+            print(f"There was an exception in the {self.name}" ,e)
+            if self.attempts < self.max_attempts:
+                print(f"Retrying {self.name}...")
+                self.clean_assistants()   
                 return self.predict()
             else:
-                print("Could not find the synonym")
-
+                print(f"Failed {self.name} after {self.attempts} attempts.")
+            
 
         self.clean_assistants()        
         return response

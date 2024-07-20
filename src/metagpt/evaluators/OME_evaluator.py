@@ -278,14 +278,16 @@ class OMEEvaluator:
 
     def path_df(
             self,
-    ):
+    )-> pd.DataFrame:
         """
-        TODO: Add docstring
+        This function creates a df with paths as Index and samples as Columns.
+        The entries are True if the path is present in the sample and False if not.
         """
+        print("- - - Creating Path DataFrame - - -")
         for s in self.dataset.samples.values():
             if s.metadata_str:
                 s.metadata_xml = ET.fromstring(s.metadata_str)
-                s.paths = utils.get_json(s.metadata_xml)
+                s.paths = utils.generate_paths(utils.get_json(s.metadata_xml))
 
             else:
                 s.paths = set()

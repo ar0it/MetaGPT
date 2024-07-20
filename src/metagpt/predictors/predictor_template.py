@@ -27,28 +27,23 @@ class PredictorTemplate:
         self.out_path = None
         self.token_in_cost = 5/1e6
         self.token_out_cost = 15/1e6
-        self.attempts = 1
+        self.attempts = 0
+        self.max_attempts = 3
         self.name = self.__class__.__name__
+        self.model = "gpt-4o-mini"
         
-    def predict(self):
+    def predict(self)->dict:
         """
         Predict the OME XML from the raw metadata
         """
 
-        print("- - - Generating Thread - - -")
-        self.init_thread()
+        raise NotImplementedError
 
-        print("- - - Generating Prompt - - -")
-        full_message = "\n\n" + "The raw data is: \n" + self.raw_metadata
-        self.generate_message(msg=full_message)
-
-        print("- - - Predicting OME XML - - -")
-        self.assistant.run_assistant(msg=full_message, thread=self.thread)
-
-        print("- - - Exporting OME XML - - -")
-        self.export_ome_xml()
-        print("- - - Shut down assistant - - -")
-        self.clean_assistants()
+    def add_attempts(self, i:float=1):
+        """
+        Add an attempt to the attempt counter. Normalized by the number of assistants.
+        """
+        self.attempts += i/len(self.assistants)
 
     def init_thread(self):
         """
@@ -165,15 +160,18 @@ class PredictorTemplate:
         """
         Clean up the assistants
         """
-        for a in self.assistants:
-            self.client.beta.assistants.delete(assistant_id=a.id)
-
-        for t in self.threads:
-            self.client.beta.threads.delete(thread_id=t.id)
-
-        for v in self.vector_stores:
-            self.client.beta.vector_stores.delete(vector_store_id=v.id)
-
+        try:
+            for a in self.assistants:
+                self.client.beta.assistants.delete(assistant_id=a.id)
+            self.assistants = []
+            for t in self.threads:
+                self.client.beta.threads.delete(thread_id=t.id)
+            self.threads = []
+            for v in self.vector_stores:
+                self.client.beta.vector_stores.delete(vector_store_id=v.id)
+            self.vector_stores = []
+        except Exception as e:
+            print("There was an issue when cleaning up the assistants", e)
     def get_cost(self, run):
         """
         Get the cost of the prediction

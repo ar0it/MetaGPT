@@ -31,8 +31,8 @@ class ExperimentTemplate:
                 print("-"*60)
                 print("-"*10+"Bioformats"+"-"*10)
                 out_bioformats = BioformatsReader.get_omexml_metadata(path=path) # the raw metadata as ome xml str
-                raw_meta = BioformatsReader.get_raw_metadata(path=path) # the raw metadata as dictionary of key value pairs
-                tree_meta = BioformatsReader.raw_to_tree(raw_meta) # the raw metadata as nested dictionary --> more compressed
+                #raw_meta = BioformatsReader.get_raw_metadata(path=path) # the raw metadata as dictionary of key value pairs
+                #tree_meta = BioformatsReader.raw_to_tree(raw_meta) # the raw metadata as nested dictionary --> more compressed
 
                 file_name = path.split("/")[-1].split(".")[0]
                 data_format = path.split("/")[-1].split(".")[1]
@@ -51,7 +51,6 @@ class ExperimentTemplate:
                 self.dataset.add_sample(bio_sample)
 
                 for predictor in self.predictors:
-                    print("-"*10+predictor.__class__.__name__+"-"*10)
                     utils.make_prediction(
                         predictor=predictor,
                         in_data=fake_meta,
@@ -59,6 +58,7 @@ class ExperimentTemplate:
                         name=file_name,
                         should_predict=self.should_predict,
                         data_format=data_format,
+                        start_point=out_bioformats,
                         iter=i
                     )
         

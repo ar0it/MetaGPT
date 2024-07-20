@@ -76,23 +76,27 @@ class PredictorSimpleAnnotation(PredictorTemplate):
         """
         TODO: Add docstring
         """
+        print(f"Predicting for {self.name}, attempt: {self.attempts}")
+
         self.init_thread()
         self.init_assistant()   
         self.init_run()
+        response, cost = None, None
         try:
+            self.add_attempts(1)
             response = self.run.required_action.submit_tool_outputs.tool_calls[0]
             response = ast.literal_eval(response.function.arguments) # converts string to dict
-            print(utils.merge_xml_annotation(response))
-
+            utils.merge_xml_annotation(annot=response)
         except Exception as e:
-            print(e)
-            self.attempts += 1
-            if self.attempts < 1:
+            response = None
+            print(f"There was an exception in the {self.name}" ,e)
+            if self.attempts < self.max_attempts:
+                print(f"Retrying {self.name}...")
+                self.clean_assistants()
                 return self.predict()
             else:
-                return None, None, self.attempts
+                print(f"Failed {self.name} after {self.attempts} attempts.")
             
-        cost = self.get_cost(run=self.run)         
         self.clean_assistants()
         return response, cost, self.attempts
     
@@ -120,7 +124,7 @@ class PredictorSimpleAnnotation(PredictorTemplate):
             name="OME XML Annotator",
             description="An assistant to predict OME XML annotations from raw metadata",
             instructions=self.pred_prompt,
-            model="gpt-4o",
+            model=self.model,
             tools=[utils.openai_schema(self.XMLAnnotationFunction)],
 
         )

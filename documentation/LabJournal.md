@@ -1,3 +1,37 @@
+# 20.07.24
+- write agent like marvin from scratch --> give it tools for:
+    - adding things to a state (the python ome object via function calling)
+    - reading the current state
+    - give it the schema as vector db
+    - give it the documentation of ome_types as vector db
+    - function that allows the agent to modify its own temperature
+    
+- experiment with different temperature scores?
+- generate several distorters
+
+# 19.07.24
+- fix the two annotation approaches
+- check whether attemps are recorded correctly
+- improve the distortion
+- get marving and tree to run with gpt-4o mini
+- ----------PredictorSimpleAnnotation_testetst_Image8_edited_----------
+---Trying to load output from file---
+there was an error when loading a the file [Errno 2] No such file or directory: '/home/aaron/Documents/Projects/MetaGPT/out/assistant_outputs/PredictorSimpleAnnotation_testetst_Image8_edited_.txt'
+queued
+in_progress
+in_progress
+requires_action
+None
+---Merging structured annotations---
+Traceback (most recent call last):
+  File "/home/aaron/Documents/Projects/MetaGPT/src/main.py", line 76, in <module>
+    experiment.run()
+  File "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/experiments/experiment_template.py", line 54, in run
+    utils.make_prediction(
+  File "/home/aaron/Documents/Projects/MetaGPT/src/metagpt/utils/utils.py", line 471, in make_prediction
+    start_point = from_xml(start_point).structured_annotations.remove()
+TypeError: remove() missing 1 required positional argument: 'item'
+
 # 17.07.24
 - n_paths shouldnt be a set (doubles are allowed)
 

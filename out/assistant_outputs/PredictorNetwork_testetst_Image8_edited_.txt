@@ -1,97 +1,86 @@
 <OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
-  <Image ID="Image:0">
-    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint8" SignificantBits="8" SizeX="680" SizeY="280" SizeZ="1" SizeC="1" SizeT="1" PhysicalSizeX="9.926E-06" PhysicalSizeY="9.926E-06" PhysicalSizeZ="1.0">
-      <Channel ID="Channel:0:0" SamplesPerPixel="1"/>
-    </Pixels>
-  </Image>
   <StructuredAnnotations>
-    <XMLAnnotation ID="Annotation:15">
+    <XMLAnnotation ID="Annotation:25">
       <Value>
         <OriginalMetadata>
-          <Key>ImageProperties</Key>
+          <Key>Image</Key>
           <Value/>
           <OriginalMetadata>
             <OriginalMetadata>
-              <Key>hyperstack</Key>
+              <Key>Width</Key>
+              <Value>680</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Length</Key>
+              <Value>280</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Resolution</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>X</Key>
+                  <Value>100777.212</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Y</Key>
+                  <Value>100777.212</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Unit</Key>
+                  <Value>Centimeter</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PhotometricInterpretation</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>MetaData</Key>
+                  <Value>Monochrome</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Interpretation</Key>
+                  <Value>BlackIsZero</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>SamplesPerPixel</Key>
+              <Value>1</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>NumberOfChannels</Key>
+              <Value>1</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>SampleFormat</Key>
+              <Value>unsigned integer</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>BitsPerSample</Key>
+              <Value>8</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Compression</Key>
+              <Value>Uncompressed</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Software</Key>
+              <Value>OME Bio-Formats 6.7.0</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PlanarConfiguration</Key>
+              <Value>Chunky</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Hyperstack</Key>
               <Value>true</Value>
             </OriginalMetadata>
             <OriginalMetadata>
               <Key>MetaMorph</Key>
               <Value>no</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>ImageJ</Key>
-              <Value/>
-            </OriginalMetadata>
-          </OriginalMetadata>
-        </OriginalMetadata>
-        <OriginalMetadata>
-          <Key>Dimensions</Key>
-          <Value/>
-          <OriginalMetadata>
-            <OriginalMetadata>
-              <Key>SizeX</Key>
-              <Value>680</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>SizeY</Key>
-              <Value>280</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>SizeZ</Key>
-              <Value>1</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>SizeC</Key>
-              <Value>3</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>SizeT</Key>
-              <Value>30</Value>
-            </OriginalMetadata>
-          </OriginalMetadata>
-        </OriginalMetadata>
-        <OriginalMetadata>
-          <Key>PixelProperties</Key>
-          <Value/>
-          <OriginalMetadata>
-            <OriginalMetadata>
-              <Key>PixelType</Key>
-              <Value>1</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>ImageCount</Key>
-              <Value>90</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>DimensionOrder</Key>
-              <Value>XYCZT</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>isRGB</Key>
-              <Value>False</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>isInterleaved</Key>
-              <Value>False</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>isLittleEndian</Key>
-              <Value>True</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>isIndexed</Key>
-              <Value>False</Value>
-            </OriginalMetadata>
-          </OriginalMetadata>
-        </OriginalMetadata>
-        <OriginalMetadata>
-          <Key>SeriesProperties</Key>
-          <Value/>
-          <OriginalMetadata>
-            <OriginalMetadata>
-              <Key>SeriesCount</Key>
-              <Value>1</Value>
             </OriginalMetadata>
           </OriginalMetadata>
         </OriginalMetadata>
@@ -100,33 +89,5 @@
   </StructuredAnnotations>
 </OME>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-COST: 0.0
-ATTEMPTS: 2.0
+COST: None
+ATTEMPTS: 1.6666666666666667

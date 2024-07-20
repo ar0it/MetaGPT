@@ -72,7 +72,7 @@ class DistorterTemplate:
         if should_pred == "no":
             out = self.load_fake_data(out_path) or None
         elif should_pred == "yes":
-            out = self.pred(ome_xml) or None
+            out = self.pred(ome_xml, out_path=out_path) or None
         elif should_pred == "maybe":
             out = self.load_fake_data(out_path) or self.pred(ome_xml, out_path=out_path) or None
         return out

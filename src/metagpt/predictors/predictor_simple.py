@@ -84,12 +84,15 @@ class PredictorSimple(PredictorTemplate):
         """
         TODO: Add docstring
         """
+        print(f"Predicting for {self.name}, attempt: {self.attempts}")
+
         self.init_thread()
         self.init_vector_store()
         self.init_assistant()   
         self.init_run()
-        response = None
+        response, cost = None, None
         try:
+            self.add_attempts()
             if self.run.status == 'completed':
                 response = self.client.beta.threads.messages.list(
                     thread_id=self.thread.id
@@ -103,15 +106,15 @@ class PredictorSimple(PredictorTemplate):
 
             test_ome_pred = from_xml(response)
         except Exception as e:
-            print(e)
-            if self.attempts < 1:
-                self.attempts += 1
+            response = None
+            print(f"There was an exception in the {self.name}" ,e)
+            if self.attempts < self.max_attempts:
+                print(f"Retrying {self.name}...")
+                self.clean_assistants()   
                 return self.predict()
             else:
-                print("Could not convert the OME XML to OME object")
-                return None, None, self.attempts
-            
-        cost = self.get_cost(run=self.run)
+                print(f"Failed {self.name} after {self.attempts} attempts.")
+        
         self.clean_assistants()        
         return response, cost, self.attempts
     
@@ -139,7 +142,7 @@ class PredictorSimple(PredictorTemplate):
             name="OME XML Annotator",
             description="An assistant to predict OME XML annotations from raw metadata",
             instructions=self.pred_prompt,
-            model="gpt-4o",
+            model=self.model,
             tools=[{"type": "file_search"}, utils.openai_schema(self.OMEXMLResponse)],
             tool_resources={"file_search": {"vector_store_ids": [self.vector_store.id]}}
         )

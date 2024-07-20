@@ -11,6 +11,7 @@ from ome_types import from_xml, to_xml
 from metagpt.predictors.predictor_template import PredictorTemplate
 from metagpt.predictors.predictor_simple_annotator import PredictorSimpleAnnotation
 from metagpt.predictors.predictor_simple import PredictorSimple
+from metagpt.predictors.predictor_seperator import PredictorSeperator
 import metagpt.utils.utils as utils
 import numpy as np
 
@@ -23,106 +24,33 @@ class PredictorNetwork(PredictorTemplate):
     def __init__(self, raw_meta: str) -> None:
         super().__init__()
         self.raw_metadata = raw_meta
-        self.full_message = "The raw data is: \n" + str(self.raw_metadata)
-
-        self.sep_prompt = """
-        You are part of a toolchain designed to predict metadata for the OME model, specifically the structured annotations part.
-        You will be interacting with other toolchain components, therefore asking questions or providing any human-readable output is not necessary.
-        Your task will be to take raw metadata in the form of key-value pairs and sort out the one that do not have an appropriate place in the ome datamodel,
-        but instead need to be added as structured annotation. For that purpose you have access to the OME schema via vectorized embeddings.
-        Furthermore to improve the consistency of the ouput, you have acess to the SepOutputTool which will structure the output key value pairs appropriately.
-        ALWAYS USE THE TOOL TO PRODUCE RELIABLE OUTPUTS.
-        The tool has two fields, annotation_properties and ome_properties. The annotation_properties are the properties that should be added as structured annotations.
-        The ome_properties are the key value pairs that are represented in the OME Datamodel model.
-        If you understood all of this, and will follow the instructions, answer with "." and wait for the first metadata to be provided.
-        """
-
+        self.assistants = [
+            "predictor_seperator",
+            "predictor_simple_annotator",
+            "predictor_simple"
+        ]
     
     def predict(self) -> StructuredAnnotations:
         """
         TODO: Add docstring
         """
-        self.init_sep_thread()
-        self.init_vector_store()
-        self.init_sep_assistant()   
-        self.init_sep_run()
-        try:
-            self.sep_response = self.sep_run.required_action.submit_tool_outputs.tool_calls[0].function.arguments
-            self.sep_response = ast.literal_eval(self.sep_response)
-        except:
-            return None, None, self.attempts
+        print(f"Predicting for {self.name}, attempt: {self.attempts}")
+        response, cost = None, None
+
+        response_sep, sep_cost, sep_attempts = PredictorSeperator("Here is the raw metadata \n" + str(self.raw_metadata)).predict()
+        response_annot, response_ome = response_sep
+
+        self.pred_response_annot, annot_cost, annot_attempts = PredictorSimpleAnnotation(
+            "Here is the preselected raw metadata \n" + str(response_annot)).predict()
         
-        sep_cost = self.get_cost(self.sep_run)
-        sep_response_annot = self.sep_response["annotation_properties"]
-        sep_response_ome = self.sep_response["ome_properties"]
-
-        self.pred_response_annot, annot_cost, annot_attempts = PredictorSimpleAnnotation("Here is the preselected raw metadata \n" + str(sep_response_annot)).predict()
-        self.pred_response_ome, ome_cost, ome_attempts = PredictorSimple("Here is the preselected raw metadata \n" + str(sep_response_ome)).predict()
-        # merge
-        print(self.pred_response_annot)
-        xml_annotation = utils.dict_to_xml_annotation(self.pred_response_annot)
-        ome_xml = from_xml(self.pred_response_ome)
-        ome_xml.structured_annotations.append(xml_annotation)
-
-        cost = sep_cost + annot_cost + ome_cost
-        self.clean_assistants()
-        return to_xml(ome_xml), cost, np.mean([annot_attempts, ome_attempts])
-    
-    def init_sep_run(self):
-        self.sep_run = self.client.beta.threads.runs.create(
-            thread_id=self.sep_thread.id,
-            assistant_id=self.sep_assistant.id,
-            tool_choice={"type": "file_search", "type": "function", "function": {"name": "SepOutputTool"}},
-            temperature=0.0,
-            )
+        self.pred_response_ome, ome_cost, ome_attempts = PredictorSimple(
+            "Here is the preselected raw metadata \n" + str(response_ome)).predict()
         
-        end_status = ["complete", "requires_action", "failed"]
-        while self.sep_run.status not in end_status:
-            print(self.sep_run.status)
-            time.sleep(5)
-            self.sep_run = self.client.beta.threads.runs.retrieve(
-                thread_id=self.sep_thread.id,
-                run_id=self.sep_run.id
-                )
-            
-        print(self.sep_run.status)
+        self.add_attempts(sep_attempts + annot_attempts + ome_attempts)
 
-
-    def init_sep_assistant(self):
-        self.sep_assistant = self.client.beta.assistants.create(
-            name="OME XML Seperator",
-            description="An assistant to seperate raw metadata into already contained and new metadata. Use the knowledge base of the omexml schema, to make the best decsion",
-            instructions=self.sep_prompt,
-            model="gpt-4o",
-            tools=[{"type": "file_search"}, utils.openai_schema(self.SepOutputTool)],
-            tool_resources={"file_search": {"vector_store_ids": [self.vector_store.id]}}
-        )
-        self.assistants.append(self.sep_assistant)
-
-    
-    def init_vector_store(self):
-        self.vector_store = self.client.beta.vector_stores.create(
-            name="OME XML Schema",
-        )
-        file_paths = ["/home/aaron/Documents/Projects/MetaGPT/in/schema/ome_xsd.txt"]
-        file_streams = [open(path, "rb") for path in file_paths]
-
-        file_batch = self.client.beta.vector_stores.file_batches.upload_and_poll(
-            vector_store_id=self.vector_store.id, files=file_streams
-            )
-        self.vector_stores.append(self.vector_store)
+        response = utils.merge_xml_annotation(
+            annot=self.pred_response_annot,
+            ome=self.pred_response_ome)
         
-    def init_sep_thread(self):
-        self.sep_thread = self.client.beta.threads.create(messages=[
-            {"role": "user", "content": self.sep_prompt},
-            {"role": "assistant", "content": "."},
-            {"role": "user", "content": self.full_message}])
-        self.threads.append(self.sep_thread)
+        return response, cost, self.attempts
     
-
-    class SepOutputTool(BaseModel):
-        """
-        This tool automatically formats and structures the metadata in the appropriate way.
-        """
-        annotation_properties: Optional[dict[str, str]] = Field(default_factory=list, description="A list of properties which are to be put into the structured annotations.")
-        ome_properties: Optional[dict[str, str]] = Field(default_factory=list, description="A list of properties which are already contained in the OME model.")
