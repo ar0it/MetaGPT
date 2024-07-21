@@ -11,7 +11,7 @@ import pygram.tree as tree
 from pygram.PyGram import Profile
 from deprecated import deprecated
 from metagpt.utils import utils
-
+from ome_types import from_xml, to_xml, to_dict
 class OMEEvaluator:
     """
     This class evaluates the performance of a OME XML generation model by calculating the edit distance between the
@@ -286,9 +286,14 @@ class OMEEvaluator:
         print("- - - Creating Path DataFrame - - -")
         for s in self.dataset.samples.values():
             if s.metadata_str:
-                s.metadata_xml = ET.fromstring(s.metadata_str)
-                s.paths = utils.generate_paths(utils.get_json(s.metadata_xml))
-
+                print(s.name + s.method)
+                #s.metadata_xml = ET.fromstring(s.metadata_str)
+                s.metadata_xml = from_xml(s.metadata_str)
+                s.paths = utils.generate_paths(to_dict(s.metadata_xml))
+                print(len(s.paths))
+                print(s.paths)
+                print(s.metadata_str)
+                print("----------------------------------------------------------")
             else:
                 s.paths = set()
 

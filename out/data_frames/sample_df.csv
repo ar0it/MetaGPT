@@ -2,5 +2,6 @@
 testetst_Image8_edited__Bioformats,Bioformats,87,64,0.0,testetst_Image8_edited_,ome,,
 testetst_Image8_edited__PredictorSimple,PredictorSimple,44,1,0.6135770234986946,testetst_Image8_edited_,ome,,1.0
 testetst_Image8_edited__PredictorNetwork,PredictorNetwork,44,1,0.7800511508951407,testetst_Image8_edited_,ome,,1.6666666666666667
-testetst_Image8_edited__PredictorSimpleAnnotation,PredictorSimpleAnnotation,67,1,0.7010676156583631,testetst_Image8_edited_,ome,,1.0
+testetst_Image8_edited__PredictorSimpleAnnotation,PredictorSimpleAnnotation,67,1,0.9185573007562536,testetst_Image8_edited_,ome,,1.0
 testetst_Image8_edited__PredictorNetworkAnnotation,PredictorNetworkAnnotation,90,1,0.5625,testetst_Image8_edited_,ome,,1.0
+testetst_Image8_edited__PredictorState,PredictorState,110,1,0.9603174603174603,testetst_Image8_edited_,ome,,1.0

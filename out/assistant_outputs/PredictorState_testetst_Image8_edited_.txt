@@ -1,0 +1,12 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Image ID="Image:0" Name="testetst_Image8_edited_.ome.tif">
+    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint8" SizeX="680" SizeY="280" SizeZ="1" SizeC="3" SizeT="30" PhysicalSizeX="0.09922878199885109" PhysicalSizeXUnit="µm" PhysicalSizeY="0.09922878199885109" PhysicalSizeYUnit="µm">
+      <Channel ID="Channel:0:0" SamplesPerPixel="1"/>
+      <Channel ID="Channel:0:1" SamplesPerPixel="1"/>
+      <Channel ID="Channel:0:2" SamplesPerPixel="1"/>
+    </Pixels>
+  </Image>
+</OME>
+
+COST: None
+ATTEMPTS: 1.0

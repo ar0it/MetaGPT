@@ -8,7 +8,7 @@ from metagpt.predictors.predictor_template import PredictorTemplate
 from metagpt.predictors.predictor_simple_annotator import PredictorSimpleAnnotation
 from metagpt.predictors.predictor_network_annotator import PredictorNetworkAnnotation
 from metagpt.predictors.predictor_network import PredictorNetwork
-from metagpt.predictors.predictor_marvin import PredictorMarvin
+from metagpt.predictors.predictor_state import PredictorState
 from metagpt.predictors.predictor_simple import PredictorSimple
 from metagpt.experiments.experiment_template import ExperimentTemplate
 import importlib
@@ -60,7 +60,7 @@ experiment.predictors = [
     PredictorNetwork,
     PredictorSimpleAnnotation,
     PredictorNetworkAnnotation,
-    PredictorMarvin
+    PredictorState,
     ]
 experiment.data_paths = [
     #f"{wd}/in/images/dataset/2021_10_27_FRET_T001_Fret_Turquoise.tif"

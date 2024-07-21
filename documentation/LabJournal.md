@@ -1,3 +1,5 @@
+# 21.07.24
+- run main to get latest bug
 # 20.07.24
 - write agent like marvin from scratch --> give it tools for:
     - adding things to a state (the python ome object via function calling)
@@ -5,7 +7,10 @@
     - give it the schema as vector db
     - give it the documentation of ome_types as vector db
     - function that allows the agent to modify its own temperature
-    
+    - browse datamodel tool 
+
+- simulated raw data is just another data format --> impleement it this way
+- problem: annotations get added as one long annotation, thos somehow dont appear in the paths
 - experiment with different temperature scores?
 - generate several distorters
 

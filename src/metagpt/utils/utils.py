@@ -17,7 +17,8 @@ from metagpt.predictors.predictor_template import PredictorTemplate
 from typing import Optional
 import ast
 import xml.etree.ElementTree as ET
-from ome_types import from_xml, to_xml
+from ome_types import from_xml, to_xml, to_dict
+import jsonpatch
 
 def render_cell_output(output_path):
     """
@@ -88,7 +89,7 @@ def save_and_stream_output(output_path=f"out/jupyter_cell_outputs/cell_output_{d
         print(f"\nCell output saved to {output_path}")
 
 
-def from_dict(ome_dict):
+def from_dict(ome_dict) -> OME:
     """
     Convert a dictionary to an OME object.
     """
@@ -330,6 +331,18 @@ def dict_to_xml_annotation(value: dict) -> XMLAnnotation:
                     {'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata',
                      'text': '',
                      'children': [create_element(k, v) for k, v in value.items()]}
+                ]
+            }
+        elif isinstance(value, list):
+            return {
+                'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata',
+                'text': '',
+                'children': [
+                    {'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}Key', 'text': key},
+                    {'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}Value', 'text': ''},
+                    {'qname': '{http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata',
+                     'text': '',
+                     'children': [create_element(f"{key}_{i}", v) for i, v in enumerate(value)]}
                 ]
             }
         else:
@@ -618,3 +631,71 @@ def safe_float(value):
         return float(value)
     except (ValueError, TypeError):
         return None
+    
+
+def ensure_path_exists(data: Dict[str, Any], path: str) -> None:
+    """
+    Ensure that the path exists in the data structure, creating empty lists or dicts as needed.
+    """
+    parts = path.strip("/").split("/")
+    current = data
+    for i, part in enumerate(parts):
+        if part == "-" or part.isdigit():
+            if not isinstance(current, list):
+                current = []
+            if part == "-" or int(part) == len(current):
+                current.append({})
+            elif int(part) > len(current):
+                current.extend([{} for _ in range(int(part) - len(current) + 1)])
+            current = current[int(part) if part != "-" else -1]
+        else:
+            if part not in current:
+                if i < len(parts) - 1 and (parts[i+1] == "-" or parts[i+1].isdigit()):
+                    current[part] = []
+                else:
+                    current[part] = {}
+            current = current[part]
+
+def custom_apply(patch: jsonpatch.JsonPatch, data: Dict[str, Any]) -> Dict[str, Any]:
+    """
+    Apply the JSON Patch, automatically creating missing nodes.
+    """
+    for operation in patch:
+        if operation["op"] in ["add", "replace"]:
+            ensure_path_exists(data, "/".join(operation["path"].split("/")[:-1]))
+        elif operation["op"] == "remove":
+            ensure_path_exists(data, operation["path"])
+    return patch.apply(data)
+
+def update_state(current_state: OME, proposed_change: list) -> OME:
+    """
+    Update the OME state based on proposed changes using JSONPatch, automatically creating missing nodes.
+
+    Args:
+        current_state (OME): The current OME state.
+        proposed_change (list): The change proposed as a JSON Patch document.
+
+    Returns:
+        OME: The updated OME state.
+
+    Raises:
+        jsonpatch.JsonPatchException: If the patch is invalid or cannot be applied.
+        ValueError: If the resulting document is not a valid OME model.
+    """
+    # Convert current state to a dictionary, ensuring all default empty lists are included
+    current_dict = json.loads(current_state.model_dump_json())
+
+    try:
+        # Apply the JSON Patch with custom logic to create missing nodes
+        patch = jsonpatch.JsonPatch(proposed_change)
+        updated_dict = custom_apply(patch, current_dict)
+
+        # Convert the updated dictionary back to an OME object
+        updated_state = from_dict(updated_dict)
+
+        return updated_state
+
+    except jsonpatch.JsonPatchException as e:
+        raise ValueError(f"Invalid JSON Patch: {str(e)}")
+    except Exception as e:
+        raise ValueError(f"Error applying patch or converting to OME: {str(e)}")
