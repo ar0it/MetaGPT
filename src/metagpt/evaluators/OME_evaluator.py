@@ -11,7 +11,11 @@ import pygram.tree as tree
 from pygram.PyGram import Profile
 from deprecated import deprecated
 from metagpt.utils import utils
-from ome_types import from_xml, to_xml, to_dict
+from ome_types import from_xml, to_xml, to_dict, OME
+from ome_types.model import StructuredAnnotations
+import copy
+import ast
+
 class OMEEvaluator:
     """
     This class evaluates the performance of a OME XML generation model by calculating the edit distance between the
@@ -37,15 +41,27 @@ class OMEEvaluator:
         self.palette1 = sns.palettes._ColorPalette(sns.color_palette("Paired")[1::2])
 
 
+    def json_to_pygram(self, json_data: dict):
+        """
+        Convert a JSON structure to a pygram tree.
+        """
+        def convert_element(key, value):
+            node = tree.Node(key)
+            
+            if isinstance(value, dict):
+                for k, v in value.items():
+                    node.addkid(convert_element(k, v))
+            elif isinstance(value, list):
+                for i, item in enumerate(value):
+                    node.addkid(convert_element(f"{key}_{i}", item))
+            else:
+                node.addkid(tree.Node(str(value)))
+            
+            return node
 
-    def element_to_pygram(self, element: ET.Element):
-        """
-        Convert an xml element to a pygram tree.
-        """
-        node = tree.Node(element.tag)
-        for child in element:
-            node.addkid(self.element_to_pygram(child))
-        return node
+        # Assuming the input is a dictionary with a single root element
+        root_key, root_value = next(iter(json_data.items()))
+        return convert_element(root_key, root_value)
     
 
     def zss_edit_distance(self, xml_a: ET.Element, xml_b: ET.Element):
@@ -57,13 +73,16 @@ class OMEEvaluator:
         return simple_distance(self.gt_graph, self.pred_graph)
     
 
-    def pygram_edit_distance(self, xml_a: ET.Element, xml_b: ET.Element):
+    def pygram_edit_distance(self, xml_a: OME, xml_b: OME):
         """
         Calculate the edit distance between two xml trees on word level.
         Here an outline of the algorithm:
         """
-        profile1 = Profile(self.element_to_pygram(xml_a), 2, 3)
-        profile2 = Profile(self.element_to_pygram(xml_b), 2, 3)
+        print("- - - Calculating Edit Distance - - -")
+        json_a = {"ome": to_dict(xml_a)}
+        json_b = {"ome": to_dict(xml_b)}
+        profile1 = Profile(self.json_to_pygram(json_a), 2, 3)
+        profile2 = Profile(self.json_to_pygram(json_b), 2, 3)
         return profile1.edit_distance(profile2)
     
 
@@ -173,7 +192,6 @@ class OMEEvaluator:
             alignment_a = [[["-"] * len(s2[j - 1])]] + alignment_a
             alignment_b = [s2[j - 1]] + alignment_b
             j -= 1
-        print(dp)
         return dp[-1][-1], alignment_a, alignment_b
     
 
@@ -203,7 +221,6 @@ class OMEEvaluator:
         """
         paths_a = utils.get_json(xml_a)
         paths_b = utils.get_json(xml_b)
-        print("path difference: ", paths_a)
         return len(paths_a.symmetric_difference(paths_b))
     
 
@@ -217,19 +234,19 @@ class OMEEvaluator:
             f.write(f"### File Ground Truth: \n")
             # create a dataframe with the paths
             df_paths = self.path_df()
-            print(df_paths)
             # create a dataframe with the samples properties
             df_sample = self.sample_df(df_paths)
-            print(df_sample)
             # create the plots
             self.method_edit_distance_plt(df_sample)
             self.n_paths_method_plt(df_sample)
-            self.format_method_plot(df_sample)
+            self.format_method_plt(df_sample)
             self.paths_annotation_stacked_plt(df_sample)
             self.method_attempts_plot(df_sample)
             self.format_counts_plt(df_sample)
             self.paths_annotation_stacked_relative_plt(df_sample)
             self.attempts_paths_plt(df_sample)
+            self.method_edit_distance_no_annot_plt(df_sample)
+            self.method_edit_distance_only_annot_plt(df_sample)
             # add the plots to the report
             f.write("## Path Comparison\n")
             for k, v in self.plot_dict.items():
@@ -249,7 +266,7 @@ class OMEEvaluator:
         df["Method"] = [s.method if s.method else None for s in self.dataset.samples.values()]
         df["Name"] = [s.name if s.name else None for s in self.dataset.samples.values()]
         df["n_paths"] = df_paths.sum()
-        df["n_annotations"] = {k: df_paths[k][df_paths.index.str.contains("StructuredAnnotations")].sum() for k in
+        df["n_annotations"] = {k: df_paths[k][df_paths.index.str.contains("structured_annotations")].sum() for k in
                                df_paths.columns}
         df["og_image_format"] = [s.format if s.format else None for s in self.dataset.samples.values()]
         df["cost"] = [s.cost if s.cost else None for s in self.dataset.samples.values()]
@@ -269,6 +286,41 @@ class OMEEvaluator:
                     edit_distances.append(2)
                 t1 = time.time()
         df["Edit_distance"] = edit_distances
+        edit_distances_no_annot = []
+        for n in df["Name"].unique():
+            methods = list(df["Method"].unique())
+            for m in methods:
+                gt = self.dataset.samples[f"{n}_Bioformats"].metadata_xml
+                gt_no_annot = copy.deepcopy(gt)
+                gt_no_annot.structured_annotations = StructuredAnnotations()
+                test = self.dataset.samples[f"{n}_{m}"].metadata_xml
+                test_no_annot = copy.deepcopy(test)
+                test_no_annot.structured_annotations = StructuredAnnotations()
+                t0 = time.time()
+                #edit_distances.append(self.zss_edit_distance(test, gt))
+                if test_no_annot and gt_no_annot:
+                    edit_distances_no_annot.append(self.pygram_edit_distance(test_no_annot, gt_no_annot))
+                else:
+                    edit_distances_no_annot.append(2)
+                t1 = time.time()
+        df["Edit_distance_no_annot"] = edit_distances_no_annot
+
+        edit_distances_only_annot = []
+        for n in df["Name"].unique():
+            methods = list(df["Method"].unique())
+            for m in methods:
+                gt = self.dataset.samples[f"{n}_Bioformats"].metadata_xml
+                gt_no_annot = gt.structured_annotations
+                test = self.dataset.samples[f"{n}_{m}"].metadata_xml
+                test_no_annot = test.structured_annotations
+                t0 = time.time()
+                #edit_distances.append(self.zss_edit_distance(test, gt))
+                if test and gt:
+                    edit_distances_only_annot.append(self.pygram_edit_distance(test, gt))
+                else:
+                    edit_distances_only_annot.append(2)
+                t1 = time.time()
+        df["Edit_distance_only_annot"] = edit_distances_only_annot
 
         # save the df to a csv
         df.to_csv(f"{self.out_path}/data_frames/sample_df.csv")
@@ -290,12 +342,10 @@ class OMEEvaluator:
                 #s.metadata_xml = ET.fromstring(s.metadata_str)
                 s.metadata_xml = from_xml(s.metadata_str)
                 s.paths = utils.generate_paths(to_dict(s.metadata_xml))
-                print(len(s.paths))
-                print(s.paths)
-                print(s.metadata_str)
-                print("----------------------------------------------------------")
             else:
                 s.paths = set()
+            print(len(s.paths))
+            pd.Series(s.paths).to_csv(f"{self.out_path}/data_frames/path_df_{s.name+s.method}.csv")
 
         self.all_paths = pd.Series(
             list(
@@ -348,8 +398,8 @@ class OMEEvaluator:
 
         plt.tight_layout()
 
-        plt.savefig(f"{self.out_path}/plots/method_edit_plt.svg")
-        self.plot_dict["method_edit_plt"] = f"../plots/method_edit_plt.svg"
+        plt.savefig(f"{self.out_path}/plots/method_edit_distance_plt.svg")
+        self.plot_dict["method_edit_distance_plt"] = f"../plots/method_edit_distance_plt.svg"
         #plt.show()
 
         return fig, ax
@@ -440,14 +490,14 @@ class OMEEvaluator:
 
         plt.tight_layout()
 
-        plt.savefig(f"{self.out_path}/plots/paths_stacked_plt.svg")
-        self.plot_dict["paths_stacked_plt"] = f"../plots/paths_stacked_plt.svg"
+        plt.savefig(f"{self.out_path}/plots/n_paths_method_plt.svg")
+        self.plot_dict["n_paths_method_plt"] = f"../plots/n_paths_method_plt.svg"
         #plt.show()
 
         return fig, ax
 
 
-    def format_method_plot(
+    def format_method_plt(
             self,
             df_sample: pd.DataFrame = None,
     ):
@@ -478,8 +528,8 @@ class OMEEvaluator:
 
         plt.tight_layout()
 
-        plt.savefig(f"{self.out_path}/plots/paths_stacked_plt.svg")
-        self.plot_dict["paths_stacked_plt"] = f"../plots/paths_stacked_plt.svg"
+        plt.savefig(f"{self.out_path}/plots/format_method_plt.svg")
+        self.plot_dict["format_method_plt"] = f"../plots/format_method_plt.svg"
         #plt.show()
 
         return fig, ax
@@ -524,8 +574,8 @@ class OMEEvaluator:
 
         plt.tight_layout()
 
-        plt.savefig(f"{self.out_path}/plots/attempts_paths_plt.svg")
-        self.plot_dict["attempts_paths_plt"] = f"../plots/attempts_paths_plt.svg"
+        plt.savefig(f"{self.out_path}/plots/method_attempts_plot.svg")
+        self.plot_dict["method_attempts_plot"] = f"../plots/method_attempts_plot.svg"
         #plt.show()
 
         return fig, ax
@@ -569,7 +619,7 @@ class OMEEvaluator:
 
         return fig, ax
     
-    def format_n_paths(
+    def format_n_paths_plt(
             self,
             df_sample: pd.DataFrame = None,
     ):
@@ -694,6 +744,75 @@ class OMEEvaluator:
         self.plot_dict["attempts_paths_plt"] = f"../plots/attempts_paths_plt.svg"
         #plt.show()
 
+    def method_edit_distance_no_annot_plt(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        """
+        This function creates a plot which compares the inter sample standard deviation.
+        The X-axis will be the used method, whereas the Y-axis will be the standard deviation.
+        """
+        fig, ax = plt.subplots()
+        
+        plot = sns.barplot(
+            x=df_sample["Method"],
+            y=df_sample["Edit_distance_no_annot"],
+            edgecolor='black',
+            ax=ax,
+            palette=self.palette0)
+
+        ax.set_xlabel("Method", fontsize=14)
+        ax.set_ylabel("Edit Distance", fontsize=14)
+        ax.set_title("Edit Distance by Method w/o annotations", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/method_edit_distance_no_annot_plt.svg")
+        self.plot_dict["method_edit_distance_no_annot_plt"] = f"../plots/method_edit_distance_no_annot_plt.svg"
+        #plt.show()
+
+        return fig, ax
+    
+    def method_edit_distance_only_annot_plt(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        """
+        This function creates a plot which compares the inter sample standard deviation.
+        The X-axis will be the used method, whereas the Y-axis will be the standard deviation.
+        """
+        fig, ax = plt.subplots()
+        
+        plot = sns.barplot(
+            x=df_sample["Method"],
+            y=df_sample["Edit_distance_only_annot"],
+            edgecolor='black',
+            ax=ax,
+            palette=self.palette0)
+
+        ax.set_xlabel("Method", fontsize=14)
+        ax.set_ylabel("Edit Distance", fontsize=14)
+        ax.set_title("Edit Distance by Method only annotations", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/method_edit_distance_only_annot_plt.svg")
+        self.plot_dict["method_edit_distance_only_annot_plt"] = f"../plots/method_edit_distance_only_annot_plt.svg"
+        #plt.show()
+
+        return fig, ax
 
 # Which plots do I want to return?
 # plot which shows deviation between runs of same sample
