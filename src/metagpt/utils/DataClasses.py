@@ -6,10 +6,12 @@ from xml.etree import ElementTree as ET
 from typing import Optional
 from pydantic import Field
 from ome_types import OME
+
+
 @dataclass
 class Sample:
     name: str = None
-    metadata_str: str = None# the metadata as xml string
+    metadata_str: str = None  # the metadata as xml string
     method: str = None
     metadata_xml: OME = Field(default_factory=OME, description="The metadata as an OME object")
     cost: Optional[float] = None # the cost in $
@@ -18,6 +20,7 @@ class Sample:
     format: Optional[str] = None
     attempts: Optional[float] = None
     iter: Optional[int] = None
+    gpt_model: Optional[str] = None
 
 
 @dataclass

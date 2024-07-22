@@ -18,6 +18,7 @@ class ExperimentTemplate:
         self.evaluators:list = []
         self.out_path:str = None
         self.schema:str = None
+        self.model:str = "gpt-4o-mini"
 
     def run(self):
         """
@@ -59,7 +60,8 @@ class ExperimentTemplate:
                         should_predict=self.should_predict,
                         data_format=data_format,
                         start_point=out_bioformats,
-                        iter=i
+                        iter=i,
+                        model=self.model
                     )
         
         for eval in self.evaluators:

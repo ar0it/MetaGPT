@@ -89,7 +89,7 @@ def save_and_stream_output(output_path=f"out/jupyter_cell_outputs/cell_output_{d
         print(f"\nCell output saved to {output_path}")
 
 
-def from_dict(ome_dict) -> OME:
+def from_dict(ome_dict, state:BaseModel=None) -> OME:
     """
     Convert a dictionary to an OME object.
     """
@@ -116,10 +116,10 @@ def from_dict(ome_dict) -> OME:
                 setattr(obj, key, existing_list)
             else:
                 setattr(obj, key, value)
-    
-    ome = OME()
-    set_attributes(ome, ome_dict)
-    return ome
+    if state is None:
+        state = OME()
+    set_attributes(state, ome_dict)
+    return state
 
 def _init_logger():
     """This is so that Javabridge doesn't spill out a lot of DEBUG messages
@@ -396,7 +396,11 @@ def merge_xml_annotation(annot: Dict[str, Any], ome: str = None) -> Optional[str
     print("Merged structured annotations")
     return out
 
-def save_output(output: str, cost: float, attempts: float, path: str) -> bool:
+def save_output(output: str,
+                cost: float,
+                attempts: float,
+                path: str
+                ) -> bool:
     """
     Save output to a file.
 
@@ -417,7 +421,8 @@ def save_output(output: str, cost: float, attempts: float, path: str) -> bool:
         print(f"Error saving output: {e}")
         return False
 
-def load_output(path: str) -> tuple[Optional[str], Optional[float]]:
+def load_output(path: str
+                ) -> tuple[Optional[str], Optional[float]]:
     """
     Load output from a file.
 
@@ -454,7 +459,8 @@ def make_prediction(predictor: PredictorTemplate,
                     should_predict="maybe",
                     start_point=None,
                     data_format=None,
-                    iter:int=None):
+                    iter:int=None,
+                    model:str=None):
     """
     TODO: add docstring
     """
@@ -472,7 +478,10 @@ def make_prediction(predictor: PredictorTemplate,
             print("there was an error when loading a the file", e)
 
     if should_predict == "yes" or (not out and should_predict != "no"):
-            out, cost, attempts = predictor(in_data).predict()
+            pred_obj = predictor(in_data)
+            if model:
+                pred_obj.model = model
+            out, cost, attempts = pred_obj.predict()
             # save the output to file
             if out and isinstance(out, dict) and start_point:
                 out = merge_xml_annotation(annot=out, ome=start_point)
@@ -491,7 +500,8 @@ def make_prediction(predictor: PredictorTemplate,
                         format=data_format,
                         cost=cost,
                         attempts=attempts,
-                        iter=iter)
+                        iter=iter,
+                        gpt_model=model)
      
     dataset.add_sample(out_sample)
 
@@ -637,7 +647,7 @@ def ensure_path_exists(data: Dict[str, Any], path: str) -> None:
     """
     Ensure that the path exists in the data structure, creating empty lists or dicts as needed.
     """
-    parts = path.strip("/").split("/")
+    parts = path.strip("/").split("/").remove("") or []
     current = data
     for i, part in enumerate(parts):
         if part == "-" or part.isdigit():
@@ -691,7 +701,7 @@ def update_state(current_state: OME, proposed_change: list) -> OME:
         updated_dict = custom_apply(patch, current_dict)
 
         # Convert the updated dictionary back to an OME object
-        updated_state = from_dict(updated_dict)
+        updated_state = from_dict(updated_dict, state=current_state)
 
         return updated_state
 
@@ -699,3 +709,107 @@ def update_state(current_state: OME, proposed_change: list) -> OME:
         raise ValueError(f"Invalid JSON Patch: {str(e)}")
     except Exception as e:
         raise ValueError(f"Error applying patch or converting to OME: {str(e)}")
+    
+
+def browse_schema(cls: BaseModel, additional_ignored_keywords: List[str] = [], max_depth: int = float('inf')) -> Dict[str, Any]:
+    """
+    Browse a schema as jsonschema, with depth control.
+
+    Args:
+        cls (BaseModel): The Pydantic model to convert to a schema.
+        additional_ignored_keywords (List[str], optional): Additional keywords to ignore in the schema. Defaults to [].
+        max_depth (int, optional): Maximum depth of nesting to include in the schema. Defaults to infinity.
+
+    Returns:
+        dict: A dictionary in the format of OpenAI's schema as jsonschema
+    """
+    schema = cls.model_json_schema()
+    docstring = parse(cls.__doc__ or "")
+    
+    def clean_description(desc: Union[str, Any]) -> str:
+        if not isinstance(desc, str):
+            return str(desc)
+        cleaned = re.sub(r'\s+', ' ', desc)
+        return cleaned.strip()
+
+    def resolve_ref(ref: str, definitions: Dict[str, Any]) -> Dict[str, Any]:
+        if not ref.startswith('#/$defs/'):
+            return {'type': 'object', 'description': f'Unresolved reference: {ref}'}
+        def_name = ref.split('/')[-1]
+        return definitions.get(def_name, {'type': 'object', 'description': f'Missing definition: {def_name}'})
+
+    def flatten_schema(prop: Any, definitions: Dict[str, Any], current_depth: int = 0) -> Any:
+        if not isinstance(prop, dict) or current_depth >= max_depth:
+            return {'type': 'object', 'description': 'Nested object (depth limit reached)'} if isinstance(prop, dict) else prop
+
+        flattened = {}
+        unnecessary_keys = [] + additional_ignored_keywords
+        for key, value in prop.items():
+            if key not in unnecessary_keys:
+                if key == '$ref':
+                    if current_depth < max_depth:
+                        flattened.update(flatten_schema(resolve_ref(value, definitions), definitions, current_depth + 1))
+                    else:
+                        flattened['type'] = 'object'
+                        flattened['description'] = 'Nested object (depth limit reached)'
+                elif key == "required" and (value == True or value == False):
+                    continue
+                elif key == 'description' and type(value) == str:
+                    flattened[key] = clean_description(value)
+                elif isinstance(value, dict):
+                    if current_depth < max_depth:
+                        flattened[key] = flatten_schema(value, definitions, current_depth + 1)
+                    else:
+                        flattened[key] = {'type': 'object', 'description': 'Nested object (depth limit reached)'}
+                elif isinstance(value, list):
+                    if current_depth < max_depth:
+                        flattened[key] = [flatten_schema(item, definitions, current_depth + 1) for item in value]
+                    else:
+                        flattened[key] = [{'type': 'object', 'description': 'Nested object (depth limit reached)'}]
+                else:
+                    flattened[key] = value
+
+        return flattened
+
+    # Extract $defs if present
+    definitions = schema.pop('$defs', {})
+
+    # Flatten the main schema
+    flattened_schema = flatten_schema(schema, definitions)
+
+    # Add flattened definitions to properties
+    if 'properties' not in flattened_schema:
+        flattened_schema['properties'] = {}
+    flattened_schema['properties']['definitions'] = {
+        'type': 'object',
+        'properties': {k: flatten_schema(v, definitions) for k, v in definitions.items()}
+    }
+
+    # Add descriptions from docstring
+    for param in docstring.params:
+        if param.arg_name in flattened_schema.get('properties', {}):
+            if isinstance(flattened_schema['properties'][param.arg_name], dict):
+                flattened_schema['properties'][param.arg_name]['description'] = clean_description(param.description)
+            else:
+                # If it's not a dict (due to max_depth), we replace it with a dict containing the description
+                flattened_schema['properties'][param.arg_name] = {
+                    'type': 'object',
+                    'description': clean_description(param.description) + ' (Nested object, depth limit reached)'
+                }
+
+    # Combine short_description and long_description for a more complete description
+    full_description = docstring.short_description or ""
+    if docstring.long_description:
+        full_description += " " + docstring.long_description if full_description else docstring.long_description
+    
+    description = clean_description(full_description) if full_description else f"Correctly extracted `{cls.__name__}` with all the required parameters with correct types"
+
+    return {
+        "name": schema.get('title', cls.__name__),
+        "description": description,
+        "parameters": {
+            "type": "object",
+            "required": [],
+            "properties": flattened_schema["properties"]
+        }
+    }

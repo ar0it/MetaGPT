@@ -14,16 +14,24 @@ from pydantic import BaseModel, Field, RootModel
 from typing import List, Literal, Any, Union
 import json
 
+
 class PredictorState(PredictorTemplate):
     """
     TODO: Add docstring
     """
-    def __init__(self, raw_meta: str) -> None:
+    def __init__(self, raw_meta: str, state:BaseModel=None) -> None:
         super().__init__()
-        self.state = OME()
+        if state is None:
+            state = OME()
+        self.state = state
         self.raw_metadata = raw_meta
         self.full_message = "The raw data is: \n" + str(self.raw_metadata)
+        self.current_state_documentation = f"""
+        Here is the schema to the respective state object, this is what you are supposed to predict:
+        {utils.browse_schema(self.state.__class__)}
+        """
         self.current_state_message = "The current state is: \n" + self.state.model_dump_json()
+
         self.json_patch_examples = """
 
         # Example State, created for you with the ome_types python library
@@ -266,6 +274,10 @@ class PredictorState(PredictorTemplate):
         First of you are updating a persistent state object, this helps you to
         update the state step by step. To do so you are provided the update_json_state
         function, which takes a list of json patches as input and updates the state object.
+        Importantly you are not always given the OME state object, but only a part of it.
+        This means you need to generate the json patches for the provided part of the schema.
+        The paths in the patches are therefore relative to the provided state object.
+        Make sure you dont add the full path to the state object, but only the path to the provided part of the schema.
         The json patches are structured as follows:
         {self.json_patch_examples}
         The ome_types OME object is structured slightly different from the default xml schema.
@@ -312,12 +324,13 @@ class PredictorState(PredictorTemplate):
         """
         
 
-    def predict(self) -> dict:
+    def predict(self, indent:Optional[int]=0) -> dict:
         """
         TODO: Add docstring
         """
-        print(f"Predicting for {self.name}, attempt: {self.attempts}")
-
+        print(indent*"  "+f"Predicting for {self.name}, attempt: {self.attempts}")
+        print(self.state.model_dump_json())
+        print(type(self.state))
         self.init_thread()
         self.init_vector_store()
         self.init_assistant()   
@@ -330,9 +343,10 @@ class PredictorState(PredictorTemplate):
             response = ast.literal_eval(response.function.arguments)
             response = response['json_patches']
             for patch in response:
-                print(patch, type(patch))
-                print(self.state)
+                print(patch)
                 self.state = utils.update_state(self.state, [patch])
+                # TODO: Use the custom apply function for more reliablility
+                print(self.state)
 
         except Exception as e:
             print(f"There was an exception in the {self.name}" ,e)
@@ -381,7 +395,7 @@ class PredictorState(PredictorTemplate):
     def init_thread(self):
         self.thread = self.client.beta.threads.create(messages=[{"role": "user", "content": self.instructions},
                                                                 {"role": "assistant", "content": "."},
-                                                                {"role": "user", "content": self.current_state_message + self.full_message}])
+                                                                {"role": "user", "content": self.current_state_message + self.current_state_documentation + self.full_message }])
         self.threads.append(self.thread)
 
     def init_vector_store(self):
@@ -428,7 +442,7 @@ class JsonPatch(BaseModel):
 
 class update_json_state(BaseModel):
     """
-    The response to the OME XML annotation
+    Update the state of the predictor from a list of json patches.
     """
     json_patches: Optional[list[JsonPatch]] = Field(default_factory=list[JsonPatch], description="")
     no_properties: Optional[bool] = Field(default=False, description="If no fitting properties were found in the raw metadata set this to True.")

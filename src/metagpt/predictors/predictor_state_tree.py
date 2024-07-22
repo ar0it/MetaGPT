@@ -4,8 +4,11 @@ from pydantic import BaseModel, Field
 from collections.abc import Iterator
 import importlib.util
 import sys
-
+from ome_types import from_xml, to_xml
+from ome_types.model import OME
 import metagpt.utils.BioformatsReader as BioformatsReader
+from metagpt.predictors.predictor_template import PredictorTemplate
+from metagpt.predictors.predictor_state import PredictorState
 import metagpt.utils.utils as utils
 
 prompt="""
@@ -49,12 +52,10 @@ You will have to decide on your own, if in doubt, skip the node.
 
 # Define the tree node class
 class TreeNode:
-    thread = marvin.beta.assistants.Thread()
-    thread_id = thread.id
     def __init__(self, model: Type[BaseModel]):
         self.model = model
-        self.object = None
-        self.children = []
+        self.state:BaseModel = None
+        self.children:list[TreeNode] = []
 
 
     def add_child(self, child: 'TreeNode'):
@@ -78,48 +79,31 @@ class TreeNode:
                 yield name
 
     
-    def predict_meta(self, raw_meta) -> BaseModel:
+    def predict_meta(self, raw_meta:str, indent:int=0) -> BaseModel:
 
         # add the metdata from the child nodes first
         child_objects = {}
         for child in self.children:
-            if child_obj := child.predict_meta(raw_meta):
+            if child_obj := child.predict_meta(raw_meta, indent=indent+1):
                 child_objects[child.model.__name__] = child_obj
 
-        self.object = self.instantiate_model(child_objects)
+        self.state = self.instantiate_model(child_objects)
         # TODO: loop here in case the field allows for the same type multiple times (i.e OME(images=[Image, Image, Image])) Maybe loop until AI doesnt predict any new
         # In that case I need to remove metadata from the raw_meta that has already been used
         #print(f"Predicting metadata for {self.model.__name__}, self.object={self.object}, required={list(self.required_fields(self.model))}")
-        
-        self.app = marvin.beta.applications.applications.Application(
-            name='OME Metadata Store',
-            instructions=(prompt),
-            state= self.object,
-            )
-        self.app.say("here is the raw metadata: {}".format(raw_meta), max_completion_tokens=1000, thread=self.thread)
-
+        response, cost, attemtps = PredictorState(state=self.state, raw_meta=raw_meta).predict()
+        self.state = from_xml(response)
         # MaybeModel to Model
-        if self.object.__class__.__name__.startswith("Maybe"):
-            self.object = getattr(self.object, self.model.__name__)
+        if self.state.__class__.__name__.startswith("Maybe"):
+            self.state = getattr(self.state, self.model.__name__)
         
-        print("####################################################################################")
-        print(f"Predicting metadata for {self.model.__name__}")
-
-        """if self.object.__class__.__name__.startswith("Plate"):
-            print(self.object.__dict__.items())
-            print(self.object.id)
-            print({k:v for k, v in vars(self.object).items() if v and k != "kind" and k != "id"})
-            print(type(self.object))
-            print(self.children)
-            print_tree(self)
-        """
         # return None if the object is empty other than the ID
-        if self.object:
-            attributes = {k:v for k, v in self.object.__dict__.items() if v and k != "kind" and k != "id"}
+        if self.state:
+            attributes = {k:v for k, v in self.state.__dict__.items() if v and k != "kind" and k != "id"}
             if not attributes:
-                self.object = None
+                self.state = None
 
-        return self.object
+        return self.state
     
     def instantiate_model(self, child_objects) -> BaseModel:
         if obj:= create_instance(self.model, child_objects):
@@ -165,63 +149,64 @@ def create_instance(instance, obj_dict:dict):
         return None # TODO: Think about how to handle this case properly
         
 
-# Function to identify dependencies and collect all models
-def collect_dependencies(model: Type[BaseModel], known_models: Dict[str, Type[BaseModel]], collected: Dict[str, Type[BaseModel]]):
-    if model.__name__ in collected:
-        return
-    collected[model.__name__] = model
-    for field in model.model_fields.values():
-        field_type = field.annotation
-        if hasattr(field_type, '__fields__'):  # If the field is a Pydantic model
-            collect_dependencies(field_type, known_models, collected)
-        elif hasattr(field_type, '__origin__') and field_type.__origin__ is list:
-            item_type = field_type.__args__[0]
-            if hasattr(item_type, '__fields__'):
-                collect_dependencies(item_type, known_models, collected)
-
-# Function to create the tree
-def create_dependency_tree(model: Type[BaseModel], known_models: Dict[str, Type[BaseModel]], visited: Set[str]) -> TreeNode:
-    node = TreeNode(model)
-    visited.add(model.__name__)
-    
-    for field in model.model_fields.values():
-        field_type = field.annotation
-        if hasattr(field_type, '__fields__') and field_type.__name__ not in visited:  # If the field is a Pydantic model
-            child_node = create_dependency_tree(field_type, known_models, visited)
-            node.add_child(child_node)
-        elif hasattr(field_type, '__origin__') and field_type.__origin__ is list:
-            item_type = field_type.__args__[0]
-            if hasattr(item_type, '__fields__') and item_type.__name__ not in visited:
-                child_node = create_dependency_tree(item_type, known_models, visited)
-                node.add_child(child_node)
-    
-    return node
-
-# Function to build the tree starting from the root model
-def build_tree(root_model: Type[BaseModel]) -> TreeNode:
-    known_models = {model.__name__: model for model in globals().values() if isinstance(model, type) and issubclass(model, BaseModel)}
-    collected_models = {}
-    collect_dependencies(root_model, known_models, collected_models)
-    
-    return create_dependency_tree(root_model, known_models, set())
-
-# Build the tree starting from the OME model
-#dependency_tree = build_tree(Image)
-
-# Print the tree structure
-def print_tree(node: TreeNode, indent: str = ""):
-    print(f"{indent}{node.model.__name__}")
-    for child in node.children:
-        print_tree(child, indent + "  ")
-
-#dependency_tree.predict_meta(ome_raw)
-
-#print(dependency_tree.object.model_dump_json())
-
 class PredictorStateTree(PredictorTemplate):
-    def __init__(self, state: BaseModel):
-        self.state = state
-        self.dependency_tree = build_tree(state.__class__)
+    def __init__(self, raw_meta:str, model:BaseModel=None):
+        if model is None:
+            model = OME
+        self.model = model
+        self.raw_meta = raw_meta
+        #self.state = state
+        self.dependency_tree = self.build_tree(model)
 
-    def predict(self, raw_meta: List[Dict[str, str]]) -> BaseModel:
-        return self.dependency_tree.predict_meta(raw_meta)
+    def predict(self) -> BaseModel:
+        return self.dependency_tree.predict_meta(self.raw_meta)
+    
+    def collect_dependencies(self, model: Type[BaseModel], known_models: Dict[str, Type[BaseModel]], collected: Dict[str, Type[BaseModel]]):
+        if model.__name__ in collected:
+            return
+        collected[model.__name__] = model
+        for field in model.model_fields.values():
+            field_type = field.annotation
+            if hasattr(field_type, '__fields__'):  # If the field is a Pydantic model
+                self.collect_dependencies(field_type, known_models, collected)
+            elif hasattr(field_type, '__origin__') and field_type.__origin__ is list:
+                item_type = field_type.__args__[0]
+                if hasattr(item_type, '__fields__'):
+                    self.collect_dependencies(item_type, known_models, collected)
+
+    # Function to create the tree
+    def create_dependency_tree(self, model: Type[BaseModel], known_models: Dict[str, Type[BaseModel]], visited: Set[str]) -> TreeNode:
+        node = TreeNode(model)
+        visited.add(model.__name__)
+        
+        for field in model.model_fields.values():
+            field_type = field.annotation
+            if hasattr(field_type, '__fields__') and field_type.__name__ not in visited:  # If the field is a Pydantic model
+                child_node = self.create_dependency_tree(field_type, known_models, visited)
+                node.add_child(child_node)
+            elif hasattr(field_type, '__origin__') and field_type.__origin__ is list:
+                item_type = field_type.__args__[0]
+                if hasattr(item_type, '__fields__') and item_type.__name__ not in visited:
+                    child_node = self.create_dependency_tree(item_type, known_models, visited)
+                    node.add_child(child_node)
+        
+        return node
+
+    # Function to build the tree starting from the root model
+    def build_tree(self, root_model: Type[BaseModel]) -> TreeNode:
+        known_models = {model.__name__: model for model in globals().values() if isinstance(model, type) and issubclass(model, BaseModel)}
+        collected_models = {}
+        self.collect_dependencies(root_model, known_models, collected_models)
+        
+        return self.create_dependency_tree(root_model, known_models, set())
+
+    # Build the tree starting from the OME model
+    #dependency_tree = build_tree(Image)
+
+    # Print the tree structure
+    def print_tree(self, node: TreeNode = None, indent: str = ""):
+        if node is None:
+            node = self.dependency_tree
+        print(f"{indent}{node.model.__name__}")
+        for child in node.children:
+            self.print_tree(child, indent + "  ")
