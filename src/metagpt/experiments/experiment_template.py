@@ -2,6 +2,7 @@ from metagpt.utils.DataClasses import Dataset, Sample
 from metagpt.utils import utils, BioformatsReader
 from metagpt.distorters.distorter_template import DistorterTemplate
 import json
+from ome_types import from_xml
 
 class ExperimentTemplate:
     """
@@ -37,7 +38,6 @@ class ExperimentTemplate:
 
                 file_name = path.split("/")[-1].split(".")[0]
                 data_format = path.split("/")[-1].split(".")[1]
-
                 dt = DistorterTemplate()
                 fake_meta = dt.distort(
                     out_bioformats,

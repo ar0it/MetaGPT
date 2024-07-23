@@ -127,7 +127,8 @@ class PredictorSimple(PredictorTemplate):
             )
         
         end_status = ["completed", "requires_action", "failed"]
-        while self.run.status not in end_status:
+        while self.run.status not in end_status and self.run_iter<self.max_iter:
+            self.run_iter += 1
             print(self.run.status)
             time.sleep(5)
             self.run = self.client.beta.threads.runs.retrieve(

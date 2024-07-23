@@ -18,6 +18,8 @@ class PredictorTemplate:
         self.client = OpenAI() #instructor.patch(OpenAI(api_key=os.getenv("OPENAI_API_KEY")))
         self.run = None
         self.pre_prompt = None
+        self.max_iter = 10
+        self.run_iter = 0
         self.response = None
         self.messages = []
         self.assistants = []

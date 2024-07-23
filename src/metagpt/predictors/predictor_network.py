@@ -38,6 +38,8 @@ class PredictorNetwork(PredictorTemplate):
         response, cost = None, None
 
         response_sep, sep_cost, sep_attempts = PredictorSeperator("Here is the raw metadata \n" + str(self.raw_metadata)).predict()
+        if response_sep is None:
+            return None, cost, self.attempts
         response_annot, response_ome = response_sep
 
         self.pred_response_annot, annot_cost, annot_attempts = PredictorSimpleAnnotation(

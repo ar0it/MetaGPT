@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>metagpt.utils.utils API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>metagpt.utils.utils</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="metagpt.utils.utils.browse_schema"><code class="name flex">
+<span>def <span class="ident">browse_schema</span></span>(<span>cls: pydantic.main.BaseModel, additional_ignored_keywords: List[str] = [], max_depth: int = inf) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Browse a schema as jsonschema, with depth control.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>cls</code></strong> :&ensp;<code>BaseModel</code></dt>
+<dd>The Pydantic model to convert to a schema.</dd>
+<dt><strong><code>additional_ignored_keywords</code></strong> :&ensp;<code>List[str]</code>, optional</dt>
+<dd>Additional keywords to ignore in the schema. Defaults to [].</dd>
+<dt><strong><code>max_depth</code></strong> :&ensp;<code>int</code>, optional</dt>
+<dd>Maximum depth of nesting to include in the schema. Defaults to infinity.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>A dictionary in the format of OpenAI's schema as jsonschema</dd>
+</dl></div>
+</dd>
+<dt id="metagpt.utils.utils.collect_dependencies"><code class="name flex">
+<span>def <span class="ident">collect_dependencies</span></span>(<span>model: Type[pydantic.main.BaseModel], known_models: Dict[str, Type[pydantic.main.BaseModel]], collected: Dict[str, Type[pydantic.main.BaseModel]])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to identify dependencies and collect all models</p></div>
+</dd>
+<dt id="metagpt.utils.utils.custom_apply"><code class="name flex">
+<span>def <span class="ident">custom_apply</span></span>(<span>patch: jsonpatch.JsonPatch, data: Dict[str, Any]) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Apply the JSON Patch, automatically creating missing nodes.</p></div>
+</dd>
+<dt id="metagpt.utils.utils.dict_to_xml_annotation"><code class="name flex">
+<span>def <span class="ident">dict_to_xml_annotation</span></span>(<span>value: dict) ‑> ome_types._autogenerated.ome_2016_06.xml_annotation.XMLAnnotation</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert a dictionary to an XMLAnnotation object, handling nested dictionaries.</p>
+<p>value: dict - The dictionary to be converted to an XMLAnnotation object.
+It requires the key 'annotations' which is a dictionary of key-value pairs.</p></div>
+</dd>
+<dt id="metagpt.utils.utils.ensure_path_exists"><code class="name flex">
+<span>def <span class="ident">ensure_path_exists</span></span>(<span>data: Dict[str, Any], path: str) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Ensure that the path exists in the data structure, creating empty lists or dicts as needed.</p></div>
+</dd>
+<dt id="metagpt.utils.utils.flatten"><code class="name flex">
+<span>def <span class="ident">flatten</span></span>(<span>container)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="metagpt.utils.utils.from_dict"><code class="name flex">
+<span>def <span class="ident">from_dict</span></span>(<span>ome_dict, state: pydantic.main.BaseModel = None) ‑> ome_types._autogenerated.ome_2016_06.ome.OME</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert a dictionary to an OME object.</p></div>
+</dd>
+<dt id="metagpt.utils.utils.generate_paths"><code class="name flex">
+<span>def <span class="ident">generate_paths</span></span>(<span>json_data: Union[dict, list], current_path: str = '', paths: list = None) ‑> list</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generate all possible paths from a nested JSON structure.</p>
+<p>This function traverses a nested JSON structure (which may contain dictionaries and lists)
+and generates a list of all possible paths within it. For dictionaries, it uses the keys
+to build the path. For lists, it uses indices, except when a list item is a dictionary
+with an 'id' key, in which case it uses the id value in the path.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>json_data</code></strong> :&ensp;<code>dict</code> or <code>list</code></dt>
+<dd>The nested JSON structure to traverse.</dd>
+<dt><strong><code>current_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>The current path being built. Used in recursive calls.
+Defaults to an empty string.</dd>
+<dt><strong><code>paths</code></strong> :&ensp;<code>list</code>, optional</dt>
+<dd>The list to store all generated paths. Used in recursive calls.
+Defaults to None, which initializes an empty list.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>list</code></dt>
+<dd>A list of strings, where each string represents a path in the format
+"path/to/element = value".</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; json_data = {
+...     &quot;test&quot;: 5,
+...     &quot;images&quot;: [
+...         {&quot;image&quot;: {&quot;id&quot;: &quot;image:0&quot;}},
+...         {&quot;image&quot;: {&quot;id&quot;: &quot;image:1&quot;}}
+...     ],
+...     &quot;nested&quot;: {
+...         &quot;key&quot;: &quot;value&quot;,
+...         &quot;list&quot;: [1, 2, 3]
+...     }
+... }
+&gt;&gt;&gt; result = generate_paths(json_data)
+&gt;&gt;&gt; for path in result:
+...     print(path)
+test = 5
+images/0/image/id = image:0
+images/1/image/id = image:1
+nested/key = value
+nested/list/0 = 1
+nested/list/1 = 2
+nested/list/2 = 3
+</code></pre></div>
+</dd>
+<dt id="metagpt.utils.utils.get_dependencies"><code class="name flex">
+<span>def <span class="ident">get_dependencies</span></span>(<span>model: Type[pydantic.main.BaseModel], known_models: Dict[str, Type[pydantic.main.BaseModel]]) ‑> Set[str]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to identify dependencies for sorting</p></div>
+</dd>
+<dt id="metagpt.utils.utils.get_json"><code class="name flex">
+<span>def <span class="ident">get_json</span></span>(<span>xml_root: xml.etree.ElementTree.Element, paths={}) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Helper function to get all paths in an XML tree.
+:return: set of paths</p></div>
+</dd>
+<dt id="metagpt.utils.utils.load_output"><code class="name flex">
+<span>def <span class="ident">load_output</span></span>(<span>path: str) ‑> tuple[typing.Optional[str], typing.Optional[float]]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load output from a file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>The file path to load from.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Optional[str]</code></dt>
+<dd>The loaded output, or None if an error occurred.</dd>
+</dl></div>
+</dd>
+<dt id="metagpt.utils.utils.make_prediction"><code class="name flex">
+<span>def <span class="ident">make_prediction</span></span>(<span>predictor: <a title="metagpt.predictors.predictor_template.PredictorTemplate" href="../predictors/predictor_template.html#metagpt.predictors.predictor_template.PredictorTemplate">PredictorTemplate</a>, in_data, dataset, name, should_predict='maybe', start_point=None, data_format=None, iter: int = None, model: str = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>TODO: add docstring</p></div>
+</dd>
+<dt id="metagpt.utils.utils.merge_xml_annotation"><code class="name flex">
+<span>def <span class="ident">merge_xml_annotation</span></span>(<span>annot: Dict[str, Any], ome: str = None) ‑> Optional[str]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Merge the annotation section with the OME XML.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>ome</code></strong> :&ensp;<code>Optional[str]</code></dt>
+<dd>The OME XML string.</dd>
+<dt><strong><code>annot</code></strong> :&ensp;<code>Optional[Dict[str, Any]]</code></dt>
+<dd>The annotation dictionary.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Optional[str]</code></dt>
+<dd>The merged XML string, or None if inputs are invalid.</dd>
+</dl></div>
+</dd>
+<dt id="metagpt.utils.utils.openai_schema"><code class="name flex">
+<span>def <span class="ident">openai_schema</span></span>(<span>cls: pydantic.main.BaseModel, additional_ignored_keywords: list[str] = []) ‑> Dict[str, Any]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Return the schema in the format of OpenAI's schema as jsonschema</p>
+<h2 id="note">Note</h2>
+<p>It's important to add a docstring to describe how to best use this class, it will be included in the description attribute and be part of the prompt.</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>dict</code></dt>
+<dd>A dictionary in the format of OpenAI's schema as jsonschema</dd>
+</dl></div>
+</dd>
+<dt id="metagpt.utils.utils.read_ome_xml"><code class="name flex">
+<span>def <span class="ident">read_ome_xml</span></span>(<span>path: str) ‑> xml.etree.ElementTree.Element</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This method reads the ome xml file and returns the ET root element.</p></div>
+</dd>
+<dt id="metagpt.utils.utils.render_cell_output"><code class="name flex">
+<span>def <span class="ident">render_cell_output</span></span>(<span>output_path)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load the captured output from a file and render it.</p>
+<p>Parameters:
+output_path (str): Path to the output file where the cell output is saved.</p></div>
+</dd>
+<dt id="metagpt.utils.utils.safe_float"><code class="name flex">
+<span>def <span class="ident">safe_float</span></span>(<span>value)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Safely convert a value to float, returning None if conversion is not possible.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>value</code></strong></dt>
+<dd>The value to convert to float.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code> or <code>None</code></dt>
+<dd>The float value if conversion is successful, None otherwise.</dd>
+</dl></div>
+</dd>
+<dt id="metagpt.utils.utils.save_and_stream_output"><code class="name flex">
+<span>def <span class="ident">save_and_stream_output</span></span>(<span>output_path='out/jupyter_cell_outputs/cell_output_2024-07-23T16:22:53.579340_.json')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Context manager to capture the output of a code block, save it to a file,
+and print it to the console in real-time.</p>
+<p>Parameters:
+output_path (str): Path to the output file where the cell output will be saved.</p></div>
+</dd>
+<dt id="metagpt.utils.utils.save_output"><code class="name flex">
+<span>def <span class="ident">save_output</span></span>(<span>output: str, cost: float, attempts: float, path: str) ‑> bool</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Save output to a file.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>output</code></strong> :&ensp;<code>str</code></dt>
+<dd>The output to save.</dd>
+<dt><strong><code>path</code></strong> :&ensp;<code>str</code></dt>
+<dd>The file path to save to.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>bool</code></dt>
+<dd>True if save was successful, False otherwise.</dd>
+</dl></div>
+</dd>
+<dt id="metagpt.utils.utils.sort_models_by_dependencies"><code class="name flex">
+<span>def <span class="ident">sort_models_by_dependencies</span></span>(<span>root_model: Type[pydantic.main.BaseModel]) ‑> List[Type[pydantic.main.BaseModel]]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Function to sort models by dependencies</p></div>
+</dd>
+<dt id="metagpt.utils.utils.update_state"><code class="name flex">
+<span>def <span class="ident">update_state</span></span>(<span>current_state: ome_types._autogenerated.ome_2016_06.ome.OME, proposed_change: list) ‑> ome_types._autogenerated.ome_2016_06.ome.OME</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update the OME state based on proposed changes using JSONPatch, automatically creating missing nodes.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>current_state</code></strong> :&ensp;<code>OME</code></dt>
+<dd>The current OME state.</dd>
+<dt><strong><code>proposed_change</code></strong> :&ensp;<code>list</code></dt>
+<dd>The change proposed as a JSON Patch document.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>OME</code></dt>
+<dd>The updated OME state.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<dl>
+<dt><code>jsonpatch.JsonPatchException</code></dt>
+<dd>If the patch is invalid or cannot be applied.</dd>
+<dt><code>ValueError</code></dt>
+<dd>If the resulting document is not a valid OME model.</dd>
+</dl></div>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="metagpt.utils.utils.Tee"><code class="flex name class">
+<span>class <span class="ident">Tee</span></span>
+<span>(</span><span>*streams)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Tee:
+    def __init__(self, *streams):
+        self.streams = streams
+    
+    def write(self, data):
+        for stream in self.streams:
+            stream.write(data)
+    
+    def flush(self):
+        for stream in self.streams:
+            stream.flush()</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="metagpt.utils.utils.Tee.flush"><code class="name flex">
+<span>def <span class="ident">flush</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="metagpt.utils.utils.Tee.write"><code class="name flex">
+<span>def <span class="ident">write</span></span>(<span>self, data)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="metagpt.utils" href="index.html">metagpt.utils</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="metagpt.utils.utils.browse_schema" href="#metagpt.utils.utils.browse_schema">browse_schema</a></code></li>
+<li><code><a title="metagpt.utils.utils.collect_dependencies" href="#metagpt.utils.utils.collect_dependencies">collect_dependencies</a></code></li>
+<li><code><a title="metagpt.utils.utils.custom_apply" href="#metagpt.utils.utils.custom_apply">custom_apply</a></code></li>
+<li><code><a title="metagpt.utils.utils.dict_to_xml_annotation" href="#metagpt.utils.utils.dict_to_xml_annotation">dict_to_xml_annotation</a></code></li>
+<li><code><a title="metagpt.utils.utils.ensure_path_exists" href="#metagpt.utils.utils.ensure_path_exists">ensure_path_exists</a></code></li>
+<li><code><a title="metagpt.utils.utils.flatten" href="#metagpt.utils.utils.flatten">flatten</a></code></li>
+<li><code><a title="metagpt.utils.utils.from_dict" href="#metagpt.utils.utils.from_dict">from_dict</a></code></li>
+<li><code><a title="metagpt.utils.utils.generate_paths" href="#metagpt.utils.utils.generate_paths">generate_paths</a></code></li>
+<li><code><a title="metagpt.utils.utils.get_dependencies" href="#metagpt.utils.utils.get_dependencies">get_dependencies</a></code></li>
+<li><code><a title="metagpt.utils.utils.get_json" href="#metagpt.utils.utils.get_json">get_json</a></code></li>
+<li><code><a title="metagpt.utils.utils.load_output" href="#metagpt.utils.utils.load_output">load_output</a></code></li>
+<li><code><a title="metagpt.utils.utils.make_prediction" href="#metagpt.utils.utils.make_prediction">make_prediction</a></code></li>
+<li><code><a title="metagpt.utils.utils.merge_xml_annotation" href="#metagpt.utils.utils.merge_xml_annotation">merge_xml_annotation</a></code></li>
+<li><code><a title="metagpt.utils.utils.openai_schema" href="#metagpt.utils.utils.openai_schema">openai_schema</a></code></li>
+<li><code><a title="metagpt.utils.utils.read_ome_xml" href="#metagpt.utils.utils.read_ome_xml">read_ome_xml</a></code></li>
+<li><code><a title="metagpt.utils.utils.render_cell_output" href="#metagpt.utils.utils.render_cell_output">render_cell_output</a></code></li>
+<li><code><a title="metagpt.utils.utils.safe_float" href="#metagpt.utils.utils.safe_float">safe_float</a></code></li>
+<li><code><a title="metagpt.utils.utils.save_and_stream_output" href="#metagpt.utils.utils.save_and_stream_output">save_and_stream_output</a></code></li>
+<li><code><a title="metagpt.utils.utils.save_output" href="#metagpt.utils.utils.save_output">save_output</a></code></li>
+<li><code><a title="metagpt.utils.utils.sort_models_by_dependencies" href="#metagpt.utils.utils.sort_models_by_dependencies">sort_models_by_dependencies</a></code></li>
+<li><code><a title="metagpt.utils.utils.update_state" href="#metagpt.utils.utils.update_state">update_state</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="metagpt.utils.utils.Tee" href="#metagpt.utils.utils.Tee">Tee</a></code></h4>
+<ul class="">
+<li><code><a title="metagpt.utils.utils.Tee.flush" href="#metagpt.utils.utils.Tee.flush">flush</a></code></li>
+<li><code><a title="metagpt.utils.utils.Tee.write" href="#metagpt.utils.utils.Tee.write">write</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

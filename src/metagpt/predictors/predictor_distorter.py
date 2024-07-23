@@ -29,13 +29,10 @@ class PredictorDistorter(PredictorTemplate):
         Use the same seperator operator "/" as in the original metadata.
         The operator indicates the hierarchy in the metadata.
         The goal is to create a new metadata syntax that is not the same as the original.
-        The output should be a dictionary of key value pairs, similair to that of the original metadata, where the keys are the new metadata syntax, and the values are the values from the original metadata.
-        Here are some example to make thinkgs clear:
+        The output should be a dictionary of key value pairs,with the mapping from old keys to new keys.
+        Here are some example to make things clear:
         Input: {"key1": "value1", "key2": "value2"}
-        Output: {"new_key1": "value1", "new_key2": "value2"}
-        or in the case of a nested structure
-        Input: {"key1": {"nestedKey1": "value1"}, "key2": "value2"}
-        Output: {"new_key1": {"new_nestedKey1": "value1"}, "new_key2": "value2"}
+        Output: {"key1": "new_key1", "key2": "new_key2"}
         This is a hard task therefore I need you to work step by step and use chain of thought.
         I have provided you with the function out_new_meta that will help you with outputting the new metadata.
         You are required to use this function.
@@ -80,7 +77,8 @@ class PredictorDistorter(PredictorTemplate):
             )
         
         end_status = ["completed", "requires_action", "failed"]
-        while self.run.status not in end_status:
+        while self.run.status not in end_status and self.run_iter<self.max_iter:
+            self.run_iter += 1
             print(self.run.status)
             time.sleep(5)
             self.run = self.client.beta.threads.runs.retrieve(
@@ -95,7 +93,7 @@ class PredictorDistorter(PredictorTemplate):
             name="MetadataInventor",
             description="An assistant to translate metadata in to a made up syntax",
             instructions=self.prompt,
-            model="gpt-4o",
+            model="gpt-4o-mini",
             tools=[{"type": "file_search"}, utils.openai_schema(self.out_new_meta)]
         )
         self.assistants.append(self.assistant)
@@ -113,4 +111,4 @@ class PredictorDistorter(PredictorTemplate):
         """
         new_meta: dict[str, Any] = Field(
             default_factory=dict,
-            description="A dictionary of key value pairs, with the keys corresponding to the new metadata and the values remain the old values.Can be nested.")
+            description="A dictionary of key value pairs, with the keys corresponding to the old keys and the values to the new keys.")

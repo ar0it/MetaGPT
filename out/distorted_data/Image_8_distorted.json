@@ -1,0 +1,4561 @@
+{
+    "Expers": [
+        {
+            "Exper": {
+                "ID": "Experimenter:0",
+                "UsrNm": "bcers01"
+            }
+        }
+    ],
+    "Instrs": [
+        {
+            "Instr": {
+                "ID": "Instrument:0",
+                "Micrscp": {},
+                "Dets": [
+                    {
+                        "Det": {
+                            "AmpGain": "2.0",
+                            "Gn": "1.0",
+                            "ID": "Detector:0:0",
+                            "Mdl": "",
+                            "Zm": "1.0"
+                        }
+                    },
+                    {
+                        "Det": {
+                            "AmpGain": "1.0",
+                            "Gn": "242.27363180139324",
+                            "ID": "Detector:0:1",
+                            "Mdl": "",
+                            "Zm": "1.0"
+                        }
+                    },
+                    {
+                        "Det": {
+                            "AmpGain": "2.0",
+                            "Gn": "800.0",
+                            "ID": "Detector:1:0",
+                            "Mdl": "",
+                            "Zm": "1.0"
+                        }
+                    }
+                ],
+                "Objs": [
+                    {
+                        "Obj": {
+                            "ID": "Objective:0",
+                            "Immsn": "Water",
+                            "LensNA": "1.2000000000000002",
+                            "Mdl": "C-Apochromat 63x/1.2 W Korr M27",
+                            "NomMag": "63.0"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "Imgs": [
+        {
+            "Img": {
+                "ID": "Image:0",
+                "Nm": "Image 8 #1",
+                "ExpRefs": [
+                    {
+                        "ExpRef": {
+                            "ID": "Experimenter:0"
+                        }
+                    }
+                ],
+                "InstrRefs": [
+                    {
+                        "InstrRef": {
+                            "ID": "Instrument:0"
+                        }
+                    }
+                ],
+                "ObjSetts": [
+                    {
+                        "ObjSett": {
+                            "ID": "Objective:0",
+                            "Med": "Water",
+                            "RefrIdx": "1.333"
+                        }
+                    }
+                ],
+                "StgLbls": [
+                    {
+                        "StgLbl": {
+                            "Nm": "Scene position #0",
+                            "X": "-16360.5",
+                            "XUnit": "µm",
+                            "Y": "-4955.0",
+                            "YUnit": "µm",
+                            "Z": "146.837",
+                            "ZUnit": "µm"
+                        }
+                    }
+                ],
+                "Pixs": [
+                    {
+                        "Pix": {
+                            "BigEnd": "false",
+                            "DimOrd": "XYCZT",
+                            "ID": "Pixels:0",
+                            "Intrlvd": "false",
+                            "PhysSzX": "0.0992287815904495",
+                            "PhysSzXUnit": "µm",
+                            "PhysSzY": "0.0992287815904495",
+                            "PhysSzYUnit": "µm",
+                            "SigBits": "8",
+                            "SzC": "3",
+                            "SzT": "30",
+                            "SzX": "680",
+                            "SzY": "280",
+                            "SzZ": "1",
+                            "Typ": "uint8",
+                            "Chnls": [
+                                {
+                                    "Chnl": {
+                                        "AcqMode": "LaserScanningConfocalMicroscopy",
+                                        "Clr": "-16711681",
+                                        "EmWvlgth": "646.4456100000001",
+                                        "EmWvlgthUnit": "nm",
+                                        "ExcWvlgth": "561.0",
+                                        "ExcWvlgthUnit": "nm",
+                                        "Flr": "mRFP1.2",
+                                        "ID": "Channel:0:0",
+                                        "IllumTyp": "Epifluorescence",
+                                        "Nm": "ChS2-T1",
+                                        "SampPerPix": "1",
+                                        "DetSetts": [
+                                            {
+                                                "DetSett": {
+                                                    "Bnnng": "1x1",
+                                                    "ID": "Detector:0:0"
+                                                }
+                                            }
+                                        ],
+                                        "LgtPath": {}
+                                    }
+                                },
+                                {
+                                    "Chnl": {
+                                        "AcqMode": "LaserScanningConfocalMicroscopy",
+                                        "Clr": "-1",
+                                        "ID": "Channel:0:1",
+                                        "IllumTyp": "Epifluorescence",
+                                        "Nm": "T PMT-T1",
+                                        "SampPerPix": "1",
+                                        "DetSetts": [
+                                            {
+                                                "DetSett": {
+                                                    "Bnnng": "1x1",
+                                                    "ID": "Detector:0:1"
+                                                }
+                                            }
+                                        ],
+                                        "LgtPath": {}
+                                    }
+                                },
+                                {
+                                    "Chnl": {
+                                        "AcqMode": "LaserScanningConfocalMicroscopy",
+                                        "Clr": "16711935",
+                                        "EmWvlgth": "530.4922920000002",
+                                        "EmWvlgthUnit": "nm",
+                                        "ExcWvlgth": "488.00000000000006",
+                                        "ExcWvlgthUnit": "nm",
+                                        "Flr": "EGFP",
+                                        "ID": "Channel:0:2",
+                                        "IllumTyp": "Epifluorescence",
+                                        "Nm": "ChS1-T2",
+                                        "SampPerPix": "1",
+                                        "DetSetts": [
+                                            {
+                                                "DetSett": {
+                                                    "Bnnng": "1x1",
+                                                    "ID": "Detector:1:0"
+                                                }
+                                            }
+                                        ],
+                                        "LgtPath": {}
+                                    }
+                                }
+                            ],
+                            "MetaOnly": {},
+                            "Plns": [
+                                {
+                                    "Pln": {
+                                        "DltT": "10801.102527878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "0",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10801.102527878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "0",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10801.102527878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "0",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10803.880072848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "1",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10803.880072848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "1",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10803.880072848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "1",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10806.657617878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "2",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10806.657617878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "2",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10806.657617878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "2",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10809.435162848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "3",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10809.435162848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "3",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10809.435162848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "3",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10812.212707878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "4",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10812.212707878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "4",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10812.212707878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "4",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10814.990252848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "5",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10814.990252848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "5",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10814.990252848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "5",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10817.767797878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "6",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10817.767797878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "6",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10817.767797878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "6",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10820.545342848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "7",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10820.545342848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "7",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10820.545342848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "7",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10823.322887878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "8",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10823.322887878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "8",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10823.322887878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "8",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10826.100432848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "9",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10826.100432848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "9",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10826.100432848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "9",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10828.877977878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "10",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10828.877977878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "10",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10828.877977878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "10",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10831.655522848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "11",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10831.655522848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "11",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10831.655522848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "11",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10834.433067878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "12",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10834.433067878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "12",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10834.433067878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "12",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10837.210612848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "13",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10837.210612848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "13",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10837.210612848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "13",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10839.988157878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "14",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10839.988157878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "14",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10839.988157878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "14",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10842.765702848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "15",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10842.765702848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "15",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10842.765702848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "15",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10845.543247878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "16",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10845.543247878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "16",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10845.543247878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "16",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10848.320792848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "17",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10848.320792848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "17",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10848.320792848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "17",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10851.098337878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "18",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10851.098337878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "18",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10851.098337878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "18",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10853.875882848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "19",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10853.875882848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "19",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10853.875882848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "19",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10856.653427878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "20",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10856.653427878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "20",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10856.653427878788",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "20",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10859.430972848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "21",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10859.430972848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "21",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10859.430972848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "21",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10862.208517878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "22",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10862.208517878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "22",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10862.208517878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "22",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10864.986062848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "23",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10864.986062848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "23",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10864.986062848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "23",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10867.763607878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "24",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10867.763607878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "24",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10867.763607878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "24",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10870.541152848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "25",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10870.541152848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "25",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10870.541152848484",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "25",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10873.318697878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "26",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10873.318697878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "26",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10873.318697878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "26",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10876.096242848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "27",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10876.096242848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "27",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10876.096242848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "27",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10878.873787878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "28",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10878.873787878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "28",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10878.873787878787",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "28",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10881.651332848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "0",
+                                        "ThT": "29",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10881.651332848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "1",
+                                        "ThT": "29",
+                                        "ThZ": "0"
+                                    }
+                                },
+                                {
+                                    "Pln": {
+                                        "DltT": "10881.651332848485",
+                                        "DltTUnit": "s",
+                                        "PosX": "-16360.5",
+                                        "PosXUnit": "µm",
+                                        "PosY": "-4955.0",
+                                        "PosYUnit": "µm",
+                                        "PosZ": "146.837",
+                                        "PosZUnit": "µm",
+                                        "ThC": "2",
+                                        "ThT": "29",
+                                        "ThZ": "0"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "StrctAnns": {
+        "XMLAnns": [
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:0",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FocusStabilizer",
+                            "Val": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:1",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|TrackMultiplexType",
+                            "Val": "[Line]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:2",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|LightSource|LightSourceType|Laser|Wavelength",
+                            "Val": "[633.000000, 561.000000, 405.000000, 458.000000]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:3",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|SpotPositionY",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:4",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|SpotPositionX",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:5",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|PinholeDiameter",
+                            "Val": "[7.1379999999999998e-005, 0, 7.1379999999999998e-005]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:6",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|LaserSuppressionMode",
+                            "Val": "[None, None]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:7",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|RefractiveIndex",
+                            "Val": "[1.333]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:8",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|StartEvent",
+                            "Val": "[None, None]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:9",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtFrameHeight",
+                            "Val": "[512]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:10",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ScalingZ",
+                            "Val": "[9.9999999999999995e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:11",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ScalingY",
+                            "Val": "[9.9228781590449496e-008]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:12",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ScalingX",
+                            "Val": "[9.9228781590449496e-008]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:13",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtBinning",
+                            "Val": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:14",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RequestedScanSpeed",
+                            "Val": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:15",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraBinning",
+                            "Val": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:16",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtRegionHeight",
+                            "Val": "[512]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:17",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Appliance|Data|ShuttleAndFindData|Calibration|Marker|FocusPosition",
+                            "Val": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:18",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Magnification",
+                            "Val": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:19",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|Cycles",
+                            "Val": "[1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:20",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|SamplingEnd",
+                            "Val": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:21",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|DetectorIdentifier",
+                            "Val": "[SpectralImager2, NonDescannedTransmissionPmt1, SpectralImager1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:22",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|InterpolationY",
+                            "Val": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:23",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|ExcitationIntensity",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:24",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|S|Scene|Index",
+                            "Val": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:25",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|MicroscopeRef|Id",
+                            "Val": "[Microscope:0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:26",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|Id",
+                            "Val": "[1882045647122112205822316379321236341965, 2073036438124928641418889655283193049277, 108853132117492280627326639672251045474]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:27",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|Laser|LaserPower",
+                            "Val": "[0.0050000000000000001, 0.02, 0.029999999999999999, 0.025000000000000001]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:28",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|T|BinaryList|AttachmentName",
+                            "Val": "[TimeStamps]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:29",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BeamSplitter|BeamSplitterServoPosition",
+                            "Val": "[0, 0, 0, 0, 0, 0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:30",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|DigitalGain",
+                            "Val": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:31",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|ImageChannelName",
+                            "Val": "[ChS2, T PMT, ChS1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:32",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|LaserScanInfo|Averaging",
+                            "Val": "[2, 2, 2]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:33",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|LaserScanInfo|LineTime",
+                            "Val": "[2.4242424242424244e-007, 2.4242424242424244e-007, 2.4242424242424244e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:34",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|TimeSeriesSetup|Switch|SwitchAction|SetIntervalAction|Interval|TimeSpan|Value",
+                            "Val": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:35",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|LightSource|Id",
+                            "Val": "[LightSource:1, LightSource:1, LightSource:3]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:36",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|DetectorWavelengthRange|WavelengthEnd",
+                            "Val": "[6.955027830000002e-007, 5.6171049300000022e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:37",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|BiDirectional",
+                            "Val": "[true]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:38",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|DetectorWavelengthRange|WavelengthStart",
+                            "Val": "[5.9738843700000018e-007, 4.9927409100000017e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:39",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|HdrNumFrames",
+                            "Val": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:40",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Document|SubType",
+                            "Val": "[Image]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:41",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|Rotation",
+                            "Val": "[-85.581379535589718]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:42",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|Gamma",
+                            "Val": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:43",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|FilterTransmission",
+                            "Val": "[-1, -1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:44",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|Folder",
+                            "Val": "[mRFP1.2, EGFP]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:45",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FocalDistanceScanLense",
+                            "Val": "[52.5]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:46",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|Polarization_Stokes3",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:47",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|Polarization_Stokes2",
+                            "Val": "[-0.15362812946803259, -0.15362812946803259]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:48",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|PhotonConversionFactor",
+                            "Val": "[664.16913943678514, 664.16913943678514, 664.16913943678514]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:49",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|Polarization_Stokes1",
+                            "Val": "[0.98812873545715363, 0.98812873545715363]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:50",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|DyeName",
+                            "Val": "EGFP"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:51",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|Polarization_Stokes0",
+                            "Val": "[1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:52",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|Repeat",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:53",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|WaitState",
+                            "Val": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:54",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Version",
+                            "Val": "[1.0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:55",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|AmplifierGain",
+                            "Val": "[2, 1, 2]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:56",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|Microscope|System",
+                            "Val": "[LSM 880, AxioObserver]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:57",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|TimeSeriesSetup|Switch|SwitchAction|SetIntervalAction|Interval|TimeSpan|DefaultUnitFormat",
+                            "Val": "[ms]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:58",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|ExperimentBlockIndex",
+                            "Val": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:59",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|LightSource|Manufacturer|Model",
+                            "Val": "[HeNe633, DPSS 561-10, Diode 405-30, ArgonRemote]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:60",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|AiryScanTransformationYY",
+                            "Val": "[-3.8783452724085969e-187, -3.8783452724085969e-187, 5.4103468857401649e-312]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:61",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|AiryScanTransformationYX",
+                            "Val": "[1.9298288117718883e-317, 1.9298288117718883e-317, 5.4103468855425387e-312]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:62",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|Detector|Gain",
+                            "Val": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:63",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FilterSamplingNumber",
+                            "Val": "[2]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:64",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|IsSelected",
+                            "Val": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:65",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Name",
+                            "Val": "[Track1, Track2]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:66",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Binning",
+                            "Val": "[1x1, 1x1, 1x1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:67",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|EndEvent",
+                            "Val": "[Number, Number]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:68",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|Id",
+                            "Val": "[Instrument:0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:69",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|TirfAngle",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:70",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|HdrImagingMode",
+                            "Val": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:71",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|AiryScanTransformationXY",
+                            "Val": "[5.9619591652106098e-310, 5.9619591652106098e-310, 2.5142467133005446e-310]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:72",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|AiryScanTransformationXX",
+                            "Val": "[-1.4299870214316193e+162, -1.4299870214316193e+162, 2.5142467132999023e-310]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:73",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|ChannelUnit|OffsetI",
+                            "Val": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:74",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|PixelPeriod",
+                            "Val": "[3.1060606060606059e-006]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:75",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|TilesSetup|PositionGroup|AutoFocusMode",
+                            "Val": "[Off]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:76",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|AcquisitionMode",
+                            "Val": "[Frame]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:77",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraSuperSampling",
+                            "Val": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:78",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Collimator|Position",
+                            "Val": "[852, 852]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:79",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Track|ChannelRef|Id",
+                            "Val": "[1882045647122112205822316379321236341965, 2073036438124928641418889655283193049277, 108853132117492280627326639672251045474]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:80",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FilterMode",
+                            "Val": "[Line]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:81",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|DeviceMode",
+                            "Val": "[LSM_ChannelMode, LSM]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:82",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|Id",
+                            "Val": "108853132117492280627326639672251045474"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:83",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|Objective|Immersion",
+                            "Val": "[Water]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:84",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageXPosition",
+                            "Val": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:85",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|AiryScanMode",
+                            "Val": "[Off, Off, Off]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:86",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|CenterWavelength",
+                            "Val": "[5.5279100700000023e-007, 5.5279100700000023e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:87",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraFrameOffsetY",
+                            "Val": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:88",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraFrameOffsetX",
+                            "Val": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:89",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Document|Title",
+                            "Val": "[Image 8]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:90",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ApertureDiameter",
+                            "Val": "[4.4099999999999993]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:91",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BeamSplitter|Identifier",
+                            "Val": "[MainBeamSplitterDescanned1, MainBeamSplitterDescanned2, DichroicBeamSplitterDescanned1, MainBeamSplitterNonDescanned, MainBeamSplitterDescanned1, MainBeamSplitterDescanned2, DichroicBeamSplitterDescanned1, MainBeamSplitterNonDescanned]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:92",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Appliance|Data|ShuttleAndFindData|Calibration|Marker|StageYPosition",
+                            "Val": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:93",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|DigitalGain",
+                            "Val": "[2, 1, 2]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:94",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|TriggerOut",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:95",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Detector|Id",
+                            "Val": "[Detector:0:0, Detector:0:1, Detector:1:0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:96",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|AiryScanMagnification",
+                            "Val": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:97",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BeamSplitter|Filter",
+                            "Val": "[MBS 488/561/633, MBS -405, Mirror, NoneLSM, MBS 488/561/633, MBS -405, Mirror, NoneLSM]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:98",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Application|Name",
+                            "Val": "[AIMApplication]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:99",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Document|CreationDate",
+                            "Val": "[2021-07-27T16:33:14]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:100",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|Detector|AmplificationGain",
+                            "Val": "[2, 1, 2]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:101",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Track|Id",
+                            "Val": "[Track:0, Track:1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:102",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|Laser|LaserName",
+                            "Val": "[HeNe633, DPSS 561-10, Diode 405-30, ArgonRemote]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:103",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|LightSource|Power",
+                            "Val": "[5, 20, 30, 25]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:104",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|ZStackSetup|Interpolation",
+                            "Val": "[Cubic]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:105",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Gain",
+                            "Val": "[800, 242.27363180139324, 800]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:106",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|ContrastMethod",
+                            "Val": "[Fluorescence, Other, Fluorescence]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:107",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|PinholeSizeAiry",
+                            "Val": "[0.99256593406270088, 1.2095178391590697]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:108",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FocalDistanceStandardTubeLense",
+                            "Val": "[164.5]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:109",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Collimator|Name",
+                            "Val": "[LSMCOLLI_V, LSMCOLLI_V]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:110",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtFrameWidth",
+                            "Val": "[512]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:111",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|Laser",
+                            "Val": "[DPSS 561-10, ArgonRemote]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:112",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FitFramesizeToRoi",
+                            "Val": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:113",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|SpectralScanChannels",
+                            "Val": "[32, 32, 32]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:114",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ReferenceZ",
+                            "Val": "[0.00014683699999999998]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:115",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|AmplifierOffset",
+                            "Val": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:116",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|Detector|Zoom",
+                            "Val": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:117",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|IlluminationType",
+                            "Val": "[Epifluorescence, Epifluorescence, Epifluorescence]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:118",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|PalmSlider",
+                            "Val": "[true, true]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:119",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Id",
+                            "Val": "[1882045647122112205822316379321236341965, 2073036438124928641418889655283193049277, 108853132117492280627326639672251045474]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:120",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|PreScan",
+                            "Val": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:121",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|TilesSetup|PositionGroup|AutoFocusOffset",
+                            "Val": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:122",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraFrameWidth",
+                            "Val": "[1300]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:123",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FilterMethod",
+                            "Val": "[Average]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:124",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|Palette",
+                            "Val": "[LsmDetectorPalette_0_0, LsmDetectorPalette_0_1, LsmDetectorPalette_1_0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:125",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|LightSource|Id",
+                            "Val": "[LightSource:0, LightSource:1, LightSource:2, LightSource:3]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:126",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|LaserScanInfo|ScanningMode",
+                            "Val": "[LineSequential, LineSequential, LineSequential]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:127",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|Objective|Id",
+                            "Val": "[Objective:0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:128",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|HdrEnabled",
+                            "Val": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:129",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|Wavelength",
+                            "Val": "[5.6100000000000001e-007, 4.8800000000000003e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:130",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|S|Scene|Position|Z",
+                            "Val": "[146.837]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:131",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|S|Scene|Position|Y",
+                            "Val": "[-4955]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:132",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|AiryScanVirtualPinholeSize",
+                            "Val": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:133",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|S|Scene|Position|X",
+                            "Val": "[-16360.5]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:134",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FocalDistanceLsmTubeLense",
+                            "Val": "[150]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:135",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|Duration",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:136",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|CameraIntegrationTime",
+                            "Val": "[3.1060606060606059e-006, 3.1060606060606059e-006]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:137",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|DifferentSpotPosition",
+                            "Val": "[false, false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:138",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Medium",
+                            "Val": "[Water]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:139",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|User|DisplayName",
+                            "Val": "[bcers01]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:140",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|PositionZ",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:141",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Wavelength",
+                            "Val": "[561, 561, 488.00000000000006]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:142",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtSuperSampling",
+                            "Val": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:143",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|DimensionZ",
+                            "Val": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:144",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|DimensionY",
+                            "Val": "[280]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:145",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|Objective|NominalMagnification",
+                            "Val": "[63]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:146",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|PixelPeriod",
+                            "Val": "[-1, -1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:147",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|DimensionX",
+                            "Val": "[680]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:148",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|DimensionT",
+                            "Val": "[30]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:149",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|Detector|Id",
+                            "Val": "[Detector:0:0, Detector:0:1, Detector:1:0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:150",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|ChannelUnit|ChannelType",
+                            "Val": "Unspecified"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:151",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|StopAtIntensityDrop",
+                            "Val": "[false, false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:152",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|ZStackSetup|Extrapolate",
+                            "Val": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:153",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|BiDirectionalZ",
+                            "Val": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:154",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|LaserScanInfo|SampleOffsetY",
+                            "Val": "[7.1528874358965848e-007, 7.1528874358965848e-007, 7.1528874358965848e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:155",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|LaserScanInfo|SampleOffsetX",
+                            "Val": "[6.6760282735367915e-006, 6.6760282735367915e-006, 6.6760282735367915e-006]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:156",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|Name",
+                            "Val": "ChS1-T2"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:157",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|TubeLensPosition",
+                            "Val": "[Lens LSM, Lens LSM]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:158",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|StartTime",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:159",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|AcquisitionMode",
+                            "Val": "[LaserScanningConfocalMicroscopy, LaserScanningConfocalMicroscopy, LaserScanningConfocalMicroscopy]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:160",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Appliance|Data|ShuttleAndFindData|Calibration|StageOrientation|Y",
+                            "Val": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:161",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|Dye",
+                            "Val": "[mRFP1.2, EGFP]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:162",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Appliance|Data|ShuttleAndFindData|Calibration|StageOrientation|X",
+                            "Val": "[-1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:163",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|TimeSeriesSetup|StartMode|DigitalOut",
+                            "Val": "[-1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:164",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|SimRotations",
+                            "Val": "[3]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:165",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ZoomY",
+                            "Val": "[2]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:166",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Scaling|Distance|Id",
+                            "Val": "[X, Y, Z]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:167",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|ExcitationWavelength",
+                            "Val": "[561, 488.00000000000006]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:168",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ZoomX",
+                            "Val": "[2]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:169",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|OriginalScanData",
+                            "Val": "[true]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:170",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|LaserScanInfo|SampleRotation",
+                            "Val": "[-85.581379535589718, -85.581379535589718, -85.581379535589718]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:171",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Appliance|Data|ShuttleAndFindData|Calibration|MicroscopeType",
+                            "Val": "[LM]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:172",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Polarization|StokesParameter4",
+                            "Val": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:173",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Polarization|StokesParameter3",
+                            "Val": "[-0.15362812946803259, -0.15362812946803259, -0.15362812946803259]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:174",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Polarization|StokesParameter2",
+                            "Val": "[0.98812873545715363, 0.98812873545715363, 0.98812873545715363]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:175",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Polarization|StokesParameter1",
+                            "Val": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:176",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|LaserScanInfo|ZoomY",
+                            "Val": "[2, 2, 2]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:177",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|LaserScanInfo|ZoomX",
+                            "Val": "[2, 2, 2]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:178",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|BitsPerSample",
+                            "Val": "[8]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:179",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|ZStackSetup|StackBrightnessCorrection",
+                            "Val": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:180",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|LaserScanInfo|PixelTime",
+                            "Val": "[3.1060606060606059e-006, 3.1060606060606059e-006, 3.1060606060606059e-006]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:181",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|High",
+                            "Val": "0.1333333333333333"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:182",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|DetectionWavelength|Ranges",
+                            "Val": "[597.38843700000018-695.50278300000025, 499.27409100000017-561.71049300000027]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:183",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|CondensorFrontlensPosition",
+                            "Val": "[-1, -1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:184",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|SimultanGrabAndBleach",
+                            "Val": "[false, false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:185",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|OffsetZ",
+                            "Val": "[0.00018454699999999999]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:186",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|OffsetY",
+                            "Val": "[7.1528874358965848e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:187",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|OffsetX",
+                            "Val": "[6.6760282735367915e-006]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:188",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|Color",
+                            "Val": "[#FF00FF, #FFFFFF, #00FF00]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:189",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Offset",
+                            "Val": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:190",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Appliance|Id",
+                            "Val": "[ShuttleAndFind:1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:191",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Fluor",
+                            "Val": "[mRFP1.2, EGFP]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:192",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|Objective|Manufacturer|Model",
+                            "Val": "[C-Apochromat 63x/1.2 W Korr M27]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:193",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|Microscope|Id",
+                            "Val": "[Microscope:0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:194",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|Color",
+                            "Val": "#00FF00"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:195",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|LaserSuppression",
+                            "Val": "[true, true, true]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:196",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|Transmission",
+                            "Val": "[0.040000000000000001, 0.070000000000000007]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:197",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Appliance|Data|ShuttleAndFindData|Calibration|Marker|Id",
+                            "Val": "[Marker:1, Marker:2, Marker:3]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:198",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|EmissionWavelength",
+                            "Val": "[646.4456100000001, 530.49229200000025]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:199",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|HdrIntensity",
+                            "Val": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:200",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|PixelType",
+                            "Val": "[Gray8]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:201",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Name",
+                            "Val": "[ChS2-T1, T PMT-T1, ChS1-T2]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:202",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|SimGratingPeriod",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:203",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|DetectorMode",
+                            "Val": "[Integration, Integration, Integration]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:204",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|CondensorAperture",
+                            "Val": "[-1, -1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:205",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|ReflectedLightLampIntensity",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:206",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|StartNumber",
+                            "Val": "[1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:207",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Instrument|Objective|LensNA",
+                            "Val": "[1.2000000000000002]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:208",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|TransformationYY",
+                            "Val": "[-3.8783452724085969e-187, -3.8783452724085969e-187, 5.4103468857401649e-312]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:209",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|LaserSuppression",
+                            "Val": "[false, false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:210",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|TransformationYX",
+                            "Val": "[1.9298288117718883e-317, 1.9298288117718883e-317, 5.4103468855425387e-312]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:211",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Attenuation",
+                            "Val": "[0.95999999999999996, 0.95999999999999996, 0.92999999999999994]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:212",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|TransmittedLightLampIntensity",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:213",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtZoom",
+                            "Val": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:214",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|UseRois",
+                            "Val": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:215",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|TimeSeries",
+                            "Val": "[true]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:216",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Document|UserName",
+                            "Val": "[bcers01]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:217",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|ChannelType",
+                            "Val": "[Unspecified, Unspecified, Unspecified]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:218",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|DigitalOffset",
+                            "Val": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:219",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|ObjectiveRef|Id",
+                            "Val": "[Objective:0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:220",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|Low",
+                            "Val": "-0"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:221",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraFrameHeight",
+                            "Val": "[1030]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:222",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|ColorMode",
+                            "Val": "Color"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:223",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|VirtualPinholeSize",
+                            "Val": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:224",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Document|Name",
+                            "Val": "[Image 8]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:225",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|SizeY",
+                            "Val": "[280]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:226",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|SizeX",
+                            "Val": "[680]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:227",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|ComponentBitCount",
+                            "Val": "[8]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:228",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtLinePeriod",
+                            "Val": "[2.4242424242424244e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:229",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|SizeT",
+                            "Val": "[30]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:230",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|IntensityDrop",
+                            "Val": "[0.5, 0.5]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:231",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|TransformationXY",
+                            "Val": "[5.9619591652106098e-310, 5.9619591652106098e-310, 2.5142467133005446e-310]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:232",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|TransformationXX",
+                            "Val": "[-1.4299870214316193e+162, -1.4299870214316193e+162, 2.5142467132999023e-310]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:233",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|Voltage",
+                            "Val": "[800, 242.27363180139324, 800]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:234",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|Mode",
+                            "Val": "[Off, Off, Off]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:235",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|ChannelUnit|UnitI",
+                            "Val": "Unknown"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:236",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtRegionWidth",
+                            "Val": "[512]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:237",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BleachSetup|BleachParameterSet|TriggerIn",
+                            "Val": "[0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:238",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Document|Rating",
+                            "Val": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:239",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|FieldStopPosition",
+                            "Val": "[-1, -1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:240",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|SizeC",
+                            "Val": "[3]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:241",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|SamplingStart",
+                            "Val": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:242",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtOffsetY",
+                            "Val": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:243",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtOffsetX",
+                            "Val": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:244",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "DisplaySetting|Channel|ChannelUnit|FactorI",
+                            "Val": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:245",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Application|Version",
+                            "Val": "[14.0.20.201]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:246",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|PureRatioSource",
+                            "Val": "[false, false, false]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:247",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Scaling|Distance|Value",
+                            "Val": "[9.9228781590449496e-008, 9.9228781590449496e-008, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:248",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ScannerOnlineCorrection",
+                            "Val": "[true]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:249",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Experiment|AcquisitionBlock|AcquisitionModeSetup|Objective",
+                            "Val": "[C-Apochromat 63x/1.2 W Korr M27]"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLAnn": {
+                    "ID": "Annotation:250",
+                    "Nmspc": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OrigMeta": {
+                            "Ky": "Information|Image|Channel|LaserScanInfo|FrameTime",
+                            "Val": "[8.922918787878789, 8.922918787878789, 8.922918787878789]"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

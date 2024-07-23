@@ -62,14 +62,12 @@ experiment.predictors = [
     PredictorSimpleAnnotation,
     PredictorNetworkAnnotation,
     PredictorState,
-    PredictorStateTree,
+    #PredictorStateTree,
     ]
 experiment.data_paths = [
-    #f"{wd}/in/images/dataset/2021_10_27_FRET_T001_Fret_Turquoise.tif"
+    #f"{wd}/in/images/small_images/2021_10_27_FRET_T001_Fret_Turquoise.tif",
     f"{wd}/in/images/working/testetst_Image8_edited_.ome.tif",
-    #f"{wd}/in/images/Image_8.czi",
-    #f"{wd}/in/images/11_10_21_48h_H2BmCherryB16F10OVA_CD4cytcells_bsAb_endpoint.lif",
-    #f"{wd}/in/images/rFUNC.nii",
+    f"{wd}/in/images/working/Image_8.czi",
     ]
 experiment.out_path = out
 experiment.dataset = Dataset(name="Dataset1", samples={})

@@ -24,7 +24,8 @@ class PredictorSeperator(PredictorTemplate):
         super().__init__()
         self.raw_metadata = raw_meta
         self.full_message = "The raw data is: \n" + str(self.raw_metadata)
-
+        self.sep_response = None
+        
         self.prompt = """
         You are part of a toolchain designed to predict metadata for the OME model, specifically the structured annotations part.
         You will be interacting with other toolchain components, therefore asking questions or providing any human-readable output is not necessary.
@@ -48,6 +49,7 @@ class PredictorSeperator(PredictorTemplate):
         self.init_assistant()   
         self.init_run()
         response, cost = None, None
+
         try:
             self.add_attempts()
             self.sep_response = self.sep_run.required_action.submit_tool_outputs.tool_calls[0].function.arguments
@@ -60,16 +62,20 @@ class PredictorSeperator(PredictorTemplate):
                 self.clean_assistants()   
                 return self.predict()
             else:
+                response = None
                 print(f"Failed {self.name} after {self.attempts} attempts.")
             
-        
-        sep_response_annot = self.sep_response["annotation_properties"]
-        sep_response_ome = self.sep_response["ome_properties"]
-        response = (sep_response_annot, sep_response_ome)
+        if self.sep_response:
+            sep_response_annot = self.sep_response["annotation_properties"]
+            sep_response_ome = self.sep_response["ome_properties"]
+            response = (sep_response_annot, sep_response_ome)
         self.clean_assistants()
         return response, cost, self.attempts
     
     def init_run(self):
+        if self.run_iter >= self.max_iter:
+            return
+        
         self.sep_run = self.client.beta.threads.runs.create(
             thread_id=self.sep_thread.id,
             assistant_id=self.sep_assistant.id,
@@ -78,7 +84,8 @@ class PredictorSeperator(PredictorTemplate):
             )
         
         end_status = ["complete", "requires_action", "failed"]
-        while self.sep_run.status not in end_status:
+        while self.sep_run.status not in end_status and self.run_iter<self.max_iter:
+            self.run_iter += 1
             print(self.sep_run.status)
             time.sleep(5)
             self.sep_run = self.client.beta.threads.runs.retrieve(

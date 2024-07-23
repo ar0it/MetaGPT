@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>metagpt.distorters.distorter_template API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>metagpt.distorters.distorter_template</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="metagpt.distorters.distorter_template.DistorterTemplate"><code class="flex name class">
+<span>class <span class="ident">DistorterTemplate</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>The distorter takes well formed ome xml as input and returns a "distorted" key value version of it.
+Distortion can include:
+- ome xml to key value
+- shuffling of the order of entried
+- keys get renamed to similair words</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class DistorterTemplate:
+    &#34;&#34;&#34;
+    The distorter takes well formed ome xml as input and returns a &#34;distorted&#34; key value version of it.
+    Distortion can include:
+    - ome xml to key value
+    - shuffling of the order of entried
+    - keys get renamed to similair words
+    &#34;&#34;&#34;
+    def xml_to_key_value(self, ome_xml: str) -&gt; dict:
+        &#34;&#34;&#34;
+        Convert the ome xml to key value pairs
+        &#34;&#34;&#34;
+        try:
+            out2 = utils.get_json(ET.fromstring(ome_xml))
+        except Exception as e:
+            print(&#34;The ET parsing failed, trying the ome_types parser&#34;)
+        return out2
+
+    def shuffle_order(self, dict_meta: dict) -&gt; dict:
+        &#34;&#34;&#34;
+        Shuffle the order of the keys in the ome xml
+        &#34;&#34;&#34;
+        l_meta = list(dict_meta.items())
+        random.shuffle(l_meta)
+        dict_meta = dict(l_meta)
+        return dict_meta
+
+    def gen_mapping(self, dict_meta: dict) -&gt; dict:
+        &#34;&#34;&#34;
+        Rename the keys in the ome xml to similar words using a GPT model.
+        &#34;&#34;&#34;
+        pred = PredictorDistorter(str(dict_meta)).predict()[&#34;definitions&#34;]
+        return pred
+    
+    def extract_unique_keys(self, metadata):
+        &#34;&#34;&#34;
+        Extract all unique key names from a dictionary, including nested structures,
+        without full paths or indices.
+        
+        Args:
+        metadata (dict): The dictionary containing metadata.
+        
+        Returns:
+        list: A list of unique key names.
+        &#34;&#34;&#34;
+        def extract_keys(data):
+            keys = set()
+            if isinstance(data, dict):
+                for key, value in data.items():
+                    keys.add(key)
+                    keys.update(extract_keys(value))
+            elif isinstance(data, list):
+                for item in data:
+                    keys.update(extract_keys(item))
+            return keys
+
+        return list(extract_keys(metadata))
+    
+    def rename_metadata_keys(self, metadata, key_mapping):
+        &#34;&#34;&#34;
+        Rename keys in a metadata dictionary based on a provided mapping.
+        
+        Args:
+        metadata (dict): The original metadata dictionary.
+        key_mapping (dict): A dictionary mapping original key names to new key names.
+        
+        Returns:
+        dict: A new dictionary with renamed keys.
+        &#34;&#34;&#34;
+        def rename_keys(data):
+            if isinstance(data, dict):
+                return {key_mapping.get(k, k): rename_keys(v) for k, v in data.items()}
+            elif isinstance(data, list):
+                return [rename_keys(item) for item in data]
+            else:
+                return data
+
+        return rename_keys(metadata)
+    
+    def save_fake_data(self, fake_data: dict, path: str):
+        &#34;&#34;&#34;
+        Save the fake data to a file
+        &#34;&#34;&#34;
+        with open(path, &#39;w&#39;, encoding=&#39;utf-8&#39;) as f: 
+            json.dump(fake_data, f, ensure_ascii=False, indent=4)
+
+    def load_fake_data(self, path: str) -&gt; dict:
+        &#34;&#34;&#34;
+        Load the fake data from a file
+        &#34;&#34;&#34;
+        if os.path.exists(path):
+            with open(path, &#39;r&#39;, encoding=&#39;utf-8&#39;) as f:
+                return json.load(f)
+
+    def isolate_keys(self, dict_meta: dict) -&gt; dict:
+        &#34;&#34;&#34;
+        Isolate the keys in the ome xml
+        &#34;&#34;&#34;
+        dict_keys = {}
+        for key in dict_meta.keys():
+            dict_keys[key] = None
+        return dict
+    
+    def pred(self, ome_xml: str, out_path:str) -&gt; dict:
+        &#34;&#34;&#34;
+        Predict the distorted data
+        &#34;&#34;&#34;
+        dict_meta = self.xml_to_key_value(ome_xml)
+        dict_keys = self.extract_unique_keys(dict_meta)
+        dict_mapping = self.gen_mapping(dict_keys)
+        dict_new_meta = self.rename_metadata_keys(dict_meta, dict_mapping)
+        dict_meta = self.shuffle_order(dict_new_meta)
+        self.save_fake_data(dict_new_meta, out_path)
+        return dict_meta
+                            
+    def modify_metadata_structure(self, metadata, operations=None, probability=0.3):
+        &#34;&#34;&#34;
+        Modify the structure of a metadata dictionary systematically and randomly.
+        
+        Args:
+        metadata (dict): The original metadata dictionary.
+        operations (list): List of operations to perform. If None, all operations are used.
+        probability (float): Probability of applying an operation to each element (0.0 to 1.0).
+        
+        Returns:
+        dict: A new dictionary with modified structure.
+        &#34;&#34;&#34;
+        def flatten_dict(d, parent_key=&#39;&#39;, sep=&#39;.&#39;):
+            items = []
+            for k, v in d.items():
+                new_key = f&#34;{parent_key}{sep}{k}&#34; if parent_key else k
+                if isinstance(v, dict):
+                    items.extend(flatten_dict(v, new_key, sep=sep).items())
+                else:
+                    items.append((new_key, v))
+            return dict(items)
+        
+        def nest_dict(d, sep=&#39;.&#39;):
+            result = {}
+            for key, value in d.items():
+                parts = key.split(sep)
+                d = result
+                for part in parts[:-1]:
+                    if part not in d:
+                        d[part] = {}
+                    d = d[part]
+                d[parts[-1]] = value
+            return result
+        
+        all_operations = [
+            lambda x: {k: v for k, v in x.items() if random.random() &gt; probability},  # Remove random keys
+            lambda x: {**x, f&#34;new_key_{random.randint(1,100)}&#34;: random.choice([&#34;new_value&#34;, 42, True])},  # Add random key-value
+            lambda x: {k: [v] if not isinstance(v, list) else v for k, v in x.items()},  # Wrap values in lists
+            lambda x: flatten_dict(x),  # Flatten nested structure
+            lambda x: nest_dict(flatten_dict(x)),  # Re-nest flattened structure differently
+            lambda x: {k: {k: v} for k, v in x.items()},  # Nest each key-value pair
+        ]
+        
+        operations = operations or all_operations
+        
+        def apply_operations(data):
+            if isinstance(data, dict):
+                data = {k: apply_operations(v) for k, v in data.items()}
+                if random.random() &lt; probability:
+                    data = random.choice(operations)(data)
+            elif isinstance(data, list):
+                data = [apply_operations(item) for item in data]
+            return data
+        
+        return apply_operations(metadata)
+
+    def distort(self, ome_xml: str, out_path:str, should_pred:str=&#34;maybe&#34;) -&gt; dict:
+        &#34;&#34;&#34;
+        Distort the ome xml
+        &#34;&#34;&#34;
+        if should_pred == &#34;no&#34;:
+            out = self.load_fake_data(out_path) or None
+        elif should_pred == &#34;yes&#34;:
+            out = self.pred(ome_xml, out_path=out_path) or None
+        elif should_pred == &#34;maybe&#34;:
+            out = self.load_fake_data(out_path) or self.pred(ome_xml, out_path=out_path) or None
+        return out</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="metagpt.distorters.distorter_template.DistorterTemplate.distort"><code class="name flex">
+<span>def <span class="ident">distort</span></span>(<span>self, ome_xml: str, out_path: str, should_pred: str = 'maybe') ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Distort the ome xml</p></div>
+</dd>
+<dt id="metagpt.distorters.distorter_template.DistorterTemplate.extract_unique_keys"><code class="name flex">
+<span>def <span class="ident">extract_unique_keys</span></span>(<span>self, metadata)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Extract all unique key names from a dictionary, including nested structures,
+without full paths or indices.</p>
+<p>Args:
+metadata (dict): The dictionary containing metadata.</p>
+<p>Returns:
+list: A list of unique key names.</p></div>
+</dd>
+<dt id="metagpt.distorters.distorter_template.DistorterTemplate.gen_mapping"><code class="name flex">
+<span>def <span class="ident">gen_mapping</span></span>(<span>self, dict_meta: dict) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Rename the keys in the ome xml to similar words using a GPT model.</p></div>
+</dd>
+<dt id="metagpt.distorters.distorter_template.DistorterTemplate.isolate_keys"><code class="name flex">
+<span>def <span class="ident">isolate_keys</span></span>(<span>self, dict_meta: dict) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Isolate the keys in the ome xml</p></div>
+</dd>
+<dt id="metagpt.distorters.distorter_template.DistorterTemplate.load_fake_data"><code class="name flex">
+<span>def <span class="ident">load_fake_data</span></span>(<span>self, path: str) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Load the fake data from a file</p></div>
+</dd>
+<dt id="metagpt.distorters.distorter_template.DistorterTemplate.modify_metadata_structure"><code class="name flex">
+<span>def <span class="ident">modify_metadata_structure</span></span>(<span>self, metadata, operations=None, probability=0.3)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Modify the structure of a metadata dictionary systematically and randomly.</p>
+<p>Args:
+metadata (dict): The original metadata dictionary.
+operations (list): List of operations to perform. If None, all operations are used.
+probability (float): Probability of applying an operation to each element (0.0 to 1.0).</p>
+<p>Returns:
+dict: A new dictionary with modified structure.</p></div>
+</dd>
+<dt id="metagpt.distorters.distorter_template.DistorterTemplate.pred"><code class="name flex">
+<span>def <span class="ident">pred</span></span>(<span>self, ome_xml: str, out_path: str) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Predict the distorted data</p></div>
+</dd>
+<dt id="metagpt.distorters.distorter_template.DistorterTemplate.rename_metadata_keys"><code class="name flex">
+<span>def <span class="ident">rename_metadata_keys</span></span>(<span>self, metadata, key_mapping)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Rename keys in a metadata dictionary based on a provided mapping.</p>
+<p>Args:
+metadata (dict): The original metadata dictionary.
+key_mapping (dict): A dictionary mapping original key names to new key names.</p>
+<p>Returns:
+dict: A new dictionary with renamed keys.</p></div>
+</dd>
+<dt id="metagpt.distorters.distorter_template.DistorterTemplate.save_fake_data"><code class="name flex">
+<span>def <span class="ident">save_fake_data</span></span>(<span>self, fake_data: dict, path: str)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Save the fake data to a file</p></div>
+</dd>
+<dt id="metagpt.distorters.distorter_template.DistorterTemplate.shuffle_order"><code class="name flex">
+<span>def <span class="ident">shuffle_order</span></span>(<span>self, dict_meta: dict) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Shuffle the order of the keys in the ome xml</p></div>
+</dd>
+<dt id="metagpt.distorters.distorter_template.DistorterTemplate.xml_to_key_value"><code class="name flex">
+<span>def <span class="ident">xml_to_key_value</span></span>(<span>self, ome_xml: str) ‑> dict</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Convert the ome xml to key value pairs</p></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="metagpt.distorters" href="index.html">metagpt.distorters</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="metagpt.distorters.distorter_template.DistorterTemplate" href="#metagpt.distorters.distorter_template.DistorterTemplate">DistorterTemplate</a></code></h4>
+<ul class="">
+<li><code><a title="metagpt.distorters.distorter_template.DistorterTemplate.distort" href="#metagpt.distorters.distorter_template.DistorterTemplate.distort">distort</a></code></li>
+<li><code><a title="metagpt.distorters.distorter_template.DistorterTemplate.extract_unique_keys" href="#metagpt.distorters.distorter_template.DistorterTemplate.extract_unique_keys">extract_unique_keys</a></code></li>
+<li><code><a title="metagpt.distorters.distorter_template.DistorterTemplate.gen_mapping" href="#metagpt.distorters.distorter_template.DistorterTemplate.gen_mapping">gen_mapping</a></code></li>
+<li><code><a title="metagpt.distorters.distorter_template.DistorterTemplate.isolate_keys" href="#metagpt.distorters.distorter_template.DistorterTemplate.isolate_keys">isolate_keys</a></code></li>
+<li><code><a title="metagpt.distorters.distorter_template.DistorterTemplate.load_fake_data" href="#metagpt.distorters.distorter_template.DistorterTemplate.load_fake_data">load_fake_data</a></code></li>
+<li><code><a title="metagpt.distorters.distorter_template.DistorterTemplate.modify_metadata_structure" href="#metagpt.distorters.distorter_template.DistorterTemplate.modify_metadata_structure">modify_metadata_structure</a></code></li>
+<li><code><a title="metagpt.distorters.distorter_template.DistorterTemplate.pred" href="#metagpt.distorters.distorter_template.DistorterTemplate.pred">pred</a></code></li>
+<li><code><a title="metagpt.distorters.distorter_template.DistorterTemplate.rename_metadata_keys" href="#metagpt.distorters.distorter_template.DistorterTemplate.rename_metadata_keys">rename_metadata_keys</a></code></li>
+<li><code><a title="metagpt.distorters.distorter_template.DistorterTemplate.save_fake_data" href="#metagpt.distorters.distorter_template.DistorterTemplate.save_fake_data">save_fake_data</a></code></li>
+<li><code><a title="metagpt.distorters.distorter_template.DistorterTemplate.shuffle_order" href="#metagpt.distorters.distorter_template.DistorterTemplate.shuffle_order">shuffle_order</a></code></li>
+<li><code><a title="metagpt.distorters.distorter_template.DistorterTemplate.xml_to_key_value" href="#metagpt.distorters.distorter_template.DistorterTemplate.xml_to_key_value">xml_to_key_value</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>

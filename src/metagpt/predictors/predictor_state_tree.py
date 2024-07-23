@@ -92,17 +92,18 @@ class TreeNode:
         # In that case I need to remove metadata from the raw_meta that has already been used
         #print(f"Predicting metadata for {self.model.__name__}, self.object={self.object}, required={list(self.required_fields(self.model))}")
         response, cost, attemtps = PredictorState(state=self.state, raw_meta=raw_meta).predict()
-        self.state = from_xml(response)
-        # MaybeModel to Model
-        if self.state.__class__.__name__.startswith("Maybe"):
-            self.state = getattr(self.state, self.model.__name__)
-        
-        # return None if the object is empty other than the ID
-        if self.state:
+
+        if response!=None:
+            self.state = from_xml(response)
+            # MaybeModel to Model
+            if self.state.__class__.__name__.startswith("Maybe"):
+                self.state = getattr(self.state, self.model.__name__)
+            # return None if the object is empty other than the ID
             attributes = {k:v for k, v in self.state.__dict__.items() if v and k != "kind" and k != "id"}
             if not attributes:
                 self.state = None
-
+        else:
+            self.state = None
         return self.state
     
     def instantiate_model(self, child_objects) -> BaseModel:
@@ -159,7 +160,7 @@ class PredictorStateTree(PredictorTemplate):
         self.dependency_tree = self.build_tree(model)
 
     def predict(self) -> BaseModel:
-        return self.dependency_tree.predict_meta(self.raw_meta)
+        return self.dependency_tree.predict_meta(self.raw_meta), None, None
     
     def collect_dependencies(self, model: Type[BaseModel], known_models: Dict[str, Type[BaseModel]], collected: Dict[str, Type[BaseModel]]):
         if model.__name__ in collected:

@@ -24,13 +24,19 @@ class PredictorState(PredictorTemplate):
         if state is None:
             state = OME()
         self.state = state
+        self.json_patches = "No Patch has been generated yet."
+        self.last_error = "No error was thrown yet."
         self.raw_metadata = raw_meta
-        self.full_message = "The raw data is: \n" + str(self.raw_metadata)
+        self.full_message = f"""
+        The raw data is: \n" {str(self.raw_metadata)} \n please predict the metaddata for the {type(self.state)} object.
+        In a previous attempt the following json patches were generated: {self.json_patches} and the following error was
+        returned: {self.last_error}. Try to correct the mistake and generate a valid json patch.
+        """
         self.current_state_documentation = f"""
         Here is the schema to the respective state object, this is what you are supposed to predict:
-        {utils.browse_schema(self.state.__class__)}
+        {utils.browse_schema(self.state.__class__, max_depth=1)}
         """
-        self.current_state_message = "The current state is: \n" + self.state.model_dump_json()
+        self.current_state_message = "The current state is: \n" + self.state.model_dump_json() + "You can think of this as your starting point from which you are supposed to expand."
 
         self.json_patch_examples = """
 
@@ -285,7 +291,7 @@ class PredictorState(PredictorTemplate):
         Further Elements nodes such as image, pixels, channel etc. are collected as list of objects.
         Such as images, pixels, channels etc. in practise the element nodes therefore look as follows:
         images=[image1, image2, ...] furthermore properties such as the id and the top lvl attributes of the OME object such as Namespace, SchemaLocation etc.
-        are genetated automatically by the ome_types library.
+        are genetated automatically by the ome_types library. DO NOT ADD OR CHANGE PROPERTIES SUCH AS THE ID. THESE ARE GENERATED AUTOMATICALLY.
         You need to remember this when generating the json patches.
         You can access specific elements in the respective lists by calling its index in the path.
         For example:
@@ -303,7 +309,6 @@ class PredictorState(PredictorTemplate):
         1. look at the schema, what propeties are there, which properties are required to generate the property in question?
         2. Look at the raw metadata, which properties could be related to the property in question?
         3. If the needed properties are not in the raw metadata, skip the property and exit without generating a patch.
-        In this case you need to set the no_properties flag in the update_json_state to True.
         4. If the needed properties are the in the raw metadata, generate a minimal patch, that creates the property in question.
         Dont try to geneate a patch that inclued all properties at once, but work step by step.
         This way the automatic validation tool can give you feedback on each step.
@@ -324,13 +329,14 @@ class PredictorState(PredictorTemplate):
         """
         
 
-    def predict(self, indent:Optional[int]=0) -> dict:
+    def predict(self, indent:Optional[int]=0) -> str:
         """
         TODO: Add docstring
         """
         print(indent*"  "+f"Predicting for {self.name}, attempt: {self.attempts}")
         print(self.state.model_dump_json())
         print(type(self.state))
+        print(self.current_state_documentation)
         self.init_thread()
         self.init_vector_store()
         self.init_assistant()   
@@ -342,23 +348,28 @@ class PredictorState(PredictorTemplate):
             response = self.run.required_action.submit_tool_outputs.tool_calls[0]
             response = ast.literal_eval(response.function.arguments)
             response = response['json_patches']
+            self.json_patches = response
             for patch in response:
-                print(patch)
+                print("patch:", patch)
                 self.state = utils.update_state(self.state, [patch])
                 # TODO: Use the custom apply function for more reliablility
-                print(self.state)
+            if self.state.__class__.__name__.startswith("Maybe"):
+                self.state = getattr(self.state, self.model.__name__)
+            response = to_xml(self.state)  
 
         except Exception as e:
             print(f"There was an exception in the {self.name}" ,e)
+            print(response)
+            self.last_error = e
             if self.attempts < self.max_attempts:
                 print(f"Retrying {self.name}...")
                 self.clean_assistants()   
                 return self.predict()
             else:
+                response = None
                 print(f"Failed {self.name} after {self.attempts} attempts.")
         
         self.clean_assistants()
-        response = to_xml(self.state)        
         return response, cost, self.attempts
 
     def init_run(self):
@@ -370,7 +381,8 @@ class PredictorState(PredictorTemplate):
             )
         
         end_status = ["completed", "requires_action", "failed"]
-        while self.run.status not in end_status:
+        while self.run.status not in end_status and self.run_iter<self.max_iter:
+            self.run_iter += 1
             print(self.run.status)
             time.sleep(5)
             self.run = self.client.beta.threads.runs.retrieve(
@@ -445,4 +457,5 @@ class update_json_state(BaseModel):
     Update the state of the predictor from a list of json patches.
     """
     json_patches: Optional[list[JsonPatch]] = Field(default_factory=list[JsonPatch], description="")
-    no_properties: Optional[bool] = Field(default=False, description="If no fitting properties were found in the raw metadata set this to True.")
+    #no_properties: Optional[bool] = Field(default=False,
+                                          #description="Only fill out if no fitting properties were found in the raw metadata, in this case set this to True. Remember to write upercase True or False as this is a boolean.")
