@@ -13,12 +13,14 @@ import ome_types
 from metagpt.utils.DataClasses import Sample, Dataset
 import importlib
 import os
-from metagpt.predictors.predictor_template import PredictorTemplate
 from typing import Optional
 import ast
 import xml.etree.ElementTree as ET
 from ome_types import from_xml, to_xml, to_dict
 import jsonpatch
+import time
+import tiktoken
+
 
 def render_cell_output(output_path):
     """
@@ -399,6 +401,7 @@ def merge_xml_annotation(annot: Dict[str, Any], ome: str = None) -> Optional[str
 def save_output(output: str,
                 cost: float,
                 attempts: float,
+                pred_time: float,
                 path: str
                 ) -> bool:
     """
@@ -416,6 +419,7 @@ def save_output(output: str,
             f.write(output)
             f.write("\nCOST: " + str(cost))
             f.write("\nATTEMPTS: " + str(attempts))
+            f.write("\nTIME: " + str(pred_time))
         return True
     except IOError as e:
         print(f"Error saving output: {e}")
@@ -432,7 +436,7 @@ def load_output(path: str
     Returns:
         Optional[str]: The loaded output, or None if an error occurred.
     """
-    output, cost, attempts = None, None, None
+    output, cost, attempts, pred_time = None, None, None, None
     with open(path, "r") as f:
         lines = f.readlines()
         output = ""
@@ -441,6 +445,8 @@ def load_output(path: str
                 cost = safe_float(line.split(":")[-1].strip())
             elif line.startswith("ATTEMPTS"):
                 attempts = safe_float(line.split(":")[-1].strip())
+            elif line.startswith("TIME"):
+                pred_time = safe_float(line.split(":")[-1].strip())
             else:
                 output += line
     try:
@@ -449,10 +455,10 @@ def load_output(path: str
     except Exception as e:
         output = to_xml(from_xml(output))
 
-    return output, cost, attempts
+    return output, cost, attempts, pred_time
     
     
-def make_prediction(predictor: PredictorTemplate,
+def make_prediction(predictor,
                     in_data,
                     dataset,
                     name,
@@ -467,11 +473,11 @@ def make_prediction(predictor: PredictorTemplate,
     method = predictor.__name__
     path = f"{os.getcwd()}/out/assistant_outputs/{method}_{name}.txt"
     print("-"*10+method+"_"+name+"-"*10)
-    out, cost, attempts = None, None, None
+    out, cost, attempts, pred_time = None, None, None, None
     if should_predict == "maybe" or "no":
         try:
             print("Trying to load output from file")
-            out, cost, attempts = load_output(path)
+            out, cost, attempts, pred_time = load_output(path)
             if out and isinstance(out, dict) and start_point:
                 out = merge_xml_annotation(annot=out, ome=start_point)
         except Exception as e:
@@ -481,14 +487,19 @@ def make_prediction(predictor: PredictorTemplate,
             pred_obj = predictor(in_data)
             if model:
                 pred_obj.model = model
+            t0 = time.time()
             out, cost, attempts = pred_obj.predict()
+            t1 = time.time()
+            pred_time = t1-t0
+            print(f"Predicted in {pred_time:.2f} seconds")
+
             # save the output to file
             if out and isinstance(out, dict) and start_point:
                 out = merge_xml_annotation(annot=out, ome=start_point)
             if out:
                 print("Trying to save output to file")
                 out = to_xml(from_xml(out))
-                save_output(out, cost, attempts, path=path)
+                save_output(out, cost, attempts, pred_time,path=path)
                 print("Predicted and Saved output to file")
     
     if not out:
@@ -501,7 +512,8 @@ def make_prediction(predictor: PredictorTemplate,
                         cost=cost,
                         attempts=attempts,
                         iter=iter,
-                        gpt_model=model)
+                        gpt_model=model,
+                        time=pred_time)
      
     dataset.add_sample(out_sample)
 
@@ -813,3 +825,9 @@ def browse_schema(cls: BaseModel, additional_ignored_keywords: List[str] = [], m
             "properties": flattened_schema["properties"]
         }
     }
+
+def num_tokens_from_string(string: str, encoding_name: str="cl100k_base") -> int:
+    """Returns the number of tokens in a text string."""
+    encoding = tiktoken.get_encoding(encoding_name)
+    num_tokens = len(encoding.encode(string))
+    return num_tokens

@@ -22,7 +22,6 @@ class Sample:
     iter: Optional[int] = None
     gpt_model: Optional[str] = None
 
-
 @dataclass
 class Dataset:
     name: str = None
@@ -32,9 +31,9 @@ class Dataset:
 
     def add_sample(self, sample: Sample):
         self.samples[f"{sample.name}_{sample.method}"] = sample
-        if sample.cost:
+        if sample.cost != None:
             self.cost += sample.cost
-        if sample.time:
+        if sample.time != None:
             self.time += sample.time
 
 

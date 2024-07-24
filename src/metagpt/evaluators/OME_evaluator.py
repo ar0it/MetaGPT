@@ -241,12 +241,16 @@ class OMEEvaluator:
             self.n_paths_method_plt(df_sample)
             self.format_method_plt(df_sample)
             self.paths_annotation_stacked_plt(df_sample)
-            self.method_attempts_plot(df_sample)
+            self.method_attempts_plt(df_sample)
             self.format_counts_plt(df_sample)
             self.paths_annotation_stacked_relative_plt(df_sample)
             self.attempts_paths_plt(df_sample)
             self.method_edit_distance_no_annot_plt(df_sample)
             self.method_edit_distance_only_annot_plt(df_sample)
+            self.method_cost_plt(df_sample)
+            self.method_time_plt(df_sample)
+            self.n_paths_cost_plt(df_sample)
+            self.n_paths_time_plt(df_sample)
             # add the plots to the report
             f.write("## Path Comparison\n")
             for k, v in self.plot_dict.items():
@@ -270,6 +274,7 @@ class OMEEvaluator:
                                df_paths.columns}
         df["og_image_format"] = [s.format if s.format else None for s in self.dataset.samples.values()]
         df["cost"] = [s.cost if s.cost else None for s in self.dataset.samples.values()]
+        df["time"] = [s.time if s.time else None for s in self.dataset.samples.values()]
         df["attempts"] = [s.attempts if s.attempts else None for s in self.dataset.samples.values()]
         edit_distances = []
         for n in df["Name"].unique():
@@ -534,17 +539,74 @@ class OMEEvaluator:
 
         return fig, ax
     
-    def method_cost_plot(
+    def method_cost_plt(
             self,
             df_sample: pd.DataFrame = None,
     ):
         """
         This plot compares the performance of the different methods based on the cost.
-        Wont work because OpenAI does not provide the cost of the methods.
+        Wont work because OpenAI does not provide the cost of the methods. --> workarround: use the returned tokens as proxy.
         """
-        pass
+        fig, ax = plt.subplots()
 
-    def method_attempts_plot(
+        plot = sns.barplot(
+            x=df_sample["Method"],
+            y=df_sample["cost"],
+            edgecolor='black',
+            ax=ax,
+            palette=self.palette0)
+        
+        ax.set_xlabel("Method", fontsize=14)
+        ax.set_ylabel("Cost in $", fontsize=14)
+        ax.set_title("Cost by Method", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/method_cost_plt.svg")
+        self.plot_dict["method_cost_plt"] = f"../plots/method_cost_plt.svg"
+        #plt.show()
+        return fig, ax
+
+    def method_time_plt(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        """
+        This plot compares the performance of the different methods based on the time it took to generate the OME XML.
+        """
+        fig, ax = plt.subplots()
+
+        plot = sns.barplot(
+            x=df_sample["Method"],
+            y=df_sample["time"],
+            edgecolor='black',
+            ax=ax,
+            palette=self.palette0)
+        
+        ax.set_xlabel("Method", fontsize=14)
+        ax.set_ylabel("Time in s", fontsize=14)
+        ax.set_title("Time by Method", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/method_time_plt.svg")
+        self.plot_dict["method_time_plt"] = f"../plots/method_time_plt.svg"
+        #plt.show()
+        return fig, ax
+    
+    def method_attempts_plt(
             self,
             df_sample: pd.DataFrame = None,
     ):
@@ -555,10 +617,9 @@ class OMEEvaluator:
 
 
         plot = sns.barplot(
-            x=df_sample["n_paths"],
+            x=df_sample["Method"],
             y=df_sample["attempts"],
             edgecolor='black',
-            hue=df_sample["Method"],
             ax=ax,
             palette=self.palette0)
 
@@ -574,8 +635,8 @@ class OMEEvaluator:
 
         plt.tight_layout()
 
-        plt.savefig(f"{self.out_path}/plots/method_attempts_plot.svg")
-        self.plot_dict["method_attempts_plot"] = f"../plots/method_attempts_plot.svg"
+        plt.savefig(f"{self.out_path}/plots/method_attempts_plt.svg")
+        self.plot_dict["method_attempts_plt"] = f"../plots/method_attempts_plt.svg"
         #plt.show()
 
         return fig, ax
@@ -719,14 +780,14 @@ class OMEEvaluator:
         This plot shows the number of attempts per number of paths(of the original bioformats file). Each Method is its own line.
         """
         fig, ax = plt.subplots()
-        noise = np.random.normal(-0.2, 0.2, size=len(df_sample))
+        noise = np.random.normal(-0.1, 0.1, size=len(df_sample))
         plot = sns.scatterplot(
             x=df_sample["n_paths"]+ noise,
             y=df_sample["attempts"]+noise,
             hue=df_sample["Method"],
             ax=ax,
             palette=self.palette0,
-            alpha=0.5)
+            alpha=0.9)
         
         ax.set_xlabel("Number of Paths", fontsize=14)
         ax.set_ylabel("Number of Attempts", fontsize=14)
@@ -813,7 +874,77 @@ class OMEEvaluator:
         #plt.show()
 
         return fig, ax
+    
+    def n_paths_cost_plt(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        """
+        This function creates a plot which compares the number of ground truth
+        paths with the cost of the prediction for that gt. Each data point is a
+        dot and the color represents the method.
+        """
+        fig, ax = plt.subplots()
 
+        plot = sns.scatterplot(
+            x=df_sample["n_paths"],
+            y=df_sample["cost"],
+            hue=df_sample["Method"],
+            ax=ax,
+            palette=self.palette0)
+        
+        ax.set_xlabel("Number of Paths", fontsize=14)
+        ax.set_ylabel("Cost in $", fontsize=14)
+        ax.set_title("Cost by Number of Paths", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/n_paths_cost_plt.svg")
+        self.plot_dict["n_paths_cost_plt"] = f"../plots/n_paths_cost_plt.svg"
+        #plt.show()
+
+        return fig, ax
+    def  n_paths_time_plt(
+            self,
+            df_sample: pd.DataFrame = None,
+    ):
+        """
+        This function creates a plot which compares the number of ground truth
+        paths with the time it took to generate the prediction. Each data point is a
+        dot and the color represents the method.
+        """
+        fig, ax = plt.subplots()
+
+        plot = sns.scatterplot(
+            x=df_sample["n_paths"],
+            y=df_sample["time"],
+            hue=df_sample["Method"],
+            ax=ax,
+            palette=self.palette0)
+        
+        ax.set_xlabel("Number of Paths", fontsize=14)
+        ax.set_ylabel("Time in s", fontsize=14)
+        ax.set_title("Time by Number of Paths", fontsize=16)
+        ax.tick_params(axis='x', rotation=45)
+
+        ax.legend(loc='upper right')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+        plt.tight_layout()
+
+        plt.savefig(f"{self.out_path}/plots/n_paths_time_plt.svg")
+        self.plot_dict["n_paths_time_plt"] = f"../plots/n_paths_time_plt.svg"
+        #plt.show()
+
+        return fig, ax
 # Which plots do I want to return?
 # plot which shows deviation between runs of same sample
 # plot which shows the datatype dependent performance

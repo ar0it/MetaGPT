@@ -27,7 +27,7 @@ class PredictorState(PredictorTemplate):
         self.json_patches = "No Patch has been generated yet."
         self.last_error = "No error was thrown yet."
         self.raw_metadata = raw_meta
-        self.full_message = f"""
+        self.query = f"""
         The raw data is: \n" {str(self.raw_metadata)} \n please predict the metaddata for the {type(self.state)} object.
         In a previous attempt the following json patches were generated: {self.json_patches} and the following error was
         returned: {self.last_error}. Try to correct the mistake and generate a valid json patch.
@@ -274,7 +274,7 @@ class PredictorState(PredictorTemplate):
         )]
         ```
         """
-        self.instructions = f"""
+        self.prompt = f"""
         To solve the task of genrating json patches from raw unstructured metadata,
         you are given several tools etc.
         First of you are updating a persistent state object, this helps you to
@@ -327,7 +327,11 @@ class PredictorState(PredictorTemplate):
         Your task is to figure out what the metadata could mean in the context
         of the OME schema.
         """
-        
+        ome_types_schema_path = "/home/aaron/Documents/Projects/MetaGPT/in/schema/ome_types_schema.json"
+        with open(ome_types_schema_path, "w") as f:
+            json.dump(OME.model_json_schema(), f)
+
+        self.file_paths = [ome_types_schema_path]
 
     def predict(self, indent:Optional[int]=0) -> str:
         """
@@ -337,22 +341,23 @@ class PredictorState(PredictorTemplate):
         print(self.state.model_dump_json())
         print(type(self.state))
         print(self.current_state_documentation)
+        self.message = self.current_state_message + self.current_state_documentation + self.query
         self.init_thread()
         self.init_vector_store()
         self.init_assistant()   
         self.init_run()
-        response, cost = None, None
+        response = None
 
         try:
             self.add_attempts()
             response = self.run.required_action.submit_tool_outputs.tool_calls[0]
+            self.out_tokens += utils.num_tokens_from_string(response.function.arguments)
             response = ast.literal_eval(response.function.arguments)
             response = response['json_patches']
             self.json_patches = response
             for patch in response:
                 print("patch:", patch)
                 self.state = utils.update_state(self.state, [patch])
-                # TODO: Use the custom apply function for more reliablility
             if self.state.__class__.__name__.startswith("Maybe"):
                 self.state = getattr(self.state, self.model.__name__)
             response = to_xml(self.state)  
@@ -363,21 +368,22 @@ class PredictorState(PredictorTemplate):
             self.last_error = e
             if self.attempts < self.max_attempts:
                 print(f"Retrying {self.name}...")
-                self.clean_assistants()   
+                self.clean_assistants()
+                   
                 return self.predict()
             else:
                 response = None
                 print(f"Failed {self.name} after {self.attempts} attempts.")
         
         self.clean_assistants()
-        return response, cost, self.attempts
+        return response, self.get_cost(), self.attempts
 
     def init_run(self):
         self.run = self.client.beta.threads.runs.create(
             thread_id=self.thread.id,
             assistant_id=self.assistant.id,
             tool_choice={"type": "file_search", "type": "function", "function": {"name": "update_json_state"}},
-            temperature=0.0,
+            temperature=self.temperature,
             )
         
         end_status = ["completed", "requires_action", "failed"]
@@ -396,7 +402,7 @@ class PredictorState(PredictorTemplate):
         self.assistant = self.client.beta.assistants.create(
             name="OMEGPT",
             description=self.description,
-            instructions=self.instructions,
+            instructions=self.promtp,
             model=self.model,
             tools=[{"type": "file_search"},
                    utils.openai_schema(update_json_state)],
@@ -404,31 +410,8 @@ class PredictorState(PredictorTemplate):
         )
         self.assistants.append(self.assistant)
 
-    def init_thread(self):
-        self.thread = self.client.beta.threads.create(messages=[{"role": "user", "content": self.instructions},
-                                                                {"role": "assistant", "content": "."},
-                                                                {"role": "user", "content": self.current_state_message + self.current_state_documentation + self.full_message }])
-        self.threads.append(self.thread)
-
-    def init_vector_store(self):
-        self.vector_store = self.client.beta.vector_stores.create(
-            name="ome types schema",
-        )
-        ome_types_schema_path = "/home/aaron/Documents/Projects/MetaGPT/in/schema/ome_types_schema.json"
-        with open(ome_types_schema_path, "w") as f:
-            json.dump(OME.model_json_schema(), f)
-
-        file_paths = [ome_types_schema_path]
-        file_streams = [open(path, "rb") for path in file_paths]
-
-        file_batch = self.client.beta.vector_stores.file_batches.upload_and_poll(
-            vector_store_id=self.vector_store.id, files=file_streams
-            )
-        self.vector_stores.append(self.vector_store)
-
 
 class AddReplaceTestOperation(BaseModel):
-    
     op: Literal["add", "replace", "test"]
     path: str = Field(..., description="A JSON Pointer path.")
     value: Any = Field(..., description="The value to add, replace or test.")

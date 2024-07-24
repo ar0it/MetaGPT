@@ -18,35 +18,11 @@ class PredictorSimple(PredictorTemplate):
     def __init__(self, raw_meta: str) -> None:
         super().__init__()
         self.raw_metadata = raw_meta
-        self.full_message = "The raw data is: \n" + str(self.raw_metadata)
-        self.prompt = """
-        You are part of a toolchain designed to predict metadata for the OME model, specifically the structured annotations part.
-        You will be interacting with other toolchain components, therefore asking questions or providing any human-readable output is not necessary.
-        You should concisely and structured document your thought process for logging purposes. mark those as "thoughts".
-        The toolchain is a Tree structure of models, designed with the OME schema in mind.
-        This means each node has a predictor such as yourself, and will be predicting the metadata for a submodel of the OME schema.
-        One such submodel could be the  XMLAnnotation node.
-        The tree structure is designed to predict the metadata in a bottom-up manner, starting from the lower level node.
-        This way there are no missing dependencies when predicting the metadata.
-        Incoming metadata will be provided in raw format, which means a list of key-value pairs.
-        Your task will be to translate these key-value pairs to the appropriate OME schema property.
-        Try to figure out which property is which by looking at the schema and the raw metadata in a holistic manner.
-        The function call arguments you were given are the corresponding schema snippet you are supposed to fill out, remember only the highest level; the lower levels provided are only for validation and context.
-        Since this is a hard problem, I will need you to think step by step and use chain of thought.
-        Here is the structure of how to approach the problem step by step:
-        1. Look at the raw metadata, which properties can not be served by the ome data model and therefore should be added as structured annotations?
-        2. Figure out if you can groupt these properties in a hierarchical manner, do they cluster together?
-        3. Come to a conclusion how you want to structure the metadata.
-        4. Call the XMLAnnotationFunction function with the structured annotations as xml Json.
-        It is very well possible some fields remain empty.
-        Remember to solve this problem step by step and use chain of thought to solve it.
-        Again, you are not interacting with a human but are part of a chain of tools that are supposed to solve this problem.
-        Under no circumstances can you ask questions.
-        You will have to decide on your own. ONLY EVER RESPOND WITH THE JSON FUNCTION CALL.
-        If you understood all of this, and will follow the instructions, answer with "." and wait for the first metadata to be provided.
-        Use the provided function to solve the task. YOU NEED TO CALL THE FUNCTION TO SOLVE THE TASK. The chat response will be ignored.
+        self.message =f"""
+        The raw data is: \n + {str(self.raw_metadata)}
         """
-        self.pred_prompt = """
+        self.file_paths = ["/home/aaron/Documents/Projects/MetaGPT/in/schema/ome_xsd.txt"]
+        self.prompt = """
         You are a tool designed to predict metadata for the OME
         model.
         Your task will be to take raw metadata in the form of a dictionary of key-value pairs
@@ -78,52 +54,56 @@ class PredictorSimple(PredictorTemplate):
         Use the provided functions to solve the task. YOU NEED TO CALL THE FUNCTIONs TO SOLVE THE TASK. The chat response will be ignored.
         If you understood all of this, and will follow the instructions, answer with "." and wait for the metadata to be provided.
         """
-
     
     def predict(self) -> dict:
         """
         TODO: Add docstring
         """
         print(f"Predicting for {self.name}, attempt: {self.attempts}")
-
+        if self.last_error is not None:
+            self.message += self.last_error_msg
         self.init_thread()
         self.init_vector_store()
         self.init_assistant()   
         self.init_run()
-        response, cost = None, None
+        response = None
+        
         try:
             self.add_attempts()
             if self.run.status == 'completed':
                 response = self.client.beta.threads.messages.list(
                     thread_id=self.thread.id
                 )
+                self.out_tokens += utils.num_tokens_from_string(response.data[0].content[0].text.value)    
                 response = response.data[0].content[0].text.value[7:][:-4]
-                cost = self.get_cost(run=self.run)
             elif self.run.status == 'requires_action':
                 response = self.run.required_action.submit_tool_outputs.tool_calls[0]
+                self.out_tokens += utils.num_tokens_from_string(response.function.arguments)
                 response = ast.literal_eval(response.function.arguments)
                 response = response['ome_xml']
 
             test_ome_pred = from_xml(response)
         except Exception as e:
-            response = None
+            self.last_response = response
+            self.last_error = e
             print(f"There was an exception in the {self.name}" ,e)
             if self.attempts < self.max_attempts:
                 print(f"Retrying {self.name}...")
                 self.clean_assistants()   
                 return self.predict()
             else:
+                response = None
                 print(f"Failed {self.name} after {self.attempts} attempts.")
-        
+
         self.clean_assistants()        
-        return response, cost, self.attempts
+        return response, self.get_cost(), self.attempts
     
     def init_run(self):
         self.run = self.client.beta.threads.runs.create(
             thread_id=self.thread.id,
             assistant_id=self.assistant.id,
             tool_choice={"type": "file_search", "type": "function", "function": {"name": "OMEXMLResponse"}},
-            temperature=0.0,
+            temperature=self.temperature,
             )
         
         end_status = ["completed", "requires_action", "failed"]
@@ -142,30 +122,12 @@ class PredictorSimple(PredictorTemplate):
         self.assistant = self.client.beta.assistants.create(
             name="OME XML Annotator",
             description="An assistant to predict OME XML annotations from raw metadata",
-            instructions=self.pred_prompt,
+            instructions=self.prompt,
             model=self.model,
             tools=[{"type": "file_search"}, utils.openai_schema(self.OMEXMLResponse)],
             tool_resources={"file_search": {"vector_store_ids": [self.vector_store.id]}}
         )
         self.assistants.append(self.assistant)
-
-    def init_thread(self):
-        self.thread = self.client.beta.threads.create(messages=[{"role": "user", "content": self.pred_prompt},
-                                                                {"role": "assistant", "content": "."},
-                                                                {"role": "user", "content": self.full_message}])
-        self.threads.append(self.thread)
-
-    def init_vector_store(self):
-        self.vector_store = self.client.beta.vector_stores.create(
-            name="OME XML Schema",
-        )
-        file_paths = ["/home/aaron/Documents/Projects/MetaGPT/in/schema/ome_xsd.txt"]
-        file_streams = [open(path, "rb") for path in file_paths]
-
-        file_batch = self.client.beta.vector_stores.file_batches.upload_and_poll(
-            vector_store_id=self.vector_store.id, files=file_streams
-            )
-        self.vector_stores.append(self.vector_store)
 
     class OMEXMLResponse(BaseModel):
         """

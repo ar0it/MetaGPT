@@ -80,19 +80,23 @@ class TreeNode:
 
     
     def predict_meta(self, raw_meta:str, indent:int=0) -> BaseModel:
-
+        cost, attempts = 0, 0
         # add the metdata from the child nodes first
         child_objects = {}
         for child in self.children:
-            if child_obj := child.predict_meta(raw_meta, indent=indent+1):
+            child_obj, cost_child, attempts_child = child.predict_meta(raw_meta, indent=indent+1)
+            cost += cost_child
+            attempts += attempts_child
+            if child_obj:
                 child_objects[child.model.__name__] = child_obj
 
         self.state = self.instantiate_model(child_objects)
         # TODO: loop here in case the field allows for the same type multiple times (i.e OME(images=[Image, Image, Image])) Maybe loop until AI doesnt predict any new
         # In that case I need to remove metadata from the raw_meta that has already been used
         #print(f"Predicting metadata for {self.model.__name__}, self.object={self.object}, required={list(self.required_fields(self.model))}")
-        response, cost, attemtps = PredictorState(state=self.state, raw_meta=raw_meta).predict()
-
+        response, cost_pred, attemtps_pred = PredictorState(state=self.state, raw_meta=raw_meta).predict()
+        cost += cost_pred
+        attempts += attemtps_pred
         if response!=None:
             self.state = from_xml(response)
             # MaybeModel to Model
@@ -104,7 +108,7 @@ class TreeNode:
                 self.state = None
         else:
             self.state = None
-        return self.state
+        return self.state, cost, attempts
     
     def instantiate_model(self, child_objects) -> BaseModel:
         if obj:= create_instance(self.model, child_objects):

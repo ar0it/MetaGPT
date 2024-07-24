@@ -67,12 +67,12 @@ experiment.predictors = [
 experiment.data_paths = [
     #f"{wd}/in/images/small_images/2021_10_27_FRET_T001_Fret_Turquoise.tif",
     f"{wd}/in/images/working/testetst_Image8_edited_.ome.tif",
-    f"{wd}/in/images/working/Image_8.czi",
+    #f"{wd}/in/images/working/Image_8.czi",
     ]
 experiment.out_path = out
 experiment.dataset = Dataset(name="Dataset1", samples={})
 experiment.schema = ome_xsd
-experiment.should_predict = "maybe"
+experiment.should_predict = ["maybe"]*2 + ["yes"]*3
 experiment.reps = 1
 experiment.evaluators = [OMEEvaluator]
 experiment.run()

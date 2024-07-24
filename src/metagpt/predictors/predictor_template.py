@@ -5,9 +5,7 @@ from openai import OpenAI
 import xml.etree.ElementTree as ET
 from lxml import etree
 import time
-import xmlschema
-import instructor
-
+import metagpt.utils.utils as utils
 
 class PredictorTemplate:
     """
@@ -15,7 +13,7 @@ class PredictorTemplate:
     the raw metadata.
     """
     def __init__(self):
-        self.client = OpenAI() #instructor.patch(OpenAI(api_key=os.getenv("OPENAI_API_KEY")))
+        self.client = OpenAI()
         self.run = None
         self.pre_prompt = None
         self.max_iter = 10
@@ -33,12 +31,24 @@ class PredictorTemplate:
         self.max_attempts = 3
         self.name = self.__class__.__name__
         self.model = "gpt-4o-mini"
+        self.in_tokens = 0
+        self.out_tokens = 0
+        self.message = None
+        self.prompt = None
+        self.file_paths = []
+        self.temperature = 0.0
+        self.last_error = None
+        self.last_response = None
+        self.last_error_msg = f"""
+        In a previous attempt you predicted {str(self.last_response)} and got the following
+        error from the validator: {str(self.last_error)}. Please try the prediction again
+        and make sure to not make the same mistake again.
+        """
         
     def predict(self)->dict:
         """
         Predict the OME XML from the raw metadata
         """
-
         raise NotImplementedError
 
     def add_attempts(self, i:float=1):
@@ -48,10 +58,12 @@ class PredictorTemplate:
         self.attempts += i/len(self.assistants)
 
     def init_thread(self):
-        """
-        Initialize the thread
-        """
-        self.thread = self.client.beta.threads.create()
+        self.in_tokens += utils.num_tokens_from_string(self.prompt)
+        self.in_tokens += utils.num_tokens_from_string(self.message)
+        self.thread = self.client.beta.threads.create(messages=[{"role": "user", "content": self.prompt},
+                                                                {"role": "assistant", "content": "."},
+                                                                {"role": "user", "content": self.message}])
+        self.threads.append(self.thread)
 
     def subdivide_raw_metadata(self):
         """
@@ -138,8 +150,6 @@ class PredictorTemplate:
         print(validation)
 
         """
-        
-        
         if validation is not None:
             print("Validation failed")
             msg = "There seems to be an issue with the OME XML you provided. Please fix this error:\n" + str(validation)
@@ -174,13 +184,28 @@ class PredictorTemplate:
             self.vector_stores = []
         except Exception as e:
             print("There was an issue when cleaning up the assistants", e)
-    def get_cost(self, run):
+    
+    def get_cost(self):
         """
         Get the cost of the prediction
         """
         try:
-            return run.usage.completion_tokens * self.token_out_cost + run.usage.prompt_tokens * self.token_in_cost
+            return self.out_tokens * self.token_out_cost + self.in_tokens * self.token_in_cost
         except Exception as e:
-            return 0
+            return None
+        
+    
+    def init_vector_store(self):
+        self.vector_store = self.client.beta.vector_stores.create(
+            name=f"Vector Store for{self.name}",
+        )
+        file_streams = [open(path, "rb") for path in self.file_paths]
+
+        file_batch = self.client.beta.vector_stores.file_batches.upload_and_poll(
+            vector_store_id=self.vector_store.id, files=file_streams
+            )
+        self.vector_stores.append(self.vector_store)
+        
+    
 
 

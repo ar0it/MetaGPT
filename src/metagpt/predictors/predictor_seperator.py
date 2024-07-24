@@ -23,9 +23,9 @@ class PredictorSeperator(PredictorTemplate):
     def __init__(self, raw_meta: str) -> None:
         super().__init__()
         self.raw_metadata = raw_meta
-        self.full_message = "The raw data is: \n" + str(self.raw_metadata)
+        self.message = "The raw data is: \n" + str(self.raw_metadata)
         self.sep_response = None
-        
+        self.file_paths = ["/home/aaron/Documents/Projects/MetaGPT/in/schema/ome_xsd.txt"]
         self.prompt = """
         You are part of a toolchain designed to predict metadata for the OME model, specifically the structured annotations part.
         You will be interacting with other toolchain components, therefore asking questions or providing any human-readable output is not necessary.
@@ -44,15 +44,18 @@ class PredictorSeperator(PredictorTemplate):
         TODO: Add docstring
         """
         print(f"Predicting for {self.name}, attempt: {self.attempts}")
+        if self.last_error is not None:
+            self.message += self.last_error_msg
         self.init_thread()
         self.init_vector_store()
         self.init_assistant()   
         self.init_run()
-        response, cost = None, None
+        response = None
 
         try:
             self.add_attempts()
             self.sep_response = self.sep_run.required_action.submit_tool_outputs.tool_calls[0].function.arguments
+            self.out_tokens += utils.num_tokens_from_string(str(self.sep_response))
             self.sep_response = ast.literal_eval(self.sep_response)
         except Exception as e:
             response = None
@@ -62,7 +65,6 @@ class PredictorSeperator(PredictorTemplate):
                 self.clean_assistants()   
                 return self.predict()
             else:
-                response = None
                 print(f"Failed {self.name} after {self.attempts} attempts.")
             
         if self.sep_response:
@@ -70,17 +72,19 @@ class PredictorSeperator(PredictorTemplate):
             sep_response_ome = self.sep_response["ome_properties"]
             response = (sep_response_annot, sep_response_ome)
         self.clean_assistants()
-        return response, cost, self.attempts
+        return response, self.get_cost(), self.attempts
     
     def init_run(self):
         if self.run_iter >= self.max_iter:
             return
         
         self.sep_run = self.client.beta.threads.runs.create(
-            thread_id=self.sep_thread.id,
+            thread_id=self.thread.id,
             assistant_id=self.sep_assistant.id,
-            tool_choice={"type": "file_search", "type": "function", "function": {"name": "SepOutputTool"}},
-            temperature=0.0,
+            tool_choice={"type": "file_search",
+                         "type": "function",
+                         "function": {"name": "SepOutputTool"}},
+            temperature=self.temperature,
             )
         
         end_status = ["complete", "requires_action", "failed"]
@@ -89,7 +93,7 @@ class PredictorSeperator(PredictorTemplate):
             print(self.sep_run.status)
             time.sleep(5)
             self.sep_run = self.client.beta.threads.runs.retrieve(
-                thread_id=self.sep_thread.id,
+                thread_id=self.thread.id,
                 run_id=self.sep_run.id
                 )
             
@@ -106,26 +110,6 @@ class PredictorSeperator(PredictorTemplate):
             tool_resources={"file_search": {"vector_store_ids": [self.vector_store.id]}}
         )
         self.assistants.append(self.sep_assistant)
-
-    
-    def init_vector_store(self):
-        self.vector_store = self.client.beta.vector_stores.create(
-            name="OME XML Schema",
-        )
-        file_paths = ["/home/aaron/Documents/Projects/MetaGPT/in/schema/ome_xsd.txt"]
-        file_streams = [open(path, "rb") for path in file_paths]
-
-        file_batch = self.client.beta.vector_stores.file_batches.upload_and_poll(
-            vector_store_id=self.vector_store.id, files=file_streams
-            )
-        self.vector_stores.append(self.vector_store)
-        
-    def init_thread(self):
-        self.sep_thread = self.client.beta.threads.create(messages=[
-            {"role": "user", "content": self.prompt},
-            {"role": "assistant", "content": "."},
-            {"role": "user", "content": self.full_message}])
-        self.threads.append(self.sep_thread)
     
 
     class SepOutputTool(BaseModel):

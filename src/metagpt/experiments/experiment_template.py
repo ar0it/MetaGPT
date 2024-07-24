@@ -26,7 +26,7 @@ class ExperimentTemplate:
         Run the experiment
         """
         for i in range (self.reps):
-            for path in self.data_paths:
+            for path, j in enumerate(self.data_paths):
                 print("-"*60)
                 print("Processing image:")
                 print(path)
@@ -50,14 +50,17 @@ class ExperimentTemplate:
                                     format=data_format)
                 
                 self.dataset.add_sample(bio_sample)
-
+                if isinstance(self.should_predict, list):
+                    should_predict = self.should_predict[j]
+                else:
+                    should_predict = self.should_predict
                 for predictor in self.predictors:
                     utils.make_prediction(
                         predictor=predictor,
                         in_data=fake_meta,
                         dataset=self.dataset,
                         name=file_name,
-                        should_predict=self.should_predict,
+                        should_predict=should_predict,
                         data_format=data_format,
                         start_point=out_bioformats,
                         iter=i,

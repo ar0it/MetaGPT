@@ -35,11 +35,13 @@ class PredictorNetwork(PredictorTemplate):
         TODO: Add docstring
         """
         print(f"Predicting for {self.name}, attempt: {self.attempts}")
-        response, cost = None, None
+        response = None
 
-        response_sep, sep_cost, sep_attempts = PredictorSeperator("Here is the raw metadata \n" + str(self.raw_metadata)).predict()
+        response_sep, sep_cost, sep_attempts = PredictorSeperator(
+            "Here is the raw metadata \n" + str(self.raw_metadata)).predict()
+        
         if response_sep is None:
-            return None, cost, self.attempts
+            return None, sep_cost, self.attempts
         response_annot, response_ome = response_sep
 
         self.pred_response_annot, annot_cost, annot_attempts = PredictorSimpleAnnotation(
@@ -54,5 +56,5 @@ class PredictorNetwork(PredictorTemplate):
             annot=self.pred_response_annot,
             ome=self.pred_response_ome)
         
-        return response, cost, self.attempts
+        return response, sep_cost+annot_cost+ome_cost, self.attempts
     
