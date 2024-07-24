@@ -1,7 +1,6 @@
-,Method,n_paths,n_annotations,Edit_distance,Name,og_image_format,cost,attempts,Edit_distance_no_annot,Edit_distance_only_annot
-testetst_Image8_edited__Bioformats,Bioformats,164,144,0.0,testetst_Image8_edited_,ome,,,0.0,0.0
-testetst_Image8_edited__PredictorSimple,PredictorSimple,128,112,0.43449575871819035,testetst_Image8_edited_,ome,,1.0,0.22834645669291342,0.43449575871819035
-testetst_Image8_edited__PredictorNetwork,PredictorNetwork,122,122,0.8198458574181118,testetst_Image8_edited_,ome,,1.6666666666666667,1.0,0.8198458574181118
-testetst_Image8_edited__PredictorSimpleAnnotation,PredictorSimpleAnnotation,1216,1196,0.937873115450774,testetst_Image8_edited_,ome,,1.0,0.0,0.937873115450774
-testetst_Image8_edited__PredictorNetworkAnnotation,PredictorNetworkAnnotation,142,122,0.6126410835214446,testetst_Image8_edited_,ome,,1.0,0.0,0.6126410835214446
-testetst_Image8_edited__PredictorState,PredictorState,16,0,0.8556231003039514,testetst_Image8_edited_,ome,,1.0,0.22834645669291342,0.8556231003039514
+,Method,n_paths,n_annotations,Edit_distance,Name,og_image_format,cost,time,attempts,Edit_distance_no_annot,Edit_distance_only_annot
+testetst_Image8_edited__Bioformats,Bioformats,164,144,0.0,testetst_Image8_edited_,ome,,,,0.0,0.0
+testetst_Image8_edited__PredictorSimple,PredictorSimple,128,112,0.43449575871819035,testetst_Image8_edited_,ome,,,1.0,0.22834645669291342,0.43449575871819035
+testetst_Image8_edited__PredictorNetwork,PredictorNetwork,130,130,0.725398313027179,testetst_Image8_edited_,ome,0.05094,82.32012963294983,1.6666666666666667,1.0,0.725398313027179
+testetst_Image8_edited__PredictorSimpleAnnotation,PredictorSimpleAnnotation,1216,1196,0.938259109311741,testetst_Image8_edited_,ome,0.019495000000000002,12.700990200042725,1.0,0.0,0.938259109311741
+testetst_Image8_edited__PredictorNetworkAnnotation,PredictorNetworkAnnotation,150,130,0.6190057193136824,testetst_Image8_edited_,ome,0.025035,33.5143461227417,1.0,0.0,0.6190057193136824

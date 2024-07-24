@@ -15,127 +15,127 @@
     </Pixels>
   </Image>
   <StructuredAnnotations>
-    <XMLAnnotation ID="Annotation:27">
+    <XMLAnnotation ID="Annotation:29">
       <Value>
         <OriginalMetadata>
-          <Key>Pics</Key>
+          <Key>images</Key>
           <Value/>
           <OriginalMetadata>
             <OriginalMetadata>
-              <Key>Pics_0</Key>
+              <Key>images_0</Key>
               <Value/>
               <OriginalMetadata>
                 <OriginalMetadata>
-                  <Key>Pic</Key>
+                  <Key>image</Key>
                   <Value/>
                   <OriginalMetadata>
                     <OriginalMetadata>
-                      <Key>Ident</Key>
+                      <Key>id</Key>
                       <Value>Image:0</Value>
                     </OriginalMetadata>
                     <OriginalMetadata>
-                      <Key>Title</Key>
+                      <Key>name</Key>
                       <Value>testetst_Image8_edited_.ome.tif</Value>
                     </OriginalMetadata>
                     <OriginalMetadata>
-                      <Key>Details</Key>
+                      <Key>description</Key>
                       <Value/>
                       <OriginalMetadata/>
                     </OriginalMetadata>
                     <OriginalMetadata>
-                      <Key>Pixs</Key>
+                      <Key>pixels_s</Key>
                       <Value/>
                       <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>Pixs_0</Key>
+                          <Key>pixels_s_0</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>Pix</Key>
+                              <Key>pixels</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Endian</Key>
+                                  <Key>endianness</Key>
                                   <Value>false</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>DimOrder</Key>
+                                  <Key>dim_order</Key>
                                   <Value>XYCZT</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
+                                  <Key>id</Key>
                                   <Value>Pixels:0</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Inter</Key>
+                                  <Key>interleaved</Key>
                                   <Value>false</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>PhysSizeX</Key>
+                                  <Key>phys_size_x</Key>
                                   <Value>0.09922878199885109</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>PhysSizeXUnit</Key>
+                                  <Key>phys_size_x_unit</Key>
                                   <Value>µm</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>PhysSizeY</Key>
+                                  <Key>phys_size_y</Key>
                                   <Value>0.09922878199885109</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>PhysSizeYUnit</Key>
+                                  <Key>phys_size_y_unit</Key>
                                   <Value>µm</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>SigBits</Key>
+                                  <Key>significant_bits</Key>
                                   <Value>8</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>CountC</Key>
+                                  <Key>dim_c</Key>
                                   <Value>3</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>CountT</Key>
+                                  <Key>dim_t</Key>
                                   <Value>30</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>CountX</Key>
+                                  <Key>dim_x</Key>
                                   <Value>680</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>CountY</Key>
+                                  <Key>dim_y</Key>
                                   <Value>280</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>CountZ</Key>
+                                  <Key>dim_z</Key>
                                   <Value>1</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>DataType</Key>
+                                  <Key>type</Key>
                                   <Value>uint8</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Chans</Key>
+                                  <Key>channels</Key>
                                   <Value/>
                                   <OriginalMetadata>
                                     <OriginalMetadata>
-                                      <Key>Chans_0</Key>
+                                      <Key>channels_0</Key>
                                       <Value/>
                                       <OriginalMetadata>
                                         <OriginalMetadata>
-                                          <Key>Chan</Key>
+                                          <Key>channel</Key>
                                           <Value/>
                                           <OriginalMetadata>
                                             <OriginalMetadata>
-                                              <Key>Ident</Key>
+                                              <Key>id</Key>
                                               <Value>Channel:0:0</Value>
                                             </OriginalMetadata>
                                             <OriginalMetadata>
-                                              <Key>SamplesPerPix</Key>
+                                              <Key>samples_per_pixel</Key>
                                               <Value>1</Value>
                                             </OriginalMetadata>
                                             <OriginalMetadata>
-                                              <Key>LightPath</Key>
+                                              <Key>light_path</Key>
                                               <Value/>
                                               <OriginalMetadata/>
                                             </OriginalMetadata>
@@ -144,23 +144,23 @@
                                       </OriginalMetadata>
                                     </OriginalMetadata>
                                     <OriginalMetadata>
-                                      <Key>Chans_1</Key>
+                                      <Key>channels_1</Key>
                                       <Value/>
                                       <OriginalMetadata>
                                         <OriginalMetadata>
-                                          <Key>Chan</Key>
+                                          <Key>channel</Key>
                                           <Value/>
                                           <OriginalMetadata>
                                             <OriginalMetadata>
-                                              <Key>Ident</Key>
+                                              <Key>id</Key>
                                               <Value>Channel:0:1</Value>
                                             </OriginalMetadata>
                                             <OriginalMetadata>
-                                              <Key>SamplesPerPix</Key>
+                                              <Key>samples_per_pixel</Key>
                                               <Value>1</Value>
                                             </OriginalMetadata>
                                             <OriginalMetadata>
-                                              <Key>LightPath</Key>
+                                              <Key>light_path</Key>
                                               <Value/>
                                               <OriginalMetadata/>
                                             </OriginalMetadata>
@@ -169,23 +169,23 @@
                                       </OriginalMetadata>
                                     </OriginalMetadata>
                                     <OriginalMetadata>
-                                      <Key>Chans_2</Key>
+                                      <Key>channels_2</Key>
                                       <Value/>
                                       <OriginalMetadata>
                                         <OriginalMetadata>
-                                          <Key>Chan</Key>
+                                          <Key>channel</Key>
                                           <Value/>
                                           <OriginalMetadata>
                                             <OriginalMetadata>
-                                              <Key>Ident</Key>
+                                              <Key>id</Key>
                                               <Value>Channel:0:2</Value>
                                             </OriginalMetadata>
                                             <OriginalMetadata>
-                                              <Key>SamplesPerPix</Key>
+                                              <Key>samples_per_pixel</Key>
                                               <Value>1</Value>
                                             </OriginalMetadata>
                                             <OriginalMetadata>
-                                              <Key>LightPath</Key>
+                                              <Key>light_path</Key>
                                               <Value/>
                                               <OriginalMetadata/>
                                             </OriginalMetadata>
@@ -194,6 +194,11 @@
                                       </OriginalMetadata>
                                     </OriginalMetadata>
                                   </OriginalMetadata>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>metadata_only</Key>
+                                  <Value/>
+                                  <OriginalMetadata/>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
@@ -205,653 +210,647 @@
                 </OriginalMetadata>
               </OriginalMetadata>
             </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>structured_annotations</Key>
+          <Value/>
+          <OriginalMetadata>
             <OriginalMetadata>
-              <Key>Pics_1</Key>
+              <Key>xml_annotations</Key>
               <Value/>
               <OriginalMetadata>
                 <OriginalMetadata>
-                  <Key>StructAnnots</Key>
+                  <Key>xml_annotations_0</Key>
                   <Value/>
                   <OriginalMetadata>
                     <OriginalMetadata>
-                      <Key>XMLAnnots</Key>
+                      <Key>xml_annotation</Key>
                       <Value/>
                       <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_0</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:0</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:0</Value>
+                                  <Key>key</Key>
+                                  <Value>hyperstack</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>hyperstack</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>true</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>true</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_1</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_1</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:1</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:1</Value>
+                                  <Key>key</Key>
+                                  <Value>PlanarConfiguration</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>PlanarConfiguration</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>Chunky</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>Chunky</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_2</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_2</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:2</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:2</Value>
+                                  <Key>key</Key>
+                                  <Value>MetaDataPhotometricInterpretation</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>MetaDataPhotometricInterpretation</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>Monochrome</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>Monochrome</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_3</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_3</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:3</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:3</Value>
+                                  <Key>key</Key>
+                                  <Value>SamplesPerPixel</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>SamplesPerPixel</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>1</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>1</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_4</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_4</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:4</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:4</Value>
+                                  <Key>key</Key>
+                                  <Value>NumberOfChannels</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>NumberOfChannels</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>1</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>1</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_5</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_5</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:5</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:5</Value>
+                                  <Key>key</Key>
+                                  <Value>ResolutionUnit</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>ResolutionUnit</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>Centimeter</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>Centimeter</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_6</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_6</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:6</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:6</Value>
+                                  <Key>key</Key>
+                                  <Value>ImageWidth</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>ImageWidth</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>680</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>680</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_7</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_7</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:7</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:7</Value>
+                                  <Key>key</Key>
+                                  <Value>PhotometricInterpretation</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>PhotometricInterpretation</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>BlackIsZero</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>BlackIsZero</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_8</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_8</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:8</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:8</Value>
+                                  <Key>key</Key>
+                                  <Value>Software</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>Software</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>OME Bio-Formats 6.7.0</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>OME Bio-Formats 6.7.0</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_9</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_9</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:9</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:9</Value>
+                                  <Key>key</Key>
+                                  <Value>Compression</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>Compression</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>Uncompressed</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>Uncompressed</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_10</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_10</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:10</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:10</Value>
+                                  <Key>key</Key>
+                                  <Value>YResolution</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>YResolution</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>100777.212</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>100777.212</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_11</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_11</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:11</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:11</Value>
+                                  <Key>key</Key>
+                                  <Value>XResolution</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>XResolution</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>100777.212</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>100777.212</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_12</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_12</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:12</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:12</Value>
+                                  <Key>key</Key>
+                                  <Value>MetaMorph</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>MetaMorph</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>no</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>no</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_13</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_13</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:13</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:13</Value>
+                                  <Key>key</Key>
+                                  <Value>SampleFormat</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>SampleFormat</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>unsigned integer</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>unsigned integer</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_14</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_14</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:14</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:14</Value>
+                                  <Key>key</Key>
+                                  <Value>BitsPerSample</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>BitsPerSample</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>8</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>8</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
                           </OriginalMetadata>
                         </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>xml_annotations_15</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>xml_annotation</Key>
+                      <Value/>
+                      <OriginalMetadata>
                         <OriginalMetadata>
-                          <Key>XMLAnnots_15</Key>
+                          <Key>id</Key>
+                          <Value>Annotation:15</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>namespace</Key>
+                          <Value>openmicroscopy.org/OriginalMetadata</Value>
+                        </OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>value</Key>
                           <Value/>
                           <OriginalMetadata>
                             <OriginalMetadata>
-                              <Key>XMLAnnot</Key>
+                              <Key>orig_metadata</Key>
                               <Value/>
                               <OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>Ident</Key>
-                                  <Value>Annotation:15</Value>
+                                  <Key>key</Key>
+                                  <Value>ImageLength</Value>
                                 </OriginalMetadata>
                                 <OriginalMetadata>
-                                  <Key>NS</Key>
-                                  <Value>openmicroscopy.org/OriginalMetadata</Value>
-                                </OriginalMetadata>
-                                <OriginalMetadata>
-                                  <Key>Val</Key>
-                                  <Value/>
-                                  <OriginalMetadata>
-                                    <OriginalMetadata>
-                                      <Key>OrigMeta</Key>
-                                      <Value/>
-                                      <OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Key</Key>
-                                          <Value>ImageLength</Value>
-                                        </OriginalMetadata>
-                                        <OriginalMetadata>
-                                          <Key>Val</Key>
-                                          <Value>280</Value>
-                                        </OriginalMetadata>
-                                      </OriginalMetadata>
-                                    </OriginalMetadata>
-                                  </OriginalMetadata>
+                                  <Key>value</Key>
+                                  <Value>280</Value>
                                 </OriginalMetadata>
                               </OriginalMetadata>
                             </OriginalMetadata>
@@ -870,5 +869,6 @@
   </StructuredAnnotations>
 </OME>
 
-COST: None
+COST: 0.019495000000000002
 ATTEMPTS: 1.0
+TIME: 12.700990200042725

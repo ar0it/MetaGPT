@@ -61,7 +61,7 @@ experiment.predictors = [
     PredictorNetwork,
     PredictorSimpleAnnotation,
     PredictorNetworkAnnotation,
-    PredictorState,
+    #PredictorState,
     #PredictorStateTree,
     ]
 experiment.data_paths = [
@@ -72,7 +72,7 @@ experiment.data_paths = [
 experiment.out_path = out
 experiment.dataset = Dataset(name="Dataset1", samples={})
 experiment.schema = ome_xsd
-experiment.should_predict = ["maybe"]*2 + ["yes"]*3
+experiment.should_predict = ["maybe"]*4 + ["yes"]*1
 experiment.reps = 1
 experiment.evaluators = [OMEEvaluator]
 experiment.run()

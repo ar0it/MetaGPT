@@ -26,8 +26,8 @@ class Sample:
 class Dataset:
     name: str = None
     samples: dict[str:Sample] = Field(default_factory=dict)
-    cost: Optional[float] = None
-    time: Optional[float] = None
+    cost: Optional[float] = 0
+    time: Optional[float] = 0
 
     def add_sample(self, sample: Sample):
         self.samples[f"{sample.name}_{sample.method}"] = sample

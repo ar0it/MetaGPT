@@ -15,6 +15,11 @@ from ome_types import from_xml, to_xml, to_dict, OME
 from ome_types.model import StructuredAnnotations
 import copy
 import ast
+import openai
+import os
+from openai import OpenAI
+import base64
+import cv2
 
 class OMEEvaluator:
     """
@@ -224,14 +229,71 @@ class OMEEvaluator:
         return len(paths_a.symmetric_difference(paths_b))
     
 
+    def generate_results_report(self, figure_paths: list, context: str):
+        # Initialize the OpenAI client
+        client = OpenAI()
+
+        # Encode images to base64
+        base64_images = []
+        if len(figure_paths) > 9:
+            figure_paths = figure_paths[:9]
+        for path in figure_paths:  # Limit to 9 images
+            img = cv2.imread(path)
+            _, buffer = cv2.imencode(".png", img)
+            base64_images.append(base64.b64encode(buffer).decode("utf-8"))
+
+        # Prepare the messages
+        messages = [
+            {
+                "role": "system",
+                "content": """
+                You are a scientific report generator. Your task is to analyze the provided figures and context, 
+                and generate a formal, concise, and scientific results report. The report should:
+                1. Describe the key findings shown in the figures
+                2. Relate these findings to the context provided
+                3. Use precise scientific language and maintain an objective tone
+                4. Be concise yet comprehensive
+                5. Avoid speculation beyond what is directly supported by the data
+                Furthermore, you should respond using markdown syntax.
+                Importantly, structure the report using sections and subsections as appropriate.
+                The highest level section should be "Results" and the subsections should be based on the content of the report.
+                Embed the figures in the report and refer to them in the text.
+                Don't forget scientific captions for the figures.
+                You should include each figure.
+                """
+            },
+            {
+                "role": "user",
+                "content": [
+                    f"Context: {context}\n\nPlease analyze the following figures and generate a results report. The paths to the images are {figure_paths}",
+                    *map(lambda x: {"image": x, "resize": 768}, base64_images),
+                ],
+            },
+        ]
+
+        # Call the API
+        try:
+            response = client.chat.completions.create(
+                model="gpt-4o",
+                messages=messages,
+            )
+
+            # Extract the report from the response
+            report = response.choices[0].message.content
+
+            return report
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return None
+
     def report(self):
         """
-        Write evaluation report to file.
+        Write an evaluation report to file.
         """
+        with open(f"/home/aaron/Documents/Projects/MetaGPT/out/context", "r") as f:
+            context = f.read()
+
         with open(f"{self.out_path}/reports/report_test.md", "w") as f:
-            f.write("# Evaluation Report\n")
-            f.write("## File content\n")
-            f.write(f"### File Ground Truth: \n")
             # create a dataframe with the paths
             df_paths = self.path_df()
             # create a dataframe with the samples properties
@@ -251,10 +313,11 @@ class OMEEvaluator:
             self.method_time_plt(df_sample)
             self.n_paths_cost_plt(df_sample)
             self.n_paths_time_plt(df_sample)
-            # add the plots to the report
-            f.write("## Path Comparison\n")
-            for k, v in self.plot_dict.items():
-                f.write(f"![{k}]({v})\n")
+
+            figure_paths = [f"{self.out_path}/plots/{file}" for file in os.listdir(f"{self.out_path}/plots") if file.endswith(".png")]
+            print(figure_paths)
+            report = self.generate_results_report(figure_paths, context)
+            f.write(report)
 
 
     def sample_df(
@@ -405,6 +468,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/method_edit_distance_plt.svg")
         self.plot_dict["method_edit_distance_plt"] = f"../plots/method_edit_distance_plt.svg"
+        # save as png
+        plt.savefig(f"{self.out_path}/plots/method_edit_distance_plt.png")
         #plt.show()
 
         return fig, ax
@@ -453,6 +518,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/paths_annotation_stacked_plt.svg")
         self.plot_dict["paths_annotation_stacked_plt"] = f"../plots/paths_annotation_stacked_plt.svg"
+        # save as png
+        plt.savefig(f"{self.out_path}/plots/paths_annotation_stacked_plt.png")
         #plt.show()
 
         return fig, ax
@@ -496,6 +563,8 @@ class OMEEvaluator:
         plt.tight_layout()
 
         plt.savefig(f"{self.out_path}/plots/n_paths_method_plt.svg")
+        #save as png
+        plt.savefig(f"{self.out_path}/plots/n_paths_method_plt.png")
         self.plot_dict["n_paths_method_plt"] = f"../plots/n_paths_method_plt.svg"
         #plt.show()
 
@@ -533,7 +602,10 @@ class OMEEvaluator:
 
         plt.tight_layout()
 
+        # save as svg
         plt.savefig(f"{self.out_path}/plots/format_method_plt.svg")
+        # save as png
+        plt.savefig(f"{self.out_path}/plots/format_method_plt.png")
         self.plot_dict["format_method_plt"] = f"../plots/format_method_plt.svg"
         #plt.show()
 
@@ -570,6 +642,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/method_cost_plt.svg")
         self.plot_dict["method_cost_plt"] = f"../plots/method_cost_plt.svg"
+        #save as png
+        plt.savefig(f"{self.out_path}/plots/method_cost_plt.png")
         #plt.show()
         return fig, ax
 
@@ -603,6 +677,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/method_time_plt.svg")
         self.plot_dict["method_time_plt"] = f"../plots/method_time_plt.svg"
+        #save as png
+        plt.savefig(f"{self.out_path}/plots/method_time_plt.png")
         #plt.show()
         return fig, ax
     
@@ -637,6 +713,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/method_attempts_plt.svg")
         self.plot_dict["method_attempts_plt"] = f"../plots/method_attempts_plt.svg"
+        # save as png
+        plt.savefig(f"{self.out_path}/plots/method_attempts_plt.png")
         #plt.show()
 
         return fig, ax
@@ -676,6 +754,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/format_counts_plt.svg")
         self.plot_dict["format_counts_plt"] = f"../plots/format_counts_plt.svg"
+        # save as png
+        plt.savefig(f"{self.out_path}/plots/format_counts_plt.png")
         #plt.show()
 
         return fig, ax
@@ -712,6 +792,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/format_n_paths_plt.svg")
         self.plot_dict["format_n_paths_plt"] = f"../plots/format_n_paths_plt.svg"
+        # save as png
+        plt.savefig(f"{self.out_path}/plots/format_n_paths_plt.png")
         #plt.show()
 
         return fig, ax
@@ -768,6 +850,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/paths_annotation_stacked_relative_plt.svg")
         self.plot_dict["paths_annotation_stacked_relative_plt"] = f"../plots/paths_annotation_stacked_relative_plt.svg"
+        # save as png
+        plt.savefig(f"{self.out_path}/plots/paths_annotation_stacked_relative_plt.png")
         #plt.show()
 
         return fig, ax
@@ -803,6 +887,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/attempts_paths_plt.svg")
         self.plot_dict["attempts_paths_plt"] = f"../plots/attempts_paths_plt.svg"
+        # save as png
+        plt.savefig(f"{self.out_path}/plots/attempts_paths_plt.png")
         #plt.show()
 
     def method_edit_distance_no_annot_plt(
@@ -836,6 +922,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/method_edit_distance_no_annot_plt.svg")
         self.plot_dict["method_edit_distance_no_annot_plt"] = f"../plots/method_edit_distance_no_annot_plt.svg"
+        # save as png
+        plt.savefig(f"{self.out_path}/plots/method_edit_distance_no_annot_plt.png")
         #plt.show()
 
         return fig, ax
@@ -871,6 +959,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/method_edit_distance_only_annot_plt.svg")
         self.plot_dict["method_edit_distance_only_annot_plt"] = f"../plots/method_edit_distance_only_annot_plt.svg"
+        # save as png
+        plt.savefig(f"{self.out_path}/plots/method_edit_distance_only_annot_plt.png")
         #plt.show()
 
         return fig, ax
@@ -907,6 +997,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/n_paths_cost_plt.svg")
         self.plot_dict["n_paths_cost_plt"] = f"../plots/n_paths_cost_plt.svg"
+        # save as png
+        plt.savefig(f"{self.out_path}/plots/n_paths_cost_plt.png")
         #plt.show()
 
         return fig, ax
@@ -942,6 +1034,8 @@ class OMEEvaluator:
 
         plt.savefig(f"{self.out_path}/plots/n_paths_time_plt.svg")
         self.plot_dict["n_paths_time_plt"] = f"../plots/n_paths_time_plt.svg"
+        # save as png
+        plt.savefig(f"{self.out_path}/plots/n_paths_time_plt.png")
         #plt.show()
 
         return fig, ax

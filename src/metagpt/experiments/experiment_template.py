@@ -26,7 +26,7 @@ class ExperimentTemplate:
         Run the experiment
         """
         for i in range (self.reps):
-            for path, j in enumerate(self.data_paths):
+            for path in self.data_paths:
                 print("-"*60)
                 print("Processing image:")
                 print(path)
@@ -38,11 +38,13 @@ class ExperimentTemplate:
 
                 file_name = path.split("/")[-1].split(".")[0]
                 data_format = path.split("/")[-1].split(".")[1]
+
+                
                 dt = DistorterTemplate()
                 fake_meta = dt.distort(
                     out_bioformats,
                     out_path=self.out_path + "distorted_data/" + file_name + "_distorted.json",
-                    should_pred=self.should_predict) # the distorted metadata as dictionary of key value pairs
+                    should_pred="maybe") # the distorted metadata as dictionary of key value pairs
 
                 bio_sample = Sample(name=file_name,
                                     metadata_str=out_bioformats,
@@ -50,11 +52,12 @@ class ExperimentTemplate:
                                     format=data_format)
                 
                 self.dataset.add_sample(bio_sample)
-                if isinstance(self.should_predict, list):
-                    should_predict = self.should_predict[j]
-                else:
-                    should_predict = self.should_predict
-                for predictor in self.predictors:
+
+                for j, predictor in enumerate(self.predictors):
+                    if isinstance(self.should_predict, list):
+                        should_predict = self.should_predict[j]
+                    else:
+                        should_predict = self.should_predict
                     utils.make_prediction(
                         predictor=predictor,
                         in_data=fake_meta,

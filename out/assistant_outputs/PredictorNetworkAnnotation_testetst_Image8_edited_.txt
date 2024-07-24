@@ -15,7 +15,7 @@
     </Pixels>
   </Image>
   <StructuredAnnotations>
-    <XMLAnnotation ID="Annotation:29">
+    <XMLAnnotation ID="Annotation:31">
       <Value>
         <OriginalMetadata>
           <Key>Image</Key>
@@ -53,35 +53,41 @@
               <OriginalMetadata>
                 <OriginalMetadata>
                   <Key>MetaData</Key>
-                  <Value>Monochrome</Value>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>PhotometricInterpretation</Key>
+                      <Value>Monochrome</Value>
+                    </OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>SamplesPerPixel</Key>
+                      <Value>1</Value>
+                    </OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>NumberOfChannels</Key>
+                      <Value>1</Value>
+                    </OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>Compression</Key>
+                      <Value>Uncompressed</Value>
+                    </OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>SampleFormat</Key>
+                      <Value>unsigned integer</Value>
+                    </OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>BitsPerSample</Key>
+                      <Value>8</Value>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
                 </OriginalMetadata>
                 <OriginalMetadata>
-                  <Key>Value</Key>
+                  <Key>PhotometricInterpretation</Key>
                   <Value>BlackIsZero</Value>
                 </OriginalMetadata>
               </OriginalMetadata>
             </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>SamplesPerPixel</Key>
-              <Value>1</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>NumberOfChannels</Key>
-              <Value>1</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>SampleFormat</Key>
-              <Value>unsigned integer</Value>
-            </OriginalMetadata>
-            <OriginalMetadata>
-              <Key>BitsPerSample</Key>
-              <Value>8</Value>
-            </OriginalMetadata>
           </OriginalMetadata>
-        </OriginalMetadata>
-        <OriginalMetadata>
-          <Key>Compression</Key>
-          <Value>Uncompressed</Value>
         </OriginalMetadata>
         <OriginalMetadata>
           <Key>Software</Key>
@@ -104,5 +110,6 @@
   </StructuredAnnotations>
 </OME>
 
-COST: None
+COST: 0.025035
 ATTEMPTS: 1.0
+TIME: 33.5143461227417

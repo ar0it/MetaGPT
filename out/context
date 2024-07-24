@@ -1,0 +1,222 @@
+\section*{Abstract}
+Numerous image-generating techniques, such as microscopy, produce metadata, often in proprietary formats. This presents
+challenges in processing (i.e., compatibility with existing pipelines), publishing (i.e., accessibility for readers),
+and storage (i.e., future usability of data). Bioformats, a widely used Java library, aims to address these issues by
+offering tools to convert these proprietary formats into the open OME format. 
+While Bioformats effectively handles many image formats, it is inherently limited by the data model and its hard-coded mapping between properties which can lead to
+loss of metadata. A key issue with Bioformats is its struggle to keep up with the constant
+changes in proprietary file formats. Despite these changes often being relatively minor, the effort to maintain
+Bioformats are substantial due to traditional software paradigms' hard-coded and static nature.
+Interestingly, format transcription is not dissimilar to language translation, where words in different languages are
+mapped to each other. Large language models (LLMs)/ Transformers/ Autoregressive Decoder have recently surprised the scientific community by outperforming
+previous state-of-the-art translation tools, despite not being explicitly trained for translation tasks. The vast amount of 
+multilingual data give as training datra has enabled these models to develop a deep knowledge of language, moving beyond
+monolingual word representation towards a generalized, conceptual knowledge base. 
+Essentially, these models accept words in any language, translate them into an abstract conceptual representation
+for reasoning, and then map the resulting concepts back to the desired output language. Applying this logic to
+format transcription, the same principle could be used. Instead of directly mapping a property, such as a key-value
+pair, from the input format to another property in the output format, the input is first represented as a concept.
+This concept can then be transcribed to the specified output. As the conceptual meaning of the input or output does
+not derive from literal string representation, this method is resilient to most changes in proprietary file formats and can even structure metadata where the OME datamodel does not provide a schema.
+Here, I propose OME Curater, a network of agentic GPT-4o instances that can capture metadata which is originally not captured in the OME data model and attach it as structured annotations. Furthermore, I propose a system that could eventually substitute bioformats completely, enabling format-agnostic microscopy research. A fully functional "OME GPT" has the potential to revolutionize
+the landscape of microscopy and unify the efforts of the imaging community, much like how the FASTA file format has enabled the sequencing community to work together efficiently.
+
+
+In the rapidly evolving field of microscopy and biomedical imaging, the management and interpretation of metadata have become increasingly crucial\cite{sarkans2021rembi}. As diverse image-generating techniques produce vast amounts of data, often in proprietary formats, researchers face significant challenges in processing, publishing, and storing this valuable information\cite{dufaux2021}\cite{problems_data_management}. These challenges not only impact the immediate usability of data but also pose risks to the long-term accessibility and reproducibility of scientific findings\cite{dufaux2021}\cite{problems_data_management}.
+
+\section{Background and Motivation}
+
+The biomedical imaging community has long recognized the need for standardized, open formats to address the issues posed by proprietary data structures\cite{problems_data_management}\cite{ome}. Meanwhile best standards for data management have been established which define data handling rules via the FAIR acronym, which stands for Findable, Accessible, Interoperable and Reproducible\cite{fair}.
+% maybe add fair principles here
+
+The open microscopy environment (OME), a consortium of public and private entities have developed an open datamodel to store image metadata. Further Bioformats, a widely adopted Java library, emerged as a solution for metadata transcription, offering tools to convert proprietary formats into the open OME format. This initiative has been instrumental in enhancing data interoperability and accessibility across various platforms and research environments.
+
+However, despite its widespread use and effectiveness, Bioformats and the OME datamodel face inherent limitations. The library's reliance on a fixed data model and hard-coded mapping between properties can lead to metadata loss, particularly when dealing with rapidly evolving proprietary formats. The constant changes in these formats necessitate substantial maintenance efforts, highlighting the limitations of traditional, static software paradigms in addressing this dynamic challenge. The authors of "Metadata matters: access to image data in the real world" a broad call of the scientific community to standardize data management efforts write :"
+As the number of imaging systems and the rate of innovation grows, maintaining a tool like Bio-Formats, simply because commercial vendors do not use standardized file formats, becomes increasingly untenable."\cite{problems_data_management}.
+
+
+\section{Related Work and Current Limitations}
+
+Attempts to address these  metadata management issues have primarily focused on developing and refining tools like Bioformats and making existing datamodels more performant.
+% Explain NGFF
+One example is OME Next Generation File Format (OME-NGFF), which addresses the issue of acceibility of especially large metadata. This is done by designing a data container which can be natively and parallely accessed in the cloud. This allows for an easier and more computational efficient way of storing and thus maintaining data. Importantly OME-NGFF remains compatible with the legacy OME datamodel \cite{ngff}.
+Fundamental to this file format is the trending format Zarr, which stores data as chunks, thus enabling more flexible distribution of those files\cite{zarr}.
+
+Although these efforts have made significant strides in data accesibiity, the fundamental problem imposed by the limitations of conventional software design approaches, such as hard coded metadata property mapping, has not been addressed \cite{problems_data_management}.
+
+\section{Proposed Approach}
+
+This thesis proposes a novel approach to metadata management in microscopy, drawing inspiration from recent advancements in natural language processing and artificial intelligence. By conceptualizing format transcription as analogous to language translation, we explore the potential of Large Language Models (LLMs) for metadata interoperability.
+
+The core innovation lies in treating metadata transcription not as a direct mapping between formats, but as a process of conceptual abstraction and re-representation. 
+The model takes in a list of unstructured metadata for example key value pairs then reasons in its embedding space about the potential meaning of each parameter and comes up with the metadata in OME format. This process is syntax and semantic independent and works holistically on the entire metadata.
+This approach promises greater resilience to changes in proprietary formats and the ability to structure metadata even when the OME datamodel does not provide a specific schema for the provided metadata. Further, the proposed system works on top of existing methods, such as bioformats, i.e. parts of the metadata get translated by Bioformats and the remaining metadata gets structured via the LLM. This allows for interoperability and utilizing the strengths of the respective approaches. 
+
+From a technical perspective, the proposed system consist of a generative language model such as GPT4, a data model or state, such as the OME schema and validation tools. The generator predicts metadata which is added to the state and subsequently validatet against the schema.
+
+\section{Research Questions and Objectives}
+
+This thesis proposes a novel approach to metadata transcription via format agnostic translation. Further it explores the possibilities, performance and limitations of such a system, in particular it aims to address the following key questions:
+
+\begin{enumerate}
+    \item Can a network of agentic GPT-4o instances effectively capture and structure metadata that is not natively supported by the OME data model?
+    \item To what extent can tis AI-driven system \textbf{substitute} Bioformats completely in enabling format-agnostic microscopy research?
+    \item What are the implications of such a system for data interoperability, accessibility, and long-term preservation in the microscopy community?
+\end{enumerate}
+
+\section{Thesis Structure}
+
+This thesis is structured as follows:
+
+\begin{itemize}
+    \item Chapter \ref{sec:background} provides a comprehensive background on metadata management in microscopy and the current state of the art in AI-driven data processing.
+    \item Chapter \ref{sec:matmet} presents the methodology, detailing the development of OME Curater and the proposed "OME GPT" system.
+    \item Chapter \ref{sec:res} showcases the results of the experiments, demonstrating the capabilities and limitations of the proposed approach.
+    \item Chapter \ref{sec:discussion} discusses the implications of the findings, their potential impact on the field, and provides an outlook for future research directions.
+\end{itemize}
+
+By exploring the intersection of advanced AI technologies and microscopy data management, this thesis aims to contribute to the ongoing efforts to unify and streamline microscopy research, potentially paving the way for a paradigm shift in how the scientific community approaches metadata handling and format transcription.
+
+TEMPLATE FOR THE RESULTS REPORT REMEMBER TO RESPOND AS MAKDOWN:
+
+
+% !TEX root = thesis.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Results
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Results}
+  \label{sec:res}
+
+In this chapter which also could be more than one chapter, depending on the nature
+of the thesis, the results of the thesis are presented. Make sure you illustrate
+your results with appropriate figures and tables, but do not discuss the results
+here. This should be done in a separate discussion chapter.
+
+Create plots that can answer the initial hypothesis:
+\begin{enumerate}
+    \item Can a network of agentic GPT-4o instances effectively capture and structure metadata that is not natively supported by the OME data model?
+    \item To what extent can tis AI-driven system \textbf{substitute} Bioformats completely in enabling format-agnostic microscopy research?
+    \item What are the implications of such a system for data interoperability, accessibility, and long-term preservation in the microscopy community?
+\end{enumerate}
+
+Have a plot which show the completion rate against the metadata count.
+
+\begin{itemize}
+    \item Recap on the Experimental design and the motivation for the experiment as introduction
+    \item show results but don't discuss.
+    \item clearly describe results via text aswell
+\end{itemize}
+
+
+
+
+
+
+
+
+The proposed system metaGPT was tested for several metrics, namely the completion
+rate, the number of attempts, the number of paths, and the number of edits. The
+results are presented in the following sections.
+
+\section{Predictiveness of metaGPT}
+The main conisderation for a system like metaGPT is its predictive performance.
+To evaluate this the edit distance as described in section \ref{sec:edit_distance}
+was used. To evaluate the performance the edit distance between the bioformats
+metadata and the prediction of the distorted metadata was calculated for each
+file. The results are shown in figure \ref{fig:edit_distance}.
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=1\textwidth]{figures/n_paths_method_plt.svg}
+    \caption[The relation between the prediction method and the number of paths generated]
+    {The relation between the prediction method and the number of paths generated}
+    \label{fig:method_attempts}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=1\textwidth]{figures/method_edit_distance_plt.svg}
+    \caption[The edit distance by prediction method.]
+    {The edit distance by prediction method.}
+    \label{fig:method_edit_distance}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=1\textwidth]{figures/method_edit_distance_no_annot_plt.svg}
+    \caption[The edit distance by prediction method without considering annotations.]
+    {The edit distance by prediction method without considering annotations.}
+    \label{fig:method_edit_distance_no_annot}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=1\textwidth]{figures/method_edit_distance_only_annot_plt.svg}
+    \caption[The edit distance by prediction method and only considering the structured annotations.]
+    {The edit distance by prediction method and only considering the structured annotations.}
+    \label{fig:method_edit_distance_only_annot}
+\end{figure}
+
+\section{Reliablity analysis}
+This section evaluates the robustness and reliability of metaGPT. \ref{fig:reliability}
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=1\textwidth]{figures/attempts_path_plt.svg}
+    \caption[The relation between size of the metadata tree and the number of takes to predict]
+    {The relation between size of the metadata tree and the number of takes to predict}
+    \label{fig:attempts_path}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=1\textwidth]{figures/method_attempts_plt.svg}
+    \caption[The relation between the prediction method and the number of takes to predict]
+    {The relation between the prediction method and the number of takes to predict}
+    \label{fig:method_attempts}
+\end{figure}
+
+\section{Usablity of metaGPT}
+To evaluate whether such a system could have a practical use in the microscopy community,
+the time taken to predict the metadata was measured. The results are shown in figure \ref{fig:time_n_paths} and \ref{fig:time_method}.
+% time taken to predict per path
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=1\textwidth]{figures/n_paths_time_plt.svg}
+    \caption[The relation between the prediction time and the number of paths to be generated (color = prediction method)]
+    {The relation between the prediction time and the number of paths to be generated (color = prediction method)}
+    \label{fig:method_attempts}
+\end{figure}
+% time taken to predict per method
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=1\textwidth]{figures/method_time_plt.svg}
+    \caption[The relation between the prediction time and the prediction method]
+    {The relation between the prediction time and the prediction method}
+    \label{fig:method_attempts}
+\end{figure}
+
+Additionally the cost of prediction was analysed. The analysis was severly limited
+due to limtations in the ChatGPT API we will explore further in the discussion section.
+The results are shown in figure \ref{fig:cost_n_paths} and \ref{fig:cost_method}.
+The cost are calculated based on the number of tokens used in the prediction.
+Input and output tokens are counted separately, as different price levels apply.
+% cost of prediction per path
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=1\textwidth]{figures/n_paths_cost_plt.svg}
+    \caption[The relation between the prediction cost and the number of paths to be generated (color = prediction method)]
+    {The relation between the prediction time and the number of paths to be generated (color = prediction method)}
+    \label{fig:method_attempts}
+\end{figure}
+% cost of prediction per method
+\begin{figure}[htbp]
+    \centering
+    \includesvg[width=1\textwidth]{figures/methods_cost_plt.svg}
+    \caption[The relation between the prediction cost and the prediction method]
+    {The relation between the prediction time and the prediction method}
+    \label{fig:method_attempts}
+\end{figure}
+
+\clearpage

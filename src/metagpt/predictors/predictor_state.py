@@ -96,6 +96,7 @@ class PredictorState(PredictorTemplate):
                 "size_z": 1,
                 "size_c": 3,
                 "size_t": 1,
+                "interleaved": False,
                 "physical_size_x": 0.1,
                 "physical_size_x_unit": "µm",
                 "physical_size_y": 0.1,
@@ -284,6 +285,8 @@ class PredictorState(PredictorTemplate):
         This means you need to generate the json patches for the provided part of the schema.
         The paths in the patches are therefore relative to the provided state object.
         Make sure you dont add the full path to the state object, but only the path to the provided part of the schema.
+        Also remember, that json patches are python code and therefore need to follow
+        its syntax. For example boolean values are written as upper casee True or False.
         The json patches are structured as follows:
         {self.json_patch_examples}
         The ome_types OME object is structured slightly different from the default xml schema.
@@ -338,25 +341,23 @@ class PredictorState(PredictorTemplate):
         TODO: Add docstring
         """
         print(indent*"  "+f"Predicting for {self.name}, attempt: {self.attempts}")
-        print(self.state.model_dump_json())
         print(type(self.state))
-        print(self.current_state_documentation)
         self.message = self.current_state_message + self.current_state_documentation + self.query
         self.init_thread()
         self.init_vector_store()
         self.init_assistant()   
         self.init_run()
         response = None
-
+        print("tets")
         try:
             self.add_attempts()
             response = self.run.required_action.submit_tool_outputs.tool_calls[0]
             self.out_tokens += utils.num_tokens_from_string(response.function.arguments)
-            response = ast.literal_eval(response.function.arguments)
+            if isinstance(response.function.arguments, str):
+                response = ast.literal_eval(response.function.arguments)
             response = response['json_patches']
             self.json_patches = response
             for patch in response:
-                print("patch:", patch)
                 self.state = utils.update_state(self.state, [patch])
             if self.state.__class__.__name__.startswith("Maybe"):
                 self.state = getattr(self.state, self.model.__name__)
@@ -402,7 +403,7 @@ class PredictorState(PredictorTemplate):
         self.assistant = self.client.beta.assistants.create(
             name="OMEGPT",
             description=self.description,
-            instructions=self.promtp,
+            instructions=self.prompt,
             model=self.model,
             tools=[{"type": "file_search"},
                    utils.openai_schema(update_json_state)],
