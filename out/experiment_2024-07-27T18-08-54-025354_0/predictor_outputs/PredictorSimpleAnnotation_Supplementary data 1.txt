@@ -1,0 +1,275 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Experimenter ID="Experimenter:0" UserName="Fotini"/>
+  <Instrument ID="Instrument:0">
+    <Microscope/>
+    <Detector Gain="1.0" Zoom="1.0" AmplificationGain="1.0" ID="Detector:0:0" Type="PMT"/>
+    <Detector Gain="1054.4018240486341" Zoom="1.0" AmplificationGain="0.6" ID="Detector:1:0" Type="PMT"/>
+    <Detector Gain="244.79908797568262" Zoom="1.0" AmplificationGain="3.234459585588829" ID="Detector:1:1"/>
+    <Objective Model="Plan-Apochromat 40x/1.3 Oil DIC M27" ID="Objective:0" Immersion="Oil" LensNA="1.3" NominalMagnification="40.0"/>
+    <FilterSet ID="FilterSet:0:0:0">
+      <EmissionFilterRef ID="Filter:0:0:0"/>
+    </FilterSet>
+    <FilterSet ID="FilterSet:1:0:0">
+      <EmissionFilterRef ID="Filter:1:0:0"/>
+    </FilterSet>
+    <Filter ID="Filter:0:0:0">
+      <TransmittanceRange CutOut="550.0" CutOutUnit="nm"/>
+    </Filter>
+    <Filter ID="Filter:1:0:0">
+      <TransmittanceRange CutIn="560.0" CutInUnit="nm" CutOut="1000.0" CutOutUnit="nm"/>
+    </Filter>
+  </Instrument>
+  <Image ID="Image:0" Name="3-2-OnubZa-babDig-OR4Bio-ant-mid #1">
+    <ExperimenterRef ID="Experimenter:0"/>
+    <InstrumentRef ID="Instrument:0"/>
+    <ObjectiveSettings ID="Objective:0" Medium="Oil" RefractiveIndex="1.518"/>
+    <StageLabel Name="Scene position #0" X="-0.0123987" XUnit="m" Y="0.0135649" YUnit="m" Z="35.187000000000005" ZUnit="µm"/>
+    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint8" SignificantBits="8" Interleaved="false" BigEndian="false" SizeX="1024" SizeY="1024" SizeZ="9" SizeC="3" SizeT="1" PhysicalSizeX="0.15629243164055615" PhysicalSizeXUnit="µm" PhysicalSizeY="0.15629243164055615" PhysicalSizeYUnit="µm" PhysicalSizeZ="1.5965325780299056" PhysicalSizeZUnit="µm">
+      <Channel ID="Channel:0:0" Name="Ch1-T1" SamplesPerPixel="1" IlluminationType="Epifluorescence" AcquisitionMode="LaserScanningConfocalMicroscopy" ExcitationWavelength="488.00000000000006" ExcitationWavelengthUnit="nm" EmissionWavelength="518.0000000000001" EmissionWavelengthUnit="nm" Fluor="FITC" Color="16711935">
+        <DetectorSettings ID="Detector:0:0" Binning="1x1"/>
+        <LightPath/>
+      </Channel>
+      <Channel ID="Channel:0:1" Name="Ch2-T2" SamplesPerPixel="1" IlluminationType="Epifluorescence" AcquisitionMode="LaserScanningConfocalMicroscopy" ExcitationWavelength="555.0000000000001" ExcitationWavelengthUnit="nm" EmissionWavelength="585.0000000000001" EmissionWavelengthUnit="nm" Fluor="TRITC" Color="-16776961">
+        <DetectorSettings ID="Detector:1:0" Binning="1x1"/>
+        <LightPath/>
+      </Channel>
+      <Channel ID="Channel:0:2" Name="T PMT-T2" SamplesPerPixel="1" IlluminationType="Epifluorescence" AcquisitionMode="LaserScanningConfocalMicroscopy" Fluor="Dye3" Color="-1">
+        <DetectorSettings ID="Detector:1:1" Binning="1x1"/>
+        <LightPath/>
+      </Channel>
+      <MetadataOnly/>
+      <Plane TheZ="0" TheT="0" TheC="0" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="35.187000000000005" PositionZUnit="µm"/>
+      <Plane TheZ="0" TheT="0" TheC="1" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="35.187000000000005" PositionZUnit="µm"/>
+      <Plane TheZ="0" TheT="0" TheC="2" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="35.187000000000005" PositionZUnit="µm"/>
+      <Plane TheZ="1" TheT="0" TheC="0" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="36.78353257802991" PositionZUnit="µm"/>
+      <Plane TheZ="1" TheT="0" TheC="1" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="36.78353257802991" PositionZUnit="µm"/>
+      <Plane TheZ="1" TheT="0" TheC="2" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="36.78353257802991" PositionZUnit="µm"/>
+      <Plane TheZ="2" TheT="0" TheC="0" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="38.380065156059814" PositionZUnit="µm"/>
+      <Plane TheZ="2" TheT="0" TheC="1" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="38.380065156059814" PositionZUnit="µm"/>
+      <Plane TheZ="2" TheT="0" TheC="2" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="38.380065156059814" PositionZUnit="µm"/>
+      <Plane TheZ="3" TheT="0" TheC="0" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="39.97659773408972" PositionZUnit="µm"/>
+      <Plane TheZ="3" TheT="0" TheC="1" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="39.97659773408972" PositionZUnit="µm"/>
+      <Plane TheZ="3" TheT="0" TheC="2" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="39.97659773408972" PositionZUnit="µm"/>
+      <Plane TheZ="4" TheT="0" TheC="0" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="41.57313031211963" PositionZUnit="µm"/>
+      <Plane TheZ="4" TheT="0" TheC="1" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="41.57313031211963" PositionZUnit="µm"/>
+      <Plane TheZ="4" TheT="0" TheC="2" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="41.57313031211963" PositionZUnit="µm"/>
+      <Plane TheZ="5" TheT="0" TheC="0" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="43.16966289014953" PositionZUnit="µm"/>
+      <Plane TheZ="5" TheT="0" TheC="1" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="43.16966289014953" PositionZUnit="µm"/>
+      <Plane TheZ="5" TheT="0" TheC="2" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="43.16966289014953" PositionZUnit="µm"/>
+      <Plane TheZ="6" TheT="0" TheC="0" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="44.76619546817944" PositionZUnit="µm"/>
+      <Plane TheZ="6" TheT="0" TheC="1" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="44.76619546817944" PositionZUnit="µm"/>
+      <Plane TheZ="6" TheT="0" TheC="2" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="44.76619546817944" PositionZUnit="µm"/>
+      <Plane TheZ="7" TheT="0" TheC="0" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="46.36272804620934" PositionZUnit="µm"/>
+      <Plane TheZ="7" TheT="0" TheC="1" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="46.36272804620934" PositionZUnit="µm"/>
+      <Plane TheZ="7" TheT="0" TheC="2" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="46.36272804620934" PositionZUnit="µm"/>
+      <Plane TheZ="8" TheT="0" TheC="0" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="47.95926062423925" PositionZUnit="µm"/>
+      <Plane TheZ="8" TheT="0" TheC="1" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="47.95926062423925" PositionZUnit="µm"/>
+      <Plane TheZ="8" TheT="0" TheC="2" DeltaT="5298.034693863636" DeltaTUnit="s" PositionX="-0.0123987" PositionXUnit="m" PositionY="0.0135649" PositionYUnit="m" PositionZ="47.95926062423925" PositionZUnit="µm"/>
+    </Pixels>
+  </Image>
+  <StructuredAnnotations>
+    <XMLAnnotation ID="Annotation:282">
+      <Value>
+        <OriginalMetadata>
+          <Key>images</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>images_0</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>image</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>id</Key>
+                      <Value>Image:0</Value>
+                    </OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>img_name</Key>
+                      <Value>testetst_Image8_edited_.ome.tif</Value>
+                    </OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>description</Key>
+                      <Value/>
+                      <OriginalMetadata/>
+                    </OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>pixels</Key>
+                      <Value/>
+                      <OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>pixels_0</Key>
+                          <Value/>
+                          <OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>pixels</Key>
+                              <Value/>
+                              <OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>big_endian</Key>
+                                  <Value>false</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>dim_order</Key>
+                                  <Value>XYCZT</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>id</Key>
+                                  <Value>Pixels:0</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>interleaved</Key>
+                                  <Value>false</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>phy_size_x</Key>
+                                  <Value>0.09922878199885109</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>phy_size_x_unit</Key>
+                                  <Value>µm</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>phy_size_y</Key>
+                                  <Value>0.09922878199885109</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>phy_size_y_unit</Key>
+                                  <Value>µm</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>significant_bits</Key>
+                                  <Value>8</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>sz_c</Key>
+                                  <Value>3</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>sz_t</Key>
+                                  <Value>30</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>sz_x</Key>
+                                  <Value>680</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>sz_y</Key>
+                                  <Value>280</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>sz</Key>
+                                  <Value>1</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>img_type</Key>
+                                  <Value>uint8</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>channels</Key>
+                                  <Value/>
+                                  <OriginalMetadata>
+                                    <OriginalMetadata>
+                                      <Key>channels_0</Key>
+                                      <Value/>
+                                      <OriginalMetadata>
+                                        <OriginalMetadata>
+                                          <Key>channel</Key>
+                                          <Value/>
+                                          <OriginalMetadata>
+                                            <OriginalMetadata>
+                                              <Key>id</Key>
+                                              <Value>Channel:0:0</Value>
+                                            </OriginalMetadata>
+                                            <OriginalMetadata>
+                                              <Key>samples_per_pixel</Key>
+                                              <Value>1</Value>
+                                            </OriginalMetadata>
+                                            <OriginalMetadata>
+                                              <Key>light_path</Key>
+                                              <Value/>
+                                              <OriginalMetadata/>
+                                            </OriginalMetadata>
+                                          </OriginalMetadata>
+                                        </OriginalMetadata>
+                                      </OriginalMetadata>
+                                    </OriginalMetadata>
+                                    <OriginalMetadata>
+                                      <Key>channels_1</Key>
+                                      <Value/>
+                                      <OriginalMetadata>
+                                        <OriginalMetadata>
+                                          <Key>channel</Key>
+                                          <Value/>
+                                          <OriginalMetadata>
+                                            <OriginalMetadata>
+                                              <Key>id</Key>
+                                              <Value>Channel:0:1</Value>
+                                            </OriginalMetadata>
+                                            <OriginalMetadata>
+                                              <Key>samples_per_pixel</Key>
+                                              <Value>1</Value>
+                                            </OriginalMetadata>
+                                            <OriginalMetadata>
+                                              <Key>light_path</Key>
+                                              <Value/>
+                                              <OriginalMetadata/>
+                                            </OriginalMetadata>
+                                          </OriginalMetadata>
+                                        </OriginalMetadata>
+                                      </OriginalMetadata>
+                                    </OriginalMetadata>
+                                    <OriginalMetadata>
+                                      <Key>channels_2</Key>
+                                      <Value/>
+                                      <OriginalMetadata>
+                                        <OriginalMetadata>
+                                          <Key>channel</Key>
+                                          <Value/>
+                                          <OriginalMetadata>
+                                            <OriginalMetadata>
+                                              <Key>id</Key>
+                                              <Value>Channel:0:2</Value>
+                                            </OriginalMetadata>
+                                            <OriginalMetadata>
+                                              <Key>samples_per_pixel</Key>
+                                              <Value>1</Value>
+                                            </OriginalMetadata>
+                                            <OriginalMetadata>
+                                              <Key>light_path</Key>
+                                              <Value/>
+                                              <OriginalMetadata/>
+                                            </OriginalMetadata>
+                                          </OriginalMetadata>
+                                        </OriginalMetadata>
+                                      </OriginalMetadata>
+                                    </OriginalMetadata>
+                                  </OriginalMetadata>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>meta_only</Key>
+                                  <Value/>
+                                  <OriginalMetadata/>
+                                </OriginalMetadata>
+                              </OriginalMetadata>
+                            </OriginalMetadata>
+                          </OriginalMetadata>
+                        </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+      </Value>
+    </XMLAnnotation>
+  </StructuredAnnotations>
+</OME>
+
+COST: 0.20750500000000002
+ATTEMPTS: 1.0
+TIME: 7.2104411125183105

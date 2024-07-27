@@ -1,0 +1,304 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <StructuredAnnotations>
+    <XMLAnnotation ID="Annotation:276">
+      <Value>
+        <OriginalMetadata>
+          <Key>Camera</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>CameraUserName</Key>
+              <Value>CLxStringW</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>CameraUniqueName</Key>
+              <Value>CLxStringW</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>CameraFamilyName</Key>
+              <Value>CLxStringW</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>CameraSettings</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>m_GrabberString</Key>
+                  <Value>VGA</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>m_SWNameString</Key>
+                  <Value>NIS-Elements AR</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>m_CompanyString</Key>
+                  <Value>NIKON Corporation</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>m_VersionString</Key>
+                  <Value>5.02.00 (Build 1266) Patch 01</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>m_bEnableAutoWhite</Key>
+                  <Value>false</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>m_bEnableAutoContrast</Key>
+                  <Value>false</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>m_bShowSpectralGraph</Key>
+                  <Value>true</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>m_bGrayGraph</Key>
+                  <Value>false</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>m_bViewLut</Key>
+                  <Value>false</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>m_bShowAllComp</Key>
+                  <Value>true</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>m_bRatioViewEnabled</Key>
+                  <Value>bool</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>CameraSettingsFQMode</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>vGrabberCameraSettingsFQMode</Key>
+                  <Value>lx_uint32</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>vGrabberCameraSettings</Key>
+                  <Value>CLxListVariant</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>LightSource</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>LightSourceID</Key>
+                  <Value>LightSource:2</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Model</Key>
+                  <Value>Lumencor MultiLaser</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Power</Key>
+                  <Value>0.000000</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Objective</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>ObjectiveCalibratedMagnification</Key>
+                  <Value>"1.000000" ID="Objective:0" LensNA="1.300000" NominalMagnification="1"</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>ObjectiveCorrection</Key>
+                  <Value>"PlanFluor" ID="Objective:1" Immersion="Oil" LensNA="1.300000" Model="Plan Fluor 40x Oil DIC H N2" NominalMagnification="40" WorkingDistance="200.000000"</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Image</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ImageID</Key>
+              <Value>Image:0</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ImageName</Key>
+              <Value>E:\jenny_test\channelfret_turquoise,fret_tomato,ph-3_seq0000_0000_crop\2021_10_27_FRET_T001_Ph-3.tif</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ImageWidth</Key>
+              <Value>1608</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ImageLength</Key>
+              <Value>1608</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ImageDimensions</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>PixelsDimensionOrder</Key>
+                  <Value>XYCZT</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>PhysicalSizeX</Key>
+                  <Value>0.550000</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>PhysicalSizeY</Key>
+                  <Value>0.550000</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>SizeC</Key>
+                  <Value>1</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>SizeT</Key>
+                  <Value>1</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>SizeX</Key>
+                  <Value>1608</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>SizeY</Key>
+                  <Value>1608</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>SizeZ</Key>
+                  <Value>1</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Type</Key>
+                  <Value>uint8</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>BitsPerSample</Key>
+              <Value>8</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>MaxSampleValue</Key>
+              <Value>255</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Compression</Key>
+              <Value>Uncompressed</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>SamplesPerPixel</Key>
+              <Value>1</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ROI</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>FillOrder</Key>
+              <Value>Pixels with lower column values are stored in the higher order bits of a byte</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PhotometricInterpretation</Key>
+              <Value>BlackIsZero</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PlanarConfiguration</Key>
+              <Value>Chunky</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PropertiesQuality</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PropertiesFast</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PropertiesQuality_Extra</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PropertiesFast_Extra</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Metadata</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Comment</Key>
+              <Value>      !--this instrument tag is add because of backward compatibility with NIS elements 4.30--
+      /LightSource
+   /Instrument
+      /LightSource
+      /LightSource
+      /Filter
+   /Instrument
+      AcquisitionDate
+         2021-10-27T18:00:24      /AcquisitionDate
+      Description
+         Dimensions: T(720) x XY(1) x λ(3)
+Camera Name: Photometrics Prime 95B
+Numerical Aperture: 1.3
+Refractive Index: 1.515
+Number of Picture Planes: 3
+Plane #1:
+ Name: Fret_Turquoise
+ Component Count: 1
+ Modality: Widefield Fluorescence
+ Camera Settings:   
+  Camera Type: Prime 95B
+  Binning: 2x2
+  Bit Depth: 12-bit
+  Exposure: 100 ms
+  Denoising: Off
+  Conversion Gain: 둀ၙ
+  Fan Speed: High
+Plane #2:
+ Name: Fret_Tomato
+ Component Count: 1
+ Modality: Widefield Fluorescence
+ Camera Settings:   
+  Camera Type: Prime 95B
+  Binning: 2x2
+  Bit Depth: 12-bit
+  Exposure: 100 ms
+  Denoising: Off
+  Conversion Gain: 둀ၙ
+  Fan Speed: High
+Plane #3:
+ Name: Ph-3
+ Component Count: 1
+ Modality: Brightfield
+ Camera Settings:   
+  Camera Type: Prime 95B
+  Binning: 1x1
+  Bit Depth: 12-bit
+  Exposure: 100 ms
+  Denoising: Off
+  Conversion Gain: 둀ၙ
+  Fan Speed: High
+Time Loop: 720
+- Equidistant (Period 30000 ms)
+      /Description
+         /Channel
+      /Pixels
+   /Image
+/OME
+</Value>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+      </Value>
+    </XMLAnnotation>
+  </StructuredAnnotations>
+</OME>
+
+COST: 0.238265
+ATTEMPTS: 1.6666666666666667
+TIME: 167.2665958404541

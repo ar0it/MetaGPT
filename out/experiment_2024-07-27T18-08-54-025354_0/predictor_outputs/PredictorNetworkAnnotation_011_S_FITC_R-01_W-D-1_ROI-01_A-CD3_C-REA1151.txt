@@ -1,0 +1,105 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Image ID="Image:0" Name="011_S_FITC_R-01_W-D-1_ROI-01_A-CD3_C-REA1151.tif">
+    <Description> &lt;!-- Warning: this comment is within an OME-XML metadata block, which contains crucial dimensional parameters and other important metadata. Please edit cautiously (if at all), and back up the original data before doing so. For more information, see the OME-TIFF web site: http://www.openmicroscopy.org/site/support/ome-model/ome-tiff/ --&gt;;  &lt;/Experiment&gt;;  &lt;/Plate&gt;;   &lt;/Reagent&gt;;  &lt;/Screen&gt;;  &lt;/Instrument&gt;;    &lt;/Channel&gt;;    &lt;/TiffData&gt;;   &lt;/Pixels&gt;;  &lt;/Image&gt;;    &lt;/Value&gt;;   &lt;/MapAnnotation&gt;;    &lt;/Value&gt;;   &lt;/MapAnnotation&gt;;    &lt;/Value&gt;;   &lt;/MapAnnotation&gt;;    &lt;/Value&gt;;   &lt;/MapAnnotation&gt;;  &lt;/StructuredAnnotations&gt;; &lt;/OME&gt;; </Description>
+    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint16" SignificantBits="16" Interleaved="false" BigEndian="false" SizeX="6859" SizeY="3726" SizeZ="1" SizeC="1" SizeT="1">
+      <Channel ID="Channel:0:0" SamplesPerPixel="1">
+        <LightPath/>
+      </Channel>
+      <MetadataOnly/>
+    </Pixels>
+  </Image>
+  <StructuredAnnotations>
+    <XMLAnnotation ID="Annotation:280">
+      <Value>
+        <OriginalMetadata>
+          <Key>PhotometricInterpretation</Key>
+          <Value>BlackIsZero</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>BitsPerSample</Key>
+          <Value>16</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>ImageWidth</Key>
+          <Value>6859</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>TileLength</Key>
+          <Value>256</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>TileByteCounts</Key>
+          <Value>131072</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>TileOffsets</Key>
+          <Value>8</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>TileWidth</Key>
+          <Value>256</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>ImageLength</Key>
+          <Value>3726</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>NumberOfChannels</Key>
+          <Value>1</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Software</Key>
+          <Value>OME Files (C++) 0.7.0</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>SampleFormat</Key>
+          <Value>unsigned integer</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>PlanarConfiguration</Key>
+          <Value>Chunky</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>NewSubfileType</Key>
+          <Value>2</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Compression</Key>
+          <Value>Uncompressed</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>MetaMorph</Key>
+          <Value>no</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Comment</Key>
+          <Value>!-- Warning: this comment is within an OME-XML metadata block, which contains crucial dimensional parameters and other important metadata. Please edit cautiously (if at all), and back up the original data before doing so. For more information, see the OME-TIFF web site: http://www.openmicroscopy.org/site/support/ome-model/ome-tiff/ --
+ /Experiment
+ /Plate
+  /Reagent
+ /Screen
+ /Instrument
+   /Channel
+   /TiffData
+  /Pixels
+ /Image
+   /Value
+  /MapAnnotation
+   /Value
+  /MapAnnotation
+   /Value
+  /MapAnnotation
+   /Value
+  /MapAnnotation
+ /StructuredAnnotations
+/OME
+</Value>
+        </OriginalMetadata>
+      </Value>
+    </XMLAnnotation>
+  </StructuredAnnotations>
+</OME>
+
+COST: 0.11778000000000001
+ATTEMPTS: 1.0
+TIME: 34.44057750701904

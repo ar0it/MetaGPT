@@ -1,0 +1,405 @@
+,0
+0,structured_annotations/xml_annotations/276/id = Annotation:276
+1,structured_annotations/xml_annotations/276/value/any_elements/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+2,structured_annotations/xml_annotations/276/value/any_elements/0/text = 
+3,structured_annotations/xml_annotations/276/value/any_elements/0/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+4,structured_annotations/xml_annotations/276/value/any_elements/0/children/0/text = Camera
+5,structured_annotations/xml_annotations/276/value/any_elements/0/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+6,structured_annotations/xml_annotations/276/value/any_elements/0/children/1/text = 
+7,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+8,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/text = 
+9,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+10,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/0/text = 
+11,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/0/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+12,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/0/children/0/text = CameraUserName
+13,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/0/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+14,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/0/children/1/text = CLxStringW
+15,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+16,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/1/text = 
+17,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/1/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+18,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/1/children/0/text = CameraUniqueName
+19,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/1/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+20,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/1/children/1/text = CLxStringW
+21,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/2/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+22,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/2/text = 
+23,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/2/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+24,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/2/children/0/text = CameraFamilyName
+25,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/2/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+26,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/2/children/1/text = CLxStringW
+27,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+28,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/text = 
+29,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+30,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/0/text = CameraSettings
+31,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+32,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/1/text = 
+33,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+34,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/text = 
+35,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+36,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/0/text = 
+37,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/0/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+38,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/0/children/0/text = m_GrabberString
+39,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/0/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+40,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/0/children/1/text = VGA
+41,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+42,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/1/text = 
+43,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/1/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+44,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/1/children/0/text = m_SWNameString
+45,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/1/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+46,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/1/children/1/text = NIS-Elements AR
+47,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/2/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+48,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/2/text = 
+49,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/2/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+50,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/2/children/0/text = m_CompanyString
+51,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/2/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+52,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/2/children/1/text = NIKON Corporation
+53,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/3/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+54,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/3/text = 
+55,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/3/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+56,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/3/children/0/text = m_VersionString
+57,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/3/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+58,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/3/children/1/text = 5.02.00 (Build 1266) Patch 01
+59,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/4/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+60,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/4/text = 
+61,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/4/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+62,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/4/children/0/text = m_bEnableAutoWhite
+63,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/4/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+64,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/4/children/1/text = false
+65,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/5/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+66,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/5/text = 
+67,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/5/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+68,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/5/children/0/text = m_bEnableAutoContrast
+69,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/5/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+70,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/5/children/1/text = false
+71,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/6/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+72,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/6/text = 
+73,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/6/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+74,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/6/children/0/text = m_bShowSpectralGraph
+75,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/6/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+76,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/6/children/1/text = true
+77,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/7/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+78,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/7/text = 
+79,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/7/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+80,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/7/children/0/text = m_bGrayGraph
+81,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/7/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+82,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/7/children/1/text = false
+83,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/8/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+84,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/8/text = 
+85,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/8/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+86,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/8/children/0/text = m_bViewLut
+87,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/8/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+88,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/8/children/1/text = false
+89,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/9/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+90,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/9/text = 
+91,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/9/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+92,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/9/children/0/text = m_bShowAllComp
+93,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/9/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+94,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/9/children/1/text = true
+95,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/10/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+96,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/10/text = 
+97,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/10/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+98,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/10/children/0/text = m_bRatioViewEnabled
+99,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/10/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+100,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/3/children/2/children/10/children/1/text = bool
+101,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+102,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/text = 
+103,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+104,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/0/text = CameraSettingsFQMode
+105,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+106,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/1/text = 
+107,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+108,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/text = 
+109,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+110,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/children/0/text = 
+111,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/children/0/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+112,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/children/0/children/0/text = vGrabberCameraSettingsFQMode
+113,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/children/0/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+114,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/children/0/children/1/text = lx_uint32
+115,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+116,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/children/1/text = 
+117,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/children/1/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+118,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/children/1/children/0/text = vGrabberCameraSettings
+119,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/children/1/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+120,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/4/children/2/children/1/children/1/text = CLxListVariant
+121,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+122,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/text = 
+123,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+124,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/0/text = LightSource
+125,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+126,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/1/text = 
+127,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+128,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/text = 
+129,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+130,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/0/text = 
+131,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/0/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+132,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/0/children/0/text = LightSourceID
+133,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/0/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+134,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/0/children/1/text = LightSource:2
+135,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+136,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/1/text = 
+137,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/1/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+138,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/1/children/0/text = Model
+139,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/1/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+140,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/1/children/1/text = Lumencor MultiLaser
+141,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/2/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+142,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/2/text = 
+143,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/2/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+144,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/2/children/0/text = Power
+145,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/2/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+146,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/5/children/2/children/2/children/1/text = 0.000000
+147,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+148,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/text = 
+149,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+150,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/0/text = Objective
+151,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+152,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/1/text = 
+153,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+154,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/text = 
+155,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+156,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/children/0/text = 
+157,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/children/0/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+158,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/children/0/children/0/text = ObjectiveCalibratedMagnification
+159,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/children/0/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+160,"structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/children/0/children/1/text = ""1.000000"" ID=""Objective:0"" LensNA=""1.300000"" NominalMagnification=""1"""
+161,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+162,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/children/1/text = 
+163,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/children/1/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+164,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/children/1/children/0/text = ObjectiveCorrection
+165,structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/children/1/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+166,"structured_annotations/xml_annotations/276/value/any_elements/0/children/2/children/6/children/2/children/1/children/1/text = ""PlanFluor"" ID=""Objective:1"" Immersion=""Oil"" LensNA=""1.300000"" Model=""Plan Fluor 40x Oil DIC H N2"" NominalMagnification=""40"" WorkingDistance=""200.000000"""
+167,structured_annotations/xml_annotations/276/value/any_elements/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+168,structured_annotations/xml_annotations/276/value/any_elements/1/text = 
+169,structured_annotations/xml_annotations/276/value/any_elements/1/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+170,structured_annotations/xml_annotations/276/value/any_elements/1/children/0/text = Image
+171,structured_annotations/xml_annotations/276/value/any_elements/1/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+172,structured_annotations/xml_annotations/276/value/any_elements/1/children/1/text = 
+173,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+174,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/text = 
+175,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+176,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/0/text = 
+177,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/0/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+178,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/0/children/0/text = ImageID
+179,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/0/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+180,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/0/children/1/text = Image:0
+181,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+182,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/1/text = 
+183,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/1/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+184,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/1/children/0/text = ImageName
+185,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/1/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+186,"structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/1/children/1/text = E:\jenny_test\channelfret_turquoise,fret_tomato,ph-3_seq0000_0000_crop\2021_10_27_FRET_T001_Ph-3.tif"
+187,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/2/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+188,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/2/text = 
+189,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/2/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+190,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/2/children/0/text = ImageWidth
+191,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/2/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+192,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/2/children/1/text = 1608
+193,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/3/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+194,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/3/text = 
+195,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/3/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+196,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/3/children/0/text = ImageLength
+197,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/3/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+198,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/3/children/1/text = 1608
+199,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+200,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/text = 
+201,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+202,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/0/text = ImageDimensions
+203,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+204,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/1/text = 
+205,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+206,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/text = 
+207,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+208,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/0/text = 
+209,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/0/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+210,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/0/children/0/text = PixelsDimensionOrder
+211,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/0/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+212,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/0/children/1/text = XYCZT
+213,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+214,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/1/text = 
+215,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/1/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+216,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/1/children/0/text = PhysicalSizeX
+217,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/1/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+218,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/1/children/1/text = 0.550000
+219,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/2/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+220,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/2/text = 
+221,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/2/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+222,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/2/children/0/text = PhysicalSizeY
+223,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/2/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+224,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/2/children/1/text = 0.550000
+225,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/3/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+226,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/3/text = 
+227,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/3/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+228,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/3/children/0/text = SizeC
+229,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/3/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+230,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/3/children/1/text = 1
+231,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/4/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+232,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/4/text = 
+233,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/4/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+234,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/4/children/0/text = SizeT
+235,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/4/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+236,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/4/children/1/text = 1
+237,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/5/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+238,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/5/text = 
+239,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/5/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+240,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/5/children/0/text = SizeX
+241,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/5/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+242,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/5/children/1/text = 1608
+243,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/6/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+244,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/6/text = 
+245,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/6/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+246,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/6/children/0/text = SizeY
+247,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/6/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+248,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/6/children/1/text = 1608
+249,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/7/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+250,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/7/text = 
+251,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/7/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+252,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/7/children/0/text = SizeZ
+253,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/7/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+254,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/7/children/1/text = 1
+255,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/8/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+256,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/8/text = 
+257,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/8/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+258,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/8/children/0/text = Type
+259,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/8/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+260,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/4/children/2/children/8/children/1/text = uint8
+261,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/5/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+262,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/5/text = 
+263,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/5/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+264,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/5/children/0/text = BitsPerSample
+265,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/5/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+266,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/5/children/1/text = 8
+267,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/6/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+268,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/6/text = 
+269,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/6/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+270,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/6/children/0/text = MaxSampleValue
+271,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/6/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+272,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/6/children/1/text = 255
+273,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/7/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+274,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/7/text = 
+275,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/7/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+276,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/7/children/0/text = Compression
+277,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/7/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+278,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/7/children/1/text = Uncompressed
+279,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/8/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+280,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/8/text = 
+281,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/8/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+282,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/8/children/0/text = SamplesPerPixel
+283,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/8/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+284,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/8/children/1/text = 1
+285,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/9/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+286,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/9/text = 
+287,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/9/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+288,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/9/children/0/text = ROI
+289,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/9/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+290,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/9/children/1/text = CLxListVariant
+291,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/10/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+292,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/10/text = 
+293,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/10/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+294,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/10/children/0/text = FillOrder
+295,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/10/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+296,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/10/children/1/text = Pixels with lower column values are stored in the higher order bits of a byte
+297,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/11/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+298,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/11/text = 
+299,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/11/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+300,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/11/children/0/text = PhotometricInterpretation
+301,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/11/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+302,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/11/children/1/text = BlackIsZero
+303,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/12/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+304,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/12/text = 
+305,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/12/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+306,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/12/children/0/text = PlanarConfiguration
+307,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/12/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+308,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/12/children/1/text = Chunky
+309,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/13/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+310,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/13/text = 
+311,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/13/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+312,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/13/children/0/text = PropertiesQuality
+313,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/13/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+314,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/13/children/1/text = CLxListVariant
+315,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/14/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+316,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/14/text = 
+317,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/14/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+318,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/14/children/0/text = PropertiesFast
+319,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/14/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+320,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/14/children/1/text = CLxListVariant
+321,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/15/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+322,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/15/text = 
+323,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/15/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+324,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/15/children/0/text = PropertiesQuality_Extra
+325,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/15/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+326,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/15/children/1/text = CLxListVariant
+327,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/16/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+328,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/16/text = 
+329,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/16/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+330,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/16/children/0/text = PropertiesFast_Extra
+331,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/16/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+332,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/16/children/1/text = CLxListVariant
+333,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/17/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+334,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/17/text = 
+335,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/17/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+336,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/17/children/0/text = Metadata
+337,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/17/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+338,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/17/children/1/text = CLxListVariant
+339,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/18/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}OriginalMetadata
+340,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/18/text = 
+341,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/18/children/0/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Key
+342,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/18/children/0/text = Comment
+343,structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/18/children/1/qname = {http://www.openmicroscopy.org/Schemas/OME/2016-06}Value
+344,"structured_annotations/xml_annotations/276/value/any_elements/1/children/2/children/18/children/1/text =       !--this instrument tag is add because of backward compatibility with NIS elements 4.30--
+      /LightSource
+   /Instrument
+      /LightSource
+      /LightSource
+      /Filter
+   /Instrument
+      AcquisitionDate
+         2021-10-27T18:00:24      /AcquisitionDate
+      Description
+         Dimensions: T(720) x XY(1) x λ(3)
+Camera Name: Photometrics Prime 95B
+Numerical Aperture: 1.3
+Refractive Index: 1.515
+Number of Picture Planes: 3
+Plane #1:
+ Name: Fret_Turquoise
+ Component Count: 1
+ Modality: Widefield Fluorescence
+ Camera Settings:   
+  Camera Type: Prime 95B
+  Binning: 2x2
+  Bit Depth: 12-bit
+  Exposure: 100 ms
+  Denoising: Off
+  Conversion Gain: 둀ၙ
+  Fan Speed: High
+Plane #2:
+ Name: Fret_Tomato
+ Component Count: 1
+ Modality: Widefield Fluorescence
+ Camera Settings:   
+  Camera Type: Prime 95B
+  Binning: 2x2
+  Bit Depth: 12-bit
+  Exposure: 100 ms
+  Denoising: Off
+  Conversion Gain: 둀ၙ
+  Fan Speed: High
+Plane #3:
+ Name: Ph-3
+ Component Count: 1
+ Modality: Brightfield
+ Camera Settings:   
+  Camera Type: Prime 95B
+  Binning: 1x1
+  Bit Depth: 12-bit
+  Exposure: 100 ms
+  Denoising: Off
+  Conversion Gain: 둀ၙ
+  Fan Speed: High
+Time Loop: 720
+- Equidistant (Period 30000 ms)
+      /Description
+         /Channel
+      /Pixels
+   /Image
+/OME
+"
+345,structured_annotations/xml_annotations/276/kind = xmlannotation

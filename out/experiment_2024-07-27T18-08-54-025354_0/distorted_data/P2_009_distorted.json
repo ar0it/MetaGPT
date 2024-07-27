@@ -1,0 +1,2324 @@
+{
+    "imgs": [
+        {
+            "img": {
+                "id": "Image:0",
+                "img_name": "testetst_Image8_edited_.ome.tif",
+                "desc": {},
+                "pixs": [
+                    {
+                        "pix": {
+                            "big_endian": "false",
+                            "dim_order": "XYCZT",
+                            "id": "Pixels:0",
+                            "interleaved": "false",
+                            "phy_size_x": "0.09922878199885109",
+                            "phy_size_x_unit": "µm",
+                            "phy_size_y": "0.09922878199885109",
+                            "phy_size_y_unit": "µm",
+                            "sig_bits": "8",
+                            "sc": "3",
+                            "st": "30",
+                            "sx": "680",
+                            "sy": "280",
+                            "sz": "1",
+                            "img_type": "uint8",
+                            "chans": [
+                                {
+                                    "chan": {
+                                        "id": "Channel:0:0",
+                                        "samples_per_pix": "1",
+                                        "light_path": {}
+                                    }
+                                },
+                                {
+                                    "chan": {
+                                        "id": "Channel:0:1",
+                                        "samples_per_pix": "1",
+                                        "light_path": {}
+                                    }
+                                },
+                                {
+                                    "chan": {
+                                        "id": "Channel:0:2",
+                                        "samples_per_pix": "1",
+                                        "light_path": {}
+                                    }
+                                }
+                            ],
+                            "meta_only": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "img": {
+                "id": "Image:0",
+                "img_name": "Reconstructed_multichannel_stack_tumor_spheroid.tif",
+                "desc": {},
+                "pixs": [
+                    {
+                        "pix": {
+                            "big_endian": "true",
+                            "dim_order": "XYCZT",
+                            "id": "Pixels:0",
+                            "interleaved": "false",
+                            "phy_size_x": "0.3400000544000087",
+                            "phy_size_x_unit": "µm",
+                            "phy_size_y": "0.3400000544000087",
+                            "phy_size_y_unit": "µm",
+                            "phy_size_z": "3.0",
+                            "phy_size_z_unit": "µm",
+                            "sig_bits": "16",
+                            "sc": "4",
+                            "st": "1",
+                            "sx": "1024",
+                            "sy": "1024",
+                            "sz": "60",
+                            "img_type": "uint16",
+                            "chans": [
+                                {
+                                    "chan": {
+                                        "id": "Channel:0:0",
+                                        "samples_per_pix": "1",
+                                        "light_path": {}
+                                    }
+                                },
+                                {
+                                    "chan": {
+                                        "id": "Channel:0:1",
+                                        "samples_per_pix": "1",
+                                        "light_path": {}
+                                    }
+                                },
+                                {
+                                    "chan": {
+                                        "id": "Channel:0:2",
+                                        "samples_per_pix": "1",
+                                        "light_path": {}
+                                    }
+                                },
+                                {
+                                    "chan": {
+                                        "id": "Channel:0:3",
+                                        "samples_per_pix": "1",
+                                        "light_path": {}
+                                    }
+                                }
+                            ],
+                            "meta_only": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "img": {
+                "id": "Image:0",
+                "img_name": "Series 1",
+                "acq_date": "2020-11-26T09:45:06",
+                "desc": "8Z0329",
+                "inst_refs": [
+                    {
+                        "inst_ref": {
+                            "id": "Instrument:0"
+                        }
+                    }
+                ],
+                "obj_set": [
+                    {
+                        "obj_set": {
+                            "id": "Objective:0:0"
+                        }
+                    }
+                ],
+                "pixs": [
+                    {
+                        "pix": {
+                            "big_endian": "false",
+                            "dim_order": "XYCZT",
+                            "id": "Pixels:0",
+                            "interleaved": "true",
+                            "phy_size_x": "0.2260040228716071",
+                            "phy_size_x_unit": "µm",
+                            "phy_size_y": "0.22573872999390507",
+                            "phy_size_y_unit": "µm",
+                            "sig_bits": "8",
+                            "sc": "3",
+                            "st": "1",
+                            "sx": "69632",
+                            "sy": "86272",
+                            "sz": "1",
+                            "img_type": "uint8",
+                            "chans": [
+                                {
+                                    "chan": {
+                                        "id": "Channel:0:0",
+                                        "samples_per_pix": "3",
+                                        "light_path": {}
+                                    }
+                                }
+                            ],
+                            "meta_only": {},
+                            "planes": [
+                                {
+                                    "plane": {
+                                        "pos_x": "6396973.0",
+                                        "pos_x_unit": "nm",
+                                        "pos_y": "1469281.0",
+                                        "pos_y_unit": "nm",
+                                        "pos_z": "0.0",
+                                        "pos_z_unit": "nm",
+                                        "the_c": "0",
+                                        "the_t": "0",
+                                        "the_z": "0"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "img": {
+                "id": "Image:1",
+                "img_name": "Series 2",
+                "acq_date": "2020-11-26T09:45:06",
+                "inst_refs": [
+                    {
+                        "inst_ref": {
+                            "id": "Instrument:0"
+                        }
+                    }
+                ],
+                "obj_set": [
+                    {
+                        "obj_set": {
+                            "id": "Objective:0:0"
+                        }
+                    }
+                ],
+                "pixs": [
+                    {
+                        "pix": {
+                            "big_endian": "false",
+                            "dim_order": "XYCZT",
+                            "id": "Pixels:1",
+                            "interleaved": "true",
+                            "phy_size_x": "0.9040773890245005",
+                            "phy_size_x_unit": "µm",
+                            "phy_size_y": "0.9030160736861116",
+                            "phy_size_y_unit": "µm",
+                            "sig_bits": "8",
+                            "sc": "3",
+                            "st": "1",
+                            "sx": "17408",
+                            "sy": "21568",
+                            "sz": "1",
+                            "img_type": "uint8",
+                            "chans": [
+                                {
+                                    "chan": {
+                                        "id": "Channel:1:0",
+                                        "samples_per_pix": "3",
+                                        "light_path": {}
+                                    }
+                                }
+                            ],
+                            "meta_only": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "img": {
+                "id": "Image:2",
+                "img_name": "Series 3",
+                "acq_date": "2020-11-26T09:45:06",
+                "inst_refs": [
+                    {
+                        "inst_ref": {
+                            "id": "Instrument:0"
+                        }
+                    }
+                ],
+                "obj_set": [
+                    {
+                        "obj_set": {
+                            "id": "Objective:0:0"
+                        }
+                    }
+                ],
+                "pixs": [
+                    {
+                        "pix": {
+                            "big_endian": "false",
+                            "dim_order": "XYCZT",
+                            "id": "Pixels:2",
+                            "interleaved": "true",
+                            "phy_size_x": "3.616636528028933",
+                            "phy_size_x_unit": "µm",
+                            "phy_size_y": "3.61271676300578",
+                            "phy_size_y_unit": "µm",
+                            "sig_bits": "8",
+                            "sc": "3",
+                            "st": "1",
+                            "sx": "4352",
+                            "sy": "5392",
+                            "sz": "1",
+                            "img_type": "uint8",
+                            "chans": [
+                                {
+                                    "chan": {
+                                        "id": "Channel:2:0",
+                                        "samples_per_pix": "3",
+                                        "light_path": {}
+                                    }
+                                }
+                            ],
+                            "meta_only": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "img": {
+                "id": "Image:3",
+                "img_name": "Series 4",
+                "acq_date": "2020-11-26T09:45:06",
+                "inst_refs": [
+                    {
+                        "inst_ref": {
+                            "id": "Instrument:0"
+                        }
+                    }
+                ],
+                "obj_set": [
+                    {
+                        "obj_set": {
+                            "id": "Objective:0:0"
+                        }
+                    }
+                ],
+                "pixs": [
+                    {
+                        "pix": {
+                            "big_endian": "false",
+                            "dim_order": "XYCZT",
+                            "id": "Pixels:3",
+                            "interleaved": "false",
+                            "phy_size_x": "14.47178002894356",
+                            "phy_size_x_unit": "µm",
+                            "phy_size_y": "14.45086705202312",
+                            "phy_size_y_unit": "µm",
+                            "sig_bits": "8",
+                            "sc": "3",
+                            "st": "1",
+                            "sx": "1088",
+                            "sy": "1348",
+                            "sz": "1",
+                            "img_type": "uint8",
+                            "chans": [
+                                {
+                                    "chan": {
+                                        "id": "Channel:3:0",
+                                        "samples_per_pix": "3",
+                                        "light_path": {}
+                                    }
+                                }
+                            ],
+                            "meta_only": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "img": {
+                "id": "Image:4",
+                "img_name": "Series 5",
+                "acq_date": "2020-11-26T09:45:06",
+                "inst_refs": [
+                    {
+                        "inst_ref": {
+                            "id": "Instrument:0"
+                        }
+                    }
+                ],
+                "obj_set": [
+                    {
+                        "obj_set": {
+                            "id": "Objective:0:0"
+                        }
+                    }
+                ],
+                "pixs": [
+                    {
+                        "pix": {
+                            "big_endian": "false",
+                            "dim_order": "XYCZT",
+                            "id": "Pixels:4",
+                            "interleaved": "false",
+                            "phy_size_x": "58.13953488372093",
+                            "phy_size_x_unit": "µm",
+                            "phy_size_y": "57.80346820809248",
+                            "phy_size_y_unit": "µm",
+                            "sig_bits": "8",
+                            "sc": "3",
+                            "st": "1",
+                            "sx": "272",
+                            "sy": "337",
+                            "sz": "1",
+                            "img_type": "uint8",
+                            "chans": [
+                                {
+                                    "chan": {
+                                        "id": "Channel:4:0",
+                                        "samples_per_pix": "3",
+                                        "light_path": {}
+                                    }
+                                }
+                            ],
+                            "meta_only": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "img": {
+                "id": "Image:5",
+                "img_name": "Series 6",
+                "acq_date": "2020-11-26T09:45:06",
+                "inst_refs": [
+                    {
+                        "inst_ref": {
+                            "id": "Instrument:0"
+                        }
+                    }
+                ],
+                "obj_set": [
+                    {
+                        "obj_set": {
+                            "id": "Objective:0:0"
+                        }
+                    }
+                ],
+                "pixs": [
+                    {
+                        "pix": {
+                            "big_endian": "false",
+                            "dim_order": "XYCZT",
+                            "id": "Pixels:5",
+                            "interleaved": "false",
+                            "phy_size_x": "63.69426751592357",
+                            "phy_size_x_unit": "µm",
+                            "phy_size_y": "64.1025641025641",
+                            "phy_size_y_unit": "µm",
+                            "sig_bits": "8",
+                            "sc": "3",
+                            "st": "1",
+                            "sx": "1194",
+                            "sy": "407",
+                            "sz": "1",
+                            "img_type": "uint8",
+                            "chans": [
+                                {
+                                    "chan": {
+                                        "id": "Channel:5:0",
+                                        "samples_per_pix": "3",
+                                        "light_path": {}
+                                    }
+                                }
+                            ],
+                            "meta_only": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "img": {
+                "id": "Image:6",
+                "img_name": "Series 7",
+                "acq_date": "2020-11-26T09:45:06",
+                "inst_refs": [
+                    {
+                        "inst_ref": {
+                            "id": "Instrument:0"
+                        }
+                    }
+                ],
+                "obj_set": [
+                    {
+                        "obj_set": {
+                            "id": "Objective:0:0"
+                        }
+                    }
+                ],
+                "pixs": [
+                    {
+                        "pix": {
+                            "big_endian": "false",
+                            "dim_order": "XYCZT",
+                            "id": "Pixels:6",
+                            "interleaved": "false",
+                            "phy_size_x": "128.2051282051282",
+                            "phy_size_x_unit": "µm",
+                            "phy_size_y": "128.2051282051282",
+                            "phy_size_y_unit": "µm",
+                            "sig_bits": "8",
+                            "sc": "1",
+                            "st": "1",
+                            "sx": "597",
+                            "sy": "203",
+                            "sz": "1",
+                            "img_type": "uint8",
+                            "chans": [
+                                {
+                                    "chan": {
+                                        "id": "Channel:6:0",
+                                        "samples_per_pix": "1",
+                                        "light_path": {}
+                                    }
+                                }
+                            ],
+                            "meta_only": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "img": {
+                "id": "Image:0",
+                "img_name": "2021_10_27_FRET_T001_Fret_Tomato.tif",
+                "desc": "      <!--this instrument tag is add because of backward compatibility with NIS elements 4.30-->;       </LightSource>;    </Instrument>;       </LightSource>;       </LightSource>;       </Filter>;    </Instrument>;       <AcquisitionDate>;          2021-10-27T18:00:24      </AcquisitionDate>;       <Description>;          Dimensions: T(720) x XY(1) x λ(3); Camera Name: Photometrics Prime 95B; Numerical Aperture: 1.3; Refractive Index: 1.515; Number of Picture Planes: 3; Plane #1:;  Name: Fret_Turquoise;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #2:;  Name: Fret_Tomato;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #3:;  Name: Ph-3;  Component Count: 1;  Modality: Brightfield;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 1x1;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Time Loop: 720; - Equidistant (Period 30000 ms);       </Description>;          </Channel>;       </Pixels>;    </Image>; </OME>; ",
+                "pixs": [
+                    {
+                        "pix": {
+                            "big_endian": "false",
+                            "dim_order": "XYCZT",
+                            "id": "Pixels:0",
+                            "interleaved": "false",
+                            "sig_bits": "8",
+                            "sc": "1",
+                            "st": "1",
+                            "sx": "1608",
+                            "sy": "1608",
+                            "sz": "1",
+                            "img_type": "uint8",
+                            "chans": [
+                                {
+                                    "chan": {
+                                        "id": "Channel:0:0",
+                                        "samples_per_pix": "1",
+                                        "light_path": {}
+                                    }
+                                }
+                            ],
+                            "meta_only": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "img": {
+                "id": "Image:0",
+                "img_name": "Image 8 #1",
+                "exp_refs": [
+                    {
+                        "exp_ref": {
+                            "id": "Experimenter:0"
+                        }
+                    }
+                ],
+                "inst_refs": [
+                    {
+                        "inst_ref": {
+                            "id": "Instrument:0"
+                        }
+                    }
+                ],
+                "obj_set": [
+                    {
+                        "obj_set": {
+                            "id": "Objective:0",
+                            "med": "Water",
+                            "refr_index": "1.333"
+                        }
+                    }
+                ],
+                "stage_labels": [
+                    {
+                        "stage_label": {
+                            "img_name": "Scene position #0",
+                            "x": "-16360.5",
+                            "x_unit": "µm",
+                            "y": "-4955.0",
+                            "y_unit": "µm",
+                            "z": "146.837",
+                            "z_unit": "µm"
+                        }
+                    }
+                ],
+                "pixs": [
+                    {
+                        "pix": {
+                            "big_endian": "false",
+                            "dim_order": "XYCZT",
+                            "id": "Pixels:0",
+                            "interleaved": "false",
+                            "phy_size_x": "0.0992287815904495",
+                            "phy_size_x_unit": "µm",
+                            "phy_size_y": "0.0992287815904495",
+                            "phy_size_y_unit": "µm",
+                            "sig_bits": "8",
+                            "sc": "3",
+                            "st": "30",
+                            "sx": "680",
+                            "sy": "280",
+                            "sz": "1",
+                            "img_type": "uint8",
+                            "chans": [
+                                {
+                                    "chan": {
+                                        "acq_mode": "LaserScanningConfocalMicroscopy",
+                                        "color": "-16711681",
+                                        "em_wl": "646.4456100000001",
+                                        "em_wl_unit": "nm",
+                                        "exc_wl": "561.0",
+                                        "exc_wl_unit": "nm",
+                                        "fluor": "mRFP1.2",
+                                        "id": "Channel:0:0",
+                                        "illum_type": "Epifluorescence",
+                                        "img_name": "ChS2-T1",
+                                        "samples_per_pix": "1",
+                                        "det_set": [
+                                            {
+                                                "det_set": {
+                                                    "bin": "1x1",
+                                                    "id": "Detector:0:0"
+                                                }
+                                            }
+                                        ],
+                                        "light_path": {}
+                                    }
+                                },
+                                {
+                                    "chan": {
+                                        "acq_mode": "LaserScanningConfocalMicroscopy",
+                                        "color": "-1",
+                                        "id": "Channel:0:1",
+                                        "illum_type": "Epifluorescence",
+                                        "img_name": "T PMT-T1",
+                                        "samples_per_pix": "1",
+                                        "det_set": [
+                                            {
+                                                "det_set": {
+                                                    "bin": "1x1",
+                                                    "id": "Detector:0:1"
+                                                }
+                                            }
+                                        ],
+                                        "light_path": {}
+                                    }
+                                },
+                                {
+                                    "chan": {
+                                        "acq_mode": "LaserScanningConfocalMicroscopy",
+                                        "color": "16711935",
+                                        "em_wl": "530.4922920000002",
+                                        "em_wl_unit": "nm",
+                                        "exc_wl": "488.00000000000006",
+                                        "exc_wl_unit": "nm",
+                                        "fluor": "EGFP",
+                                        "id": "Channel:0:2",
+                                        "illum_type": "Epifluorescence",
+                                        "img_name": "ChS1-T2",
+                                        "samples_per_pix": "1",
+                                        "det_set": [
+                                            {
+                                                "det_set": {
+                                                    "bin": "1x1",
+                                                    "id": "Detector:1:0"
+                                                }
+                                            }
+                                        ],
+                                        "light_path": {}
+                                    }
+                                }
+                            ],
+                            "meta_only": {},
+                            "planes": [
+                                {
+                                    "plane": {
+                                        "delta_t": "10801.102527878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "0",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10801.102527878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "0",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10801.102527878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "0",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10803.880072848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "1",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10803.880072848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "1",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10803.880072848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "1",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10806.657617878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "2",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10806.657617878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "2",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10806.657617878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "2",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10809.435162848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "3",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10809.435162848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "3",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10809.435162848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "3",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10812.212707878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "4",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10812.212707878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "4",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10812.212707878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "4",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10814.990252848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "5",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10814.990252848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "5",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10814.990252848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "5",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10817.767797878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "6",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10817.767797878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "6",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10817.767797878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "6",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10820.545342848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "7",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10820.545342848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "7",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10820.545342848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "7",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10823.322887878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "8",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10823.322887878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "8",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10823.322887878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "8",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10826.100432848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "9",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10826.100432848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "9",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10826.100432848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "9",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10828.877977878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "10",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10828.877977878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "10",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10828.877977878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "10",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10831.655522848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "11",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10831.655522848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "11",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10831.655522848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "11",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10834.433067878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "12",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10834.433067878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "12",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10834.433067878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "12",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10837.210612848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "13",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10837.210612848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "13",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10837.210612848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "13",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10839.988157878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "14",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10839.988157878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "14",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10839.988157878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "14",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10842.765702848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "15",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10842.765702848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "15",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10842.765702848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "15",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10845.543247878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "16",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10845.543247878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "16",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10845.543247878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "16",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10848.320792848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "17",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10848.320792848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "17",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10848.320792848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "17",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10851.098337878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "18",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10851.098337878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "18",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10851.098337878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "18",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10853.875882848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "19",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10853.875882848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "19",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10853.875882848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "19",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10856.653427878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "20",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10856.653427878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "20",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10856.653427878788",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "20",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10859.430972848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "21",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10859.430972848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "21",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10859.430972848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "21",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10862.208517878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "22",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10862.208517878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "22",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10862.208517878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "22",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10864.986062848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "23",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10864.986062848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "23",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10864.986062848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "23",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10867.763607878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "24",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10867.763607878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "24",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10867.763607878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "24",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10870.541152848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "25",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10870.541152848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "25",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10870.541152848484",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "25",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10873.318697878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "26",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10873.318697878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "26",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10873.318697878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "26",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10876.096242848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "27",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10876.096242848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "27",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10876.096242848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "27",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10878.873787878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "28",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10878.873787878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "28",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10878.873787878787",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "28",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10881.651332848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "0",
+                                        "the_t": "29",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10881.651332848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "1",
+                                        "the_t": "29",
+                                        "the_z": "0"
+                                    }
+                                },
+                                {
+                                    "plane": {
+                                        "delta_t": "10881.651332848485",
+                                        "delta_t_unit": "s",
+                                        "pos_x": "-16360.5",
+                                        "pos_x_unit": "µm",
+                                        "pos_y": "-4955.0",
+                                        "pos_y_unit": "µm",
+                                        "pos_z": "146.837",
+                                        "pos_z_unit": "µm",
+                                        "the_c": "2",
+                                        "the_t": "29",
+                                        "the_z": "0"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "img": {
+                "id": "Image:0",
+                "img_name": "P2_009.TIF",
+                "desc": "@Hokawo@fACC=0;fAVE=0;fSUB=0;fBSUB=0;fBOFS=0;fSHC=0;vACC=2;vAVE=2;vSUB=0;vBOFS=0;vBPPGr=16;vOrient=ORIGINAL;vrcAcqArea=0,0,128,128;sGrabber=\"DvMultiCamU.dll\";sGrabberVer=\"2,3,1,2617\";sDataSource=\"C11440-22CU (S/N: 781160)\";vDate=2023/01/23;vTime=11:33:45;vTStamp=1674470025863.764893;vExpTim1=0.020008;vExpTim2=0.000000;vExpTim3=0.000000;vGain1=0;vGain2=0;vGain3=0;vOffset=0;vBinX=1;vBinY=1;vrcSub=1072,960,1200,1088;vCTemp=0.000000;vSens=0;vImgNo=66;vMarker=0;vsizeSensor=2048,2048;vTStampRefFT=27111902,3577643008;vConvOffs=100.000000;vConfFact=0.480000;vImgSrcID=0;~Hokawo~",
+                "pixs": [
+                    {
+                        "pix": {
+                            "big_endian": "false",
+                            "dim_order": "XYCZT",
+                            "id": "Pixels:0",
+                            "interleaved": "false",
+                            "phy_size_x": "1.0",
+                            "phy_size_x_unit": "µm",
+                            "sig_bits": "16",
+                            "sc": "1",
+                            "st": "5000",
+                            "sx": "128",
+                            "sy": "128",
+                            "sz": "1",
+                            "img_type": "uint16",
+                            "chans": [
+                                {
+                                    "chan": {
+                                        "id": "Channel:0:0",
+                                        "samples_per_pix": "1",
+                                        "light_path": {}
+                                    }
+                                }
+                            ],
+                            "meta_only": {}
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "struct_ann": {
+        "xml_anns": [
+            {
+                "xml_ann": {
+                    "id": "Annotation:0",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "PlanarConfiguration",
+                            "value": "Chunky"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:1",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "MetaDataPhotometricInterpretation",
+                            "value": "Monochrome"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:2",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "NewSubfileType",
+                            "value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:3",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "SamplesPerPixel",
+                            "value": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:4",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "Orientation",
+                            "value": "1st row - top; 1st column - left"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:5",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "NumberOfChannels",
+                            "value": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:6",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "ResolutionUnit",
+                            "value": "None"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:7",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "ImageWidth",
+                            "value": "128"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:8",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "FillOrder",
+                            "value": "Pixels with lower column values are stored in the higher order bits of a byte"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:9",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "PhotometricInterpretation",
+                            "value": "BlackIsZero"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:10",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "Compression",
+                            "value": "Uncompressed"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:11",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "XResolution",
+                            "value": "1.0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:12",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "MetaMorph",
+                            "value": "no"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:13",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "SampleFormat",
+                            "value": "unsigned integer"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:14",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "BitsPerSample",
+                            "value": "16"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_ann": {
+                    "id": "Annotation:15",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "value": {
+                        "orig_meta": {
+                            "key": "ImageLength",
+                            "value": "128"
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "instruments": [
+        {
+            "instrument": {
+                "id": "Instrument:0",
+                "microscopes": [
+                    {
+                        "microscope": {
+                            "model": "C9600-12"
+                        }
+                    }
+                ],
+                "objs": [
+                    {
+                        "obj": {
+                            "id": "Objective:0:0",
+                            "nom_mag": "40.0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "instrument": {
+                "id": "Instrument:0",
+                "microscope": {},
+                "detectors": [
+                    {
+                        "detector": {
+                            "amp_gain": "2.0",
+                            "gain": "1.0",
+                            "id": "Detector:0:0",
+                            "model": "",
+                            "zoom": "1.0"
+                        }
+                    },
+                    {
+                        "detector": {
+                            "amp_gain": "1.0",
+                            "gain": "242.27363180139324",
+                            "id": "Detector:0:1",
+                            "model": "",
+                            "zoom": "1.0"
+                        }
+                    },
+                    {
+                        "detector": {
+                            "amp_gain": "2.0",
+                            "gain": "800.0",
+                            "id": "Detector:1:0",
+                            "model": "",
+                            "zoom": "1.0"
+                        }
+                    }
+                ],
+                "objs": [
+                    {
+                        "obj": {
+                            "id": "Objective:0",
+                            "immersion": "Water",
+                            "lens_na": "1.2000000000000002",
+                            "model": "C-Apochromat 63x/1.2 W Korr M27",
+                            "nom_mag": "63.0"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "exp": [
+        {
+            "exp": {
+                "id": "Experimenter:0",
+                "user_name": "bcers01"
+            }
+        }
+    ]
+}

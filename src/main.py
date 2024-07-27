@@ -70,10 +70,11 @@ experiment.out_path = out
 experiment.dataset = Dataset(name="Dataset1", samples={})
 experiment.schema = ome_xsd
 experiment.should_predict = "maybe"
+experiment.model = "gpt-4o"
 experiment.reps = 1
 experiment.time = datetime.datetime.now().isoformat().replace(":", "-").replace(".", "-")
 experiment.evaluators = [EvaluatorTemplate]
-experiment.out_path_experiment = "/home/aaron/Documents/Projects/MetaGPT/out/experiment_2024-07-27T11-44-01-418605_0/"
+experiment.out_path_experiment = "/home/aaron/Documents/Projects/MetaGPT/out/experiment_2024-07-27T18-08-54-025354_0"
 experiment.run()
 
 javabridge.kill_vm()

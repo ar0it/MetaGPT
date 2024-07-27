@@ -1,0 +1,101 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Image ID="Image:0" Name="testetst_Image8_edited_.ome.tif">
+    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint8" SignificantBits="8" Interleaved="false" BigEndian="false" SizeX="680" SizeY="280" SizeZ="1" SizeC="3" SizeT="30" PhysicalSizeX="0.09922878199885109" PhysicalSizeXUnit="µm" PhysicalSizeY="0.09922878199885109" PhysicalSizeYUnit="µm">
+      <Channel ID="Channel:0:0" SamplesPerPixel="1">
+        <LightPath/>
+      </Channel>
+      <Channel ID="Channel:0:1" SamplesPerPixel="1">
+        <LightPath/>
+      </Channel>
+      <Channel ID="Channel:0:2" SamplesPerPixel="1">
+        <LightPath/>
+      </Channel>
+    </Pixels>
+  </Image>
+  <StructuredAnnotations>
+    <XMLAnnotation ID="Annotation:0" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="hyperstack" Value="true"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:1" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="PlanarConfiguration" Value="Chunky"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:2" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="MetaDataPhotometricInterpretation" Value="Monochrome"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:3" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="SamplesPerPixel" Value="1"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:4" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="NumberOfChannels" Value="1"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:5" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="ResolutionUnit" Value="Centimeter"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:6" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="ImageWidth" Value="680"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:7" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="PhotometricInterpretation" Value="BlackIsZero"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:8" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="Software" Value="OME Bio-Formats 6.7.0"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:9" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="Compression" Value="Uncompressed"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:10" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="YResolution" Value="100777.212"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:11" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="XResolution" Value="100777.212"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:12" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="MetaMorph" Value="no"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:13" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="SampleFormat" Value="unsigned integer"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:14" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="BitsPerSample" Value="8"/>
+      </Value>
+    </XMLAnnotation>
+    <XMLAnnotation ID="Annotation:15" Namespace="openmicroscopy.org/OriginalMetadata">
+      <Value>
+        <OriginalMetadata Key="ImageLength" Value="280"/>
+      </Value>
+    </XMLAnnotation>
+  </StructuredAnnotations>
+</OME>
+
+COST: 0.025400000000000002
+ATTEMPTS: 1.0
+TIME: 29.357311487197876

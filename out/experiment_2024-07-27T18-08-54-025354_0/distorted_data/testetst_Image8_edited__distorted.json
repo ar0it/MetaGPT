@@ -1,0 +1,2141 @@
+{
+    "imageList": [
+        {
+            "imageType": {
+                "identifier": "Image:0",
+                "nameType": "2021_10_27_FRET_T001_Fret_Turquoise.tif",
+                "desc": "      <!--this instrument tag is add because of backward compatibility with NIS elements 4.30-->;       </LightSource>;    </Instrument>;       </LightSource>;       </LightSource>;       </Filter>;    </Instrument>;       <AcquisitionDate>;          2021-10-27T18:00:24      </AcquisitionDate>;       <Description>;          Dimensions: T(720) x XY(1) x λ(3); Camera Name: Photometrics Prime 95B; Numerical Aperture: 1.3; Refractive Index: 1.515; Number of Picture Planes: 3; Plane #1:;  Name: Fret_Turquoise;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #2:;  Name: Fret_Tomato;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #3:;  Name: Ph-3;  Component Count: 1;  Modality: Brightfield;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 1x1;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Time Loop: 720; - Equidistant (Period 30000 ms);       </Description>;          </Channel>;       </Pixels>;    </Image>; </OME>; ",
+                "pixelCountList": [
+                    {
+                        "pixelCount": {
+                            "bigEndianFlag": "false",
+                            "dimOrder": "XYCZT",
+                            "identifier": "Pixels:0",
+                            "interleavedFlag": "false",
+                            "significantBits": "8",
+                            "dimC": "1",
+                            "dimT": "1",
+                            "dimX": "1608",
+                            "dimY": "1608",
+                            "dimZ": "1",
+                            "dataType": "uint8",
+                            "channelList": [
+                                {
+                                    "channelType": {
+                                        "identifier": "Channel:0:0",
+                                        "samplesPerPixel": "1",
+                                        "lightPathType": {}
+                                    }
+                                }
+                            ],
+                            "metaOnlyFlag": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "imageType": {
+                "identifier": "Image:0",
+                "nameType": "BAF_sim_StructuredIllumination_ChannelAlignment #1",
+                "expRefList": [
+                    {
+                        "expRef": {
+                            "identifier": "Experimenter:0"
+                        }
+                    }
+                ],
+                "instRefList": [
+                    {
+                        "instRef": {
+                            "identifier": "Instrument:0"
+                        }
+                    }
+                ],
+                "objectiveSettingsList": [
+                    {
+                        "objectiveSettings": {
+                            "identifier": "Objective:0",
+                            "mediumType": "Oil",
+                            "refractiveIndex": "1.518"
+                        }
+                    }
+                ],
+                "stageLabelsList": [
+                    {
+                        "stageLabel": {
+                            "nameType": "Scene position #0",
+                            "coordX": "0",
+                            "unitX": "reference frame",
+                            "coordY": "0",
+                            "unitY": "reference frame"
+                        }
+                    }
+                ],
+                "pixelCountList": [
+                    {
+                        "pixelCount": {
+                            "bigEndianFlag": "false",
+                            "dimOrder": "XYCZT",
+                            "identifier": "Pixels:0",
+                            "interleavedFlag": "false",
+                            "physSizeX": "0.025",
+                            "unitPhysSizeX": "µm",
+                            "physSizeY": "0.025",
+                            "unitPhysSizeY": "µm",
+                            "physSizeZ": "0.5",
+                            "unitPhysSizeZ": "µm",
+                            "significantBits": "16",
+                            "dimC": "3",
+                            "dimT": "1",
+                            "dimX": "1904",
+                            "dimY": "1900",
+                            "dimZ": "9",
+                            "dataType": "uint16",
+                            "channelList": [
+                                {
+                                    "channelType": {
+                                        "acquisitionMode": "StructuredIllumination",
+                                        "colorType": "65535",
+                                        "emissionWave": "405.00000000000006",
+                                        "unitEmissionWave": "nm",
+                                        "excitationWave": "405.00000000000006",
+                                        "unitExcitationWave": "nm",
+                                        "identifier": "Channel:0:0",
+                                        "illuminationType": "Epifluorescence",
+                                        "nameType": "TV2-T1-SR",
+                                        "pinholeSize": "0.0",
+                                        "unitPinholeSize": "µm",
+                                        "samplesPerPixel": "1",
+                                        "detectorSettingsList": [
+                                            {
+                                                "detectorSettings": {
+                                                    "binningFactor": "1x1",
+                                                    "identifier": "Detector:0:0"
+                                                }
+                                            }
+                                        ],
+                                        "lightPathType": {}
+                                    }
+                                },
+                                {
+                                    "channelType": {
+                                        "acquisitionMode": "StructuredIllumination",
+                                        "colorType": "16711935",
+                                        "emissionWave": "488.00000000000006",
+                                        "unitEmissionWave": "nm",
+                                        "excitationWave": "488.00000000000006",
+                                        "unitExcitationWave": "nm",
+                                        "identifier": "Channel:0:1",
+                                        "illuminationType": "Epifluorescence",
+                                        "nameType": "TV2-T2-SR",
+                                        "pinholeSize": "0.0",
+                                        "unitPinholeSize": "µm",
+                                        "samplesPerPixel": "1",
+                                        "detectorSettingsList": [
+                                            {
+                                                "detectorSettings": {
+                                                    "binningFactor": "1x1",
+                                                    "identifier": "Detector:1:0"
+                                                }
+                                            }
+                                        ],
+                                        "lightPathType": {}
+                                    }
+                                },
+                                {
+                                    "channelType": {
+                                        "acquisitionMode": "StructuredIllumination",
+                                        "colorType": "-16776961",
+                                        "emissionWave": "561.0",
+                                        "unitEmissionWave": "nm",
+                                        "excitationWave": "561.0",
+                                        "unitExcitationWave": "nm",
+                                        "identifier": "Channel:0:2",
+                                        "illuminationType": "Epifluorescence",
+                                        "nameType": "TV2-T3-SR",
+                                        "pinholeSize": "0.0",
+                                        "unitPinholeSize": "µm",
+                                        "samplesPerPixel": "1",
+                                        "detectorSettingsList": [
+                                            {
+                                                "detectorSettings": {
+                                                    "binningFactor": "1x1",
+                                                    "identifier": "Detector:2:0"
+                                                }
+                                            }
+                                        ],
+                                        "lightPathType": {}
+                                    }
+                                }
+                            ],
+                            "metaOnlyFlag": {},
+                            "planesCount": [
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "0"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "0"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "0"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "1"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "1"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "1"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "2"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "2"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "2"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "3"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "3"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "3"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "4"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "4"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "4"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "5"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "5"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "5"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "6"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "6"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "6"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "7"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "7"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "7"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "8"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "8"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "57964.80411029801",
+                                        "unitDeltaT": "s",
+                                        "posX": "0",
+                                        "unitPosX": "reference frame",
+                                        "posY": "0",
+                                        "unitPosY": "reference frame",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "8"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "imageType": {
+                "identifier": "Image:0",
+                "nameType": "3_right_20x #1",
+                "expRefList": [
+                    {
+                        "expRef": {
+                            "identifier": "Experimenter:0"
+                        }
+                    }
+                ],
+                "instRefList": [
+                    {
+                        "instRef": {
+                            "identifier": "Instrument:0"
+                        }
+                    }
+                ],
+                "objectiveSettingsList": [
+                    {
+                        "objectiveSettings": {
+                            "identifier": "Objective:0",
+                            "mediumType": "Air",
+                            "refractiveIndex": "1.0"
+                        }
+                    }
+                ],
+                "stageLabelsList": [
+                    {
+                        "stageLabel": {
+                            "nameType": "Scene position #0",
+                            "coordX": "699.0",
+                            "unitX": "µm",
+                            "coordY": "6328.5",
+                            "unitY": "µm",
+                            "coordZ": "531.52",
+                            "unitZ": "µm"
+                        }
+                    }
+                ],
+                "pixelCountList": [
+                    {
+                        "pixelCount": {
+                            "bigEndianFlag": "false",
+                            "dimOrder": "XYCZT",
+                            "identifier": "Pixels:0",
+                            "interleavedFlag": "false",
+                            "physSizeX": "1.3837763682730653",
+                            "unitPhysSizeX": "µm",
+                            "physSizeY": "1.3837763682730653",
+                            "unitPhysSizeY": "µm",
+                            "physSizeZ": "4.199999999999999",
+                            "unitPhysSizeZ": "µm",
+                            "significantBits": "8",
+                            "dimC": "4",
+                            "dimT": "1",
+                            "dimX": "512",
+                            "dimY": "512",
+                            "dimZ": "18",
+                            "dataType": "uint8",
+                            "channelList": [
+                                {
+                                    "channelType": {
+                                        "acquisitionMode": "LaserScanningConfocalMicroscopy",
+                                        "colorType": "-16776961",
+                                        "emissionWave": "637.0000000000001",
+                                        "unitEmissionWave": "nm",
+                                        "excitationWave": "543.0",
+                                        "unitExcitationWave": "nm",
+                                        "fluorType": "mCherry",
+                                        "identifier": "Channel:0:0",
+                                        "illuminationType": "Epifluorescence",
+                                        "nameType": "Ch3-T1",
+                                        "samplesPerPixel": "1",
+                                        "detectorSettingsList": [
+                                            {
+                                                "detectorSettings": {
+                                                    "binningFactor": "1x1",
+                                                    "identifier": "Detector:0:0"
+                                                }
+                                            }
+                                        ],
+                                        "lightPathType": {}
+                                    }
+                                },
+                                {
+                                    "channelType": {
+                                        "acquisitionMode": "LaserScanningConfocalMicroscopy",
+                                        "colorType": "16711935",
+                                        "emissionWave": "515.5218240000002",
+                                        "unitEmissionWave": "nm",
+                                        "excitationWave": "488.00000000000006",
+                                        "unitExcitationWave": "nm",
+                                        "fluorType": "EGFP",
+                                        "identifier": "Channel:0:1",
+                                        "illuminationType": "Epifluorescence",
+                                        "nameType": "Ch2 M-T2",
+                                        "samplesPerPixel": "1",
+                                        "detectorSettingsList": [
+                                            {
+                                                "detectorSettings": {
+                                                    "binningFactor": "1x1",
+                                                    "identifier": "Detector:1:0"
+                                                }
+                                            }
+                                        ],
+                                        "lightPathType": {}
+                                    }
+                                },
+                                {
+                                    "channelType": {
+                                        "acquisitionMode": "LaserScanningConfocalMicroscopy",
+                                        "colorType": "65535",
+                                        "emissionWave": "497.5000000000001",
+                                        "unitEmissionWave": "nm",
+                                        "excitationWave": "405.00000000000006",
+                                        "unitExcitationWave": "nm",
+                                        "fluorType": "DAPI",
+                                        "identifier": "Channel:0:2",
+                                        "illuminationType": "Epifluorescence",
+                                        "nameType": "Ch1-T3",
+                                        "samplesPerPixel": "1",
+                                        "detectorSettingsList": [
+                                            {
+                                                "detectorSettings": {
+                                                    "binningFactor": "1x1",
+                                                    "identifier": "Detector:2:0"
+                                                }
+                                            }
+                                        ],
+                                        "lightPathType": {}
+                                    }
+                                },
+                                {
+                                    "channelType": {
+                                        "acquisitionMode": "LaserScanningConfocalMicroscopy",
+                                        "colorType": "-1",
+                                        "fluorType": "Dye4",
+                                        "identifier": "Channel:0:3",
+                                        "illuminationType": "Epifluorescence",
+                                        "nameType": "T PMT-T3",
+                                        "samplesPerPixel": "1",
+                                        "detectorSettingsList": [
+                                            {
+                                                "detectorSettings": {
+                                                    "binningFactor": "1x1",
+                                                    "identifier": "Detector:2:1"
+                                                }
+                                            }
+                                        ],
+                                        "lightPathType": {}
+                                    }
+                                }
+                            ],
+                            "metaOnlyFlag": {},
+                            "planesCount": [
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "531.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "0"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "531.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "0"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "531.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "0"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "531.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "0"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "535.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "1"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "535.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "1"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "535.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "1"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "535.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "1"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "539.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "2"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "539.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "2"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "539.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "2"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "539.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "2"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "544.12",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "3"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "544.12",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "3"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "544.12",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "3"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "544.12",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "3"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "548.3199999999999",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "4"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "548.3199999999999",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "4"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "548.3199999999999",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "4"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "548.3199999999999",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "4"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "552.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "5"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "552.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "5"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "552.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "5"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "552.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "5"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "556.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "6"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "556.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "6"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "556.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "6"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "556.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "6"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "560.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "7"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "560.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "7"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "560.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "7"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "560.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "7"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "565.12",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "8"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "565.12",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "8"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "565.12",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "8"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "565.12",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "8"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "569.3199999999999",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "9"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "569.3199999999999",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "9"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "569.3199999999999",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "9"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "569.3199999999999",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "9"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "573.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "10"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "573.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "10"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "573.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "10"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "573.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "10"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "577.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "11"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "577.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "11"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "577.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "11"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "577.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "11"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "581.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "12"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "581.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "12"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "581.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "12"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "581.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "12"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "586.12",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "13"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "586.12",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "13"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "586.12",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "13"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "586.12",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "13"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "590.3199999999999",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "14"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "590.3199999999999",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "14"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "590.3199999999999",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "14"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "590.3199999999999",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "14"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "594.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "15"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "594.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "15"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "594.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "15"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "594.52",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "15"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "598.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "16"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "598.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "16"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "598.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "16"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "598.72",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "16"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "602.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "0",
+                                        "tIndex": "0",
+                                        "zIndex": "17"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "602.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "1",
+                                        "tIndex": "0",
+                                        "zIndex": "17"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "602.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "2",
+                                        "tIndex": "0",
+                                        "zIndex": "17"
+                                    }
+                                },
+                                {
+                                    "planeType": {
+                                        "deltaTime": "10315.919362848485",
+                                        "unitDeltaT": "s",
+                                        "posX": "699.0",
+                                        "unitPosX": "µm",
+                                        "posY": "6328.5",
+                                        "unitPosY": "µm",
+                                        "posZ": "602.92",
+                                        "unitPosZ": "µm",
+                                        "channelIndex": "3",
+                                        "tIndex": "0",
+                                        "zIndex": "17"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "imageType": {
+                "identifier": "Image:0",
+                "nameType": "testetst_Image8_edited_.ome.tif",
+                "desc": {},
+                "pixelCountList": [
+                    {
+                        "pixelCount": {
+                            "bigEndianFlag": "false",
+                            "dimOrder": "XYCZT",
+                            "identifier": "Pixels:0",
+                            "interleavedFlag": "false",
+                            "physSizeX": "0.09922878199885109",
+                            "unitPhysSizeX": "µm",
+                            "physSizeY": "0.09922878199885109",
+                            "unitPhysSizeY": "µm",
+                            "significantBits": "8",
+                            "dimC": "3",
+                            "dimT": "30",
+                            "dimX": "680",
+                            "dimY": "280",
+                            "dimZ": "1",
+                            "dataType": "uint8",
+                            "channelList": [
+                                {
+                                    "channelType": {
+                                        "identifier": "Channel:0:0",
+                                        "samplesPerPixel": "1",
+                                        "lightPathType": {}
+                                    }
+                                },
+                                {
+                                    "channelType": {
+                                        "identifier": "Channel:0:1",
+                                        "samplesPerPixel": "1",
+                                        "lightPathType": {}
+                                    }
+                                },
+                                {
+                                    "channelType": {
+                                        "identifier": "Channel:0:2",
+                                        "samplesPerPixel": "1",
+                                        "lightPathType": {}
+                                    }
+                                }
+                            ],
+                            "metaOnlyFlag": {}
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "structuredAnnots": {
+        "xmlAnnots": [
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:0",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "hyperstack",
+                            "valueType": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:1",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "PlanarConfiguration",
+                            "valueType": "Chunky"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:2",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "MetaDataPhotometricInterpretation",
+                            "valueType": "Monochrome"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:3",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "SamplesPerPixel",
+                            "valueType": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:4",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "NumberOfChannels",
+                            "valueType": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:5",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "ResolutionUnit",
+                            "valueType": "Centimeter"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:6",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "ImageWidth",
+                            "valueType": "680"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:7",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "PhotometricInterpretation",
+                            "valueType": "BlackIsZero"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:8",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "Software",
+                            "valueType": "OME Bio-Formats 6.7.0"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:9",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "Compression",
+                            "valueType": "Uncompressed"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:10",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "YResolution",
+                            "valueType": "100777.212"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:11",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "XResolution",
+                            "valueType": "100777.212"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:12",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "MetaMorph",
+                            "valueType": "no"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:13",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "SampleFormat",
+                            "valueType": "unsigned integer"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:14",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "BitsPerSample",
+                            "valueType": "8"
+                        }
+                    }
+                }
+            },
+            {
+                "xmlAnnot": {
+                    "identifier": "Annotation:15",
+                    "namespace": "openmicroscopy.org/OriginalMetadata",
+                    "valueType": {
+                        "originalMeta": {
+                            "keyType": "ImageLength",
+                            "valueType": "280"
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "expList": [
+        {
+            "experimenter": {
+                "identifier": "Experimenter:0",
+                "userName": ""
+            }
+        },
+        {
+            "experimenter": {
+                "identifier": "Experimenter:0",
+                "userName": "domartm"
+            }
+        }
+    ],
+    "instrumentsList": [
+        {
+            "instrumentType": {
+                "identifier": "Instrument:0",
+                "detectorList": [
+                    {
+                        "detectorType": {
+                            "ampGain": "30.0",
+                            "gainValue": "1.0",
+                            "identifier": "Detector:0:0",
+                            "dataType": "Other",
+                            "zoomLevel": "1.0"
+                        }
+                    },
+                    {
+                        "detectorType": {
+                            "ampGain": "15.0",
+                            "gainValue": "0.0",
+                            "identifier": "Detector:1:0",
+                            "dataType": "Other",
+                            "zoomLevel": "1.0"
+                        }
+                    },
+                    {
+                        "detectorType": {
+                            "ampGain": "30.0",
+                            "gainValue": "0.0",
+                            "identifier": "Detector:2:0",
+                            "dataType": "Other",
+                            "zoomLevel": "1.0"
+                        }
+                    }
+                ],
+                "objList": [
+                    {
+                        "objectiveType": {
+                            "identifier": "Objective:0",
+                            "immersionType": "Oil",
+                            "lensNA": "1.4600000000000002",
+                            "modelType": "alpha Plan-Apochromat 100x/1.46 Oil DIC M27 Elyra",
+                            "nominalMag": "100.0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "instrumentType": {
+                "identifier": "Instrument:0",
+                "microscopeType": {},
+                "detectorList": [
+                    {
+                        "detectorType": {
+                            "ampGain": "1.0",
+                            "gainValue": "1.0",
+                            "identifier": "Detector:0:0",
+                            "modelType": "",
+                            "dataType": "PMT",
+                            "zoomLevel": "1.0"
+                        }
+                    },
+                    {
+                        "detectorType": {
+                            "ampGain": "1.0",
+                            "gainValue": "647.0",
+                            "identifier": "Detector:1:0",
+                            "modelType": "",
+                            "dataType": "PMT",
+                            "zoomLevel": "1.0"
+                        }
+                    },
+                    {
+                        "detectorType": {
+                            "ampGain": "1.0",
+                            "gainValue": "475.0",
+                            "identifier": "Detector:2:0",
+                            "modelType": "",
+                            "dataType": "PMT",
+                            "zoomLevel": "1.0"
+                        }
+                    },
+                    {
+                        "detectorType": {
+                            "ampGain": "1.0",
+                            "gainValue": "322.0",
+                            "identifier": "Detector:2:1",
+                            "modelType": "",
+                            "zoomLevel": "1.0"
+                        }
+                    }
+                ],
+                "objList": [
+                    {
+                        "objectiveType": {
+                            "identifier": "Objective:0",
+                            "immersionType": "Air",
+                            "lensNA": "0.5000000000000001",
+                            "modelType": "EC Plan-Neofluar 20x/0.50 M27",
+                            "nominalMag": "20.0"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

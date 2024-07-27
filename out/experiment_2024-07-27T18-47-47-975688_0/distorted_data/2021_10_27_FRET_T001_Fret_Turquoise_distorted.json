@@ -1,0 +1,2790 @@
+{
+    "image_collection": [
+        {
+            "image_data": {
+                "identifier": "Image:0",
+                "image_name": "2021_10_27_FRET_T001_Fret_Turquoise.tif",
+                "image_description": "      <!--this instrument tag is add because of backward compatibility with NIS elements 4.30-->;       </LightSource>;    </Instrument>;       </LightSource>;       </LightSource>;       </Filter>;    </Instrument>;       <AcquisitionDate>;          2021-10-27T18:00:24      </AcquisitionDate>;       <Description>;          Dimensions: T(720) x XY(1) x λ(3); Camera Name: Photometrics Prime 95B; Numerical Aperture: 1.3; Refractive Index: 1.515; Number of Picture Planes: 3; Plane #1:;  Name: Fret_Turquoise;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #2:;  Name: Fret_Tomato;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #3:;  Name: Ph-3;  Component Count: 1;  Modality: Brightfield;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 1x1;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Time Loop: 720; - Equidistant (Period 30000 ms);       </Description>;          </Channel>;       </Pixels>;    </Image>; </OME>; ",
+                "pixel_count": [
+                    {
+                        "pixel_data": {
+                            "endianness": "false",
+                            "dimensional_order": "XYCZT",
+                            "identifier": "Pixels:0",
+                            "data_interleaving": "false",
+                            "bit_significance": "8",
+                            "channel_size": "1",
+                            "time_size": "1",
+                            "width_size": "1608",
+                            "height_size": "1608",
+                            "depth_size": "1",
+                            "image_type": "uint8",
+                            "channel_count": [
+                                {
+                                    "channel_info": {
+                                        "identifier": "Channel:0:0",
+                                        "pixel_samples": "1",
+                                        "illumination_path": {}
+                                    }
+                                }
+                            ],
+                            "metadata_exclusive": {}
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "structured_data": {
+        "xml_data_set": [
+            {
+                "xml_data": {
+                    "identifier": "Annotation:0",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "ExcitationSourceName - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:1",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sizeSensorMicrons - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:2",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sizeSensorPixels - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:3",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "dBinningX - value",
+                            "data_value": "-1.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:4",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_uiAutoWhiteColor - value",
+                            "data_value": "16777215"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:5",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "MultiViewEnabled - value",
+                            "data_value": "false"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:6",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "PlanarConfiguration",
+                            "data_value": "Chunky"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:7",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "cy - value",
+                            "data_value": "-1"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:8",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dTMeasCalMax - value",
+                            "data_value": "0.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:9",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "bCalibrated - value",
+                            "data_value": "false"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:10",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiUsageFlags - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:11",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "PhotometricInterpretation",
+                            "data_value": "BlackIsZero"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:12",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bShowSpectralGraph - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:13",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "CameraUserName - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:14",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "rectSensorUser - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:15",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Laser Wavelength",
+                            "data_value": "\"475\"/"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:16",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_GrabberString - value",
+                            "data_value": "VGA"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:17",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_NFRString - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:18",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "ModifiedAtJDN - value",
+                            "data_value": "0.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:19",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "LastEmissionFilterName1 - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:20",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "DetectorSettings Binning",
+                            "data_value": "\"2x2\" ID=\"Detector:0\"/"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:21",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Tag0 - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:22",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Top - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:23",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "left - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:24",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_uiPropGroupCount - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:25",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bShowSpectralGraph - value",
+                            "data_value": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:26",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_CompanyString - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:27",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "dFps - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:28",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiNumOffset - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:29",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiComp - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:30",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dTMeasCalMin - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:31",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Size - value",
+                            "data_value": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:32",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiBkgndSize - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:33",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sizeSensorStep - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:34",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "ExcitationSourceKey - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:35",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Left - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:36",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_iGraphScale - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:37",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "dBinningY - value",
+                            "data_value": "-1.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:38",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiDenOffset - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:39",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dFmax - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:40",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiFQModeUsage - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:41",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiBpc - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:42",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Channel AcquisitionMode",
+                            "data_value": "\"WideField\" Color=\"1834752\" EmissionWavelength=\"517\" ExcitationWavelength=\"475\" ID=\"Channel:0\" Name=\"Fret_Turquoise\" PinholeSize=\"-1.000000\""
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:43",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Top - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:44",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "LightPath - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:45",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "CameraUniqueName - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:46",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "dFps - value",
+                            "data_value": "-1.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:47",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "fmtDesc - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:48",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "bCanExecAsyncSampleGet - value",
+                            "data_value": "false"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:49",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "dMin - value",
+                            "data_value": "0.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:50",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "EPIAdditionalFilterKey - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:51",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "right - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:52",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "OpenViewV1_0 - runtype",
+                            "data_value": "CLxByteArray"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:53",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiComp - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:54",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "dSensitivity - value",
+                            "data_value": "-1.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:55",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "ROI - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:56",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiNumer - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:57",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bEnableAutoWhite - value",
+                            "data_value": "false"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:58",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "right - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:59",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "bCalibrated - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:60",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "variant - version",
+                            "data_value": "1.0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:61",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "SamplesPerPixel",
+                            "data_value": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:62",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "UpdateLPAutomatically - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:63",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dRmin - value",
+                            "data_value": "0.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:64",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_GrabberString - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:65",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_dGraphZoom01 - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:66",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Tag5 - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:67",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "bCamCorrReq - value",
+                            "data_value": "false"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:68",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "UpdateLPAutomatically - value",
+                            "data_value": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:69",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Filter ID",
+                            "data_value": "\"Filter:0\" Model=\"Custom\" Type=\"BandPass\""
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:70",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_dGraphZoom00 - value",
+                            "data_value": "1.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:71",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Microscope Model",
+                            "data_value": "\"Ti2 Microscope\"/"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:72",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "LastEmissionFilterKey1 - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:73",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "cx - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:74",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Tag2 - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:75",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dFmin - value",
+                            "data_value": "255.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:76",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_CopyrightString - value",
+                            "data_value": "Copyright � 1991-2017  Laboratory Imaging,  http://www.lim.cz"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:77",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_sRatioDesc - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:78",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "MetaDataPhotometricInterpretation",
+                            "data_value": "Monochrome"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:79",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dRmin - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:80",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bGraphVerticalSplit - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:81",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_dGraphOffset00 - value",
+                            "data_value": "0.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:82",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_dGraphOffset00 - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:83",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Objective CalibratedMagnification",
+                            "data_value": "\"1.000000\" ID=\"Objective:0\" LensNA=\"1.300000\" NominalMagnification=\"1\"/"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:84",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiBpc - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:85",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Orientation",
+                            "data_value": "1st row - top; 1st column - left"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:86",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "dMin - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:87",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "left - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:88",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiDenom - value",
+                            "data_value": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:89",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "dBinningX - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:90",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "FillOrder",
+                            "data_value": "Pixels with lower column values are stored in the higher order bits of a byte"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:91",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bGraphVerticalSplit - value",
+                            "data_value": "false"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:92",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "PropertiesQuality - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:93",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_iGraphSelected - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:94",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_dGraphZoom01 - value",
+                            "data_value": "1.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:95",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "bCanExecAsyncSampleGet - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:96",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "PropertiesFast - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:97",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_uiPropGroupCount - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:98",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "?xml version",
+                            "data_value": "\"1.0\" encoding=\"UTF-8\"?"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:99",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "TransmittanceRange CutIn",
+                            "data_value": "\"474\" CutOut=\"476\"/"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:100",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Pixels DimensionOrder",
+                            "data_value": "\"XYCZT\" ID=\"Pixels:0\" PhysicalSizeX=\"0.550000\" PhysicalSizeY=\"0.550000\" SizeC=\"1\" SizeT=\"1\" SizeX=\"1608\" SizeY=\"1608\" SizeZ=\"1\" Type=\"uint8\""
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:101",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "ImageLength",
+                            "data_value": "1608"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:102",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "MaxSampleValue",
+                            "data_value": "255"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:103",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "ID - value",
+                            "data_value": "Z1"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:104",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "SetColorManually - value",
+                            "data_value": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:105",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "DIAAdditionalFilterName - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:106",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Left - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:107",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_VersionString - value",
+                            "data_value": "5.02.00 (Build 1266) Patch 01"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:108",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "bottom - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:109",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiInterpretation - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:110",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "BitsPerSample",
+                            "data_value": "8"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:111",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Group - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:112",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "vGrabberCameraSettingsFQMode - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:113",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dTMeasCalMin - value",
+                            "data_value": "0.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:114",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Plane DeltaT",
+                            "data_value": "\"2875.559326\" ExposureTime=\"100.000000\" PositionX=\"11817.900391\" PositionY=\"5465.299805\" PositionZ=\"3318.479980\" TheC=\"0\" TheT=\"0\" TheZ=\"0\"/"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:115",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_CopyrightString - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:116",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bGrayGraph - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:117",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "ImagingEnvironment Temperature",
+                            "data_value": "\"-1.000000\"/"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:118",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Type - value",
+                            "data_value": "3"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:119",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiInterpretation - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:120",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Bottom - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:121",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Right - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:122",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_dGraphOffset01 - value",
+                            "data_value": "0.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:123",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "bottom - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:124",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Type - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:125",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "PropertiesQuality_Extra - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:126",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "MetaMorph",
+                            "data_value": "no"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:127",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "NumberOfChannels",
+                            "data_value": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:128",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Experimenter ID",
+                            "data_value": "\"Experimenter:0\" Institution=\"\" LastName=\"\"/"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:129",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "CustomTagDescription_v1.0 - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:130",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dVisc - value",
+                            "data_value": "1.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:131",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_SWNameString - value",
+                            "data_value": "NIS-Elements AR"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:132",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "ImageWidth",
+                            "data_value": "1608"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:133",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bViewLut - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:134",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_dGraphOffset02 - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:135",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dTMeasCalMax - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:136",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiUsageFlags - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:137",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "TypeID - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:138",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "InstrumentRef ID",
+                            "data_value": "\"Instrument:1\"/"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:139",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Metadata - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:140",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_dGraphZoom02 - value",
+                            "data_value": "116.305045871559628"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:141",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_dGraphZoom00 - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:142",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "rectSensorSource - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:143",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Tag4 - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:144",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bEnableAutoWhite - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:145",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "ChannelCount - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:146",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "MultiViewEnabled - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:147",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "no_name - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:148",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_pwszPropGroupNameArray - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:149",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Key - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:150",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Desc - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:151",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Tag1 - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:152",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "dSensitivity - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:153",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_dGraphOffset02 - value",
+                            "data_value": "0.028969216509890"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:154",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sizeSensorMin - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:155",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiFQModeUsage - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:156",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Compression",
+                            "data_value": "Uncompressed"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:157",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dFmin - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:158",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "vGrabberCameraSettingsFQMode - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:159",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Right - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:160",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bRatioViewEnabled - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:161",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Desc - value",
+                            "data_value": "Ti2 ZDrive"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:162",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "OpenViewV1_0 - value",
+                            "data_value": "CxRMAGEAcwB0AFYAaQBlAHcARgBvAHIARABvAGMAdQBtAGUAbgB0AAAAAQAAAGoAAAAAAAAACA5WAGkAZQB3AEMAbABhAHMAcwBOAGEAbQBlAAAAUwBMAHgAUABpAGMAVgBpAGUAdwAAADYAAAAAAAAA"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:163",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Unit - value",
+                            "data_value": "�m"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:164",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_VersionString - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:165",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiDenOffset - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:166",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "OME xmlns",
+                            "data_value": "\"http://www.openmicroscopy.org/Schemas/OME/2015-01\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.openmicroscopy.org/Schemas/OME/2015-01 http://www.openmicroscopy.org/Schemas/OME/2015-01/ome.xsd\""
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:167",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "PropertiesFast_Extra - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:168",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "bPickFromGraph - value",
+                            "data_value": "false"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:169",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "EPIAdditionalFilterName - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:170",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "dMax - value",
+                            "data_value": "2.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:171",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "CameraFamilyName - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:172",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "top - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:173",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_iGraphScale - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:174",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Comment",
+                            "data_value": "      !--this instrument tag is add because of backward compatibility with NIS elements 4.30--\n      /LightSource\n   /Instrument\n      /LightSource\n      /LightSource\n      /Filter\n   /Instrument\n      AcquisitionDate\n         2021-10-27T18:00:24      /AcquisitionDate\n      Description\n         Dimensions: T(720) x XY(1) x λ(3)\nCamera Name: Photometrics Prime 95B\nNumerical Aperture: 1.3\nRefractive Index: 1.515\nNumber of Picture Planes: 3\nPlane #1:\n Name: Fret_Turquoise\n Component Count: 1\n Modality: Widefield Fluorescence\n Camera Settings:   \n  Camera Type: Prime 95B\n  Binning: 2x2\n  Bit Depth: 12-bit\n  Exposure: 100 ms\n  Denoising: Off\n  Conversion Gain: 둀ၙ\n  Fan Speed: High\nPlane #2:\n Name: Fret_Tomato\n Component Count: 1\n Modality: Widefield Fluorescence\n Camera Settings:   \n  Camera Type: Prime 95B\n  Binning: 2x2\n  Bit Depth: 12-bit\n  Exposure: 100 ms\n  Denoising: Off\n  Conversion Gain: 둀ၙ\n  Fan Speed: High\nPlane #3:\n Name: Ph-3\n Component Count: 1\n Modality: Brightfield\n Camera Settings:   \n  Camera Type: Prime 95B\n  Binning: 1x1\n  Bit Depth: 12-bit\n  Exposure: 100 ms\n  Denoising: Off\n  Conversion Gain: 둀ၙ\n  Fan Speed: High\nTime Loop: 720\n- Equidistant (Period 30000 ms)\n      /Description\n         /Channel\n      /Pixels\n   /Image\n/OME\n"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:175",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Bottom - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:176",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "LightSource ID",
+                            "data_value": "\"LightSource:2\" Model=\"Lumencor MultiLaser\" Power=\"0.000000\""
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:177",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "SetColorManually - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:178",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dVisc - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:179",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Unit - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:180",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dFmax - value",
+                            "data_value": "1.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:181",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bGrayGraph - value",
+                            "data_value": "false"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:182",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bEnableAutoContrast - value",
+                            "data_value": "false"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:183",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "ModifiedAtJDN - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:184",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiDenom - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:185",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_SWNameString - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:186",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dRmax - value",
+                            "data_value": "2.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:187",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "vGrabberCameraSettings - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:188",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "bCamCorrReq - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:189",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiBkgndSize - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:190",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dRmax - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:191",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Objective Correction",
+                            "data_value": "\"PlanFluor\" ID=\"Objective:1\" Immersion=\"Oil\" LensNA=\"1.300000\" Model=\"Plan Fluor 40x Oil DIC H N2\" NominalMagnification=\"40\" WorkingDistance=\"200.000000\"/"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:192",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Image ID",
+                            "data_value": "\"Image:0\" Name=\"E:\\jenny_test\\channelfret_turquoise,fret_tomato,ph-3_seq0000_0000_crop\\2021_10_27_FRET_T001_Fret_Turquoise.tif\""
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:193",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "ID - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:194",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "wszFormatText - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:195",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bRatioViewEnabled - value",
+                            "data_value": "false"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:196",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiNumOffset - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:197",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "TypeID - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:198",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Size - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:199",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_CompanyString - value",
+                            "data_value": "NIKON Corporation"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:200",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dKd - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:201",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bViewLut - value",
+                            "data_value": "false"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:202",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "dMax - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:203",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "sCal.dKd - value",
+                            "data_value": "224.000000000000000"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:204",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_uiPropGroupUsageArray - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:205",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_uiAutoWhiteColor - runtype",
+                            "data_value": "lx_uint32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:206",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_iGraphSelected - value",
+                            "data_value": "-1"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:207",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "wszFormatDesc - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:208",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "DIAAdditionalFilterKey - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:209",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "cx - value",
+                            "data_value": "-1"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:210",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "FormatFast - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:211",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_dGraphOffset01 - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:212",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_dGraphZoom02 - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:213",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "bPickFromGraph - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:214",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Tag6 - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:215",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "wszUniqueName - runtype",
+                            "data_value": "CLxStringW"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:216",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "FormatQuality - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:217",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bEnableAutoContrast - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:218",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "cy - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:219",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "top - runtype",
+                            "data_value": "lx_int32"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:220",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "ChannelCount - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:221",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Tag3 - runtype",
+                            "data_value": "CLxListVariant"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:222",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bShowAllComp - runtype",
+                            "data_value": "bool"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:223",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "dBinningY - runtype",
+                            "data_value": "double"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:224",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Instrument ID",
+                            "data_value": "\"Instrument:1\""
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:225",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "m_bShowAllComp - value",
+                            "data_value": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:226",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "uiNumer - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:227",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Detector ID",
+                            "data_value": "\"Detector:0\"/"
+                        }
+                    }
+                }
+            },
+            {
+                "xml_data": {
+                    "identifier": "Annotation:228",
+                    "data_namespace": "openmicroscopy.org/OriginalMetadata",
+                    "data_value": {
+                        "source_metadata": {
+                            "metadata_key": "Group - value",
+                            "data_value": "0"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

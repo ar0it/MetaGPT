@@ -1,58 +1,88 @@
-from metagpt.utils import utils
-import random
-from openai import OpenAI
-from metagpt.predictors.predictor_distorter import PredictorDistorter
-import xml.etree.ElementTree as ET
-from ome_types import from_xml, to_xml, to_dict
-import json
+"""
+This module contains the DistorterTemplate class, which is responsible for distorting
+well-formed OME XML into a modified key-value representation. The distortion process
+can include converting XML to key-value pairs, shuffling the order of entries, and
+renaming keys to similar words.
+"""
+
 import os
+import json
+import random
+import xml.etree.ElementTree as ET
+from typing import Dict, List, Any, Optional
+
+from metagpt.utils import utils
+from metagpt.predictors.predictor_distorter import PredictorDistorter
 
 class DistorterTemplate:
     """
-    The distorter takes well formed ome xml as input and returns a "distorted" key value version of it.
-    Distortion can include:
-    - ome xml to key value
-    - shuffling of the order of entried
-    - keys get renamed to similair words
+    A class for distorting OME XML into modified key-value representations.
+
+    The distorter takes well-formed OME XML as input and returns a "distorted"
+    key-value version of it. Distortion can include:
+    - OME XML to key-value conversion
+    - Shuffling of the order of entries
+    - Renaming keys to similar words
     """
-    def xml_to_key_value(self, ome_xml: str) -> dict:
+
+    def xml_to_key_value(self, ome_xml: str) -> Dict[str, Any]:
         """
-        Convert the ome xml to key value pairs
+        Convert the OME XML to key-value pairs.
+
+        Args:
+            ome_xml (str): The input OME XML string.
+
+        Returns:
+            Dict[str, Any]: A dictionary representation of the XML.
+
+        Raises:
+            Exception: If parsing fails.
         """
         try:
-            out2 = utils.get_json(ET.fromstring(ome_xml))
+            return utils.get_json(ET.fromstring(ome_xml))
         except Exception as e:
-            print("The ET parsing failed, trying the ome_types parser")
-        return out2
+            print(f"ET parsing failed: {e}. Trying the ome_types parser.")
+            raise
 
-    def shuffle_order(self, dict_meta: dict) -> dict:
+    def shuffle_order(self, dict_meta: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Shuffle the order of the keys in the ome xml
-        """
-        l_meta = list(dict_meta.items())
-        random.shuffle(l_meta)
-        dict_meta = dict(l_meta)
-        return dict_meta
+        Shuffle the order of the keys in the OME XML.
 
-    def gen_mapping(self, dict_meta: dict) -> dict:
+        Args:
+            dict_meta (Dict[str, Any]): The input dictionary.
+
+        Returns:
+            Dict[str, Any]: A new dictionary with shuffled keys.
         """
-        Rename the keys in the ome xml to similar words using a GPT model.
+        items = list(dict_meta.items())
+        random.shuffle(items)
+        return dict(items)
+
+    def gen_mapping(self, dict_meta: Dict[str, Any]) -> Dict[str, str]:
         """
-        pred = PredictorDistorter(str(dict_meta)).predict()["definitions"]
-        return pred
-    
-    def extract_unique_keys(self, metadata):
+        Rename the keys in the OME XML to similar words using a GPT model.
+
+        Args:
+            dict_meta (Dict[str, Any]): The input dictionary.
+
+        Returns:
+            Dict[str, str]: A dictionary mapping original keys to new keys.
+        """
+        predictor = PredictorDistorter(str(dict_meta))
+        return predictor.predict()["definitions"]
+
+    def extract_unique_keys(self, metadata: Dict[str, Any]) -> List[str]:
         """
         Extract all unique key names from a dictionary, including nested structures,
         without full paths or indices.
-        
+
         Args:
-        metadata (dict): The dictionary containing metadata.
-        
+            metadata (Dict[str, Any]): The dictionary containing metadata.
+
         Returns:
-        list: A list of unique key names.
+            List[str]: A list of unique key names.
         """
-        def extract_keys(data):
+        def extract_keys(data: Any) -> set:
             keys = set()
             if isinstance(data, dict):
                 for key, value in data.items():
@@ -64,19 +94,19 @@ class DistorterTemplate:
             return keys
 
         return list(extract_keys(metadata))
-    
-    def rename_metadata_keys(self, metadata, key_mapping):
+
+    def rename_metadata_keys(self, metadata: Dict[str, Any], key_mapping: Dict[str, str]) -> Dict[str, Any]:
         """
         Rename keys in a metadata dictionary based on a provided mapping.
-        
+
         Args:
-        metadata (dict): The original metadata dictionary.
-        key_mapping (dict): A dictionary mapping original key names to new key names.
-        
+            metadata (Dict[str, Any]): The original metadata dictionary.
+            key_mapping (Dict[str, str]): A dictionary mapping original key names to new key names.
+
         Returns:
-        dict: A new dictionary with renamed keys.
+            Dict[str, Any]: A new dictionary with renamed keys.
         """
-        def rename_keys(data):
+        def rename_keys(data: Any) -> Any:
             if isinstance(data, dict):
                 return {key_mapping.get(k, k): rename_keys(v) for k, v in data.items()}
             elif isinstance(data, list):
@@ -85,37 +115,56 @@ class DistorterTemplate:
                 return data
 
         return rename_keys(metadata)
-    
-    def save_fake_data(self, fake_data: dict, path: str):
+
+    def save_fake_data(self, fake_data: Dict[str, Any], path: str) -> None:
         """
-        Save the fake data to a file
+        Save the fake data to a file.
+
+        Args:
+            fake_data (Dict[str, Any]): The data to be saved.
+            path (str): The file path where the data will be saved.
         """
-        # make distored data folder
-        if not os.path.exists(os.path.dirname(path)):
-            os.makedirs(os.path.dirname(path))
-        with open(path, 'w', encoding='utf-8') as f: 
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, 'w', encoding='utf-8') as f:
             json.dump(fake_data, f, ensure_ascii=False, indent=4)
 
-    def load_fake_data(self, path: str) -> dict:
+    def load_fake_data(self, path: str) -> Optional[Dict[str, Any]]:
         """
-        Load the fake data from a file
+        Load the fake data from a file.
+
+        Args:
+            path (str): The file path from which to load the data.
+
+        Returns:
+            Optional[Dict[str, Any]]: The loaded data, or None if the file doesn't exist.
         """
         if os.path.exists(path):
             with open(path, 'r', encoding='utf-8') as f:
                 return json.load(f)
+        return None
 
-    def isolate_keys(self, dict_meta: dict) -> dict:
+    def isolate_keys(self, dict_meta: Dict[str, Any]) -> Dict[str, None]:
         """
-        Isolate the keys in the ome xml
+        Isolate the keys in the OME XML.
+
+        Args:
+            dict_meta (Dict[str, Any]): The input dictionary.
+
+        Returns:
+            Dict[str, None]: A dictionary with the same keys as the input, but all values set to None.
         """
-        dict_keys = {}
-        for key in dict_meta.keys():
-            dict_keys[key] = None
-        return dict
-    
-    def pred(self, ome_xml: str, out_path:str) -> dict:
+        return {key: None for key in dict_meta.keys()}
+
+    def pred(self, ome_xml: str, out_path: str) -> Dict[str, Any]:
         """
-        Predict the distorted data
+        Predict the distorted data.
+
+        Args:
+            ome_xml (str): The input OME XML string.
+            out_path (str): The path where the distorted data will be saved.
+
+        Returns:
+            Dict[str, Any]: The distorted metadata.
         """
         dict_meta = self.xml_to_key_value(ome_xml)
         dict_keys = self.extract_unique_keys(dict_meta)
@@ -124,20 +173,20 @@ class DistorterTemplate:
         dict_meta = self.shuffle_order(dict_new_meta)
         self.save_fake_data(dict_new_meta, out_path)
         return dict_meta
-                            
-    def modify_metadata_structure(self, metadata, operations=None, probability=0.3):
+
+    def modify_metadata_structure(self, metadata: Dict[str, Any], operations: Optional[List[callable]] = None, probability: float = 0.3) -> Dict[str, Any]:
         """
         Modify the structure of a metadata dictionary systematically and randomly.
-        
+
         Args:
-        metadata (dict): The original metadata dictionary.
-        operations (list): List of operations to perform. If None, all operations are used.
-        probability (float): Probability of applying an operation to each element (0.0 to 1.0).
-        
+            metadata (Dict[str, Any]): The original metadata dictionary.
+            operations (Optional[List[callable]]): List of operations to perform. If None, all operations are used.
+            probability (float): Probability of applying an operation to each element (0.0 to 1.0).
+
         Returns:
-        dict: A new dictionary with modified structure.
+            Dict[str, Any]: A new dictionary with modified structure.
         """
-        def flatten_dict(d, parent_key='', sep='.'):
+        def flatten_dict(d: Dict[str, Any], parent_key: str = '', sep: str = '.') -> Dict[str, Any]:
             items = []
             for k, v in d.items():
                 new_key = f"{parent_key}{sep}{k}" if parent_key else k
@@ -146,8 +195,8 @@ class DistorterTemplate:
                 else:
                     items.append((new_key, v))
             return dict(items)
-        
-        def nest_dict(d, sep='.'):
+
+        def nest_dict(d: Dict[str, Any], sep: str = '.') -> Dict[str, Any]:
             result = {}
             for key, value in d.items():
                 parts = key.split(sep)
@@ -158,7 +207,7 @@ class DistorterTemplate:
                     d = d[part]
                 d[parts[-1]] = value
             return result
-        
+
         all_operations = [
             lambda x: {k: v for k, v in x.items() if random.random() > probability},  # Remove random keys
             lambda x: {**x, f"new_key_{random.randint(1,100)}": random.choice(["new_value", 42, True])},  # Add random key-value
@@ -167,10 +216,10 @@ class DistorterTemplate:
             lambda x: nest_dict(flatten_dict(x)),  # Re-nest flattened structure differently
             lambda x: {k: {k: v} for k, v in x.items()},  # Nest each key-value pair
         ]
-        
+
         operations = operations or all_operations
-        
-        def apply_operations(data):
+
+        def apply_operations(data: Any) -> Any:
             if isinstance(data, dict):
                 data = {k: apply_operations(v) for k, v in data.items()}
                 if random.random() < probability:
@@ -178,17 +227,25 @@ class DistorterTemplate:
             elif isinstance(data, list):
                 data = [apply_operations(item) for item in data]
             return data
-        
+
         return apply_operations(metadata)
 
-    def distort(self, ome_xml: str, out_path:str, should_pred:str="maybe") -> dict:
+    def distort(self, ome_xml: str, out_path: str, should_pred: str = "maybe") -> Optional[Dict[str, Any]]:
         """
-        Distort the ome xml
+        Distort the OME XML.
+
+        Args:
+            ome_xml (str): The input OME XML string.
+            out_path (str): The path where the distorted data will be saved.
+            should_pred (str): Whether to predict new data or use existing data. Options are "yes", "no", or "maybe".
+
+        Returns:
+            Optional[Dict[str, Any]]: The distorted metadata, or None if no data is available.
         """
         if should_pred == "no":
-            out = self.load_fake_data(out_path) or None
+            return self.load_fake_data(out_path)
         elif should_pred == "yes":
-            out = self.pred(ome_xml, out_path=out_path) or None
+            return self.pred(ome_xml, out_path=out_path)
         elif should_pred == "maybe":
-            out = self.load_fake_data(out_path) or self.pred(ome_xml, out_path=out_path) or None
-        return out
+            return self.load_fake_data(out_path) or self.pred(ome_xml, out_path=out_path)
+        return None

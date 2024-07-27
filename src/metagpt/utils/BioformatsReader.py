@@ -1,32 +1,32 @@
 """
-This file implements functions to read the proprietary images and returns their metadata in OME-XML format and the
-raw metadata key-value pairs.
+This module implements functions to read proprietary images and return their metadata
+in OME-XML format and as raw metadata key-value pairs using Bio-Formats.
 """
+
+from typing import Dict, Optional, Union
 import javabridge
 from bioformats import ImageReader
 import javabridge as jutil
-import numpy as np
 from deprecated import deprecated
 
+def get_omexml_metadata(path: Optional[str] = None, url: Optional[str] = None) -> str:
+    """
+    Read the OME metadata from a file using Bio-Formats.
 
-def get_omexml_metadata(path=None, url=None):
-    '''Read the OME metadata from a file using Bio-formats
+    Args:
+        path (Optional[str]): Path to the file. Defaults to None.
+        url (Optional[str]): URL of the file. Defaults to None.
 
-    :param path: path to the file
+    Returns:
+        str: The metadata as XML.
 
-    :param groupfiles: utilize the groupfiles option to take the directory structure
-                 into account.
+    Raises:
+        ValueError: If neither path nor url is provided.
+    """
+    if not path and not url:
+        raise ValueError("Either path or url must be provided")
 
-    :returns: the metdata as XML.
-
-    '''
     with ImageReader(path=path, url=url, perform_init=False) as rdr:
-        #
-        # Below, "in" is a keyword and Rhino's parser is just a little wonky I fear.
-        #
-        # It is critical that setGroupFiles be set to false, goodness knows
-        # why, but if you don't the series count is wrong for flex files.
-        #
         script = """
         importClass(Packages.loci.common.services.ServiceFactory,
                     Packages.loci.formats.services.OMEXMLService,
@@ -43,26 +43,31 @@ def get_omexml_metadata(path=None, url=None):
         xml;
         """
         xml = jutil.run_script(script, dict(path=rdr.path, reader=rdr.rdr))
-        #print(type(xml))
         return str(xml)
 
-
-
-def get_raw_metadata(path: str = None) -> dict[str, str]:
+def get_raw_metadata(path: str) -> Dict[str, str]:
     """
-    Read the raw metadata from a file using Bio-formats
+    Read the raw metadata from a file using Bio-Formats.
 
-    :param path: path to the file
-    :return: the metadata as a dictionary
+    Args:
+        path (str): Path to the file.
+
+    Returns:
+        Dict[str, str]: The metadata as a dictionary.
     """
-    def get_core_metadata(rdr:ImageReader) -> dict[str, str]:
+    def get_core_metadata(rdr: ImageReader) -> Dict[str, str]:
         """
-        Extract core metadata directly from the rdr object
+        Extract core metadata directly from the reader object.
+
+        Args:
+            rdr (ImageReader): The Bio-Formats image reader object.
+
+        Returns:
+            Dict[str, str]: Core metadata as a dictionary.
         """
         rdr = rdr.rdr
         core_md = {}
         
-        # List of core metadata methods to call
         core_methods = [
             'getSizeX', 'getSizeY', 'getSizeZ', 'getSizeC', 'getSizeT',
             'getPixelType', 'getBitsPerPixel', 'getImageCount',
@@ -71,53 +76,44 @@ def get_raw_metadata(path: str = None) -> dict[str, str]:
             'isIndexed', 'isFalseColor', 'getModuloZ', 'getModuloC', 'getModuloT',
             'getThumbSizeX', 'getThumbSizeY', 'getSeriesCount', "getIndex",
         ]
-        # Call each method and store the result
+        
         for method in core_methods:
             try:
                 value = getattr(rdr, method)()
                 core_md[method] = str(value)
             except Exception as e:
                 print(f"Error getting {method}: {str(e)}")
-        """
-        # Get metadata for each series
-        series_count = rdr.getSeriesCount()
-        for series in range(series_count):
-            rdr.setSeries(series)
-            for method in core_methods:
-                try:
-                    value = getattr(rdr, method)()
-                    core_md[f"Series_{series}_{method}"] = str(value)
-                except Exception as e:
-                    print(f"Error getting {method} for series {series}: {str(e)}")
-        """
         
         return core_md
     
     with ImageReader(path=path, url=None, perform_init=False) as rdr:
         rdr.rdr.setId(path)
-        metadata  = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getMetadata(path))
+        metadata = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getMetadata(path))
         series_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getSeriesMetadata(path))
         global_md = javabridge.jutil.jdictionary_to_string_dictionary(rdr.rdr.getGlobalMetadata(path))
         core_md = get_core_metadata(rdr)
 
-        meta_all = metadata | series_md | global_md | core_md # merges the metadata overwrite potentially conflicting entries
+        meta_all = {**metadata, **series_md, **global_md, **core_md}  # Merges the metadata, potentially overwriting conflicting entries
         return meta_all
 
-def raw_to_tree(raw_metadata: dict[str, str]):
+def raw_to_tree(raw_metadata: Dict[str, str]) -> Dict[str, Union[str, Dict]]:
     """
-    Convert the raw metadata to a tree structure, by seperating the key on the "|" character.
+    Convert the raw metadata to a tree structure by separating the key on the "|" character.
+
+    Args:
+        raw_metadata (Dict[str, str]): The raw metadata dictionary.
+
+    Returns:
+        Dict[str, Union[str, Dict]]: The metadata in a tree structure.
     """
     metadata = {}
     for key, value in raw_metadata.items():
         keys = key.split("|")
         current = metadata
-        for key in keys[:-1]:
-            if key not in current:
-                current[key] = {}
-            current = current[key]
+        for k in keys[:-1]:
+            if k not in current:
+                current[k] = {}
+            current = current[k]
         current[keys[-1]] = value
 
-    # pretty print dictionary
-    import json
-    #print(json.dumps(metadata, indent=4))
     return metadata
