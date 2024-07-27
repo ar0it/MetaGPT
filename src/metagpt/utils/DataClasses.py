@@ -10,6 +10,10 @@ from ome_types import OME
 
 @dataclass
 class Sample:
+    format:str
+    attempts:float
+    index:int
+    file_name:str
     name: str = None
     metadata_str: str = None  # the metadata as xml string
     method: str = None
@@ -17,10 +21,8 @@ class Sample:
     cost: Optional[float] = None # the cost in $
     paths: Optional[list[str]] = None
     time: Optional[float] = None
-    format: Optional[str] = None
-    attempts: Optional[float] = None
-    iter: Optional[int] = None
     gpt_model: Optional[str] = None
+
 
 @dataclass
 class Dataset:
@@ -30,7 +32,7 @@ class Dataset:
     time: Optional[float] = 0
 
     def add_sample(self, sample: Sample):
-        self.samples[f"{sample.name}_{sample.method}"] = sample
+        self.samples[f"{sample.name}"] = sample
         if sample.cost != None:
             self.cost += sample.cost
         if sample.time != None:

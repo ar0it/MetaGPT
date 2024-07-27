@@ -99,13 +99,14 @@ class PredictorSimple(PredictorTemplate):
         return response, self.get_cost(), self.attempts
     
     def init_run(self):
+        print("Initiating run...")
         self.run = self.client.beta.threads.runs.create(
             thread_id=self.thread.id,
             assistant_id=self.assistant.id,
             tool_choice={"type": "file_search", "type": "function", "function": {"name": "OMEXMLResponse"}},
             temperature=self.temperature,
             )
-        
+        print("Waiting for run to complete...")
         end_status = ["completed", "requires_action", "failed"]
         while self.run.status not in end_status and self.run_iter<self.max_iter:
             self.run_iter += 1

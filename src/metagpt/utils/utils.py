@@ -402,7 +402,7 @@ def save_output(output: str,
                 cost: float,
                 attempts: float,
                 pred_time: float,
-                path: str
+                path:str,
                 ) -> bool:
     """
     Save output to a file.
@@ -461,18 +461,21 @@ def load_output(path: str
 def make_prediction(predictor,
                     in_data,
                     dataset,
-                    name,
+                    file_name:str,
+                    index:int,
                     should_predict="maybe",
                     start_point=None,
                     data_format=None,
-                    iter:int=None,
-                    model:str=None):
+                    model:str=None,
+                    out_path:str=None):
     """
     TODO: add docstring
     """
     method = predictor.__name__
-    path = f"{os.getcwd()}/out/assistant_outputs/{method}_{name}.txt"
-    print("-"*10+method+"_"+name+"-"*10)
+    path = f"{out_path}/predictor_outputs/{method}_{file_name}.txt"
+    if not os.path.exists(os.path.dirname(path)):
+        os.makedirs(os.path.dirname(path))
+    print("-"*10+method+"_"+file_name+"-"*10)
     out, cost, attempts, pred_time = None, None, None, None
     if should_predict == "maybe" or "no":
         try:
@@ -496,24 +499,26 @@ def make_prediction(predictor,
             # save the output to file
             if out and isinstance(out, dict) and start_point:
                 out = merge_xml_annotation(annot=out, ome=start_point)
-            if out:
-                print("Trying to save output to file")
-                out = to_xml(from_xml(out))
-                save_output(out, cost, attempts, pred_time,path=path)
-                print("Predicted and Saved output to file")
+
+            print("Trying to save output to file")
+            if out is None:
+                out = to_xml(OME())
+            out = to_xml(from_xml(out))
+            save_output(out, cost, attempts, pred_time,path=path)
+            print("Predicted and Saved output to file")
     
     if not out:
         return
-    
-    out_sample = Sample(name=name,
+    out_sample = Sample(file_name=file_name,
                         metadata_str=out,
-                        method=method,
+                        method=camel_to_snake(method),
                         format=data_format,
                         cost=cost,
                         attempts=attempts,
-                        iter=iter,
+                        index=index,
                         gpt_model=model,
-                        time=pred_time)
+                        time=pred_time,
+                        name=f"{file_name}_{method}_{iter}")
      
     dataset.add_sample(out_sample)
 
@@ -831,3 +836,17 @@ def num_tokens_from_string(string: str, encoding_name: str="cl100k_base") -> int
     encoding = tiktoken.get_encoding(encoding_name)
     num_tokens = len(encoding.encode(string))
     return num_tokens
+
+def camel_to_snake(name):
+    """
+    Convert a CamelCase string to snake_case.
+
+    Parameters:
+    name (str): The CamelCase string to convert.
+
+    Returns:
+    str: The converted snake_case string.
+    """
+    # Insert an underscore before each uppercase letter (except the first one) and convert to lowercase
+    snake_case_name = re.sub(r'(?<!^)(?=[A-Z])', '_', name)
+    return snake_case_name

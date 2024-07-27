@@ -16,7 +16,7 @@ import importlib
 import sys
 import metagpt.utils.utils as utils
 import bioformats.logback
-from metagpt.evaluators.OME_evaluator import OMEEvaluator
+from metagpt.evaluators.evaluator_template import EvaluatorTemplate
 from metagpt.utils.DataClasses import Sample
 from metagpt.utils.DataClasses import Dataset
 from metagpt.utils.BioformatsReader import get_omexml_metadata
@@ -28,7 +28,7 @@ import bioformats
 import javabridge
 from contextlib import contextmanager
 import ome_types
-
+import datetime
 # ----------------------------------------------------------------------------------------------------------------------
 # Constants
 # ----------------------------------------------------------------------------------------------------------------------
@@ -61,20 +61,19 @@ experiment.predictors = [
     PredictorNetwork,
     PredictorSimpleAnnotation,
     PredictorNetworkAnnotation,
-    #PredictorState,
-    #PredictorStateTree,
+    PredictorState,
     ]
-experiment.data_paths = [
-    #f"{wd}/in/images/small_images/2021_10_27_FRET_T001_Fret_Turquoise.tif",
-    f"{wd}/in/images/working/testetst_Image8_edited_.ome.tif",
-    #f"{wd}/in/images/working/Image_8.czi",
-    ]
+datafolder_path ="/home/aaron/Documents/Projects/MetaGPT/in/images/working/"
+# list of all the FILES from that folder
+experiment.data_paths = [datafolder_path + f for f in os.listdir(datafolder_path) if os.path.isfile(os.path.join(datafolder_path, f))]
 experiment.out_path = out
 experiment.dataset = Dataset(name="Dataset1", samples={})
 experiment.schema = ome_xsd
-experiment.should_predict = ["maybe"]*4 + ["yes"]*1
+experiment.should_predict = "maybe"
 experiment.reps = 1
-experiment.evaluators = [OMEEvaluator]
+experiment.time = datetime.datetime.now().isoformat().replace(":", "-").replace(".", "-")
+experiment.evaluators = [EvaluatorTemplate]
+experiment.out_path_experiment = "/home/aaron/Documents/Projects/MetaGPT/out/experiment_2024-07-27T11-44-01-418605_0/"
 experiment.run()
 
 javabridge.kill_vm()

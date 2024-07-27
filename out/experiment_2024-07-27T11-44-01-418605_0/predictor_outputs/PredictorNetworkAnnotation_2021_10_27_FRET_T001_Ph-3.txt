@@ -1,0 +1,290 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Image ID="Image:0" Name="2021_10_27_FRET_T001_Ph-3.tif">
+    <Description>      &lt;!--this instrument tag is add because of backward compatibility with NIS elements 4.30--&gt;;       &lt;/LightSource&gt;;    &lt;/Instrument&gt;;       &lt;/LightSource&gt;;       &lt;/LightSource&gt;;       &lt;/Filter&gt;;    &lt;/Instrument&gt;;       &lt;AcquisitionDate&gt;;          2021-10-27T18:00:24      &lt;/AcquisitionDate&gt;;       &lt;Description&gt;;          Dimensions: T(720) x XY(1) x λ(3); Camera Name: Photometrics Prime 95B; Numerical Aperture: 1.3; Refractive Index: 1.515; Number of Picture Planes: 3; Plane #1:;  Name: Fret_Turquoise;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #2:;  Name: Fret_Tomato;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #3:;  Name: Ph-3;  Component Count: 1;  Modality: Brightfield;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 1x1;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Time Loop: 720; - Equidistant (Period 30000 ms);       &lt;/Description&gt;;          &lt;/Channel&gt;;       &lt;/Pixels&gt;;    &lt;/Image&gt;; &lt;/OME&gt;; </Description>
+    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint8" SignificantBits="8" Interleaved="false" BigEndian="false" SizeX="1608" SizeY="1608" SizeZ="1" SizeC="1" SizeT="1">
+      <Channel ID="Channel:0:0" SamplesPerPixel="1">
+        <LightPath/>
+      </Channel>
+      <MetadataOnly/>
+    </Pixels>
+  </Image>
+  <StructuredAnnotations>
+    <XMLAnnotation ID="Annotation:278">
+      <Value>
+        <OriginalMetadata>
+          <Key>Comment</Key>
+          <Value>!--this instrument tag is add because of backward compatibility with NIS elements 4.30--</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Instrument</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>LightSource</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>LightSource_0</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>Type</Key>
+                      <Value>LightSource</Value>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>LightSource_1</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>Type</Key>
+                      <Value>LightSource</Value>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>LightSource_2</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>Type</Key>
+                      <Value>LightSource</Value>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Filter</Key>
+              <Value/>
+              <OriginalMetadata/>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>AcquisitionDate</Key>
+              <Value>2021-10-27T18:00:24</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Description</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Dimensions</Key>
+                  <Value>T(720) x XY(1) x λ(3)</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Camera Name</Key>
+                  <Value>Photometrics Prime 95B</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Numerical Aperture</Key>
+                  <Value>1.3</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Refractive Index</Key>
+                  <Value>1.515</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Number of Picture Planes</Key>
+                  <Value>3</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Picture Planes</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>Picture Planes_0</Key>
+                      <Value/>
+                      <OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>Plane #1</Key>
+                          <Value/>
+                          <OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Name</Key>
+                              <Value>Fret_Turquoise</Value>
+                            </OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Component Count</Key>
+                              <Value>1</Value>
+                            </OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Modality</Key>
+                              <Value>Widefield Fluorescence</Value>
+                            </OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Camera Settings</Key>
+                              <Value/>
+                              <OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Camera Type</Key>
+                                  <Value>Prime 95B</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Binning</Key>
+                                  <Value>2x2</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Bit Depth</Key>
+                                  <Value>12-bit</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Exposure</Key>
+                                  <Value>100 ms</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Denoising</Key>
+                                  <Value>Off</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Conversion Gain</Key>
+                                  <Value>둀ၙ</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Fan Speed</Key>
+                                  <Value>High</Value>
+                                </OriginalMetadata>
+                              </OriginalMetadata>
+                            </OriginalMetadata>
+                          </OriginalMetadata>
+                        </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>Picture Planes_1</Key>
+                      <Value/>
+                      <OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>Plane #2</Key>
+                          <Value/>
+                          <OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Name</Key>
+                              <Value>Fret_Tomato</Value>
+                            </OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Component Count</Key>
+                              <Value>1</Value>
+                            </OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Modality</Key>
+                              <Value>Widefield Fluorescence</Value>
+                            </OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Camera Settings</Key>
+                              <Value/>
+                              <OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Camera Type</Key>
+                                  <Value>Prime 95B</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Binning</Key>
+                                  <Value>2x2</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Bit Depth</Key>
+                                  <Value>12-bit</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Exposure</Key>
+                                  <Value>100 ms</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Denoising</Key>
+                                  <Value>Off</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Conversion Gain</Key>
+                                  <Value>둀ၙ</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Fan Speed</Key>
+                                  <Value>High</Value>
+                                </OriginalMetadata>
+                              </OriginalMetadata>
+                            </OriginalMetadata>
+                          </OriginalMetadata>
+                        </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>Picture Planes_2</Key>
+                      <Value/>
+                      <OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>Plane #3</Key>
+                          <Value/>
+                          <OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Name</Key>
+                              <Value>Ph-3</Value>
+                            </OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Component Count</Key>
+                              <Value>1</Value>
+                            </OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Modality</Key>
+                              <Value>Brightfield</Value>
+                            </OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Camera Settings</Key>
+                              <Value/>
+                              <OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Camera Type</Key>
+                                  <Value>Prime 95B</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Binning</Key>
+                                  <Value>1x1</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Bit Depth</Key>
+                                  <Value>12-bit</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Exposure</Key>
+                                  <Value>100 ms</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Denoising</Key>
+                                  <Value>Off</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Conversion Gain</Key>
+                                  <Value>둀ၙ</Value>
+                                </OriginalMetadata>
+                                <OriginalMetadata>
+                                  <Key>Fan Speed</Key>
+                                  <Value>High</Value>
+                                </OriginalMetadata>
+                              </OriginalMetadata>
+                            </OriginalMetadata>
+                          </OriginalMetadata>
+                        </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Time Loop</Key>
+                  <Value>720</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Time Loop Details</Key>
+                  <Value>Equidistant (Period 30000 ms)</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+      </Value>
+    </XMLAnnotation>
+  </StructuredAnnotations>
+</OME>
+
+COST: 0.09318000000000001
+ATTEMPTS: 1.0
+TIME: 35.85438942909241

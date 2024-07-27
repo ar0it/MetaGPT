@@ -18,7 +18,7 @@ class PredictorDistorter(PredictorTemplate):
     def __init__(self, raw_meta: str) -> None:
         super().__init__()
         self.raw_metadata = raw_meta
-        self.full_message = "The paths to translate into another syntax are:\n" + str(self.raw_metadata)
+        self.message = "The paths to translate into another syntax are:\n" + str(self.raw_metadata)
         self.prompt = """
         You are a tool designed to invent new metadata syntax for microscopy images.
         Explictily your task will look as follows:
@@ -46,9 +46,12 @@ class PredictorDistorter(PredictorTemplate):
         """
         print(f"Predicting for {self.name}, attempt: {self.attempts}")
         self.init_thread()
+        print("Initiating assistant...")
         self.init_assistant()   
+        print("Initiating run...")
         self.init_run()
         response, cost = None, None
+        print("Predicting...")
         try:
             self.add_attempts()
             response = self.run.required_action.submit_tool_outputs.tool_calls[0]
@@ -75,7 +78,7 @@ class PredictorDistorter(PredictorTemplate):
             tool_choice={"type": "function", "function": {"name": "out_new_meta"}},
             temperature=0.0,
             )
-        
+        print("Waiting for run to complete...")
         end_status = ["completed", "requires_action", "failed"]
         while self.run.status not in end_status and self.run_iter<self.max_iter:
             self.run_iter += 1
@@ -97,13 +100,6 @@ class PredictorDistorter(PredictorTemplate):
             tools=[{"type": "file_search"}, utils.openai_schema(self.out_new_meta)]
         )
         self.assistants.append(self.assistant)
-
-    def init_thread(self):
-        self.thread = self.client.beta.threads.create(messages=[{"role": "user", "content": self.prompt},
-                                                                {"role": "assistant", "content": "."},
-                                                                {"role": "user", "content": self.full_message}])
-        self.threads.append(self.thread)
-
 
     class out_new_meta(BaseModel):
         """

@@ -90,6 +90,9 @@ class DistorterTemplate:
         """
         Save the fake data to a file
         """
+        # make distored data folder
+        if not os.path.exists(os.path.dirname(path)):
+            os.makedirs(os.path.dirname(path))
         with open(path, 'w', encoding='utf-8') as f: 
             json.dump(fake_data, f, ensure_ascii=False, indent=4)
 

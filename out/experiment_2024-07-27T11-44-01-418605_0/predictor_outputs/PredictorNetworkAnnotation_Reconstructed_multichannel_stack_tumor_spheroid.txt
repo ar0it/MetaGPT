@@ -1,0 +1,114 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Image ID="Image:0" Name="Reconstructed_multichannel_stack_tumor_spheroid.tif">
+    <Description/>
+    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint16" SignificantBits="16" Interleaved="false" BigEndian="true" SizeX="1024" SizeY="1024" SizeZ="60" SizeC="4" SizeT="1" PhysicalSizeX="0.3400000544000087" PhysicalSizeXUnit="µm" PhysicalSizeY="0.3400000544000087" PhysicalSizeYUnit="µm" PhysicalSizeZ="3.0" PhysicalSizeZUnit="µm">
+      <Channel ID="Channel:0:0" SamplesPerPixel="1">
+        <LightPath/>
+      </Channel>
+      <Channel ID="Channel:0:1" SamplesPerPixel="1">
+        <LightPath/>
+      </Channel>
+      <Channel ID="Channel:0:2" SamplesPerPixel="1">
+        <LightPath/>
+      </Channel>
+      <Channel ID="Channel:0:3" SamplesPerPixel="1">
+        <LightPath/>
+      </Channel>
+      <MetadataOnly/>
+    </Pixels>
+  </Image>
+  <StructuredAnnotations>
+    <XMLAnnotation ID="Annotation:258">
+      <Value>
+        <OriginalMetadata>
+          <Key>ImageJ</Key>
+          <Value>1.53k</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>PhotometricInterpretation</Key>
+          <Value>BlackIsZero</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>hyperstack</Key>
+          <Value>true</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>loop</Key>
+          <Value>false</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Compression</Key>
+          <Value>Uncompressed</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>ImageLength</Key>
+          <Value>1024</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>BitsPerSample</Key>
+          <Value>16</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>ImageWidth</Key>
+          <Value>1024</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>MetaMorph</Key>
+          <Value>no</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>XResolution</Key>
+          <Value>2.941176</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Spacing</Key>
+          <Value>3.0</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Unit</Key>
+          <Value>µm</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>NumberOfChannels</Key>
+          <Value>1</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>max</Key>
+          <Value>5244.0</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>YResolution</Key>
+          <Value>2.941176</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>ResolutionUnit</Key>
+          <Value>None</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>MetaDataPhotometricInterpretation</Key>
+          <Value>Monochrome</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>NewSubfileType</Key>
+          <Value>0</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>min</Key>
+          <Value>114.0</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>SamplesPerPixel</Key>
+          <Value>1</Value>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Color mode</Key>
+          <Value>composite</Value>
+        </OriginalMetadata>
+      </Value>
+    </XMLAnnotation>
+  </StructuredAnnotations>
+</OME>
+
+COST: 0.01873
+ATTEMPTS: 1.0
+TIME: 29.95906972885132

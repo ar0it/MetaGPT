@@ -1,0 +1,2739 @@
+{
+    "meta/images": [
+        {
+            "meta/image": {
+                "meta/id": "Image:0",
+                "meta/name": "2021_10_27_FRET_T001_Fret_Turquoise.tif",
+                "meta/description": "      <!--this instrument tag is add because of backward compatibility with NIS elements 4.30-->;       </LightSource>;    </Instrument>;       </LightSource>;       </LightSource>;       </Filter>;    </Instrument>;       <AcquisitionDate>;          2021-10-27T18:00:24      </AcquisitionDate>;       <Description>;          Dimensions: T(720) x XY(1) x λ(3); Camera Name: Photometrics Prime 95B; Numerical Aperture: 1.3; Refractive Index: 1.515; Number of Picture Planes: 3; Plane #1:;  Name: Fret_Turquoise;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #2:;  Name: Fret_Tomato;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #3:;  Name: Ph-3;  Component Count: 1;  Modality: Brightfield;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 1x1;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Time Loop: 720; - Equidistant (Period 30000 ms);       </Description>;          </Channel>;       </Pixels>;    </Image>; </OME>; ",
+                "meta/pixels": [
+                    {
+                        "meta/pixels": {
+                            "meta/big/endian": "false",
+                            "meta/dimension/order": "XYCZT",
+                            "meta/id": "Pixels:0",
+                            "meta/interleaved": "false",
+                            "meta/significant/bits": "8",
+                            "meta/size/c": "1",
+                            "meta/size/t": "1",
+                            "meta/size/x": "1608",
+                            "meta/size/y": "1608",
+                            "meta/size/z": "1",
+                            "meta/type": "uint8",
+                            "meta/channels": [
+                                {
+                                    "meta/channel": {
+                                        "meta/id": "Channel:0:0",
+                                        "meta/samples/per/pixel": "1",
+                                        "meta/light/path": {}
+                                    }
+                                }
+                            ],
+                            "meta/metadata/only": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "meta/image": {
+                "meta/id": "Image:0",
+                "meta/name": "BAF_sim_StructuredIllumination_ChannelAlignment #1",
+                "meta/experimenter/refs": [
+                    {
+                        "meta/experimenter/ref": {
+                            "meta/id": "Experimenter:0"
+                        }
+                    }
+                ],
+                "meta/instrument/refs": [
+                    {
+                        "meta/instrument/ref": {
+                            "meta/id": "Instrument:0"
+                        }
+                    }
+                ],
+                "meta/objective/settingss": [
+                    {
+                        "meta/objective/settings": {
+                            "meta/id": "Objective:0",
+                            "meta/medium": "Oil",
+                            "meta/refractive/index": "1.518"
+                        }
+                    }
+                ],
+                "meta/stage/labels": [
+                    {
+                        "meta/stage/label": {
+                            "meta/name": "Scene position #0",
+                            "meta/x": "0",
+                            "meta/x/unit": "reference frame",
+                            "meta/y": "0",
+                            "meta/y/unit": "reference frame"
+                        }
+                    }
+                ],
+                "meta/pixels": [
+                    {
+                        "meta/pixels": {
+                            "meta/big/endian": "false",
+                            "meta/dimension/order": "XYCZT",
+                            "meta/id": "Pixels:0",
+                            "meta/interleaved": "false",
+                            "meta/physical/size/x": "0.025",
+                            "meta/physical/size/x/unit": "µm",
+                            "meta/physical/size/y": "0.025",
+                            "meta/physical/size/y/unit": "µm",
+                            "meta/physical/size/z": "0.5",
+                            "meta/physical/size/z/unit": "µm",
+                            "meta/significant/bits": "16",
+                            "meta/size/c": "3",
+                            "meta/size/t": "1",
+                            "meta/size/x": "1904",
+                            "meta/size/y": "1900",
+                            "meta/size/z": "9",
+                            "meta/type": "uint16",
+                            "meta/channels": [
+                                {
+                                    "meta/channel": {
+                                        "meta/acquisition/mode": "StructuredIllumination",
+                                        "meta/color": "65535",
+                                        "meta/emission/wavelength": "405.00000000000006",
+                                        "meta/emission/wavelength/unit": "nm",
+                                        "meta/excitation/wavelength": "405.00000000000006",
+                                        "meta/excitation/wavelength/unit": "nm",
+                                        "meta/id": "Channel:0:0",
+                                        "meta/illumination/type": "Epifluorescence",
+                                        "meta/name": "TV2-T1-SR",
+                                        "meta/pinhole/size": "0.0",
+                                        "meta/pinhole/size/unit": "µm",
+                                        "meta/samples/per/pixel": "1",
+                                        "meta/detector/settingss": [
+                                            {
+                                                "meta/detector/settings": {
+                                                    "meta/binning": "1x1",
+                                                    "meta/id": "Detector:0:0"
+                                                }
+                                            }
+                                        ],
+                                        "meta/light/path": {}
+                                    }
+                                },
+                                {
+                                    "meta/channel": {
+                                        "meta/acquisition/mode": "StructuredIllumination",
+                                        "meta/color": "16711935",
+                                        "meta/emission/wavelength": "488.00000000000006",
+                                        "meta/emission/wavelength/unit": "nm",
+                                        "meta/excitation/wavelength": "488.00000000000006",
+                                        "meta/excitation/wavelength/unit": "nm",
+                                        "meta/id": "Channel:0:1",
+                                        "meta/illumination/type": "Epifluorescence",
+                                        "meta/name": "TV2-T2-SR",
+                                        "meta/pinhole/size": "0.0",
+                                        "meta/pinhole/size/unit": "µm",
+                                        "meta/samples/per/pixel": "1",
+                                        "meta/detector/settingss": [
+                                            {
+                                                "meta/detector/settings": {
+                                                    "meta/binning": "1x1",
+                                                    "meta/id": "Detector:1:0"
+                                                }
+                                            }
+                                        ],
+                                        "meta/light/path": {}
+                                    }
+                                },
+                                {
+                                    "meta/channel": {
+                                        "meta/acquisition/mode": "StructuredIllumination",
+                                        "meta/color": "-16776961",
+                                        "meta/emission/wavelength": "561.0",
+                                        "meta/emission/wavelength/unit": "nm",
+                                        "meta/excitation/wavelength": "561.0",
+                                        "meta/excitation/wavelength/unit": "nm",
+                                        "meta/id": "Channel:0:2",
+                                        "meta/illumination/type": "Epifluorescence",
+                                        "meta/name": "TV2-T3-SR",
+                                        "meta/pinhole/size": "0.0",
+                                        "meta/pinhole/size/unit": "µm",
+                                        "meta/samples/per/pixel": "1",
+                                        "meta/detector/settingss": [
+                                            {
+                                                "meta/detector/settings": {
+                                                    "meta/binning": "1x1",
+                                                    "meta/id": "Detector:2:0"
+                                                }
+                                            }
+                                        ],
+                                        "meta/light/path": {}
+                                    }
+                                }
+                            ],
+                            "meta/metadata/only": {},
+                            "meta/planes": [
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "0",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "0"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "1",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "0"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "2",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "0"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "0",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "1"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "1",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "1"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "2",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "1"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "0",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "2"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "1",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "2"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "2",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "2"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "0",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "3"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "1",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "3"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "2",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "3"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "0",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "4"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "1",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "4"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "2",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "4"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "0",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "5"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "1",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "5"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "2",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "5"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "0",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "6"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "1",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "6"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "2",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "6"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "0",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "7"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "1",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "7"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "2",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "7"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "0",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "8"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "1",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "8"
+                                    }
+                                },
+                                {
+                                    "meta/plane": {
+                                        "meta/delta/t": "57964.80411029801",
+                                        "meta/delta/t/unit": "s",
+                                        "meta/position/x": "0",
+                                        "meta/position/x/unit": "reference frame",
+                                        "meta/position/y": "0",
+                                        "meta/position/y/unit": "reference frame",
+                                        "meta/the/c": "2",
+                                        "meta/the/t": "0",
+                                        "meta/the/z": "8"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "meta/annotations/structured": {
+        "meta/xml/annotations": [
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:0",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtRegionHeight",
+                            "meta/value": "[512]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:1",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|Id",
+                            "meta/value": "[A4FAAE3D470A9592D4616BB6F424BCCD, 2F9D948A49D9713FED11FF8A3326EF8A, 251D93E94DE0A06F86F84591E9DA17A1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:2",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|LaserScanInfo|PixelTime",
+                            "meta/value": "[7.8787878787901705e-007, 7.8787878787901705e-007, 7.8787878787901705e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:3",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|TrackMultiplexType",
+                            "meta/value": "[Line]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:4",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtFrameWidth",
+                            "meta/value": "[512]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:5",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|TirfAngle",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:6",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|PixelType",
+                            "meta/value": "[Gray16]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:7",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|ChannelUnit|OffsetI",
+                            "meta/value": "0"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:8",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Scaling|Distance|Value",
+                            "meta/value": "[2.5000000000000002e-008, 2.5000000000000002e-008, 4.9999999999999998e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:9",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|ReflectedLightLampIntensity",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:10",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|StartC",
+                            "meta/value": "2"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:11",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Processing|StructuredIllumination|Channel|ExcitationWavelength",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:12",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|AmplifierGain",
+                            "meta/value": "[30, 15, 30]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:13",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|CondensorRevolverFilter",
+                            "meta/value": "[HF, HF, HF]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:14",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|BiDirectionalZ",
+                            "meta/value": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:15",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|Color",
+                            "meta/value": "[#0000FF, #00FF00, #FF0000]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:16",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Processing|StructuredIllumination|DimensionR",
+                            "meta/value": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:17",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|CondensorFrontlensPosition",
+                            "meta/value": "[-1, -1, -1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:18",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|ExcitationWavelength",
+                            "meta/value": "[405.00000000000006, 488.00000000000006, 561]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:19",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Instrument|Id",
+                            "meta/value": "[Instrument:0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:20",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|HdrImagingMode",
+                            "meta/value": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:21",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Document|CreationDate",
+                            "meta/value": "[1899-12-30T00:00:00]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:22",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Processing|StructuredIllumination|DimensionH",
+                            "meta/value": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:23",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|HdrIntensity",
+                            "meta/value": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:24",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|AcquisitionMode",
+                            "meta/value": "[StackScanner]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:25",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtRegionWidth",
+                            "meta/value": "[512]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:26",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Processing|StructuredIllumination|DimensionC",
+                            "meta/value": "[3]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:27",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Instrument|Detector|AmplificationGain",
+                            "meta/value": "[30, 15, 30]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:28",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Document|Name",
+                            "meta/value": "[BAF_sim_StructuredIllumination_ChannelAlignment]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:29",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Application|Name",
+                            "meta/value": "[AIMApplication]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:30",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|Voltage",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:31",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Version",
+                            "meta/value": "[1.0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:32",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|Binning",
+                            "meta/value": "[1x1, 1x1, 1x1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:33",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|LaserScanInfo|SampleRotation",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:34",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|CondensorAperture",
+                            "meta/value": "[0.55007640000000002, 0.55007640000000002, 0.55007640000000002]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:35",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|ExcitationIntensity",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:36",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|OffsetZ",
+                            "meta/value": "[-7.0499999999992718e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:37",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|OffsetY",
+                            "meta/value": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:38",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|OffsetX",
+                            "meta/value": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:39",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Z|Interval|Increment",
+                            "meta/value": "[0.5]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:40",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|LaserScanInfo|ZoomY",
+                            "meta/value": "[0.62053789999999998, 0.62053789999999998, 0.62053789999999998]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:41",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|LaserScanInfo|ZoomX",
+                            "meta/value": "[0.62053789999999998, 0.62053789999999998, 0.62053789999999998]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:42",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Collimator|Position",
+                            "meta/value": "[2191, 2277, 2336]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:43",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|LaserSuppressionMode",
+                            "meta/value": "[None, None, None]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:44",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|EmissionWavelength",
+                            "meta/value": "[405.00000000000006, 488.00000000000006, 561]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:45",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|FieldStopPosition",
+                            "meta/value": "[-1, -1, -1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:46",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtBinning",
+                            "meta/value": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:47",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|Rotation",
+                            "meta/value": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:48",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|PinholeDiameter",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:49",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|ZStackSetup|StackBrightnessCorrection",
+                            "meta/value": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:50",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|DeviceMode",
+                            "meta/value": "[SIM, SIM, SIM]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:51",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FocusStabilizer",
+                            "meta/value": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:52",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|Laser|LaserName",
+                            "meta/value": "[DPSS 561-10, Diode 405-30, HR DPSS 561-100, HR Diode 405-50, HR Diode 488-100]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:53",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|SimGratingPeriod",
+                            "meta/value": "[2.3e-005, 2.3e-005, 2.3e-005]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:54",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|SizeZ",
+                            "meta/value": "[9]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:55",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BeamSplitter|Filter",
+                            "meta/value": "[BP 420-480 + LP 750, BP 495-550 + LP 750, BP 570-620 + LP 750]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:56",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|SizeY",
+                            "meta/value": "[1900]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:57",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|SizeX",
+                            "meta/value": "[1904]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:58",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|Detector|Id",
+                            "meta/value": "[Detector:0:0, Detector:1:0, Detector:2:0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:59",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Instrument|Detector|Zoom",
+                            "meta/value": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:60",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|SizeT",
+                            "meta/value": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:61",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Processing|StructuredIllumination|Channel|GratingPixels",
+                            "meta/value": "[4.5940000000000003, 4.5940000000000003, 4.5940000000000003]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:62",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Processing|StructuredIllumination|Channel|GratingPeriod",
+                            "meta/value": "[2.3e-005, 2.3e-005, 2.3e-005]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:63",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraFrameOffsetY",
+                            "meta/value": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:64",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraFrameOffsetX",
+                            "meta/value": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:65",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtFrameHeight",
+                            "meta/value": "[512]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:66",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Collimator|Name",
+                            "meta/value": "[CAM_Colli, CAM_Colli, CAM_Colli]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:67",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Track|ChannelRef|Id",
+                            "meta/value": "[A4FAAE3D470A9592D4616BB6F424BCCD, 2F9D948A49D9713FED11FF8A3326EF8A, 251D93E94DE0A06F86F84591E9DA17A1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:68",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraFrameHeight",
+                            "meta/value": "[1002]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:69",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Name",
+                            "meta/value": "[Track 1, Track2, Track3]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:70",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|LaserScanInfo|SampleOffsetY",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:71",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|SizeC",
+                            "meta/value": "[3]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:72",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|LaserScanInfo|SampleOffsetX",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:73",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|ColorMode",
+                            "meta/value": "Color"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:74",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Scaling|Distance|Id",
+                            "meta/value": "[X, Y, Z]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:75",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Instrument|Objective|LensNA",
+                            "meta/value": "[1.4600000000000002]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:76",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|Laser",
+                            "meta/value": "[HR Diode 405-50, HR Diode 488-100, HR DPSS 561-100]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:77",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|ChannelUnit|ChannelType",
+                            "meta/value": "SimHR"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:78",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|DetectorIdentifier",
+                            "meta/value": "[CameraMonochrome2, CameraMonochrome2, CameraMonochrome2]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:79",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Track|Id",
+                            "meta/value": "[Track:0, Track:1, Track:2]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:80",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraSuperSampling",
+                            "meta/value": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:81",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|HdrNumFrames",
+                            "meta/value": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:82",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|HdrEnabled",
+                            "meta/value": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:83",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "LsmTag",
+                            "meta/value": "[ #x0A;Channel: #x09;515.521824 #x0A;Input Parameters:  #x0A;PSF #x09; 0 #x0D; #x0A;PSF_File #x09; #x0D; #x0A;Baseline_Cut #x09; 1 #x0D; #x0A;SR_Frequency_Weighting #x09; 1 #x0D; #x0A;Noise_Filter #x09; -5.5492 #x0D; #x0A;Auto_Noise_Filter #x09; 1 #x0D; #x0A;Sectioning #x09; 100 #x09; 83 #x09; 83 #x0D; #x0A;Max_Isotrop #x09; 0 #x0D; #x0A; #x0A; #x0A;Rotation = #x09;-75.600000 #x0A; #x0A;Order = #x09;1 #x0A;|Peak| / |Mean| = #x09;3.13183 #x0A;k-shift vector: #x09;76.0848 #x09;-194.361; #x0A;Equivalent grating: #x09;240.095 #x0A;Equivalent angle: #x09;-68.6604 #x0A; #x0A;Order = #x09;2 #x0A;|Peak| / |Mean| = #x09;3.05845 #x0A;k-shift vector: #x09;103.383 #x09;-469.023; #x0A;Equivalent grating: #x09;104.323 #x0A;Equivalent angle: #x09;-77.5936 #x0A; #x0A;Ideal order strengths: #x09;1 #x09;0.442722 #x09;0.444935 #x0A;Estimated phases: #x09;0  #x09;72.4523  #x09;143.634  #x09;214.889  #x09;287.487  #x0A;Estimated phase errors: #x09;0  #x09;0.452293  #x09;-0.366253  #x09;-1.11081  #x09;-0.512544  #x0A;Global phase (1): #x09;0  #x09;-228.802  #x09;-352.757  #x0A;Global phase (2): #x09;0  #x09;-114.303  #x09;-394.394  #x0A;Drift correction: #x09;-0.0246929 #x09;0.0954022 #x09;0.0628106 #x0A;Detected peaks in the final image FT: #x09;1.10261  #x09;1.81538  #x09;5.12072  #x09;1.81648  #x09;1.10079  #x0A; #x0A; #x0A;Rotation = #x09;-14.400000 #x0A; #x0A;Order = #x09;1 #x0A;|Peak| / |Mean| = #x09;2.73859 #x0A;k-shift vector: #x09;218.245 #x09;-73.9223; #x0A;Equivalent grating: #x09;217.815 #x0A;Equivalent angle: #x09;-18.7467 #x0A; #x0A;Order = #x09;2 #x0A;|Peak| / |Mean| = #x09;2.65317 #x0A;k-shift vector: #x09;451.746 #x09;-144.992; #x0A;Equivalent grating: #x09;105.788 #x0A;Equivalent angle: #x09;-17.8278 #x0A; #x0A;Ideal order strengths: #x09;1 #x09;0.442722 #x09;0.444935 #x0A;Estimated phases: #x09;0  #x09;71.0303  #x09;144.291  #x09;215.422  #x09;287.85  #x0A;Estimated phase errors: #x09;0  #x09;-0.969718  #x09;0.291199  #x09;-0.578382  #x09;-0.150468  #x0A;Global phase (1): #x09;0  #x09;-328.477  #x09;-385.449  #x0A;Global phase (2): #x09;0  #x09;-150.997  #x09;-317.471  #x0A;Drift correction: #x09;-0 #x09;-0 #x09;-0 #x0A;Detected peaks in the final image FT: #x09;0.882352  #x09;1.20265  #x09;5.12072  #x09;1.20211  #x09;0.882024  #x0A; #x0A; #x0A;Rotation = #x09;46.800000 #x0A; #x0A;Order = #x09;1 #x0A;|Peak| / |Mean| = #x09;3.18602 #x0A;k-shift vector: #x09;174.588 #x09;173.595; #x0A;Equivalent grating: #x09;203.694 #x0A;Equivalent angle: #x09;44.8936 #x0A; #x0A;Order = #x09;2 #x0A;|Peak| / |Mean| = #x09;2.56196 #x0A;k-shift vector: #x09;336.101 #x09;354.272; #x0A;Equivalent grating: #x09;102.69 #x0A;Equivalent angle: #x09;46.5647 #x0A; #x0A;Ideal order strengths: #x09;1 #x09;0.442722 #x09;0.444935 #x0A;Estimated phases: #x09;0  #x09;71.9601  #x09;144.173  #x09;215.85  #x09;288.198  #x0A;Estimated phase errors: #x09;0  #x09;-0.0398699  #x09;0.173157  #x09;-0.15045  #x09;0.197724  #x0A;Global phase (1): #x09;0  #x09;168.45  #x09;312.628  #x0A;Global phase (2): #x09;0  #x09;109.721  #x09;285.62  #x0A;Drift correction: #x09;-0.00326261 #x09;0.0955451 #x09;0.0526378 #x0A;Detected peaks in the final image FT: #x09;0.982486  #x09;1.26211  #x09;5.12072  #x09;1.25985  #x09;0.983369  #x0A; #x0A;SR Noise Filter parameter: #x09;2.8239e-006 #x0A; #x0A;Estimated resolution (direction = -75.600000): #x09;103.797 (lateral) #x09;1083.33 (axial) #x0A;Estimated resolution (direction = -14.400000): #x09;105.403 (lateral) #x09;1083.33 (axial) #x0A;Estimated resolution (direction = 46.800000): #x09;190.23 (lateral) #x09;1083.33 (axial) #x0A; #x0A;SR Zero Level: #x09;9532.84 #x0A; #x0A;ROI: roiminz : #x09;0 #x0A;ROI: roimaxz : #x09;8 #x0A;ROI: roiminx : #x09;0 #x0A;ROI: roimaxx : #x09;1003 #x0A;ROI: roiminy : #x09;0 #x0A;ROI: roimaxy : #x09;1001 #x0A; #x0A;****** ****** ****** #x0A;Warning: Peak-To-Mean is low #x0A;Error: Grating deviation between the orders is too high #x0A;Warning: Grating deviation from the expected values is high #x0A;Warning: Global Phase deviation between the orders is high #x0A;,  #x0A;Channel: #x09;578.617841 #x0A;Input Parameters:  #x0A;PSF #x09; 0 #x0D; #x0A;PSF_File #x09; #x0D; #x0A;Baseline_Cut #x09; 1 #x0D; #x0A;SR_Frequency_Weighting #x09; 1 #x0D; #x0A;Noise_Filter #x09; -5.2299 #x0D; #x0A;Auto_Noise_Filter #x09; 1 #x0D; #x0A;Sectioning #x09; 100 #x09; 83 #x09; 83 #x0D; #x0A;Max_Isotrop #x09; 0 #x0D; #x0A; #x0A; #x0A;Rotation = #x09;-75.600000 #x0A; #x0A;Order = #x09;1 #x0A;|Peak| / |Mean| = #x09;3.215 #x0A;k-shift vector: #x09;53.6155 #x09;-202.952; #x0A;Equivalent grating: #x09;238.699 #x0A;Equivalent angle: #x09;-75.23 #x0A; #x0A;Order = #x09;2 #x0A;|Peak| / |Mean| = #x09;2.78252 #x0A;k-shift vector: #x09;115.326 #x09;-429.927; #x0A;Equivalent grating: #x09;112.567 #x0A;Equivalent angle: #x09;-75.0127 #x0A; #x0A;Ideal order strengths: #x09;1 #x09;0.603564 #x09;0.380245 #x0A;Estimated phases: #x09;0  #x09;72.4982  #x09;143.114  #x09;216.417  #x09;287.238  #x0A;Estimated phase errors: #x09;0  #x09;0.498218  #x09;-0.886473  #x09;0.416682  #x09;-0.761609  #x0A;Global phase (1): #x09;0  #x09;73.2765  #x09;341.532  #x0A;Global phase (2): #x09;0  #x09;112.893  #x09;147.515  #x0A;Drift correction: #x09;-0 #x09;-0 #x09;-0 #x0A;Detected peaks in the final image FT: #x09;1.04569  #x09;0.798616  #x09;4.90611  #x09;0.800349  #x09;1.04695  #x0A; #x0A; #x0A;Rotation = #x09;-14.400000 #x0A; #x0A;Order = #x09;1 #x0A;|Peak| / |Mean| = #x09;3.88882 #x0A;k-shift vector: #x09;229.768 #x09;-50.656; #x0A;Equivalent grating: #x09;213.338 #x0A;Equivalent angle: #x09;-12.4569 #x0A; #x0A;Order = #x09;2 #x0A;|Peak| / |Mean| = #x09;2.64598 #x0A;k-shift vector: #x09;447.271 #x09;-102.641; #x0A;Equivalent grating: #x09;109.382 #x0A;Equivalent angle: #x09;-12.9495 #x0A; #x0A;Ideal order strengths: #x09;1 #x09;0.603564 #x09;0.380245 #x0A;Estimated phases: #x09;0  #x09;72.2361  #x09;144.2  #x09;216.161  #x09;288.412  #x0A;Estimated phase errors: #x09;0  #x09;0.236062  #x09;0.200471  #x09;0.160582  #x09;0.411977  #x0A;Global phase (1): #x09;0  #x09;272.174  #x09;426.821  #x0A;Global phase (2): #x09;0  #x09;138.796  #x09;258.429  #x0A;Drift correction: #x09;0.114977 #x09;0.0563901 #x09;0.00784505 #x0A;Detected peaks in the final image FT: #x09;0.872118  #x09;0.687361  #x09;4.90611  #x09;0.684777  #x09;0.869623  #x0A; #x0A; #x0A;Rotation = #x09;46.800000 #x0A; #x0A;Order = #x09;1 #x0A;|Peak| / |Mean| = #x09;2.97659 #x0A;k-shift vector: #x09;171.73 #x09;170.206; #x0A;Equivalent grating: #x09;207.415 #x0A;Equivalent angle: #x09;44.8019 #x0A; #x0A;Order = #x09;2 #x0A;|Peak| / |Mean| = #x09;2.88707 #x0A;k-shift vector: #x09;333.231 #x09;348.025; #x0A;Equivalent grating: #x09;104.077 #x0A;Equivalent angle: #x09;46.3011 #x0A; #x0A;Ideal order strengths: #x09;1 #x09;0.603564 #x09;0.380245 #x0A;Estimated phases: #x09;0  #x09;72.3814  #x09;144.046  #x09;216.377  #x09;288.294  #x0A;Estimated phase errors: #x09;0  #x09;0.381428  #x09;0.0459397  #x09;0.377047  #x09;0.294031  #x0A;Global phase (1): #x09;0  #x09;76.2508  #x09;129.329  #x0A;Global phase (2): #x09;0  #x09;-52.9373  #x09;92.003  #x0A;Drift correction: #x09;0.140158 #x09;0.0924126 #x09;-0.0147109 #x0A;Detected peaks in the final image FT: #x09;0.767592  #x09;0.263744  #x09;4.90611  #x09;0.25837  #x09;0.761814  #x0A; #x0A;SR Noise Filter parameter: #x09;5.89038e-006 #x0A; #x0A;Estimated resolution (direction = -75.600000): #x09;112.146 (lateral) #x09;1083.33 (axial) #x0A;Estimated resolution (direction = -14.400000): #x09;183.56 (lateral) #x09;1083.33 (axial) #x0A;Estimated resolution (direction = 46.800000): #x09;179.131 (lateral) #x09;1083.33 (axial) #x0A; #x0A;SR Zero Level: #x09;12105.7 #x0A; #x0A;ROI: roiminz : #x09;0 #x0A;ROI: roimaxz : #x09;8 #x0A;ROI: roiminx : #x09;0 #x0A;ROI: roimaxx : #x09;1003 #x0A;ROI: roiminy : #x09;0 #x0A;ROI: roimaxy : #x09;1001 #x0A; #x0A;****** ****** ****** #x0A;Warning: Peak-To-Mean is low #x0A;Error: Global Phase deviation between the orders is too high #x0A;,  #x0A;Channel: #x09;459.592025 #x0A;Input Parameters:  #x0A;PSF #x09; 0 #x0D; #x0A;PSF_File #x09; #x0D; #x0A;Baseline_Cut #x09; 1 #x0D; #x0A;SR_Frequency_Weighting #x09; 1 #x0D; #x0A;Noise_Filter #x09; -6.3444 #x0D; #x0A;Auto_Noise_Filter #x09; 1 #x0D; #x0A;Sectioning #x09; 100 #x09; 83 #x09; 83 #x0D; #x0A;Max_Isotrop #x09; 0 #x0D; #x0A; #x0A; #x0A;Rotation = #x09;-75.600000 #x0A; #x0A;Order = #x09;1 #x0A;|Peak| / |Mean| = #x09;3.71601 #x0A;k-shift vector: #x09;31.8957 #x09;-196.697; #x0A;Equivalent grating: #x09;251.435 #x0A;Equivalent angle: #x09;-80.8074 #x0A; #x0A;Order = #x09;2 #x0A;|Peak| / |Mean| = #x09;3.4972 #x0A;k-shift vector: #x09;133.646 #x09;-466.166; #x0A;Equivalent grating: #x09;103.326 #x0A;Equivalent angle: #x09;-74.0331 #x0A; #x0A;Ideal order strengths: #x09;1 #x09;0.345483 #x09;0.468129 #x0A;Estimated phases: #x09;0  #x09;72.3519  #x09;144.269  #x09;216.059  #x09;288.631  #x0A;Estimated phase errors: #x09;0  #x09;0.351934  #x09;0.268956  #x09;0.0585493  #x09;0.630594  #x0A;Global phase (1): #x09;0  #x09;284.616  #x09;314.933  #x0A;Global phase (2): #x09;0  #x09;112.283  #x09;542.522  #x0A;Drift correction: #x09;0.0539295 #x09;-0.718325 #x09;-0.0405475 #x0A;Detected peaks in the final image FT: #x09;1.26293  #x09;1.08652  #x09;5.08228  #x09;1.0881  #x09;1.26052  #x0A; #x0A; #x0A;Rotation = #x09;-14.400000 #x0A; #x0A;Order = #x09;1 #x0A;|Peak| / |Mean| = #x09;3.58803 #x0A;k-shift vector: #x09;221.715 #x09;-33.1049; #x0A;Equivalent grating: #x09;223.924 #x0A;Equivalent angle: #x09;-8.50897 #x0A; #x0A;Order = #x09;2 #x0A;|Peak| / |Mean| = #x09;2.9207 #x0A;k-shift vector: #x09;450.526 #x09;-66.154; #x0A;Equivalent grating: #x09;110.238 #x0A;Equivalent angle: #x09;-8.36988 #x0A; #x0A;Ideal order strengths: #x09;1 #x09;0.345483 #x09;0.468129 #x0A;Estimated phases: #x09;0  #x09;72.1501  #x09;143.712  #x09;215.384  #x09;288.009  #x0A;Estimated phase errors: #x09;0  #x09;0.150057  #x09;-0.287842  #x09;-0.615883  #x09;0.00930634  #x0A;Global phase (1): #x09;0  #x09;-171.723  #x09;-444.913  #x0A;Global phase (2): #x09;0  #x09;-125.803  #x09;-310.552  #x0A;Drift correction: #x09;-0.0991171 #x09;-0.110446 #x09;-0.00497126 #x0A;Detected peaks in the final image FT: #x09;0.626981  #x09;1.64153  #x09;5.08228  #x09;1.63973  #x09;0.625124  #x0A; #x0A; #x0A;Rotation = #x09;46.800000 #x0A; #x0A;Order = #x09;1 #x0A;|Peak| / |Mean| = #x09;3.41447 #x0A;k-shift vector: #x09;145.532 #x09;171.905; #x0A;Equivalent grating: #x09;222.619 #x0A;Equivalent angle: #x09;49.8057 #x0A; #x0A;Order = #x09;2 #x0A;|Peak| / |Mean| = #x09;2.83048 #x0A;k-shift vector: #x09;301.752 #x09;328.82; #x0A;Equivalent grating: #x09;112.361 #x0A;Equivalent angle: #x09;47.515 #x0A; #x0A;Ideal order strengths: #x09;1 #x09;0.345483 #x09;0.468129 #x0A;Estimated phases: #x09;0  #x09;71.9583  #x09;143.188  #x09;214.983  #x09;287.64  #x0A;Estimated phase errors: #x09;0  #x09;-0.0416657  #x09;-0.811743  #x09;-1.01672  #x09;-0.359647  #x0A;Global phase (1): #x09;0  #x09;87.9358  #x09;301.342  #x0A;Global phase (2): #x09;0  #x09;43.5156  #x09;11.8749  #x0A;Drift correction: #x09;-0 #x09;-0 #x09;-0 #x0A;Detected peaks in the final image FT: #x09;0.772279  #x09;1.79299  #x09;5.08228  #x09;1.79144  #x09;0.795403  #x0A; #x0A;SR Noise Filter parameter: #x09;4.52461e-007 #x0A; #x0A;Estimated resolution (direction = -75.600000): #x09;102.757 (lateral) #x09;1083.33 (axial) #x0A;Estimated resolution (direction = -14.400000): #x09;109.652 (lateral) #x09;1083.33 (axial) #x0A;Estimated resolution (direction = 46.800000): #x09;111.726 (lateral) #x09;1083.33 (axial) #x0A; #x0A;SR Zero Level: #x09;27505.9 #x0A; #x0A;ROI: roiminz : #x09;0 #x0A;ROI: roimaxz : #x09;8 #x0A;ROI: roiminx : #x09;0 #x0A;ROI: roimaxx : #x09;1003 #x0A;ROI: roiminy : #x09;0 #x0A;ROI: roimaxy : #x09;1001 #x0A; #x0A;****** ****** ****** #x0A;Warning: Peak-To-Mean is low #x0A;Error: Grating deviation between the orders is too high #x0A;Warning: Grating deviation from the expected values is high #x0A;Error: Global Phase deviation between the orders is too high #x0A;, CCD #x09; 1 #x0D; #x0A;softPSF #x09; 1 #x0D; #x0A;PSF #x09; 0 #x0D; #x0A;PSF_File #x09; #x0D; #x0A;Baseline_Cut #x09; 1 #x0D; #x0A;Z3DMode #x09; 1 #x0D; #x0A;ZExtraPlanes #x09; 4 #x0D; #x0A;force_odd_size #x09; 1 #x0D; #x0A;fixedOversampling #x09; 2 #x0D; #x0A;max_order #x09; 2 #x0D; #x0A;removeBgMethod #x09; 1 #x0D; #x0A;adjust_intensity #x09; 1 #x0D; #x0A;dim_above #x09; 0.05 #x0D; #x0A;dim_sigma #x09; 10 #x0D; #x0A;dim_edgeMethod #x09; 3 #x0D; #x0A;optimise_grating #x09; 1 #x0D; #x0A;kVecMethod #x09; 0 #x0D; #x0A;KfindArea #x09; 0.05 #x0D; #x0A;KradIn #x09; 0.05 #x0D; #x0A;KradOut #x09; 0.15 #x0D; #x0A;min_overlap #x09; 0.2 #x0D; #x0A;sep_maxshift #x09; -1 #x0D; #x0A;SepSuppressZero #x09; 0 #x0D; #x0A;optimise_phases #x09; 1 #x0D; #x0A;optimise_intensity #x09; 0 #x0D; #x0A;optimise_orderstrength #x09; 0 #x0D; #x0A;separation_merit #x09; 7 #x0D; #x0A;initShiftMultiplesOfFirst #x09; -1 #x0D; #x0A;findOrderStrengthMethod #x09; 0 #x0D; #x0A;k_correl_weight #x09; 0 #x0D; #x0A;correctDriftbtwDirections #x09; 1 #x0D; #x0A;hgoal_method #x09; 2 #x0D; #x0A;hgoal_ignore #x09; 0 #x0D; #x0A;SR_Frequency_Weighting #x09; 1 #x0D; #x0A;wiener_h #x09; 0 #x0D; #x0A;Noise_Filter #x09; -6.3444 #x0D; #x0A;Auto_Noise_Filter #x09; 1 #x0D; #x0A;OrderModifier #x09; 1 #x09; 1 #x09; 1 #x0D; #x0A;Sectioning #x09; 100 #x09; 83 #x09; 83 #x0D; #x0A;supr_variance #x09; 3 #x09; 3 #x09; 3 #x0D; #x0A;Max_Isotrop #x09; 0 #x0D; #x0A;roiminx #x09; 0 #x0D; #x0A;roiminy #x09; 0 #x0D; #x0A;roimaxx #x09; 1004 #x0D; #x0A;roimaxy #x09; 1002 #x0D; #x0A;roiminz #x09; 0 #x0D; #x0A;roimaxz #x09; 8 #x0D; #x0A;directionSelected #x09; -1 #x0D; #x0A;TIRFChannel #x09; -1 #x0D; #x0A;MaxCounts #x09; 1000 #x0D; #x0A;DarkCounts #x09; 0.05 #x0D; #x0A;IX #x09; 1235 #x0D; #x0A;ResImage #x09; 3 #x0D; #x0A;BeadsPSFFeatureSize #x09; 33 #x0D; #x0A;BeadsPSFNoiseLevel #x09; 16 #x0D; #x0A;BeadsPSFQuality #x09; 1.5 #x0D; #x0A;BeadsPSFFocalPlane #x09; -1 #x0D; #x0A;BeadsPSFSampling #x09; 4 #x0D; #x0A;BeadsPSFBackgroundMethod #x09; 0 #x0D; #x0A;BeadsMCFeatureSize #x09; 11 #x0D; #x0A;BeadsMCNoiseLevel #x09; 16 #x0D; #x0A;BeadsMCQuality #x09; 1.5 #x0D; #x0A;BeadsMCFocalPlane #x09; -1 #x0D; #x0A;BeadsMCBackgroundMethod #x09; 0 #x0D; #x0A;, CCD #x09; 1 #x0D; #x0A;softPSF #x09; 1 #x0D; #x0A;PSF #x09; 0 #x0D; #x0A;PSF_File #x09; #x0D; #x0A;Baseline_Cut #x09; 1 #x0D; #x0A;Z3DMode #x09; 1 #x0D; #x0A;ZExtraPlanes #x09; 4 #x0D; #x0A;force_odd_size #x09; 1 #x0D; #x0A;fixedOversampling #x09; 2 #x0D; #x0A;max_order #x09; 2 #x0D; #x0A;removeBgMethod #x09; 1 #x0D; #x0A;adjust_intensity #x09; 1 #x0D; #x0A;dim_above #x09; 0.05 #x0D; #x0A;dim_sigma #x09; 10 #x0D; #x0A;dim_edgeMethod #x09; 3 #x0D; #x0A;optimise_grating #x09; 1 #x0D; #x0A;kVecMethod #x09; 0 #x0D; #x0A;KfindArea #x09; 0.05 #x0D; #x0A;KradIn #x09; 0.05 #x0D; #x0A;KradOut #x09; 0.15 #x0D; #x0A;min_overlap #x09; 0.2 #x0D; #x0A;sep_maxshift #x09; -1 #x0D; #x0A;SepSuppressZero #x09; 0 #x0D; #x0A;optimise_phases #x09; 1 #x0D; #x0A;optimise_intensity #x09; 0 #x0D; #x0A;optimise_orderstrength #x09; 0 #x0D; #x0A;separation_merit #x09; 7 #x0D; #x0A;initShiftMultiplesOfFirst #x09; -1 #x0D; #x0A;findOrderStrengthMethod #x09; 0 #x0D; #x0A;k_correl_weight #x09; 0 #x0D; #x0A;correctDriftbtwDirections #x09; 1 #x0D; #x0A;hgoal_method #x09; 2 #x0D; #x0A;hgoal_ignore #x09; 0 #x0D; #x0A;SR_Frequency_Weighting #x09; 1 #x0D; #x0A;wiener_h #x09; 0 #x0D; #x0A;Noise_Filter #x09; -5.2299 #x0D; #x0A;Auto_Noise_Filter #x09; 1 #x0D; #x0A;OrderModifier #x09; 1 #x09; 1 #x09; 1 #x0D; #x0A;Sectioning #x09; 100 #x09; 83 #x09; 83 #x0D; #x0A;supr_variance #x09; 3 #x09; 3 #x09; 3 #x0D; #x0A;Max_Isotrop #x09; 0 #x0D; #x0A;roiminx #x09; 0 #x0D; #x0A;roiminy #x09; 0 #x0D; #x0A;roimaxx #x09; 1004 #x0D; #x0A;roimaxy #x09; 1002 #x0D; #x0A;roiminz #x09; 0 #x0D; #x0A;roimaxz #x09; 8 #x0D; #x0A;directionSelected #x09; -1 #x0D; #x0A;TIRFChannel #x09; -1 #x0D; #x0A;MaxCounts #x09; 1000 #x0D; #x0A;DarkCounts #x09; 0.05 #x0D; #x0A;IX #x09; 1235 #x0D; #x0A;ResImage #x09; 3 #x0D; #x0A;BeadsPSFFeatureSize #x09; 33 #x0D; #x0A;BeadsPSFNoiseLevel #x09; 16 #x0D; #x0A;BeadsPSFQuality #x09; 1.5 #x0D; #x0A;BeadsPSFFocalPlane #x09; -1 #x0D; #x0A;BeadsPSFSampling #x09; 4 #x0D; #x0A;BeadsPSFBackgroundMethod #x09; 0 #x0D; #x0A;BeadsMCFeatureSize #x09; 11 #x0D; #x0A;BeadsMCNoiseLevel #x09; 16 #x0D; #x0A;BeadsMCQuality #x09; 1.5 #x0D; #x0A;BeadsMCFocalPlane #x09; -1 #x0D; #x0A;BeadsMCBackgroundMethod #x09; 0 #x0D; #x0A;, CCD #x09; 1 #x0D; #x0A;softPSF #x09; 1 #x0D; #x0A;PSF #x09; 0 #x0D; #x0A;PSF_File #x09; #x0D; #x0A;Baseline_Cut #x09; 1 #x0D; #x0A;Z3DMode #x09; 1 #x0D; #x0A;ZExtraPlanes #x09; 4 #x0D; #x0A;force_odd_size #x09; 1 #x0D; #x0A;fixedOversampling #x09; 2 #x0D; #x0A;max_order #x09; 2 #x0D; #x0A;removeBgMethod #x09; 1 #x0D; #x0A;adjust_intensity #x09; 1 #x0D; #x0A;dim_above #x09; 0.05 #x0D; #x0A;dim_sigma #x09; 10 #x0D; #x0A;dim_edgeMethod #x09; 3 #x0D; #x0A;optimise_grating #x09; 1 #x0D; #x0A;kVecMethod #x09; 0 #x0D; #x0A;KfindArea #x09; 0.05 #x0D; #x0A;KradIn #x09; 0.05 #x0D; #x0A;KradOut #x09; 0.15 #x0D; #x0A;min_overlap #x09; 0.2 #x0D; #x0A;sep_maxshift #x09; -1 #x0D; #x0A;SepSuppressZero #x09; 0 #x0D; #x0A;optimise_phases #x09; 1 #x0D; #x0A;optimise_intensity #x09; 0 #x0D; #x0A;optimise_orderstrength #x09; 0 #x0D; #x0A;separation_merit #x09; 7 #x0D; #x0A;initShiftMultiplesOfFirst #x09; -1 #x0D; #x0A;findOrderStrengthMethod #x09; 0 #x0D; #x0A;k_correl_weight #x09; 0 #x0D; #x0A;correctDriftbtwDirections #x09; 1 #x0D; #x0A;hgoal_method #x09; 2 #x0D; #x0A;hgoal_ignore #x09; 0 #x0D; #x0A;SR_Frequency_Weighting #x09; 1 #x0D; #x0A;wiener_h #x09; 0 #x0D; #x0A;Noise_Filter #x09; -5.5492 #x0D; #x0A;Auto_Noise_Filter #x09; 1 #x0D; #x0A;OrderModifier #x09; 1 #x09; 1 #x09; 1 #x0D; #x0A;Sectioning #x09; 100 #x09; 83 #x09; 83 #x0D; #x0A;supr_variance #x09; 3 #x09; 3 #x09; 3 #x0D; #x0A;Max_Isotrop #x09; 0 #x0D; #x0A;roiminx #x09; 0 #x0D; #x0A;roiminy #x09; 0 #x0D; #x0A;roimaxx #x09; 1004 #x0D; #x0A;roimaxy #x09; 1002 #x0D; #x0A;roiminz #x09; 0 #x0D; #x0A;roimaxz #x09; 8 #x0D; #x0A;directionSelected #x09; -1 #x0D; #x0A;TIRFChannel #x09; -1 #x0D; #x0A;MaxCounts #x09; 1000 #x0D; #x0A;DarkCounts #x09; 0.05 #x0D; #x0A;IX #x09; 1235 #x0D; #x0A;ResImage #x09; 3 #x0D; #x0A;BeadsPSFFeatureSize #x09; 33 #x0D; #x0A;BeadsPSFNoiseLevel #x09; 16 #x0D; #x0A;BeadsPSFQuality #x09; 1.5 #x0D; #x0A;BeadsPSFFocalPlane #x09; -1 #x0D; #x0A;BeadsPSFSampling #x09; 4 #x0D; #x0A;BeadsPSFBackgroundMethod #x09; 0 #x0D; #x0A;BeadsMCFeatureSize #x09; 11 #x0D; #x0A;BeadsMCNoiseLevel #x09; 16 #x0D; #x0A;BeadsMCQuality #x09; 1.5 #x0D; #x0A;BeadsMCFocalPlane #x09; -1 #x0D; #x0A;BeadsMCBackgroundMethod #x09; 0 #x0D; #x0A;]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:84",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|Name",
+                            "meta/value": "TV2-T3-SR"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:85",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|InterpolationY",
+                            "meta/value": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:86",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Document|Comment",
+                            "meta/value": "[AFFINE #x0D; #x0A;C #x09;X #x09;Y #x09;RX #x09;RY #x09;SX #x09;SY #x09;Z #x0D; #x0A;  0.00 #x09;     0.00000 #x09;     0.00000 #x09;     0.00000 #x09;     0.00000 #x09;     0.00000 #x09;     0.00000 #x09;     0.00000 #x0D; #x0A;  1.00 #x09;     0.02832 #x09;    -2.65988 #x09;     0.00008 #x09;     0.00014 #x09;     0.00066 #x09;     0.00074 #x09;     0.00000 #x0D; #x0A;  2.00 #x09;     3.76318 #x09;    -0.24779 #x09;    -0.00031 #x09;     0.00008 #x09;     0.00127 #x09;     0.00137 #x09;     0.00000 #x0D; #x0A;  3.00 #x09;     7.26698 #x09;     0.43022 #x09;    -0.00044 #x09;     0.00002 #x09;     0.00228 #x09;     0.00117 #x09;     0.00000 #x0D; #x0A;]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:87",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|Low",
+                            "meta/value": "-0"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:88",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|LaserScanInfo|LineTime",
+                            "meta/value": "[3.8461538461538463e-007, 3.8461538461538463e-007, 3.8461538461538463e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:89",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|Objective",
+                            "meta/value": "[alpha Plan-Apochromat 100x/1.46 Oil DIC M27 Elyra]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:90",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Application|Version",
+                            "meta/value": "[7.0.7.288]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:91",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Instrument|Detector|Gain",
+                            "meta/value": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:92",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Document|Title",
+                            "meta/value": "[BAF_sim_StructuredIllumination_ChannelAlignment]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:93",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|PreScan",
+                            "meta/value": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:94",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Instrument|Objective|Immersion",
+                            "meta/value": "[Oil]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:95",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|Laser|LaserPower",
+                            "meta/value": "[0.02, 0.029999999999999999, 0.10000000000000001, 0.050000000000000003, 0.10000000000000001]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:96",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "LsmTag|StartC",
+                            "meta/value": "[1, 2, 0, 0, 2, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:97",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Processing|StructuredIllumination|Channel|DiffractionEfficiency3",
+                            "meta/value": "[2.71, 2.0099999999999998, 1.26]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:98",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Processing|StructuredIllumination|Channel|DiffractionEfficiency2",
+                            "meta/value": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:99",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Processing|StructuredIllumination|Channel|DiffractionEfficiency1",
+                            "meta/value": "[2.71, 2.0099999999999998, 1.26]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:100",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|IlluminationType",
+                            "meta/value": "[Epifluorescence, Epifluorescence, Epifluorescence]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:101",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|DigitalGain",
+                            "meta/value": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:102",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ScalingZ",
+                            "meta/value": "[4.9999999999999998e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:103",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BeamSplitter|Identifier",
+                            "meta/value": "[MainBeamSplitterNonDescanned, MainBeamSplitterNonDescanned, MainBeamSplitterNonDescanned]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:104",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ScalingY",
+                            "meta/value": "[4.9999999999999998e-008]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:105",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ScalingX",
+                            "meta/value": "[4.9999999999999998e-008]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:106",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|PinholeSizeAiry",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:107",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|Wavelength",
+                            "meta/value": "[4.0500000000000004e-007, 4.8800000000000003e-007, 5.6100000000000001e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:108",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|TransmittedLightLampIntensity",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:109",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtLinePeriod",
+                            "meta/value": "[3.8461538461538463e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:110",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Medium",
+                            "meta/value": "[Oil]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:111",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|ComponentBitCount",
+                            "meta/value": "[16]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:112",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Instrument|Objective|Manufacturer|Model",
+                            "meta/value": "[alpha Plan-Apochromat 100x/1.46 Oil DIC M27 Elyra]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:113",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FilterMode",
+                            "meta/value": "[Frame]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:114",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraBinning",
+                            "meta/value": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:115",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|ObjectiveRef|Id",
+                            "meta/value": "[Objective:0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:116",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|AcquisitionMode",
+                            "meta/value": "[StructuredIllumination, StructuredIllumination, StructuredIllumination]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:117",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|UseRois",
+                            "meta/value": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:118",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|ContrastMethod",
+                            "meta/value": "[Fluorescence, Fluorescence, Fluorescence]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:119",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|BitsPerSample",
+                            "meta/value": "[16]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:120",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|ImageChannelName",
+                            "meta/value": "[TV2, TV2, TV2]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:121",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|PureRatioSource",
+                            "meta/value": "[false, false, false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:122",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|FWFOVPosition",
+                            "meta/value": "[SIM, SIM, SIM]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:123",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtSuperSampling",
+                            "meta/value": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:124",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Processing|StructuredIllumination|Phases",
+                            "meta/value": "[0.000000000000000000000000000000]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:125",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|Id",
+                            "meta/value": "251D93E94DE0A06F86F84591E9DA17A1"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:126",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|Gamma",
+                            "meta/value": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:127",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Instrument|Detector|Type",
+                            "meta/value": "[Other, Other, Other]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:128",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|LaserSuppression",
+                            "meta/value": "[false, false, false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:129",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Processing|StructuredIllumination|Rotations",
+                            "meta/value": "[14.400000000000034000000000000000]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:130",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|CenterWavelength",
+                            "meta/value": "[5.5233891400000022e-007, 5.5233891400000022e-007, 5.5233891400000022e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:131",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|IsSelected",
+                            "meta/value": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:132",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|ChannelUnit|UnitI",
+                            "meta/value": "Unknown"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:133",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|DetectorMode",
+                            "meta/value": "[PhotonCounting, PhotonCounting, PhotonCounting]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:134",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|Name",
+                            "meta/value": "[TV2-T1-SR, TV2-T2-SR, TV2-T3-SR]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:135",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtZoom",
+                            "meta/value": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:136",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Instrument|Detector|Id",
+                            "meta/value": "[Detector:0:0, Detector:1:0, Detector:2:0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:137",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|FilterTransmission",
+                            "meta/value": "[-1, -1, -1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:138",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Document|Rating",
+                            "meta/value": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:139",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|High",
+                            "meta/value": "0.99892277947244423"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:140",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Instrument|Objective|Id",
+                            "meta/value": "[Objective:0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:141",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|RefractiveIndex",
+                            "meta/value": "[1.518]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:142",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|DimensionZ",
+                            "meta/value": "[9]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:143",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|PixelPeriod",
+                            "meta/value": "[7.8787878787901705e-007]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:144",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|DimensionY",
+                            "meta/value": "[1024]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:145",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|NACondenser",
+                            "meta/value": "[1, 1, 1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:146",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|ZStackSetup|Interpolation",
+                            "meta/value": "[Cubic]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:147",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|DimensionX",
+                            "meta/value": "[1024]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:148",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|DimensionT",
+                            "meta/value": "[10]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:149",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|Color",
+                            "meta/value": "#FF0000"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:150",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ZoomY",
+                            "meta/value": "[0.62053789999999998]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:151",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "LsmTag|Name",
+                            "meta/value": "[SimOut_25520403014529017387665644616, SimOut_16894912612572218045665644616, SimOut_8858531771518420394665644616, SimParR_84456256113019747665644328, SimParR_25342672653946917264665644328, SimParR_2264183309800016900665644328]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:152",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|ZoomX",
+                            "meta/value": "[0.62053789999999998]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:153",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|DigitalOffset",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:154",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "LsmTag|Type",
+                            "meta/value": "[string, string, string, string, string, string]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:155",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|Name",
+                            "meta/value": "[Other, Other, Other]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:156",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|ZStackSetup|Extrapolate",
+                            "meta/value": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:157",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Channel|PinholeSize",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:158",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|CameraIntegrationTime",
+                            "meta/value": "[1, 0.20000000000000001, 0.40000000000000002]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:159",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|OriginalScanData",
+                            "meta/value": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:160",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Image|Z|Interval|Start",
+                            "meta/value": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:161",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|SpectralScanChannels",
+                            "meta/value": "[32, 32, 32]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:162",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|LaserSuppression",
+                            "meta/value": "[false, false, false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:163",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Detector|AmplifierOffset",
+                            "meta/value": "[7.8428980000000005e-030, 5.8821729999999997e-027, 7.0586079999999998e-028]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:164",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|TimeSeries",
+                            "meta/value": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:165",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|CameraFrameWidth",
+                            "meta/value": "[1004]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:166",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Document|SubType",
+                            "meta/value": "[Image]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:167",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|TubeLensPosition",
+                            "meta/value": "[Lens 1,6x, Lens 1,6x, Lens 1,6x]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:168",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Information|Instrument|Objective|NominalMagnification",
+                            "meta/value": "[100]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:169",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FilterSamplingNumber",
+                            "meta/value": "[1]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:170",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FitFramesizeToRoi",
+                            "meta/value": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:171",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtOffsetY",
+                            "meta/value": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:172",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|RtOffsetX",
+                            "meta/value": "[0]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:173",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|Attenuator|Transmission",
+                            "meta/value": "[0.10000000000000001, 0.022000000000000002, 0.029999999999999999]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:174",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|BiDirectional",
+                            "meta/value": "[false]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:175",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|SimRotations",
+                            "meta/value": "[3]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:176",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|AcquisitionModeSetup|FilterMethod",
+                            "meta/value": "[Average]"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:177",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "DisplaySetting|Channel|ChannelUnit|FactorI",
+                            "meta/value": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "meta/xml/annotation": {
+                    "meta/id": "Annotation:178",
+                    "meta/namespace": "openmicroscopy.org/OriginalMetadata",
+                    "meta/value": {
+                        "meta/original/metadata": {
+                            "meta/key": "Experiment|AcquisitionBlock|MultiTrackSetup|TrackSetup|BeamSplitter|BeamSplitterServoPosition",
+                            "meta/value": "[0, 0, 0]"
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "meta/experimenters": [
+        {
+            "meta/experimenter": {
+                "meta/id": "Experimenter:0",
+                "meta/user/name": ""
+            }
+        }
+    ],
+    "meta/instruments": [
+        {
+            "meta/instrument": {
+                "meta/id": "Instrument:0",
+                "meta/detectors": [
+                    {
+                        "meta/detector": {
+                            "meta/amplification/gain": "30.0",
+                            "meta/gain": "1.0",
+                            "meta/id": "Detector:0:0",
+                            "meta/type": "Other",
+                            "meta/zoom": "1.0"
+                        }
+                    },
+                    {
+                        "meta/detector": {
+                            "meta/amplification/gain": "15.0",
+                            "meta/gain": "0.0",
+                            "meta/id": "Detector:1:0",
+                            "meta/type": "Other",
+                            "meta/zoom": "1.0"
+                        }
+                    },
+                    {
+                        "meta/detector": {
+                            "meta/amplification/gain": "30.0",
+                            "meta/gain": "0.0",
+                            "meta/id": "Detector:2:0",
+                            "meta/type": "Other",
+                            "meta/zoom": "1.0"
+                        }
+                    }
+                ],
+                "meta/objectives": [
+                    {
+                        "meta/objective": {
+                            "meta/id": "Objective:0",
+                            "meta/immersion": "Oil",
+                            "meta/lens/na": "1.4600000000000002",
+                            "meta/model": "alpha Plan-Apochromat 100x/1.46 Oil DIC M27 Elyra",
+                            "meta/magnification/nominal": "100.0"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

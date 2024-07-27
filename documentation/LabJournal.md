@@ -1,3 +1,11 @@
+# samstag:
+generate results.
+write results part,
+clean up code,
+generate documentation from docstring,
+add documentation to appendix and mam,
+discuss results in discussion
+
 # 21.07.24
 - run main to get latest bug
 # 20.07.24

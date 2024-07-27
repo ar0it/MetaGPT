@@ -1,0 +1,252 @@
+{
+    "Imgs": [
+        {
+            "Img": {
+                "ID": "Image:0",
+                "N": "testetst_Image8_edited_.ome.tif",
+                "Desc": {},
+                "Pxs": [
+                    {
+                        "P": {
+                            "BE": "false",
+                            "D/O": "XYCZT",
+                            "ID": "Pixels:0",
+                            "I": "false",
+                            "PSX": "0.09922878199885109",
+                            "PSX/U": "µm",
+                            "PSY": "0.09922878199885109",
+                            "PSY/U": "µm",
+                            "SB": "8",
+                            "Dim/C": "3",
+                            "Dim/T": "30",
+                            "Dim/X": "680",
+                            "Dim/Y": "280",
+                            "Dim/Z": "1",
+                            "T": "uint8",
+                            "Ch": [
+                                {
+                                    "Chnl": {
+                                        "ID": "Channel:0:0",
+                                        "S/P": "1",
+                                        "LP/Path": {}
+                                    }
+                                },
+                                {
+                                    "Chnl": {
+                                        "ID": "Channel:0:1",
+                                        "S/P": "1",
+                                        "LP/Path": {}
+                                    }
+                                },
+                                {
+                                    "Chnl": {
+                                        "ID": "Channel:0:2",
+                                        "S/P": "1",
+                                        "LP/Path": {}
+                                    }
+                                }
+                            ],
+                            "M/O": {}
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "SA/Annotations": {
+        "XML/Annot": [
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:0",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "hyperstack",
+                            "Val": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:1",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "PlanarConfiguration",
+                            "Val": "Chunky"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:2",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "MetaDataPhotometricInterpretation",
+                            "Val": "Monochrome"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:3",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "SamplesPerPixel",
+                            "Val": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:4",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "NumberOfChannels",
+                            "Val": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:5",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "ResolutionUnit",
+                            "Val": "Centimeter"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:6",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "ImageWidth",
+                            "Val": "680"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:7",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "PhotometricInterpretation",
+                            "Val": "BlackIsZero"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:8",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "Software",
+                            "Val": "OME Bio-Formats 6.7.0"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:9",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "Compression",
+                            "Val": "Uncompressed"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:10",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "YResolution",
+                            "Val": "100777.212"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:11",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "XResolution",
+                            "Val": "100777.212"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:12",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "MetaMorph",
+                            "Val": "no"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:13",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "SampleFormat",
+                            "Val": "unsigned integer"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:14",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "BitsPerSample",
+                            "Val": "8"
+                        }
+                    }
+                }
+            },
+            {
+                "XML/Annot": {
+                    "ID": "Annotation:15",
+                    "NS": "openmicroscopy.org/OriginalMetadata",
+                    "Val": {
+                        "OM": {
+                            "K": "ImageLength",
+                            "Val": "280"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

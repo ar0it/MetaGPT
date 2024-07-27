@@ -1,0 +1,101 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Image ID="Image:0" Name="Rio9 0528.tif">
+    <Description>BoundingBox 0.00000 28.58871 0.00000 28.58871 0.00000 0.00931  |</Description>
+    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint16" SignificantBits="16" Interleaved="false" BigEndian="false" SizeX="3072" SizeY="3072" SizeZ="1" SizeC="1" SizeT="1" PhysicalSizeX="0.009309249985981148" PhysicalSizeXUnit="µm" PhysicalSizeY="0.009309249985981148" PhysicalSizeYUnit="µm">
+      <Channel ID="Channel:0:0" SamplesPerPixel="1">
+        <LightPath/>
+      </Channel>
+      <MetadataOnly/>
+    </Pixels>
+  </Image>
+  <StructuredAnnotations>
+    <XMLAnnotation ID="Annotation:276">
+      <Value>
+        <OriginalMetadata>
+          <Key>Image</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Dimensions</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Width</Key>
+                  <Value>3072</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Height</Key>
+                  <Value>3072</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Resolution</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>XResolution</Key>
+                  <Value>2728469.0</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>YResolution</Key>
+                  <Value>2728469.0</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Unit</Key>
+                  <Value>Inch</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Compression</Key>
+              <Value>LZW</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PhotometricInterpretation</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>MetaData</Key>
+                  <Value>Monochrome</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Interpretation</Key>
+                  <Value>BlackIsZero</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PlanarConfiguration</Key>
+              <Value>Chunky</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>NumberOfChannels</Key>
+              <Value>1</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>SamplesPerPixel</Key>
+              <Value>1</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>BitsPerSample</Key>
+              <Value>16</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Orientation</Key>
+              <Value>1st row - top; 1st column - left</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>MetaMorph</Key>
+              <Value>no</Value>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+      </Value>
+    </XMLAnnotation>
+  </StructuredAnnotations>
+</OME>
+
+COST: 0.03393500000000001
+ATTEMPTS: 1.0
+TIME: 46.36594247817993

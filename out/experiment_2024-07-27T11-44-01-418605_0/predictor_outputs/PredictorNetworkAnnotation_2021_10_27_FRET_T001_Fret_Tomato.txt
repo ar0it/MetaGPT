@@ -1,0 +1,467 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Image ID="Image:0" Name="2021_10_27_FRET_T001_Fret_Tomato.tif">
+    <Description>      &lt;!--this instrument tag is add because of backward compatibility with NIS elements 4.30--&gt;;       &lt;/LightSource&gt;;    &lt;/Instrument&gt;;       &lt;/LightSource&gt;;       &lt;/LightSource&gt;;       &lt;/Filter&gt;;    &lt;/Instrument&gt;;       &lt;AcquisitionDate&gt;;          2021-10-27T18:00:24      &lt;/AcquisitionDate&gt;;       &lt;Description&gt;;          Dimensions: T(720) x XY(1) x λ(3); Camera Name: Photometrics Prime 95B; Numerical Aperture: 1.3; Refractive Index: 1.515; Number of Picture Planes: 3; Plane #1:;  Name: Fret_Turquoise;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #2:;  Name: Fret_Tomato;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #3:;  Name: Ph-3;  Component Count: 1;  Modality: Brightfield;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 1x1;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Time Loop: 720; - Equidistant (Period 30000 ms);       &lt;/Description&gt;;          &lt;/Channel&gt;;       &lt;/Pixels&gt;;    &lt;/Image&gt;; &lt;/OME&gt;; </Description>
+    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint8" SignificantBits="8" Interleaved="false" BigEndian="false" SizeX="1608" SizeY="1608" SizeZ="1" SizeC="1" SizeT="1">
+      <Channel ID="Channel:0:0" SamplesPerPixel="1">
+        <LightPath/>
+      </Channel>
+      <MetadataOnly/>
+    </Pixels>
+  </Image>
+  <StructuredAnnotations>
+    <XMLAnnotation ID="Annotation:264">
+      <Value>
+        <OriginalMetadata>
+          <Key>Camera</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Name</Key>
+              <Value>Photometrics Prime 95B</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>FamilyName</Key>
+              <Value>CameraFamilyName</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>UniqueName</Key>
+              <Value>CameraUniqueName</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>UserName</Key>
+              <Value>CameraUserName</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Version</Key>
+              <Value>m_VersionString</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Settings</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Type</Key>
+                  <Value>Prime 95B</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Binning</Key>
+                  <Value>2x2</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>BitDepth</Key>
+                  <Value>12-bit</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Exposure</Key>
+                  <Value>100 ms</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Denoising</Key>
+                  <Value>Off</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>ConversionGain</Key>
+                  <Value>둀ၙ</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>FanSpeed</Key>
+                  <Value>High</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>LightSource</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ID</Key>
+              <Value>LightSource:2</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Model</Key>
+              <Value>Lumencor MultiLaser</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Power</Key>
+              <Value>0.000000</Value>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Instrument</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ID</Key>
+              <Value>Instrument:1</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>LightSource</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>LightSource_0</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>ID</Key>
+                      <Value>LightSource:2</Value>
+                    </OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>Model</Key>
+                      <Value>Lumencor MultiLaser</Value>
+                    </OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>Power</Key>
+                      <Value>0.000000</Value>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Channel</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>AcquisitionMode</Key>
+              <Value>WideField</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Color</Key>
+              <Value>6618880</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>EmissionWavelength</Key>
+              <Value>517</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ExcitationWavelength</Key>
+              <Value>475</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ID</Key>
+              <Value>Channel:0</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Name</Key>
+              <Value>Fret_Tomato</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PinholeSize</Key>
+              <Value>-1.000000</Value>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Image</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>AcquisitionDate</Key>
+              <Value>2021-10-27T18:00:24</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Description</Key>
+              <Value>Dimensions: T(720) x XY(1) x λ(3)
+Camera Name: Photometrics Prime 95B
+Numerical Aperture: 1.3
+Refractive Index: 1.515
+Number of Picture Planes: 3
+Plane #1:
+ Name: Fret_Turquoise
+ Component Count: 1
+ Modality: Widefield Fluorescence
+ Camera Settings:   
+  Camera Type: Prime 95B
+  Binning: 2x2
+  Bit Depth: 12-bit
+  Exposure: 100 ms
+  Denoising: Off
+  Conversion Gain: 둀ၙ
+  Fan Speed: High
+Plane #2:
+ Name: Fret_Tomato
+ Component Count: 1
+ Modality: Widefield Fluorescence
+ Camera Settings:   
+  Camera Type: Prime 95B
+  Binning: 2x2
+  Bit Depth: 12-bit
+  Exposure: 100 ms
+  Denoising: Off
+  Conversion Gain: 둀ၙ
+  Fan Speed: High
+Plane #3:
+ Name: Ph-3
+ Component Count: 1
+ Modality: Brightfield
+ Camera Settings:   
+  Camera Type: Prime 95B
+  Binning: 1x1
+  Bit Depth: 12-bit
+  Exposure: 100 ms
+  Denoising: Off
+  Conversion Gain: 둀ၙ
+  Fan Speed: High
+Time Loop: 720
+- Equidistant (Period 30000 ms)</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Comment</Key>
+              <Value>      !--this instrument tag is add because of backward compatibility with NIS elements 4.30--
+      /LightSource
+   /Instrument
+      /LightSource
+      /LightSource
+      /Filter
+   /Instrument</Value>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Properties</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ExcitationSourceName</Key>
+              <Value>CLxStringW</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>sizeSensorMicrons</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>sizeSensorPixels</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>dBinningX</Key>
+              <Value>-1.000000000000000</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>m_uiAutoWhiteColor</Key>
+              <Value>16777215</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>MultiViewEnabled</Key>
+              <Value>false</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PlanarConfiguration</Key>
+              <Value>Chunky</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>cy</Key>
+              <Value>-1</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>sCal.dTMeasCalMax</Key>
+              <Value>0.000000000000000</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>bCalibrated</Key>
+              <Value>false</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>uiUsageFlags</Key>
+              <Value>lx_uint32</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PhotometricInterpretation</Key>
+              <Value>BlackIsZero</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>m_bShowSpectralGraph</Key>
+              <Value>true</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>rectSensorUser</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>LaserWavelength</Key>
+              <Value>475</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>m_GrabberString</Key>
+              <Value>VGA</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>m_NFRString</Key>
+              <Value>CLxStringW</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ModifiedAtJDN</Key>
+              <Value>0.000000000000000</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>LastEmissionFilterName1</Key>
+              <Value>CLxStringW</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>DetectorSettingsBinning</Key>
+              <Value>2x2</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Tag0</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Top</Key>
+              <Value>0</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>left</Key>
+              <Value>lx_int32</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>m_uiPropGroupCount</Key>
+              <Value>0</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>m_CompanyString</Key>
+              <Value>CLxStringW</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>dFps</Key>
+              <Value>-1.000000000000000</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>uiNumOffset</Key>
+              <Value>lx_uint32</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>uiComp</Key>
+              <Value>0</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>sCal.dTMeasCalMin</Key>
+              <Value>double</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Size</Key>
+              <Value>1</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>uiBkgndSize</Key>
+              <Value>lx_uint32</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>sizeSensorStep</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>ExcitationSourceKey</Key>
+              <Value>CLxStringW</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Left</Key>
+              <Value>lx_int32</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>m_iGraphScale</Key>
+              <Value>lx_int32</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>dBinningY</Key>
+              <Value>-1.000000000000000</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>uiDenOffset</Key>
+              <Value>0</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>sCal.dFmax</Key>
+              <Value>double</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>uiFQModeUsage</Key>
+              <Value>lx_uint32</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>uiBpc</Key>
+              <Value>lx_uint32</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>LightPath</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>fmtDesc</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>bCanExecAsyncSampleGet</Key>
+              <Value>false</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>dMin</Key>
+              <Value>0.000000000000000</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>EPIAdditionalFilterKey</Key>
+              <Value>CLxStringW</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>right</Key>
+              <Value>lx_int32</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>OpenViewV1_0</Key>
+              <Value>CLxByteArray</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Unit</Key>
+              <Value>�m</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>OME</Key>
+              <Value>http://www.openmicroscopy.org/Schemas/OME/2015-01</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PropertiesFast_Extra</Key>
+              <Value>CLxListVariant</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>bPickFromGraph</Key>
+              <Value>false</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>EPIAdditionalFilterName</Key>
+              <Value>CLxStringW</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>dMax</Key>
+              <Value>2.000000000000000</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>top</Key>
+              <Value>0</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>uiNumer</Key>
+              <Value>0</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>DetectorID</Key>
+              <Value>Detector:0</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Group</Key>
+              <Value>0</Value>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+      </Value>
+    </XMLAnnotation>
+  </StructuredAnnotations>
+</OME>
+
+COST: 0.12794
+ATTEMPTS: 1.0
+TIME: 58.51960492134094

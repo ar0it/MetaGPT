@@ -3,7 +3,8 @@ from metagpt.utils import utils, BioformatsReader
 from metagpt.distorters.distorter_template import DistorterTemplate
 import json
 from ome_types import from_xml
-
+import os
+import time
 class ExperimentTemplate:
     """
     The experiment template class defines an experiment object that can be used to run experiments.
@@ -20,19 +21,28 @@ class ExperimentTemplate:
         self.out_path:str = None
         self.schema:str = None
         self.model:str = "gpt-4o-mini"
+        self.time = str # teh time of the experiment
+        self.out_path_experiment = None
 
     def run(self):
         """
         Run the experiment
         """
-        for i in range (self.reps):
+        for i in range(self.reps):
+            if self.out_path_experiment is None:
+                self.out_path_experiment = self.out_path + "experiment_"+self.time+"_"+ str(i) + "/"
+            #create an out folder for the experiment
+            if not os.path.exists(self.out_path_experiment):
+                os.makedirs(self.out_path_experiment)
             for path in self.data_paths:
                 print("-"*60)
                 print("Processing image:")
                 print(path)
                 print("-"*60)
                 print("-"*10+"Bioformats"+"-"*10)
+                t0 = time.time()
                 out_bioformats = BioformatsReader.get_omexml_metadata(path=path) # the raw metadata as ome xml str
+                t1 = time.time()
                 #raw_meta = BioformatsReader.get_raw_metadata(path=path) # the raw metadata as dictionary of key value pairs
                 #tree_meta = BioformatsReader.raw_to_tree(raw_meta) # the raw metadata as nested dictionary --> more compressed
 
@@ -43,15 +53,20 @@ class ExperimentTemplate:
                 dt = DistorterTemplate()
                 fake_meta = dt.distort(
                     out_bioformats,
-                    out_path=self.out_path + "distorted_data/" + file_name + "_distorted.json",
+                    out_path=self.out_path_experiment + "distorted_data/" + file_name + "_distorted.json",
                     should_pred="maybe") # the distorted metadata as dictionary of key value pairs
 
-                bio_sample = Sample(name=file_name,
+                bio_sample = Sample(file_name=file_name,
                                     metadata_str=out_bioformats,
                                     method="Bioformats",
-                                    format=data_format)
+                                    format=data_format,
+                                    time=t1-t0,
+                                    name=f"{file_name}_Bioformats_{i}",
+                                    index=i,
+                                    attempts=1)
                 
                 self.dataset.add_sample(bio_sample)
+                
 
                 for j, predictor in enumerate(self.predictors):
                     if isinstance(self.should_predict, list):
@@ -62,16 +77,18 @@ class ExperimentTemplate:
                         predictor=predictor,
                         in_data=fake_meta,
                         dataset=self.dataset,
-                        name=file_name,
+                        file_name=file_name,
                         should_predict=should_predict,
                         data_format=data_format,
                         start_point=out_bioformats,
-                        iter=i,
-                        model=self.model
+                        index=i,
+                        model=self.model,
+                        out_path=self.out_path_experiment,
                     )
         
         for eval in self.evaluators:
             eval(
                 schema=self.schema,
                 dataset=self.dataset,
-                out_path=self.out_path).report()
+                out_path=self.out_path_experiment
+                ).report()

@@ -1,0 +1,72 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <StructuredAnnotations>
+    <XMLAnnotation ID="Annotation:1">
+      <Value>
+        <OriginalMetadata>
+          <Key>Experiment</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>AcquisitionBlock</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>MultiTrackSetup</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>TrackSetup</Key>
+                      <Value/>
+                      <OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>Detector</Key>
+                          <Value/>
+                          <OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Folder</Key>
+                              <Value>[mCherry, EGFP, DAPI]</Value>
+                            </OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Color</Key>
+                              <Value>[#FF0000, #00FF00, #0000FF, #FFFFFF]</Value>
+                            </OriginalMetadata>
+                          </OriginalMetadata>
+                        </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Information</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Image</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Channel</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>Fluor</Key>
+                      <Value>[mCherry, EGFP, DAPI]</Value>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+      </Value>
+    </XMLAnnotation>
+  </StructuredAnnotations>
+</OME>
+
+COST: 0.18386500000000003
+ATTEMPTS: 1.6666666666666667
+TIME: 81.07026052474976

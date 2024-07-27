@@ -1,0 +1,115 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Image ID="Image:0" Name="P2_009.TIF">
+    <Description>@Hokawo@fACC=0;fAVE=0;fSUB=0;fBSUB=0;fBOFS=0;fSHC=0;vACC=2;vAVE=2;vSUB=0;vBOFS=0;vBPPGr=16;vOrient=ORIGINAL;vrcAcqArea=0,0,128,128;sGrabber="DvMultiCamU.dll";sGrabberVer="2,3,1,2617";sDataSource="C11440-22CU (S/N: 781160)";vDate=2023/01/23;vTime=11:33:45;vTStamp=1674470025863.764893;vExpTim1=0.020008;vExpTim2=0.000000;vExpTim3=0.000000;vGain1=0;vGain2=0;vGain3=0;vOffset=0;vBinX=1;vBinY=1;vrcSub=1072,960,1200,1088;vCTemp=0.000000;vSens=0;vImgNo=66;vMarker=0;vsizeSensor=2048,2048;vTStampRefFT=27111902,3577643008;vConvOffs=100.000000;vConfFact=0.480000;vImgSrcID=0;~Hokawo~</Description>
+    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint16" SignificantBits="16" Interleaved="false" BigEndian="false" SizeX="128" SizeY="128" SizeZ="1" SizeC="1" SizeT="5000" PhysicalSizeX="1.0" PhysicalSizeXUnit="µm">
+      <Channel ID="Channel:0:0" SamplesPerPixel="1">
+        <LightPath/>
+      </Channel>
+      <MetadataOnly/>
+    </Pixels>
+  </Image>
+  <StructuredAnnotations>
+    <XMLAnnotation ID="Annotation:270">
+      <Value>
+        <OriginalMetadata>
+          <Key>Image</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Dimensions</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Width</Key>
+                  <Value>128</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Length</Key>
+                  <Value>128</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Resolution</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>XResolution</Key>
+                  <Value>1.0</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Unit</Key>
+                  <Value>None</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PhotometricInterpretation</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>MetaDataPhotometricInterpretation</Key>
+                  <Value>Monochrome</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>PhotometricInterpretation</Key>
+                  <Value>BlackIsZero</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Samples</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>SamplesPerPixel</Key>
+                  <Value>1</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>BitsPerSample</Key>
+                  <Value>16</Value>
+                </OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>SampleFormat</Key>
+                  <Value>unsigned integer</Value>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Compression</Key>
+              <Value>Uncompressed</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>PlanarConfiguration</Key>
+              <Value>Chunky</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Orientation</Key>
+              <Value>1st row - top; 1st column - left</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>FillOrder</Key>
+              <Value>Pixels with lower column values are stored in the higher order bits of a byte</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>NumberOfChannels</Key>
+              <Value>1</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>NewSubfileType</Key>
+              <Value>0</Value>
+            </OriginalMetadata>
+            <OriginalMetadata>
+              <Key>MetaMorph</Key>
+              <Value>no</Value>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+      </Value>
+    </XMLAnnotation>
+  </StructuredAnnotations>
+</OME>
+
+COST: 0.03151
+ATTEMPTS: 1.0
+TIME: 42.10226535797119

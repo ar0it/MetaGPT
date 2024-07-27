@@ -41,7 +41,7 @@ class PredictorNetwork(PredictorTemplate):
             "Here is the raw metadata \n" + str(self.raw_metadata)).predict()
         
         if response_sep is None:
-            return None, sep_cost, self.attempts
+            return None, sep_cost, sep_attempts
         response_annot, response_ome = response_sep
 
         self.pred_response_annot, annot_cost, annot_attempts = PredictorSimpleAnnotation(

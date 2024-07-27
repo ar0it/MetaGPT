@@ -1,0 +1,250 @@
+{
+    "ImageCollection": [
+        {
+            "MicroscopyImage": {
+                "Identifier": "Image:0",
+                "ImageName": "P2_009.TIF",
+                "ImageDescription": "@Hokawo@fACC=0;fAVE=0;fSUB=0;fBSUB=0;fBOFS=0;fSHC=0;vACC=2;vAVE=2;vSUB=0;vBOFS=0;vBPPGr=16;vOrient=ORIGINAL;vrcAcqArea=0,0,128,128;sGrabber=\"DvMultiCamU.dll\";sGrabberVer=\"2,3,1,2617\";sDataSource=\"C11440-22CU (S/N: 781160)\";vDate=2023/01/23;vTime=11:33:45;vTStamp=1674470025863.764893;vExpTim1=0.020008;vExpTim2=0.000000;vExpTim3=0.000000;vGain1=0;vGain2=0;vGain3=0;vOffset=0;vBinX=1;vBinY=1;vrcSub=1072,960,1200,1088;vCTemp=0.000000;vSens=0;vImgNo=66;vMarker=0;vsizeSensor=2048,2048;vTStampRefFT=27111902,3577643008;vConvOffs=100.000000;vConfFact=0.480000;vImgSrcID=0;~Hokawo~",
+                "PixelCountDuplicate": [
+                    {
+                        "PixelCount": {
+                            "Endianness": "false",
+                            "AxisOrder": "XYCZT",
+                            "Identifier": "Pixels:0",
+                            "InterleavedData": "false",
+                            "PhysicalDimensionX": "1.0",
+                            "DimensionXUnit": "µm",
+                            "BitDepth": "16",
+                            "ChannelSize": "1",
+                            "TemporalSize": "5000",
+                            "HorizontalSize": "128",
+                            "VerticalSize": "128",
+                            "DepthSize": "1",
+                            "DataType": "uint16",
+                            "ChannelCount": [
+                                {
+                                    "ColorChannel": {
+                                        "Identifier": "Channel:0:0",
+                                        "SamplesPerPixelCount": "1",
+                                        "OpticalPath": {}
+                                    }
+                                }
+                            ],
+                            "MetadataFlag": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "MicroscopyImage": {
+                "Identifier": "Image:0",
+                "ImageName": "Rio9 0528.tif",
+                "ImageDescription": "BoundingBox 0.00000 28.58871 0.00000 28.58871 0.00000 0.00931  |",
+                "PixelCountDuplicate": [
+                    {
+                        "PixelCount": {
+                            "Endianness": "false",
+                            "AxisOrder": "XYCZT",
+                            "Identifier": "Pixels:0",
+                            "InterleavedData": "false",
+                            "PhysicalDimensionX": "0.009309249985981148",
+                            "DimensionXUnit": "µm",
+                            "PhysicalDimensionY": "0.009309249985981148",
+                            "DimensionYUnit": "µm",
+                            "BitDepth": "16",
+                            "ChannelSize": "1",
+                            "TemporalSize": "1",
+                            "HorizontalSize": "3072",
+                            "VerticalSize": "3072",
+                            "DepthSize": "1",
+                            "DataType": "uint16",
+                            "ChannelCount": [
+                                {
+                                    "ColorChannel": {
+                                        "Identifier": "Channel:0:0",
+                                        "SamplesPerPixelCount": "1",
+                                        "OpticalPath": {}
+                                    }
+                                }
+                            ],
+                            "MetadataFlag": {}
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "StructuredMetadata": {
+        "XMLMetadataCollection": [
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:0",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "PlanarConfiguration",
+                            "DataValue": "Chunky"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:1",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "XResolution",
+                            "DataValue": "2728469.0"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:2",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "NumberOfChannels",
+                            "DataValue": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:3",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "SamplesPerPixel",
+                            "DataValue": "1"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:4",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "Compression",
+                            "DataValue": "LZW"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:5",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "ImageLength",
+                            "DataValue": "3072"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:6",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "Orientation",
+                            "DataValue": "1st row - top; 1st column - left"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:7",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "MetaDataPhotometricInterpretation",
+                            "DataValue": "Monochrome"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:8",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "ImageWidth",
+                            "DataValue": "3072"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:9",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "MetaMorph",
+                            "DataValue": "no"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:10",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "PhotometricInterpretation",
+                            "DataValue": "BlackIsZero"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:11",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "YResolution",
+                            "DataValue": "2728469.0"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:12",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "ResolutionUnit",
+                            "DataValue": "Inch"
+                        }
+                    }
+                }
+            },
+            {
+                "XMLMetadata": {
+                    "Identifier": "Annotation:13",
+                    "MetadataNamespace": "openmicroscopy.org/OriginalMetadata",
+                    "DataValue": {
+                        "InitialMetadata": {
+                            "MetadataKey": "BitsPerSample",
+                            "DataValue": "16"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

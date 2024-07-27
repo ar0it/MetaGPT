@@ -1,0 +1,19 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Experimenter ID="Experimenter:0" UserName="domartm"/>
+  <Instrument ID="Instrument:0">
+    <Detector Gain="1.0" Zoom="1.0" AmplificationGain="30.0" ID="Detector:0:0" Type="Other"/>
+    <Detector Gain="0.0" Zoom="1.0" AmplificationGain="15.0" ID="Detector:1:0" Type="Other"/>
+    <Detector Gain="0.0" Zoom="1.0" AmplificationGain="30.0" ID="Detector:2:0" Type="Other"/>
+    <Objective Model="alpha Plan-Apochromat 100x/1.46 Oil DIC M27" ID="Objective:0" Immersion="Oil"/>
+  </Instrument>
+  <Image ID="Image:0" Name="2021_10_27_FRET_T001_Fret_Turquoise.tif">
+    <Description>Dimensions: T(720) x XY(1) x λ(3); Camera Name: Photometrics Prime 95B; Numerical Aperture: 1.3; Refractive Index: 1.515; Number of Picture Planes: 3; Plane #1:;  Name: Fret_Turquoise;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #2:;  Name: Fret_Tomato;  Component Count: 1;  Modality: Widefield Fluorescence;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 2x2;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Plane #3:;  Name: Ph-3;  Component Count: 1;  Modality: Brightfield;  Camera Settings:   ;   Camera Type: Prime 95B;   Binning: 1x1;   Bit Depth: 12-bit;   Exposure: 100 ms;   Denoising: Off;   Conversion Gain: 둀ၙ;   Fan Speed: High; Time Loop: 720; - Equidistant (Period 30000 ms); </Description>
+    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint8" SignificantBits="8" Interleaved="false" BigEndian="false" SizeX="1608" SizeY="1608" SizeZ="1" SizeC="1" SizeT="1">
+      <Channel ID="Channel:0:0" SamplesPerPixel="1"/>
+    </Pixels>
+  </Image>
+</OME>
+
+COST: 0.18270000000000003
+ATTEMPTS: 1.0
+TIME: 29.483891248703003

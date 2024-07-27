@@ -1,0 +1,182 @@
+<OME xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd">
+  <Experimenter ID="Experimenter:0" UserName="domartm"/>
+  <Instrument ID="Instrument:0">
+    <Microscope/>
+    <Detector Model="" Gain="1.0" Zoom="1.0" AmplificationGain="1.0" ID="Detector:0:0" Type="PMT"/>
+    <Detector Model="" Gain="647.0" Zoom="1.0" AmplificationGain="1.0" ID="Detector:1:0" Type="PMT"/>
+    <Detector Model="" Gain="475.0" Zoom="1.0" AmplificationGain="1.0" ID="Detector:2:0" Type="PMT"/>
+    <Detector Model="" Gain="322.0" Zoom="1.0" AmplificationGain="1.0" ID="Detector:2:1"/>
+    <Objective Model="EC Plan-Neofluar 20x/0.50 M27" ID="Objective:0" Immersion="Air" LensNA="0.5000000000000001" NominalMagnification="20.0"/>
+  </Instrument>
+  <Image ID="Image:0" Name="3_right_20x #1">
+    <ExperimenterRef ID="Experimenter:0"/>
+    <InstrumentRef ID="Instrument:0"/>
+    <ObjectiveSettings ID="Objective:0" Medium="Air" RefractiveIndex="1.0"/>
+    <StageLabel Name="Scene position #0" X="699.0" XUnit="µm" Y="6328.5" YUnit="µm" Z="531.52" ZUnit="µm"/>
+    <Pixels ID="Pixels:0" DimensionOrder="XYCZT" Type="uint8" SignificantBits="8" Interleaved="false" BigEndian="false" SizeX="512" SizeY="512" SizeZ="18" SizeC="4" SizeT="1" PhysicalSizeX="1.3837763682730653" PhysicalSizeXUnit="µm" PhysicalSizeY="1.3837763682730653" PhysicalSizeYUnit="µm" PhysicalSizeZ="4.199999999999999" PhysicalSizeZUnit="µm">
+      <Channel ID="Channel:0:0" Name="Ch3-T1" SamplesPerPixel="1" IlluminationType="Epifluorescence" AcquisitionMode="LaserScanningConfocalMicroscopy" ExcitationWavelength="543.0" ExcitationWavelengthUnit="nm" EmissionWavelength="637.0000000000001" EmissionWavelengthUnit="nm" Fluor="mCherry" Color="-16776961">
+        <DetectorSettings ID="Detector:0:0" Binning="1x1"/>
+        <LightPath/>
+      </Channel>
+      <Channel ID="Channel:0:1" Name="Ch2 M-T2" SamplesPerPixel="1" IlluminationType="Epifluorescence" AcquisitionMode="LaserScanningConfocalMicroscopy" ExcitationWavelength="488.00000000000006" ExcitationWavelengthUnit="nm" EmissionWavelength="515.5218240000002" EmissionWavelengthUnit="nm" Fluor="EGFP" Color="16711935">
+        <DetectorSettings ID="Detector:1:0" Binning="1x1"/>
+        <LightPath/>
+      </Channel>
+      <Channel ID="Channel:0:2" Name="Ch1-T3" SamplesPerPixel="1" IlluminationType="Epifluorescence" AcquisitionMode="LaserScanningConfocalMicroscopy" ExcitationWavelength="405.00000000000006" ExcitationWavelengthUnit="nm" EmissionWavelength="497.5000000000001" EmissionWavelengthUnit="nm" Fluor="DAPI" Color="65535">
+        <DetectorSettings ID="Detector:2:0" Binning="1x1"/>
+        <LightPath/>
+      </Channel>
+      <Channel ID="Channel:0:3" Name="T PMT-T3" SamplesPerPixel="1" IlluminationType="Epifluorescence" AcquisitionMode="LaserScanningConfocalMicroscopy" Fluor="Dye4" Color="-1">
+        <DetectorSettings ID="Detector:2:1" Binning="1x1"/>
+        <LightPath/>
+      </Channel>
+      <MetadataOnly/>
+      <Plane TheZ="0" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="531.52" PositionZUnit="µm"/>
+      <Plane TheZ="0" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="531.52" PositionZUnit="µm"/>
+      <Plane TheZ="0" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="531.52" PositionZUnit="µm"/>
+      <Plane TheZ="0" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="531.52" PositionZUnit="µm"/>
+      <Plane TheZ="1" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="535.72" PositionZUnit="µm"/>
+      <Plane TheZ="1" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="535.72" PositionZUnit="µm"/>
+      <Plane TheZ="1" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="535.72" PositionZUnit="µm"/>
+      <Plane TheZ="1" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="535.72" PositionZUnit="µm"/>
+      <Plane TheZ="2" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="539.92" PositionZUnit="µm"/>
+      <Plane TheZ="2" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="539.92" PositionZUnit="µm"/>
+      <Plane TheZ="2" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="539.92" PositionZUnit="µm"/>
+      <Plane TheZ="2" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="539.92" PositionZUnit="µm"/>
+      <Plane TheZ="3" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="544.12" PositionZUnit="µm"/>
+      <Plane TheZ="3" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="544.12" PositionZUnit="µm"/>
+      <Plane TheZ="3" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="544.12" PositionZUnit="µm"/>
+      <Plane TheZ="3" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="544.12" PositionZUnit="µm"/>
+      <Plane TheZ="4" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="548.3199999999999" PositionZUnit="µm"/>
+      <Plane TheZ="4" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="548.3199999999999" PositionZUnit="µm"/>
+      <Plane TheZ="4" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="548.3199999999999" PositionZUnit="µm"/>
+      <Plane TheZ="4" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="548.3199999999999" PositionZUnit="µm"/>
+      <Plane TheZ="5" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="552.52" PositionZUnit="µm"/>
+      <Plane TheZ="5" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="552.52" PositionZUnit="µm"/>
+      <Plane TheZ="5" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="552.52" PositionZUnit="µm"/>
+      <Plane TheZ="5" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="552.52" PositionZUnit="µm"/>
+      <Plane TheZ="6" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="556.72" PositionZUnit="µm"/>
+      <Plane TheZ="6" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="556.72" PositionZUnit="µm"/>
+      <Plane TheZ="6" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="556.72" PositionZUnit="µm"/>
+      <Plane TheZ="6" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="556.72" PositionZUnit="µm"/>
+      <Plane TheZ="7" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="560.92" PositionZUnit="µm"/>
+      <Plane TheZ="7" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="560.92" PositionZUnit="µm"/>
+      <Plane TheZ="7" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="560.92" PositionZUnit="µm"/>
+      <Plane TheZ="7" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="560.92" PositionZUnit="µm"/>
+      <Plane TheZ="8" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="565.12" PositionZUnit="µm"/>
+      <Plane TheZ="8" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="565.12" PositionZUnit="µm"/>
+      <Plane TheZ="8" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="565.12" PositionZUnit="µm"/>
+      <Plane TheZ="8" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="565.12" PositionZUnit="µm"/>
+      <Plane TheZ="9" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="569.3199999999999" PositionZUnit="µm"/>
+      <Plane TheZ="9" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="569.3199999999999" PositionZUnit="µm"/>
+      <Plane TheZ="9" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="569.3199999999999" PositionZUnit="µm"/>
+      <Plane TheZ="9" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="569.3199999999999" PositionZUnit="µm"/>
+      <Plane TheZ="10" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="573.52" PositionZUnit="µm"/>
+      <Plane TheZ="10" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="573.52" PositionZUnit="µm"/>
+      <Plane TheZ="10" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="573.52" PositionZUnit="µm"/>
+      <Plane TheZ="10" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="573.52" PositionZUnit="µm"/>
+      <Plane TheZ="11" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="577.72" PositionZUnit="µm"/>
+      <Plane TheZ="11" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="577.72" PositionZUnit="µm"/>
+      <Plane TheZ="11" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="577.72" PositionZUnit="µm"/>
+      <Plane TheZ="11" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="577.72" PositionZUnit="µm"/>
+      <Plane TheZ="12" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="581.92" PositionZUnit="µm"/>
+      <Plane TheZ="12" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="581.92" PositionZUnit="µm"/>
+      <Plane TheZ="12" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="581.92" PositionZUnit="µm"/>
+      <Plane TheZ="12" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="581.92" PositionZUnit="µm"/>
+      <Plane TheZ="13" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="586.12" PositionZUnit="µm"/>
+      <Plane TheZ="13" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="586.12" PositionZUnit="µm"/>
+      <Plane TheZ="13" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="586.12" PositionZUnit="µm"/>
+      <Plane TheZ="13" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="586.12" PositionZUnit="µm"/>
+      <Plane TheZ="14" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="590.3199999999999" PositionZUnit="µm"/>
+      <Plane TheZ="14" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="590.3199999999999" PositionZUnit="µm"/>
+      <Plane TheZ="14" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="590.3199999999999" PositionZUnit="µm"/>
+      <Plane TheZ="14" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="590.3199999999999" PositionZUnit="µm"/>
+      <Plane TheZ="15" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="594.52" PositionZUnit="µm"/>
+      <Plane TheZ="15" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="594.52" PositionZUnit="µm"/>
+      <Plane TheZ="15" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="594.52" PositionZUnit="µm"/>
+      <Plane TheZ="15" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="594.52" PositionZUnit="µm"/>
+      <Plane TheZ="16" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="598.72" PositionZUnit="µm"/>
+      <Plane TheZ="16" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="598.72" PositionZUnit="µm"/>
+      <Plane TheZ="16" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="598.72" PositionZUnit="µm"/>
+      <Plane TheZ="16" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="598.72" PositionZUnit="µm"/>
+      <Plane TheZ="17" TheT="0" TheC="0" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="602.92" PositionZUnit="µm"/>
+      <Plane TheZ="17" TheT="0" TheC="1" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="602.92" PositionZUnit="µm"/>
+      <Plane TheZ="17" TheT="0" TheC="2" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="602.92" PositionZUnit="µm"/>
+      <Plane TheZ="17" TheT="0" TheC="3" DeltaT="10315.919362848485" DeltaTUnit="s" PositionX="699.0" PositionXUnit="µm" PositionY="6328.5" PositionYUnit="µm" PositionZ="602.92" PositionZUnit="µm"/>
+    </Pixels>
+  </Image>
+  <StructuredAnnotations>
+    <XMLAnnotation ID="Annotation:252">
+      <Value>
+        <OriginalMetadata>
+          <Key>Experiment</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>AcquisitionBlock</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>MultiTrackSetup</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>TrackSetup</Key>
+                      <Value/>
+                      <OriginalMetadata>
+                        <OriginalMetadata>
+                          <Key>Detector</Key>
+                          <Value/>
+                          <OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Folder</Key>
+                              <Value>[mCherry, EGFP, DAPI]</Value>
+                            </OriginalMetadata>
+                            <OriginalMetadata>
+                              <Key>Color</Key>
+                              <Value>[#FF0000, #00FF00, #0000FF, #FFFFFF]</Value>
+                            </OriginalMetadata>
+                          </OriginalMetadata>
+                        </OriginalMetadata>
+                      </OriginalMetadata>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>Information</Key>
+          <Value/>
+          <OriginalMetadata>
+            <OriginalMetadata>
+              <Key>Image</Key>
+              <Value/>
+              <OriginalMetadata>
+                <OriginalMetadata>
+                  <Key>Channel</Key>
+                  <Value/>
+                  <OriginalMetadata>
+                    <OriginalMetadata>
+                      <Key>Fluor</Key>
+                      <Value>[mCherry, EGFP, DAPI]</Value>
+                    </OriginalMetadata>
+                  </OriginalMetadata>
+                </OriginalMetadata>
+              </OriginalMetadata>
+            </OriginalMetadata>
+          </OriginalMetadata>
+        </OriginalMetadata>
+        <OriginalMetadata>
+          <Key>LsmTag</Key>
+          <Value>[LsmTag Name="CarlZeissAim.IncubatorState.Switch_TempChannel4" Type="boolean"true/LsmTag]</Value>
+        </OriginalMetadata>
+      </Value>
+    </XMLAnnotation>
+  </StructuredAnnotations>
+</OME>
+
+COST: 0.17641500000000002
+ATTEMPTS: 1.0
+TIME: 31.100337982177734

@@ -39,6 +39,9 @@ class PredictorNetworkAnnotation(PredictorTemplate):
         sep_response, sep_cost, sep_attempts = PredictorSeperator(
             "Here is the raw metadata \n" + str(self.raw_metadata)).predict()
         
+        if sep_response is None:
+            return None, sep_cost, sep_attempts
+        
         response_annot, response_ome = sep_response
 
         response, pred_cost, pred_attempts = PredictorSimpleAnnotation(

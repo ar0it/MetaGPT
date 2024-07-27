@@ -57,6 +57,10 @@ class PredictorSeperator(PredictorTemplate):
             self.sep_response = self.sep_run.required_action.submit_tool_outputs.tool_calls[0].function.arguments
             self.out_tokens += utils.num_tokens_from_string(str(self.sep_response))
             self.sep_response = ast.literal_eval(self.sep_response)
+            if self.sep_response:
+                sep_response_annot = self.sep_response["annotation_properties"]
+                sep_response_ome = self.sep_response["ome_properties"]
+                response = (sep_response_annot, sep_response_ome)
         except Exception as e:
             response = None
             print(f"There was an exception in the {self.name}" ,e)
@@ -67,10 +71,7 @@ class PredictorSeperator(PredictorTemplate):
             else:
                 print(f"Failed {self.name} after {self.attempts} attempts.")
             
-        if self.sep_response:
-            sep_response_annot = self.sep_response["annotation_properties"]
-            sep_response_ome = self.sep_response["ome_properties"]
-            response = (sep_response_annot, sep_response_ome)
+
         self.clean_assistants()
         return response, self.get_cost(), self.attempts
     
