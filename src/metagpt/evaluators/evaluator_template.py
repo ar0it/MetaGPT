@@ -362,6 +362,16 @@ class EvaluatorTemplate:
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
         return fig, ax
+    
+    def _update_plot(self, title:str, ax: plt.Axes):
+        """Update the plot with title."""
+        ax.set_xlabel("Prediction Method", fontsize=self.font_size)
+        ax.set_ylabel(title, fontsize=self.font_size)
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        return ax
+
 
     def _save_plot(self, fig: plt.Figure, plot_name: str):
         """Save the plot as SVG and PNG."""
@@ -377,6 +387,7 @@ class EvaluatorTemplate:
         fig, ax = self._create_base_plot("Edit Distance")
         df = df_sample[df_sample["method"] != "Bioformats"]
         sns.barplot(x=df["method"], y=df["edit_distance"], edgecolor='black', ax=ax, palette=self.palette0)
+        ax = self._update_plot("Edit Distance", ax)
         self._format_x_axis(ax, df["method"].unique())
         self._save_plot(fig, "method_edit_distance_plt")
 
@@ -384,6 +395,7 @@ class EvaluatorTemplate:
         """Plot number of paths per method."""
         fig, ax = self._create_base_plot("Number of Paths")
         sns.barplot(x=df_sample["method"], y=df_sample["n_paths"], edgecolor='black', ax=ax, palette=self.palette0_bf)
+        ax = self._update_plot("Number of Paths", ax)
         self._format_x_axis(ax, df_sample["method"].unique())
         self._save_plot(fig, "n_paths_method_plt")
 
@@ -392,6 +404,7 @@ class EvaluatorTemplate:
         fig, ax = self._create_base_plot("Edit Distance")
         df = df_sample[df_sample["method"] != "Bioformats"]
         sns.barplot(x=df["method"], y=df["edit_distance"], hue=df_sample["og_image_format"], edgecolor='black', ax=ax, palette=self.palette0)
+        ax = self._update_plot("Edit Distance", ax)
         self._format_x_axis(ax, df["method"].unique())
         ax.legend(loc='upper right')
         self._save_plot(fig, "format_method_plt")
@@ -402,6 +415,7 @@ class EvaluatorTemplate:
         n_path_plt = sns.barplot(x=df_sample["method"], y=df_sample["n_paths"]-df_sample["n_annotations"], edgecolor='black', ax=ax, palette=self.palette0_bf, label="OME Paths")
         bottom_heights = [patch.get_height() for patch in n_path_plt.patches]
         sns.barplot(x=df_sample["method"], y=df_sample["n_annotations"], edgecolor='black', ax=ax, palette=self.palette1_bf, label="Annotation Paths", bottom=bottom_heights)
+        ax = self._update_plot("Number of Paths", ax)
         self._format_x_axis(ax, df_sample["method"].unique())
         ax.legend(loc='upper right')
         self._save_plot(fig, "paths_annotation_stacked_plt")
@@ -411,6 +425,7 @@ class EvaluatorTemplate:
         fig, ax = self._create_base_plot("Number of Attempts")
         df = df_sample[df_sample["method"] != "Bioformats"]
         sns.barplot(x=df["method"], y=df["attempts"], edgecolor='black', ax=ax, palette=self.palette0)
+        ax = self._update_plot("Number of Attempts", ax)
         self._format_x_axis(ax, df["method"].unique())
         self._save_plot(fig, "method_attempts_plt")
 
@@ -419,6 +434,7 @@ class EvaluatorTemplate:
         fig, ax = self._create_base_plot("Number of Samples")
         y = df_sample[df_sample["method"] == "Bioformats"]["og_image_format"].value_counts()
         sns.barplot(x=y.index, y=y, edgecolor='black', ax=ax, palette=self.qual_color_palette)
+        ax = self._update_plot("Number of Samples", ax)
         ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
         self._save_plot(fig, "format_counts_plt")
 
@@ -427,8 +443,9 @@ class EvaluatorTemplate:
         fig, ax = self._create_base_plot("Number of Attempts")
         df = df_sample[df_sample["method"] != "Bioformats"]
         noise = np.random.normal(-0.1, 0.1, size=len(df))
-        sns.regplot(data=df, x="og_n_paths", y="attempts", order=1, color=".3")
+        sns.regplot(data=df, x="og_n_paths", y="attempts", order=1, color=".3", scatter=False)
         sns.scatterplot(x=df["og_n_paths"], y=df["attempts"]+noise, hue=df["method"], ax=ax, palette=self.palette0, alpha=0.9, s=self.scatter_size)
+        ax = self._update_plot("Number of Attempts", ax)
         ax.set_xlabel("Number of Paths", fontsize=self.font_size)
         ax.legend(loc='upper left')
         self._save_plot(fig, "attempts_paths_plt")
@@ -438,6 +455,7 @@ class EvaluatorTemplate:
         fig, ax = self._create_base_plot("Edit Distance (No Annotations)")
         df = df_sample[df_sample["method"] != "Bioformats"]
         sns.barplot(x=df["method"], y=df["edit_distance_no_annot"], edgecolor='black', ax=ax, palette=self.palette0)
+        ax = self._update_plot("Edit Distance (No Annotations)", ax)
         self._format_x_axis(ax, df["method"].unique())
         self._save_plot(fig, "method_edit_distance_no_annot_plt")
 
@@ -446,6 +464,7 @@ class EvaluatorTemplate:
         fig, ax = self._create_base_plot("Edit Distance (Annotations Only)")
         df = df_sample[df_sample["method"] != "Bioformats"]
         sns.barplot(x=df["method"], y=df["edit_distance_only_annot"], edgecolor='black', ax=ax, palette=self.palette0)
+        ax = self._update_plot("Edit Distance (Annotations Only)", ax)
         self._format_x_axis(ax, df["method"].unique())
         self._save_plot(fig, "method_edit_distance_only_annot_plt")
 
@@ -454,6 +473,7 @@ class EvaluatorTemplate:
         fig, ax = self._create_base_plot("Cost in $")
         df = df_sample[df_sample["method"] != "Bioformats"]
         sns.barplot(x=df["method"], y=df["cost"], edgecolor='black', ax=ax, palette=self.palette0)
+        ax = self._update_plot("Cost in $", ax)
         self._format_x_axis(ax, df["method"].unique())
         self._save_plot(fig, "method_cost_plt")
 
@@ -461,6 +481,7 @@ class EvaluatorTemplate:
         """Plot method prediction time."""
         fig, ax = self._create_base_plot("Prediction Time in s")
         sns.barplot(x=df_sample["method"], y=df_sample["time"], edgecolor='black', ax=ax, palette=self.palette0_bf)
+        ax = self._update_plot("Prediction Time in s", ax)
         self._format_x_axis(ax, df_sample["method"].unique())
         self._save_plot(fig, "method_time_plt")
 
@@ -468,8 +489,9 @@ class EvaluatorTemplate:
         """Plot number of paths against cost."""
         fig, ax = self._create_base_plot("Cost in $")
         df = df_sample[df_sample["method"] != "Bioformats"]
-        sns.regplot(data=df, x="og_n_paths", y="cost", order=1, color=".3")
+        sns.regplot(data=df, x="og_n_paths", y="cost", order=1, color=".3", scatter=False)
         sns.scatterplot(x=df["og_n_paths"], y=df["cost"], hue=df["method"], ax=ax, palette=self.palette0, s=self.scatter_size)
+        ax = self._update_plot("Cost in $", ax)
         ax.set_xlabel("Number of Paths", fontsize=self.font_size)
         ax.legend(loc='upper right')
         self._save_plot(fig, "n_paths_cost_plt")
@@ -478,8 +500,9 @@ class EvaluatorTemplate:
         """Plot number of paths against prediction time."""
         fig, ax = self._create_base_plot("Time in s")
         df = df_sample[df_sample["method"] != "Bioformats"]
-        sns.regplot(data=df, x="og_n_paths", y="time", order=1, color=".3")
+        sns.regplot(data=df, x="og_n_paths", y="time", order=1, color=".3", scatter=False)
         sns.scatterplot(x=df["og_n_paths"], y=df["time"], hue=df_sample["method"], ax=ax, palette=self.palette0, s=self.scatter_size)
+        ax = self._update_plot("Time in s", ax)
         ax.set_xlabel("Number of Paths", fontsize=self.font_size)
         ax.legend(loc='upper right')
         self._save_plot(fig, "n_paths_time_plt")
@@ -520,9 +543,9 @@ class EvaluatorTemplate:
         reference_date = datetime.date(1970, 1, 1)
         df['release_days'] = (df['release_date'] - reference_date).apply(lambda x: x.days)
 
-        sns.regplot(data=df, x="release_days", y="price_per_mmlu", order=1, color=".3")
+        sns.regplot(data=df, x="release_days", y="price_per_mmlu", order=1, color=".3", scatter=False)
         sns.scatterplot(data=df, x="release_date", y="price_per_mmlu", hue="model_family", s=self.scatter_size)
-
+        ax = self._update_plot("Price per MMLU", ax)
         plt.xlabel("Release Date", fontsize=self.font_size)
         plt.xticks(rotation=45)
         ax.legend(loc='upper right')

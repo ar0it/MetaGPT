@@ -8,7 +8,6 @@ import time
 from typing import Optional, List, Dict, Any
 
 import xml.etree.ElementTree as ET
-from lxml import etree
 from openai import OpenAI
 
 import metagpt.utils.utils as utils
