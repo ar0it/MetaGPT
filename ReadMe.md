@@ -9,3 +9,9 @@ To investigate this approach, we introduce metagpt, a library for building and t
 Our findings highlight both the potential and current limitations of AI-driven approaches in scientific data management. We discuss the implications of these results for the microscopy community and outline future research directions. Despite initial challenges, we argue that a fully realized "OME GPT" could significantly impact the field, potentially unifying metadata management efforts in microscopy much as the FASTA format did for genomics.
 
 This research contributes to the ongoing dialogue about AI applications in scientific data management and opens new avenues for addressing long-standing challenges in metadata standardization and interoperability.
+
+# Set Up 
+
+To run the code, you will need to have an OpenAI API key set in your environment.
+Please look at: https://platform.openai.com/docs/quickstart for a tutorial on
+setting up the key. Please make sure to install the correct package versions as described in the .yaml, since the syntax in the OpenAI library has changed recently.
